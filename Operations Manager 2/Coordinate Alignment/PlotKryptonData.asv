@@ -1,0 +1,61 @@
+clear all;
+close all;
+clc;
+
+data1 = load('Test1_61307_LBCB1Dynamic.txt');
+data2 = load('Test1_61307_LBCB2Dynamic.txt');
+
+for i=1:6;
+    data1(:,i+1) = data1(:,i+1) - data1(1,i+1);
+    data2(:,i+1) = data2(:,i+1) - data2(1,i+1);
+end
+
+data1(:,2) = 1/25.4*data1(:,2);
+data1(:,3) = 1/25.4*data1(:,3);
+data1(:,4) = 1/25.4*data1(:,4);
+data2(:,2) = 1/25.4*data2(:,2);
+data2(:,3) = 1/25.4*data2(:,3);
+data2(:,4) = 1/25.4*data2(:,4);
+
+% % subplot(6,2,1)
+% plot(data1(:,1),data1(:,7),'b')
+% hold on
+% plot(data2(:,1),data2(:,7),'r')
+% axis([2850 3400 -4 4])
+% 
+% Ps = 1232*5
+% plot(data1(Ps,1),data1(Ps,7),'bo')
+% plot(data2(Ps,1),data2(Ps,7),'ro')
+% plot(data1(Ps-49:Ps,1),data1(Ps-49:Ps,7),'b','LineWidth',5)
+% plot(data2(Ps-49:Ps,1),data2(Ps-49:Ps,7),'r','LineWidth',5)
+
+ind = [188 640 925 1410 1590 2000 2220 2480,...
+    2820 3155 3500 3710 3990 4215 4500 4900,...
+    5230 5525 5750 6160 6450 6800 7340 8190,...
+    8630 8875 9160 10650 10960 11260 11560 11860,...
+    12160 12430 12750 13110 13360 13710 13910 14200,...
+    14450 14675 14885 15140 15425 15690 15925 16180];
+
+Data1 = zeros(48,6);
+Data2 = zeros(48,6);
+Commnd = load('InputDualLBCB.txt');
+Commnd = Commnd(1:48,:);
+
+for i=1:length(ind)
+    for j=1:6
+        Data1(i,j) = sum(data1(ind(i)-49:ind(i),j+1))/50;
+        Data2(i,j) = sum(data2(ind(i)-49:ind(i),j+1))/50;
+    end
+end
+
+clear data1 data2
+
+for k=1
+figure
+for i=1:6
+    subplot(3,2,i)
+    plot(Commnd(8*k-7:8*k+1,1),Data1(1:9,i),'bo-')
+    hold on
+    plot(Commnd(1:,1),Data2(1:9,i),'ro-')
+end
+end

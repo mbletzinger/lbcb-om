@@ -1,0 +1,2 @@
+6/17/2006 4:41:37.13 PM Incoming Command: 'open-session	dummyOpenSession'
+6/17/2006 4:41:37.13 PM Response is: 'Error	1	dummyOpenSession	Local client is not connected.'
