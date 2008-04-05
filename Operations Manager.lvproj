@@ -45,8 +45,8 @@
          <Item Name="DataTransmissionActions.vi" Type="VI" URL="Data Transmission/DataTransmissionActions.vi"/>
          <Item Name="DataTransmissionGlobals.vi" Type="VI" URL="Data Transmission/DataTransmissionGlobals.vi"/>
          <Item Name="DataTransmissionTcpWriter.vi" Type="VI" URL="Data Transmission/DataTransmissionTcpWriter.vi"/>
-         <Item Name="FindDataTransmissionTcpWriterVi.vi" Type="VI" URL="Data Transmission/FindDataTransmissionTcpWriterVi.vi"/>
          <Item Name="TransmitData.vi" Type="VI" URL="Data Transmission/TransmitData.vi"/>
+         <Item Name="LaunchDataTransmissionTcpWriterVi.vi" Type="VI" URL="Data Transmission/LaunchDataTransmissionTcpWriterVi.vi"/>
       </Item>
       <Item Name="DigitalFilter" Type="Folder">
          <Item Name="Butter8thWn0008.txt" Type="Document" URL="DigitalFilter/Butter8thWn0008.txt"/>
@@ -351,7 +351,7 @@
             <Property Name="DestinationName[0]" Type="Str">LBCB Operations Manager 2.exe</Property>
             <Property Name="DestinationName[1]" Type="Str">Destination Directory</Property>
             <Property Name="DestinationName[2]" Type="Str">Support Directory</Property>
-            <Property Name="DestinationName[3]" Type="Str">Operations Mananager LLB</Property>
+            <Property Name="DestinationName[3]" Type="Str">Operations Manager LLB</Property>
             <Property Name="DestinationName[4]" Type="Str">Config</Property>
             <Property Name="DestinationName[5]" Type="Str">DigitalFilter</Property>
             <Property Name="DestinationName[6]" Type="Str">image</Property>
@@ -362,13 +362,13 @@
             <Property Name="ININame" Type="Str">LabVIEW.ini</Property>
             <Property Name="LOGID" Type="Str">{0977BECC-F48E-4520-8BAD-D10CF34BA2CA}</Property>
             <Property Name="MathScript" Type="Bool">false</Property>
-            <Property Name="Path[0]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008/internal.llb</Property>
-            <Property Name="Path[1]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008</Property>
-            <Property Name="Path[2]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008/data</Property>
-            <Property Name="Path[3]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008/Operations Manager.llb</Property>
-            <Property Name="Path[4]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008/Config</Property>
-            <Property Name="Path[5]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008/DigitalFilter</Property>
-            <Property Name="Path[6]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008/image</Property>
+            <Property Name="Path[0]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/internal.llb</Property>
+            <Property Name="Path[1]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008</Property>
+            <Property Name="Path[2]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/data</Property>
+            <Property Name="Path[3]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/Operations Manager.llb</Property>
+            <Property Name="Path[4]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/Config</Property>
+            <Property Name="Path[5]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/DigitalFilter</Property>
+            <Property Name="Path[6]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/image</Property>
             <Property Name="ShowHWConfig" Type="Bool">false</Property>
             <Property Name="SourceInfoItemCount" Type="Int">195</Property>
             <Property Name="SourceItem[0].ApplyDestination" Type="Bool">true</Property>
@@ -921,16 +921,12 @@
             <Property Name="SourceItem[26].FolderDestination" Type="Int">3</Property>
             <Property Name="SourceItem[26].ItemID" Type="Ref">/My Computer/Coordinate Alignment/Transformation061907.txt</Property>
             <Property Name="SourceItem[27].ApplyDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[27].ApplyInclusion" Type="Bool">true</Property>
             <Property Name="SourceItem[27].Destination" Type="Int">3</Property>
             <Property Name="SourceItem[27].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[27].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[27].Inclusion" Type="Str">Always Included</Property>
             <Property Name="SourceItem[27].IsFolder" Type="Bool">true</Property>
             <Property Name="SourceItem[27].ItemID" Type="Ref">/My Computer/Data Transmission</Property>
             <Property Name="SourceItem[28].Destination" Type="Int">3</Property>
             <Property Name="SourceItem[28].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[28].DisableInclusion" Type="Bool">true</Property>
             <Property Name="SourceItem[28].FolderDestination" Type="Int">3</Property>
             <Property Name="SourceItem[28].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
             <Property Name="SourceItem[28].Inclusion" Type="Str">Always Included</Property>
@@ -940,10 +936,8 @@
             <Property Name="SourceItem[28].VIPropertiesVISetting[0]" Type="Bool">false</Property>
             <Property Name="SourceItem[29].Destination" Type="Int">3</Property>
             <Property Name="SourceItem[29].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[29].DisableInclusion" Type="Bool">true</Property>
             <Property Name="SourceItem[29].FolderDestination" Type="Int">3</Property>
             <Property Name="SourceItem[29].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[29].Inclusion" Type="Str">Always Included</Property>
             <Property Name="SourceItem[29].ItemID" Type="Ref">/My Computer/Data Transmission/Data Transmission Test.vi</Property>
             <Property Name="SourceItem[29].VIPropertiesItemCount" Type="Int">1</Property>
             <Property Name="SourceItem[29].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
@@ -957,7 +951,6 @@
             <Property Name="SourceItem[3].ItemID" Type="Ref">/My Computer/Config/Config_Default2.xml</Property>
             <Property Name="SourceItem[30].Destination" Type="Int">3</Property>
             <Property Name="SourceItem[30].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[30].DisableInclusion" Type="Bool">true</Property>
             <Property Name="SourceItem[30].FolderDestination" Type="Int">3</Property>
             <Property Name="SourceItem[30].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
             <Property Name="SourceItem[30].Inclusion" Type="Str">Always Included</Property>
@@ -967,7 +960,6 @@
             <Property Name="SourceItem[30].VIPropertiesVISetting[0]" Type="Bool">false</Property>
             <Property Name="SourceItem[31].Destination" Type="Int">3</Property>
             <Property Name="SourceItem[31].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[31].DisableInclusion" Type="Bool">true</Property>
             <Property Name="SourceItem[31].FolderDestination" Type="Int">3</Property>
             <Property Name="SourceItem[31].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
             <Property Name="SourceItem[31].Inclusion" Type="Str">Always Included</Property>
@@ -977,7 +969,6 @@
             <Property Name="SourceItem[31].VIPropertiesVISetting[0]" Type="Bool">false</Property>
             <Property Name="SourceItem[32].Destination" Type="Int">3</Property>
             <Property Name="SourceItem[32].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[32].DisableInclusion" Type="Bool">true</Property>
             <Property Name="SourceItem[32].FolderDestination" Type="Int">3</Property>
             <Property Name="SourceItem[32].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
             <Property Name="SourceItem[32].Inclusion" Type="Str">Always Included</Property>
@@ -989,24 +980,18 @@
             <Property Name="SourceItem[32].VIPropertiesVISetting[1]" Type="Bool">true</Property>
             <Property Name="SourceItem[33].Destination" Type="Int">3</Property>
             <Property Name="SourceItem[33].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[33].DisableInclusion" Type="Bool">true</Property>
             <Property Name="SourceItem[33].FolderDestination" Type="Int">3</Property>
             <Property Name="SourceItem[33].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
             <Property Name="SourceItem[33].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[33].ItemID" Type="Ref">/My Computer/Data Transmission/FindDataTransmissionTcpWriterVi.vi</Property>
+            <Property Name="SourceItem[33].ItemID" Type="Ref">/My Computer/Data Transmission/TransmitData.vi</Property>
             <Property Name="SourceItem[33].VIPropertiesItemCount" Type="Int">1</Property>
             <Property Name="SourceItem[33].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[33].VIPropertiesVISetting[0]" Type="Bool">true</Property>
+            <Property Name="SourceItem[33].VIPropertiesVISetting[0]" Type="Bool">false</Property>
             <Property Name="SourceItem[34].Destination" Type="Int">3</Property>
             <Property Name="SourceItem[34].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[34].DisableInclusion" Type="Bool">true</Property>
             <Property Name="SourceItem[34].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[34].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
             <Property Name="SourceItem[34].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[34].ItemID" Type="Ref">/My Computer/Data Transmission/TransmitData.vi</Property>
-            <Property Name="SourceItem[34].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[34].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[34].VIPropertiesVISetting[0]" Type="Bool">false</Property>
+            <Property Name="SourceItem[34].ItemID" Type="Ref">/My Computer/Data Transmission/LaunchDataTransmissionTcpWriterVi.vi</Property>
             <Property Name="SourceItem[35].ApplyDestination" Type="Bool">true</Property>
             <Property Name="SourceItem[35].ApplyInclusion" Type="Bool">true</Property>
             <Property Name="SourceItem[35].Destination" Type="Int">5</Property>
@@ -1479,7 +1464,7 @@
             <Property Name="VersionInfoFileVersionBuild" Type="Int">0</Property>
             <Property Name="VersionInfoFileVersionMajor" Type="Int">1</Property>
             <Property Name="VersionInfoFileVersionMinor" Type="Int">5</Property>
-            <Property Name="VersionInfoFileVersionPatch" Type="Int">0</Property>
+            <Property Name="VersionInfoFileVersionPatch" Type="Int">1</Property>
             <Property Name="VersionInfoInternalName" Type="Str">Operations Manager</Property>
             <Property Name="VersionInfoLegalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
             <Property Name="VersionInfoProductName" Type="Str">Operations Manager</Property>
@@ -1529,10 +1514,10 @@
             <Property Name="ININame" Type="Str">LabVIEW.ini</Property>
             <Property Name="LOGID" Type="Str">{A6B681FD-D209-47E7-BAD8-FE86109E243E}</Property>
             <Property Name="MathScript" Type="Bool">false</Property>
-            <Property Name="Path[0]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008/internal.llb</Property>
-            <Property Name="Path[1]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008</Property>
-            <Property Name="Path[2]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008/data</Property>
-            <Property Name="Path[3]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008/NTCP Socket.llb</Property>
+            <Property Name="Path[0]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/internal.llb</Property>
+            <Property Name="Path[1]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008</Property>
+            <Property Name="Path[2]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/data</Property>
+            <Property Name="Path[3]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/NTCP Socket.llb</Property>
             <Property Name="ShowHWConfig" Type="Bool">false</Property>
             <Property Name="SourceInfoItemCount" Type="Int">42</Property>
             <Property Name="SourceItem[0].Destination" Type="Int">0</Property>
@@ -1876,6 +1861,169 @@
             <Property Name="VersionInfoInternalName" Type="Str">External Actuator Control</Property>
             <Property Name="VersionInfoLegalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
             <Property Name="VersionInfoProductName" Type="Str">External Actuator Control</Property>
+         </Item>
+         <Item Name="External Actuator Control With Ramp" Type="EXE">
+            <Property Name="Absolute[0]" Type="Bool">false</Property>
+            <Property Name="Absolute[1]" Type="Bool">false</Property>
+            <Property Name="Absolute[2]" Type="Bool">false</Property>
+            <Property Name="ActiveXInfoEnumCLSIDsItemCount" Type="Int">0</Property>
+            <Property Name="ActiveXInfoMajorVersion" Type="Int">0</Property>
+            <Property Name="ActiveXInfoMinorVersion" Type="Int">0</Property>
+            <Property Name="ActiveXInfoObjCLSIDsItemCount" Type="Int">0</Property>
+            <Property Name="ActiveXInfoProgIDPrefix" Type="Str"></Property>
+            <Property Name="ActiveXServerName" Type="Str"></Property>
+            <Property Name="AliasID" Type="Str">{CE8F20E8-AA75-4773-ACCE-428A5066B4CB}</Property>
+            <Property Name="AliasName" Type="Str">Project.aliases</Property>
+            <Property Name="ApplicationID" Type="Str">{9664BDB8-2059-46B7-84C8-8AA7482A4019}</Property>
+            <Property Name="ApplicationName" Type="Str">External Actuator Control With Ramp.exe</Property>
+            <Property Name="AutoIncrement" Type="Bool">false</Property>
+            <Property Name="BuildName" Type="Str">External Actuator Control With Ramp</Property>
+            <Property Name="CommandLineArguments" Type="Bool">false</Property>
+            <Property Name="CopyErrors" Type="Bool">false</Property>
+            <Property Name="DebuggingEXE" Type="Bool">false</Property>
+            <Property Name="DebugServerWaitOnLaunch" Type="Bool">false</Property>
+            <Property Name="DefaultLanguage" Type="Str">English</Property>
+            <Property Name="DependencyApplyDestination" Type="Bool">true</Property>
+            <Property Name="DependencyApplyInclusion" Type="Bool">true</Property>
+            <Property Name="DependencyApplyProperties" Type="Bool">true</Property>
+            <Property Name="DependencyFolderDestination" Type="Int">0</Property>
+            <Property Name="DependencyFolderInclusion" Type="Str">As needed</Property>
+            <Property Name="DependencyFolderPropertiesItemCount" Type="Int">0</Property>
+            <Property Name="DestinationID[0]" Type="Str">{949F79A8-DAA7-4BB9-ADF3-FE810A066AED}</Property>
+            <Property Name="DestinationID[1]" Type="Str">{949F79A8-DAA7-4BB9-ADF3-FE810A066AED}</Property>
+            <Property Name="DestinationID[2]" Type="Str">{B2EB8944-44E3-409D-9B7A-B43737283CAF}</Property>
+            <Property Name="DestinationItemCount" Type="Int">3</Property>
+            <Property Name="DestinationName[0]" Type="Str">External Actuator Control With Ramp.exe</Property>
+            <Property Name="DestinationName[1]" Type="Str">Destination Directory</Property>
+            <Property Name="DestinationName[2]" Type="Str">Support Directory</Property>
+            <Property Name="Disconnect" Type="Bool">true</Property>
+            <Property Name="IncludeHWConfig" Type="Bool">false</Property>
+            <Property Name="IncludeSCC" Type="Bool">true</Property>
+            <Property Name="INIID" Type="Str">{28CC7297-9AD8-4470-9730-858D00CD2093}</Property>
+            <Property Name="ININame" Type="Str">LabVIEW.ini</Property>
+            <Property Name="LOGID" Type="Str">{1169476F-97C5-4BE3-BD0F-831A7DD81696}</Property>
+            <Property Name="MathScript" Type="Bool">false</Property>
+            <Property Name="Path[0]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/internal.llb</Property>
+            <Property Name="Path[1]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008</Property>
+            <Property Name="Path[2]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/data</Property>
+            <Property Name="ShowHWConfig" Type="Bool">false</Property>
+            <Property Name="SourceInfoItemCount" Type="Int">37</Property>
+            <Property Name="SourceItem[0].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[0].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[0].ItemID" Type="Ref">/My Computer/Config</Property>
+            <Property Name="SourceItem[1].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[1].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[1].ItemID" Type="Ref">/My Computer/Coordinate Alignment</Property>
+            <Property Name="SourceItem[10].Inclusion" Type="Str">Always Included</Property>
+            <Property Name="SourceItem[10].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Global Values.vi</Property>
+            <Property Name="SourceItem[11].Inclusion" Type="Str">Startup VI</Property>
+            <Property Name="SourceItem[11].ItemID" Type="Ref">/My Computer/External Actuators/External Actuator Control.vi</Property>
+            <Property Name="SourceItem[12].Inclusion" Type="Str">Always Included</Property>
+            <Property Name="SourceItem[12].ItemID" Type="Ref">/My Computer/External Actuators/External Control Test.vi</Property>
+            <Property Name="SourceItem[13].Inclusion" Type="Str">Always Included</Property>
+            <Property Name="SourceItem[13].ItemID" Type="Ref">/My Computer/External Actuators/RampHold_Ext.vi</Property>
+            <Property Name="SourceItem[14].Inclusion" Type="Str">Always Included</Property>
+            <Property Name="SourceItem[14].ItemID" Type="Ref">/My Computer/External Actuators/RampHold_Test.vi</Property>
+            <Property Name="SourceItem[15].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[15].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[15].ItemID" Type="Ref">/My Computer/IconFiles</Property>
+            <Property Name="SourceItem[16].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[16].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[16].ItemID" Type="Ref">/My Computer/image</Property>
+            <Property Name="SourceItem[17].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[17].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[17].ItemID" Type="Ref">/My Computer/InputData</Property>
+            <Property Name="SourceItem[18].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[18].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[18].ItemID" Type="Ref">/My Computer/lib</Property>
+            <Property Name="SourceItem[19].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[19].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[19].ItemID" Type="Ref">/My Computer/NTCP library</Property>
+            <Property Name="SourceItem[2].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[2].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[2].ItemID" Type="Ref">/My Computer/Data Transmission</Property>
+            <Property Name="SourceItem[20].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[20].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[20].ItemID" Type="Ref">/My Computer/NTCP library/.svn</Property>
+            <Property Name="SourceItem[21].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[21].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[21].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base</Property>
+            <Property Name="SourceItem[22].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[22].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[22].ItemID" Type="Ref">/My Computer/NTCP library/.svn/props</Property>
+            <Property Name="SourceItem[23].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[23].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[23].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base</Property>
+            <Property Name="SourceItem[24].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[24].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[24].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp</Property>
+            <Property Name="SourceItem[25].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[25].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[25].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/prop-base</Property>
+            <Property Name="SourceItem[26].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[26].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[26].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/props</Property>
+            <Property Name="SourceItem[27].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[27].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[27].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/text-base</Property>
+            <Property Name="SourceItem[28].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[28].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[28].ItemID" Type="Ref">/My Computer/TestData</Property>
+            <Property Name="SourceItem[29].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[29].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[29].ItemID" Type="Ref">/My Computer/TestData/.svn</Property>
+            <Property Name="SourceItem[3].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[3].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[3].ItemID" Type="Ref">/My Computer/DigitalFilter</Property>
+            <Property Name="SourceItem[30].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[30].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[30].ItemID" Type="Ref">/My Computer/TestData/.svn/prop-base</Property>
+            <Property Name="SourceItem[31].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[31].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[31].ItemID" Type="Ref">/My Computer/TestData/.svn/props</Property>
+            <Property Name="SourceItem[32].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[32].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[32].ItemID" Type="Ref">/My Computer/TestData/.svn/text-base</Property>
+            <Property Name="SourceItem[33].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[33].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[33].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp</Property>
+            <Property Name="SourceItem[34].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[34].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[34].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/prop-base</Property>
+            <Property Name="SourceItem[35].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[35].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[35].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/props</Property>
+            <Property Name="SourceItem[36].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[36].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[36].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/text-base</Property>
+            <Property Name="SourceItem[4].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[4].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[4].ItemID" Type="Ref">/My Computer/DLL</Property>
+            <Property Name="SourceItem[5].Destination" Type="Int">0</Property>
+            <Property Name="SourceItem[5].IsFolder" Type="Bool">true</Property>
+            <Property Name="SourceItem[5].ItemID" Type="Ref">/My Computer/External Actuators</Property>
+            <Property Name="SourceItem[6].Inclusion" Type="Str">Always Included</Property>
+            <Property Name="SourceItem[6].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Actions.ctl</Property>
+            <Property Name="SourceItem[7].Inclusion" Type="Str">Always Included</Property>
+            <Property Name="SourceItem[7].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Commands.ctl</Property>
+            <Property Name="SourceItem[8].Inclusion" Type="Str">Always Included</Property>
+            <Property Name="SourceItem[8].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Direct DAQ.vi</Property>
+            <Property Name="SourceItem[9].Inclusion" Type="Str">Always Included</Property>
+            <Property Name="SourceItem[9].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Feedback.ctl</Property>
+            <Property Name="StripLib" Type="Bool">true</Property>
+            <Property Name="SupportedLanguageCount" Type="Int">0</Property>
+            <Property Name="TLBID" Type="Str">{20B42CE4-F648-46B9-9FBE-1E55DDAD3A8E}</Property>
+            <Property Name="UseFFRTE" Type="Bool">false</Property>
+            <Property Name="VersionInfoCompanyName" Type="Str">University of Illinois</Property>
+            <Property Name="VersionInfoFileDescription" Type="Str"></Property>
+            <Property Name="VersionInfoFileType" Type="Int">1</Property>
+            <Property Name="VersionInfoFileVersionBuild" Type="Int">0</Property>
+            <Property Name="VersionInfoFileVersionMajor" Type="Int">1</Property>
+            <Property Name="VersionInfoFileVersionMinor" Type="Int">0</Property>
+            <Property Name="VersionInfoFileVersionPatch" Type="Int">0</Property>
+            <Property Name="VersionInfoInternalName" Type="Str">External Actuator Control With Ramp</Property>
+            <Property Name="VersionInfoLegalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
+            <Property Name="VersionInfoProductName" Type="Str">External Actuator Control With Ramp</Property>
          </Item>
       </Item>
    </Item>
