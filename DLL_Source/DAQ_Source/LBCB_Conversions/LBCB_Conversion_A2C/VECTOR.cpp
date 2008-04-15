@@ -29,7 +29,7 @@ VECTOR::VECTOR( size_t n_rows )
 	//assert( n_rows < 1 );
 	if(num_rows<1){num_rows=1;}
 	vector_ptr = new double[num_rows];
-	for (int i=1; i<=num_rows; i++)
+	for (int i=1; i<=(int)num_rows; i++)
 	{(*this)(i) = 0;}
 }
 
@@ -42,7 +42,7 @@ VECTOR::VECTOR( const VECTOR& Vector )
 {
 	num_rows = Vector.num_rows;
 	vector_ptr = new double[num_rows];
-	for (int i=1; i<=num_rows; i++)
+	for (int i=1; i<=(int)num_rows; i++)
 	{(*this)(i) = Vector(i);}
 }
 
@@ -56,14 +56,14 @@ void VECTOR::Set_Size( size_t n_rows )
 	num_rows = n_rows;
 	delete [] vector_ptr;
 	vector_ptr = new double[num_rows];
-	for (int i=1; i<=num_rows; i++)
+	for (int i=1; i<=(int)num_rows; i++)
 	{(*this)(i) = 0;}
 	return;
 }
 
 void VECTOR::Set_Value( double value )
 {
-	for (int i=1; i<=num_rows; i++){(*this)(i) = value;}
+	for (int i=1; i<=(int)num_rows; i++){(*this)(i) = value;}
 	return;
 }
 
@@ -72,7 +72,7 @@ void VECTOR::Set_Value( int row, double value )
 	//assert( row < 1 );
 	if(row<1){row=1;}
 	//assert( row > num_rows );
-	if(row>num_rows){row=num_rows;}
+	if(row>(int)num_rows){row=(int)num_rows;}
 	(*this)(row) = value;
 	return;
 }
@@ -90,14 +90,14 @@ double VECTOR::Value( int row ) const
 	//assert( row < 1 );
 	if(row<1){row=1;}
 	//assert( row > num_rows );
-	if(row>num_rows){row=num_rows;}
+	if(row>(int)num_rows){row=(int)num_rows;}
 	return( (*this)(row) );
 }
 
 double VECTOR::Norm() const
 {
 	double norm = 0.0;
-	for ( int i=1; i<=num_rows; i++)
+	for ( int i=1; i<=(int)num_rows; i++)
 	{norm += (*this)(i)*(*this)(i);}
 	return( sqrt(norm) );
 }
@@ -105,9 +105,9 @@ double VECTOR::Norm() const
 VECTOR VECTOR::NormalizedVector() const
 {
 	VECTOR temp(num_rows);
-	if(Norm==0){return(temp);}
+	if(Norm()==0){return(temp);}
 
-	for( int i=1; i<=num_rows; i++)
+	for( int i=1; i<=(int)num_rows; i++)
 	{temp(i) = (*this)(i)/Norm();}
 	return( temp );
 }
@@ -130,7 +130,7 @@ VECTOR& VECTOR::operator = ( const VECTOR& Vector )
 	num_rows = Vector.num_rows;
 	delete [] vector_ptr;
 	vector_ptr = new double[num_rows];
-	for( int i=1; i<=num_rows; i++)
+	for( int i=1; i<=(int)num_rows; i++)
 	{(*this)(i)=Vector(i);}
 	return( *this );
 }

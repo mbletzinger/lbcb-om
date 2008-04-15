@@ -89,7 +89,7 @@ void LBCB::Set_PinParam( const MATRIX &basepin, const MATRIX &platformpin )
 	MinLength(6) = 10.175;
 */
 	VECTOR temp(3);
-	for (i=0; i<=5; i++)
+	for (int i=0; i<=5; i++)
 	{
 		temp = PlatFormPin[i] - BasePin[i];
 		NomLength(i+1) = temp.Norm();
@@ -97,7 +97,7 @@ void LBCB::Set_PinParam( const MATRIX &basepin, const MATRIX &platformpin )
 	// Initialize the Coordinate and Actuator Length
 	currentcartesian.Set_Size( 6 );
 
-	for ( i=0; i<=5; i++)
+	for ( int i=0; i<=5; i++)
 	{
 		Actuator_ptr[i].Set_MaximumLength( MaxLength(i+1) );
 		Actuator_ptr[i].Set_MinimumLength( MinLength(i+1) );
@@ -179,11 +179,11 @@ void LBCB::Cartesian2Actuator( VECTOR const & Cart_Disp, VECTOR const & Cart_For
 
 		k = 0;
 		for (int j=1; j<=3; j++){k += BasePin_vec(j)*Directional_vec(j);}
-		for (j=1; j<=3; j++){temp(j) = BasePin_vec(j) - k*Directional_vec(j);}
+		for (int j=1; j<=3; j++){temp(j) = BasePin_vec(j) - k*Directional_vec(j);}
 
 		Moment_vec = temp.CrossProduct( Directional_vec );
 
-		for (j=1; j<=3; j++){
+		for (int j=1; j<=3; j++){
 			Convert_Matrix(j,i+1) = Directional_vec(j);
 			Convert_Matrix(j+3,i+1) = Moment_vec(j);
 		}
@@ -286,7 +286,7 @@ void LBCB::Cartesian2Actuator( VECTOR const & CartesianData, VECTOR & ActuatorSp
 
 	Cartesian2Actuator( Cart_Disp, Cart_Force, Act_Stroke, Act_Force );
 
-	for (i=1; i<=6; i++){
+	for (int i=1; i<=6; i++){
 		ActuatorSpaceData(i)   = Act_Stroke(i);
 		ActuatorSpaceData(i+6) = Act_Force(i);
 	}
@@ -305,7 +305,7 @@ void LBCB::Actuator2Cartesian( VECTOR const & ActuatorSpaceData, VECTOR & Cartes
 
 	Actuator2Cartesian( Act_Stroke, Act_Force, Cart_Disp, Cart_Force, Limitation );
 
-	for (i=1; i<=6; i++){
+	for (int i=1; i<=6; i++){
 		CartesianData(i)   = Cart_Disp(i);
 		CartesianData(i+6) = Cart_Force(i);
 	}
