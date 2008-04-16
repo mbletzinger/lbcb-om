@@ -21,6 +21,7 @@
 
 //#define NDEBUG
 
+ErrorLogger* LBCB_Actuator::log = NULL;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -241,3 +242,8 @@ VECTOR LBCB_Actuator::CurrentPlatFormPin( void ) const
 
 	return;
 }*/
+
+ void LBCB_Actuator::SetErrorLogger(ErrorLogger* log)
+{
+	LBCB_Actuator::log = log;
+}

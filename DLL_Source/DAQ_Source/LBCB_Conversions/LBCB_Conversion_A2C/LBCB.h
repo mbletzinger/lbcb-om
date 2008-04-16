@@ -12,13 +12,7 @@
 #include "VECTOR.h"
 #include "MATRIX.h"
 #include "LBCB_Actuator.h"
-#include <iostream>
-#include <string>
-#include <iomanip>
-#include <cmath>
-#include <fstream>
-//#include <cassert>
-#include <exception>
+#include "ErrorLogger.h"
 
 class LBCB  
 {
@@ -45,7 +39,7 @@ public:
 	void Actuator2Cartesian( VECTOR const & Act_Stroke, VECTOR const & ACt_Force, VECTOR & Cart_Disp, VECTOR & Cart_Force, VECTOR const & Limitation );
 	void Cartesian2Actuator( VECTOR const & CartesianData, VECTOR & ActuatorSpace);
 	void Actuator2Cartesian( VECTOR const & ActuatorSpace, VECTOR & CartesianData, VECTOR const & Limitation );
-
+	static void SetErrorLogger(ErrorLogger* log);
 private:
 	LBCB();
 	static bool flag;
@@ -53,6 +47,7 @@ private:
 	LBCB_Actuator *Actuator_ptr;
 	VECTOR *BasePin, *PlatFormPin;
 	VECTOR currentcartesian;
+	static ErrorLogger *log;
 };
 
 #endif // _MSC_VER > 1000

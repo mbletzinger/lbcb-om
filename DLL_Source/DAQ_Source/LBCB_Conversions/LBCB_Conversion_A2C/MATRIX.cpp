@@ -14,21 +14,20 @@
 #include <iomanip>
 #include <cmath>
 #include <fstream>
-//#include <assert.h>
-#include <exception>
 
 //#define NDEBUG
+ErrorLogger* MATRIX::log = NULL;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-MATRIX::MATRIX( size_t n_rows, size_t n_cols )
+MATRIX::MATRIX( int n_rows, int n_cols )
 :num_rows(n_rows), num_cols(n_cols), matrix_ptr(NULL)
 {
 	//assert( n_rows < 1 );
 	//assert( n_cols < 1 );
-	matrix_ptr = new double[num_rows*num_cols];
+	matrix_ptr = new double[(size_t)num_rows*num_cols];
 	Set_Value(0.0);
 	//for ( int i=1; i<=num_rows*num_cols; i++)
 	//{(*this)(i) = 0;}
@@ -43,41 +42,42 @@ MATRIX::MATRIX( const MATRIX& Matrix )
 {
 	num_rows = Matrix.num_rows;
 	num_cols = Matrix.num_cols;
-	matrix_ptr = new double[num_rows*num_cols];
-	for ( int i=1; i<=num_rows*num_cols;i++ )
+	// Check for negatives and zeros here
+	matrix_ptr = new double[(size_t)num_rows*num_cols];
+	for ( int i=1; i<=(num_rows*num_cols);i++ )
 	{(*this)(i) = Matrix(i);}
 }
 
 //////////////////////////////////////////////////////////////////////
 // Member Function with Access to the Member Variables
 //////////////////////////////////////////////////////////////////////
-void MATRIX::Set_Size( size_t n_rows )
+void MATRIX::Set_Size( int n_rows )
 {
 	//assert( n_rows < 1 );
 	num_rows = n_rows;
 	num_cols = 1;
 	delete [] matrix_ptr;
-	matrix_ptr = new double[num_rows*num_cols];
-	for ( int i=1; i<=num_rows*num_cols; i++ )
+	matrix_ptr = new double[(size_t)num_rows*num_cols];
+	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{(*this)(i) = 0;}
 	return;
 }
 
-void MATRIX::Set_Size( size_t n_rows, size_t n_cols )
+void MATRIX::Set_Size( int n_rows, int n_cols )
 {
 	//assert( n_rows < 1 );
 	//assert( n_cols < 1 );
 	num_rows = n_rows;
 	num_cols = n_cols;
 	delete [] matrix_ptr;
-	matrix_ptr = new double[num_rows*num_cols];
+	matrix_ptr = new double[(size_t)num_rows*num_cols];
 	Set_Value(0.0);
 	return;
 }
 
 void MATRIX::Set_Value( double value )
 {
-	for ( int i=1; i<=num_rows*num_cols; i++ )
+	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{(*this)(i) = value;}
 	return;
 }
@@ -155,7 +155,7 @@ MATRIX& MATRIX::operator = ( const MATRIX& Matrix )
 	num_cols = Matrix.num_cols;
 	delete [] matrix_ptr;
 	matrix_ptr = new double[num_rows*num_cols];
-	for ( int i=1; i<=num_rows*num_cols; i++ )
+	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{(*this)(i) = Matrix(i);}
 	return( *this );
 }
@@ -165,7 +165,7 @@ MATRIX MATRIX::operator + ( const MATRIX& Matrix ) const
 	//assert( num_rows != Matrix.num_rows );
 	//assert( num_cols != Matrix.num_cols );
 	MATRIX temp(num_rows, num_cols);
-	for ( int i=1; i<=num_rows*num_cols; i++ )
+	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{temp(i) = (*this)(i) + Matrix(i);}
 	return( temp );
 }
@@ -175,7 +175,7 @@ MATRIX MATRIX::operator - ( const MATRIX& Matrix ) const
 	//assert( num_rows != Matrix.num_rows );
 	//assert( num_cols != Matrix.num_cols );
 	MATRIX temp(num_rows, num_cols);
-	for ( int i=1; i<=num_rows*num_cols; i++ )
+	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{temp(i) = (*this)(i)-Matrix(i);}
 	return( temp );
 }
@@ -248,17 +248,17 @@ void MATRIX::Identity()
 	return;
 }
 
-void MATRIX::LUDecompose( VECTOR& index, int det_sign )
+void MATRIX::LUDecompose( vector<int>& index, int det_sign )
 {
-	int i, j, k, m, imax;
+	int i, j, m, k,imax;
 	double big, dum, sum, temp;
 	VECTOR temp_vector( num_rows );
-	index.Set_Size( num_rows );
+	index.reserve( num_rows );
 	det_sign = 1;
 
 	for (i=1; i<=num_rows; i++)
 	{
-		index(i) = i;
+		index[i] = i;
 		big = 0.0;
 		for (j=1; j<=num_rows; j++)
 		{
@@ -298,9 +298,9 @@ void MATRIX::LUDecompose( VECTOR& index, int det_sign )
 			}
 			det_sign *= -1;
 			temp_vector(imax) = temp_vector(j);
-			m = index(j);
-			index(j) = index(imax);
-			index(imax) = m;
+			m = index[j];
+			index[j] = index[imax];
+			index[imax] = m;
 		}
 
 		if ((*this)(j,j) ==0.0){return;}
@@ -318,7 +318,7 @@ void MATRIX::LUDecompose( MATRIX& L, MATRIX& U, MATRIX& P ) const
 {
 	//assert( num_rows != num_cols );
 	int i, j, det_sign=1;
-	VECTOR index( num_rows );
+	vector<int> index;
 	MATRIX A;
 	A = (*this);
 
@@ -333,7 +333,7 @@ void MATRIX::LUDecompose( MATRIX& L, MATRIX& U, MATRIX& P ) const
 	{
 		for (i=1; i<=j; i++){U(i,j) = A(i,j);}
 		for (i=j+1; i<=num_rows; i++){L(i,j) = A(i,j);}
-		P(j,index(j)) = 1.0;
+		P(j,index[j]) = 1.0;
 	}
 	return;
 }
@@ -343,7 +343,7 @@ void MATRIX::LinearSolver( const VECTOR& b, VECTOR& x ) const
 	//assert( num_rows != b.Size() );
 	int i, j, ii=0, d_sign=1;
 	double sum;
-	VECTOR index( num_rows );
+	vector<int> index;
 	MATRIX A( num_rows, num_cols );
 
 	x.Set_Size( num_rows );
@@ -353,7 +353,7 @@ void MATRIX::LinearSolver( const VECTOR& b, VECTOR& x ) const
 	// Forward Substitution
 	for (i=1; i<=num_rows; i++)
 	{
-		x(i) = b(index(i));
+		x(i) = b(index[i]);
 		sum = x(i);
 		if (ii) 
 		{
@@ -397,6 +397,10 @@ void MATRIX::Transpose( MATRIX& Matrix ) const
 		{Matrix(j,i) = (*this)(i,j);}
 	}
 	return;
+}
+ void MATRIX::SetErrorLogger(ErrorLogger* log)
+{
+	MATRIX::log = log;
 }
 
 /*

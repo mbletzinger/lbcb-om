@@ -19,6 +19,7 @@
 #include <exception>
 
 using std::string;
+ErrorLogger* RotationalMatrix::log = NULL;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -96,4 +97,8 @@ MATRIX RotationalMatrix::operator () ( const double theta, const int flg)
 	type = flg;
 	TypeChange( angle, type );
 	return( RotMatrix );
+}
+ void RotationalMatrix::SetErrorLogger(ErrorLogger* log)
+{
+	RotationalMatrix::log = log;
 }

@@ -25,7 +25,7 @@
 // Function for the singleton
 //////////////////////////////////////////////////////////////////////
 bool LBCB::flag = false;
-
+ErrorLogger* LBCB::log = NULL;
 LBCB* LBCB::instance = NULL;
 
 LBCB* LBCB::Create( )
@@ -311,4 +311,9 @@ void LBCB::Actuator2Cartesian( VECTOR const & ActuatorSpaceData, VECTOR & Cartes
 	}
 
 	return;
+}
+
+ void LBCB::SetErrorLogger(ErrorLogger* log)
+{
+	LBCB::log = log;
 }

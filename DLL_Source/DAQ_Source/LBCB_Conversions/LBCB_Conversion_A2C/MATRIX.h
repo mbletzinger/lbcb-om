@@ -15,20 +15,23 @@
 #include <iomanip>
 #include <cmath>
 #include <fstream>
-//#include <cassert>
-#include <exception>
+#include <vector>
+
+#include "ErrorLogger.h"
+
+using namespace std;
 
 class MATRIX  
 {
 public:
 	// Constructor and Destructor
-	MATRIX( size_t n_rows=1, size_t n_cols=1 );
+	MATRIX( int n_rows=1, int n_cols=1 );
 	~MATRIX();
 	MATRIX( const MATRIX& Matrix ); // Copy Constructor
 
 	// Member Function with Access to the Member Variables
-	void Set_Size( size_t n_rows );
-	void Set_Size( size_t n_rows, size_t n_cols );
+	void Set_Size( int n_rows );
+	void Set_Size( int n_rows, int n_cols );
 	void Set_Value( double value );
 	void Set_Value( int row, double value );
 	void Set_Value( int row, int col, double value );
@@ -53,7 +56,7 @@ public:
 	// Matrix Function
 	void Diagonal( const double value );
 	void Identity();
-	void LUDecompose( VECTOR& index, int d_sign );
+	void LUDecompose( vector<int>& index, int d_sign );
 	void LUDecompose( MATRIX& L, MATRIX& U, MATRIX& P ) const;
 	void LinearSolver( const VECTOR& b, VECTOR& x ) const;
 	void Inverse( MATRIX& Matrix ) const;
@@ -61,11 +64,12 @@ public:
 	//void Roll( const double angle );
 	//void Pitch( const double angle );
 	//void Yaw( const double angle );
+	static void SetErrorLogger(ErrorLogger *log);
 
 private:
-	size_t num_rows, num_cols;
+	int num_rows, num_cols;
 	double *matrix_ptr;
-
+	static ErrorLogger *log;
 };
 
 #endif // !defined(AFX_MATRIX_H__BB56D4B1_555E_46B6_A585_7C31890E0139__INCLUDED_)

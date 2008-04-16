@@ -11,13 +11,8 @@
 
 #include "VECTOR.h"
 #include "MATRIX.h"
-#include <iostream>
 #include <string>
-#include <iomanip>
-#include <cmath>
-#include <fstream>
-//#include <cassert>
-#include <exception>
+#include "ErrorLogger.h"
 
 
 class LBCB_Actuator  
@@ -55,6 +50,7 @@ public:
 	VECTOR CurrentPlatFormPin( void ) const;
 	//void   Display( void )            const;
 //    string ID( void ) const
+	static void SetErrorLogger(ErrorLogger *log);
 
 private:
 	double max_length;
@@ -65,7 +61,7 @@ private:
 	VECTOR nominalplatformpin;
 	VECTOR currentplatformpin;
 	//string id;
-
+	static ErrorLogger *log;
 };
 
 #endif 

@@ -13,11 +13,7 @@
 #include "MATRIX.h"
 #include <iostream>
 #include <string>
-#include <iomanip>
-#include <cmath>
-#include <fstream>
-//#include <cassert>
-#include <exception>
+#include "ErrorLogger.h"
 
 //typedef basic_string <char> string;
 using std::string;
@@ -35,12 +31,13 @@ public:
 	MATRIX operator() (void);
 	MATRIX operator() (const double theta );
 	MATRIX operator() (const double theta, const int flg);
+	static void SetErrorLogger(ErrorLogger *log);
 
 private:
 	double angle; // Angle in radian
 	MATRIX RotMatrix;
 	int type;     // [1:Roll, 2:Pitch, 3:Yaw]
-
+	static ErrorLogger *log;
 };
 
 #endif // !defined(AFX_ROTATIONALMATRIX_H__5D24F279_AF6B_48EE_8A8C_673B01380508__INCLUDED_)

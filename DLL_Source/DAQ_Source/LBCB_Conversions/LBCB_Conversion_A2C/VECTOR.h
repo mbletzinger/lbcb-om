@@ -11,11 +11,7 @@
 
 #include <iostream>
 #include <string>
-#include <iomanip>
-#include <cmath>
-#include <fstream>
-//#include <cassert>
-#include <exception>
+#include "ErrorLogger.h"
 
 class VECTOR  
 {
@@ -49,10 +45,12 @@ public:
 	// Vector Function
 	double DotProduct( const VECTOR& Vector )   const;
 	VECTOR CrossProduct( const VECTOR& Vector ) const;
+	static void SetErrorLogger(ErrorLogger *log);
 
 private:
 	size_t num_rows;
 	double *vector_ptr;
+	static ErrorLogger *log;
 };
 
 #endif // !defined(AFX_VECTOR_H__A5EBC5C3_5F3C_4683_B472_ABD5DDC71BE3__INCLUDED_)

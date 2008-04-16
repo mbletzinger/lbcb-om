@@ -18,6 +18,7 @@
 #include <exception>
 
 //#define NDEBUG
+ErrorLogger* VECTOR::log = NULL;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -120,7 +121,7 @@ double& VECTOR::operator ()( int row ) const
 	//assert( row < 1 );
 	if(row<1){row=1;}
 	//assert( row > num_rows );
-	if(row>num_rows){row=num_rows;}
+	if(row>(int)num_rows){row=(int)num_rows;}
 	return( vector_ptr[row-1] );
 }
 
@@ -139,7 +140,7 @@ VECTOR VECTOR::operator + ( const VECTOR& Vector ) const
 {
 	//assert( num_rows != Vector.num_rows );
 	VECTOR temp(num_rows);
-	for ( int i=1; i<=num_rows; i++)
+	for ( int i=1; i<=(int)num_rows; i++)
 	{temp(i) = (*this)(i) + Vector(i);}
 	return( temp );
 }
@@ -148,7 +149,7 @@ VECTOR VECTOR::operator - ( const VECTOR& Vector ) const
 {
 	//assert( num_rows != Vector.num_rows );
 	VECTOR temp(num_rows);
-	for ( int i=1; i<=num_rows; i++)
+	for ( int i=1; i<=(int)num_rows; i++)
 	{temp(i) = (*this)(i) - Vector(i);}
 	return( temp );
 }
@@ -156,7 +157,7 @@ VECTOR VECTOR::operator - ( const VECTOR& Vector ) const
 VECTOR VECTOR::operator * ( const double value ) const
 {
 	VECTOR temp(num_rows);
-	for ( int i=1; i<=num_rows; i++)
+	for ( int i=1; i<=(int)num_rows; i++)
 	{temp(i) = value * (*this)(i);}
 	return( temp );
 }
@@ -165,7 +166,7 @@ VECTOR VECTOR::operator / ( const double value ) const
 {
 	//assert( value == 0.0 );
 	VECTOR temp(num_rows);
-	for ( int i=1; i<=num_rows; i++)
+	for ( int i=1; i<=(int)num_rows; i++)
 	{temp(i) = (*this)(i)/value;}
 	return( temp );
 }
@@ -177,7 +178,7 @@ double VECTOR::DotProduct( const VECTOR &Vector ) const
 {
 	//assert( num_rows!=Vector.num_rows );
 	double dotproduct=0.0;
-	for ( int i=1; i<=num_rows; i++)
+	for ( int i=1; i<=(int)num_rows; i++)
 	{dotproduct += (*this)(i) * Vector(i);}
 	return( dotproduct );
 }
@@ -191,4 +192,8 @@ VECTOR VECTOR::CrossProduct( const VECTOR &Vector ) const
 	temp.vector_ptr[1] = vector_ptr[2]*Vector.vector_ptr[0] - vector_ptr[0]*Vector.vector_ptr[2];
 	temp.vector_ptr[2] = vector_ptr[0]*Vector.vector_ptr[1] - vector_ptr[1]*Vector.vector_ptr[0];
 	return( temp );
+}
+ void VECTOR::SetErrorLogger(ErrorLogger* log)
+{
+	VECTOR::log = log;
 }
