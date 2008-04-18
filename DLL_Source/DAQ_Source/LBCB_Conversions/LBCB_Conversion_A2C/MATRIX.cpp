@@ -318,7 +318,7 @@ void MATRIX::LUDecompose( MATRIX& L, MATRIX& U, MATRIX& P ) const
 {
 	//assert( num_rows != num_cols );
 	int i, j, det_sign=1;
-	vector<int> index;
+	vector<int> index(num_rows + 1);
 	MATRIX A;
 	A = (*this);
 
@@ -343,7 +343,7 @@ void MATRIX::LinearSolver( const VECTOR& b, VECTOR& x ) const
 	//assert( num_rows != b.Size() );
 	int i, j, ii=0, d_sign=1;
 	double sum;
-	vector<int> index;
+	vector<int> index(num_rows + 1);
 	MATRIX A( num_rows, num_cols );
 
 	x.Set_Size( num_rows );
