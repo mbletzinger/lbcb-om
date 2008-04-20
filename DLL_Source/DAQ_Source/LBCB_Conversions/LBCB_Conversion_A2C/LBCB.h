@@ -48,6 +48,8 @@ private:
 	VECTOR *BasePin, *PlatFormPin;
 	VECTOR currentcartesian;
 	static ErrorLogger *log;
+	static int CtorCount;
+	static int NewCount;
 };
 
 #endif // _MSC_VER > 1000

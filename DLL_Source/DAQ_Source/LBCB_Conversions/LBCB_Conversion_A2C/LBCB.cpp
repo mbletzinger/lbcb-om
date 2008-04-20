@@ -27,7 +27,8 @@
 bool LBCB::flag = false;
 ErrorLogger* LBCB::log = NULL;
 LBCB* LBCB::instance = NULL;
-
+int LBCB::CtorCount = 0;
+int LBCB::NewCount = 0;
 LBCB* LBCB::Create( )
 {
 	if(!flag)
@@ -47,6 +48,9 @@ LBCB::LBCB( )
 	BasePin = new VECTOR[6];
 	PlatFormPin = new VECTOR[6];
 	Actuator_ptr = new LBCB_Actuator[6];
+	CtorCount++;
+	log->getErrorStream() << "LBCB Constructed: " << CtorCount;
+	log->addedError();
 }
 
 LBCB::~LBCB()
@@ -55,6 +59,9 @@ LBCB::~LBCB()
 	delete [] PlatFormPin;
 	delete [] Actuator_ptr;
 	//delete [] instance;
+	CtorCount--;
+	log->getErrorStream() << "LBCB Destroyed: " << CtorCount;
+	log->addedError();
 }
 
 void LBCB::Set_PinParam( const MATRIX &basepin, const MATRIX &platformpin )

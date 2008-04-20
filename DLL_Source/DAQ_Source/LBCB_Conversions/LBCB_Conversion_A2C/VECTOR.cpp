@@ -19,7 +19,8 @@
 
 //#define NDEBUG
 ErrorLogger* VECTOR::log = NULL;
-
+int VECTOR::CtorCount = 0;
+int VECTOR::NewCount = 0;
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -30,21 +31,40 @@ VECTOR::VECTOR( size_t n_rows )
 	//assert( n_rows < 1 );
 	if(num_rows<1){num_rows=1;}
 	vector_ptr = new double[num_rows];
+	NewCount+=(num_rows);
+	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
+	log->addedError();
+
 	for (int i=1; i<=(int)num_rows; i++)
 	{(*this)(i) = 0;}
+	CtorCount++;
+	log->getErrorStream() << "VECTOR Constructed: " << CtorCount;
+	log->addedError();
 }
 
 VECTOR::~VECTOR()
 {
 	delete [] vector_ptr;
+	NewCount-=(num_rows);
+	log->getErrorStream()<<(num_rows) << " less VECTOR::doubles: " << NewCount;
+	log->addedError();
+	CtorCount--;
+	log->getErrorStream() << "VECTOR Destroyed: " << CtorCount;
+	log->addedError();
 }
 
 VECTOR::VECTOR( const VECTOR& Vector )
 {
 	num_rows = Vector.num_rows;
 	vector_ptr = new double[num_rows];
+	NewCount+=(num_rows);
+	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
+	log->addedError();
 	for (int i=1; i<=(int)num_rows; i++)
 	{(*this)(i) = Vector(i);}
+	CtorCount++;
+	log->getErrorStream() << "VECTOR Constructed: " << CtorCount;
+	log->addedError();
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -53,10 +73,16 @@ VECTOR::VECTOR( const VECTOR& Vector )
 void VECTOR::Set_Size( size_t n_rows )
 {
 	//assert( n_rows < 1 );
+	NewCount-=(num_rows);
+	log->getErrorStream()<<(num_rows) << " less VECTOR::doubles: " << NewCount;
+	log->addedError();
 	if(n_rows<1){n_rows=1;}
 	num_rows = n_rows;
 	delete [] vector_ptr;
 	vector_ptr = new double[num_rows];
+	NewCount+=(num_rows);
+	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
+	log->addedError();
 	for (int i=1; i<=(int)num_rows; i++)
 	{(*this)(i) = 0;}
 	return;
@@ -128,9 +154,15 @@ double& VECTOR::operator ()( int row ) const
 VECTOR& VECTOR::operator = ( const VECTOR& Vector )
 {
 	if(vector_ptr==Vector.vector_ptr) {return(*this);}
+	NewCount-=(num_rows);
+	log->getErrorStream()<<(num_rows) << " less VECTOR::doubles: " << NewCount;
+	log->addedError();
 	num_rows = Vector.num_rows;
 	delete [] vector_ptr;
 	vector_ptr = new double[num_rows];
+	NewCount+=(num_rows);
+	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
+	log->addedError();
 	for( int i=1; i<=(int)num_rows; i++)
 	{(*this)(i)=Vector(i);}
 	return( *this );

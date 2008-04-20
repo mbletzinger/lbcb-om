@@ -70,6 +70,8 @@ private:
 	int num_rows, num_cols;
 	double *matrix_ptr;
 	static ErrorLogger *log;
+	static int CtorCount;
+	static int NewCount;
 };
 
 #endif // !defined(AFX_MATRIX_H__BB56D4B1_555E_46B6_A585_7C31890E0139__INCLUDED_)

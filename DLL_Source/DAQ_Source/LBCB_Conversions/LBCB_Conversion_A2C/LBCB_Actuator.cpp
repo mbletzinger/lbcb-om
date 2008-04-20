@@ -22,7 +22,8 @@
 //#define NDEBUG
 
 ErrorLogger* LBCB_Actuator::log = NULL;
-
+int LBCB_Actuator::CtorCount = 0;
+int LBCB_Actuator::NewCount = 0;
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -33,10 +34,16 @@ LBCB_Actuator::LBCB_Actuator()
 	basepin.Set_Size(3);
 	nominalplatformpin.Set_Size(3);
 	currentplatformpin.Set_Size(3);
+	CtorCount++;
+	log->getErrorStream() << "LBCB_Actuator Constructed: " << CtorCount;
+	log->addedError();
 }
 
 LBCB_Actuator::~LBCB_Actuator()
 {
+	CtorCount--;
+	log->getErrorStream() << "LBCB_Actuator Destroyed: " << CtorCount;
+	log->addedError();
 }
 
 //////////////////////////////////////////////////////////////////////

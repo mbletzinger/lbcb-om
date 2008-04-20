@@ -23,6 +23,8 @@ _declspec(dllexport) void LBCB_conversion_A2C(long size, long type, double motio
 	{
 		int i;
 
+		elog.getErrorStream() << "LBCB_conversion_A2C started";
+		elog.addedError();
 		VECTOR MotionCenter(3), PlatformCenter(3), ActuatorSpace(12), CartesianData(12), MotionCenterData(12), Limitation(6);
 		MATRIX basepin(3,6), platformpin(3,6);
 
@@ -219,6 +221,15 @@ _declspec(dllexport) void LBCB_conversion_A2C(long size, long type, double motio
 		{
 			cartesian_value[i] = MotionCenterData(i+1);
 			if (length == 12) {cartesian_value[i+6] = MotionCenterData(i+7);}
+		}
+
+		elog.getErrorStream() << "LBCB_conversion_A2C finished";
+		elog.addedError();
+
+		*error = 0;
+		if(elog.hasError()) {
+			*error = 1;
+			elog.flush();
 		}
 
 		return;

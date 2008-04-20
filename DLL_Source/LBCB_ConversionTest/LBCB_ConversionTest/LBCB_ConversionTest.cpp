@@ -22,12 +22,14 @@ int _tmain(int argc, _TCHAR* argv[])
 	long error;
 	LBCB_conversion_A2C_Init();
 	LBCB_conversion_A2C_SetErrorLogFile("c:\\Documents and Settings\\adminmbletzin\\Desktop\\DLLError.txt",60);
-	LBCB_conversion_A2C(size, type, motion_center,length, sensor_readings6, cartesian_value6,&error);
 
-	for (int i = 0; i < 6; i++) {
-		cout<<"cart["<<i<<"]="<<cartesian_value6[i]<<endl;
+	for (int r=1; r <= 25; r++) { 
+		LBCB_conversion_A2C(size, type, motion_center,length, sensor_readings6, cartesian_value6,&error);
+
+		for (int i = 0; i < 6; i++) {
+			cout<<"cart["<<i<<"]="<<cartesian_value6[i]<<endl;
+		}
 	}
-
 	return 0;
 }
 

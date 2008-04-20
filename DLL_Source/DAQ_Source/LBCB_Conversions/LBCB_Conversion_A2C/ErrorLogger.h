@@ -1,6 +1,8 @@
 #pragma once
 #include<string>
 #include<sstream>
+#include<ostream>
+
 using namespace std;
 
 class ErrorLogger
@@ -10,7 +12,9 @@ public:
 	~ErrorLogger(void);
 	void flush();
 	void setFile(string Filename);
-	void addError(string Error);
+	void addedError();
+	ostream& getErrorStream();
+	bool hasError();
 private:
 	ostringstream ErrorStream;
 	string LogFilename;

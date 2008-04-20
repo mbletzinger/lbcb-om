@@ -17,6 +17,8 @@
 
 //#define NDEBUG
 ErrorLogger* MATRIX::log = NULL;
+int MATRIX::CtorCount = 0;
+int MATRIX::NewCount = 0;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -28,14 +30,26 @@ MATRIX::MATRIX( int n_rows, int n_cols )
 	//assert( n_rows < 1 );
 	//assert( n_cols < 1 );
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
+	NewCount+=(num_rows*num_cols);
+	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
+	log->addedError();
 	Set_Value(0.0);
 	//for ( int i=1; i<=num_rows*num_cols; i++)
 	//{(*this)(i) = 0;}
+	CtorCount++;
+	log->getErrorStream() << "MATRIX Constructed: " << CtorCount;
+	log->addedError();
 }
 
 MATRIX::~MATRIX()
 {
 	delete [] matrix_ptr;
+	NewCount-=(num_rows*num_cols);
+	log->getErrorStream()<< (num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
+	log->addedError();
+	CtorCount--;
+	log->getErrorStream() << "MATRIX Destroyed: " << CtorCount;
+	log->addedError();
 }
 
 MATRIX::MATRIX( const MATRIX& Matrix )
@@ -44,8 +58,16 @@ MATRIX::MATRIX( const MATRIX& Matrix )
 	num_cols = Matrix.num_cols;
 	// Check for negatives and zeros here
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
+
+	NewCount+=(num_rows*num_cols);
+	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
+	log->addedError();
+
 	for ( int i=1; i<=(num_rows*num_cols);i++ )
 	{(*this)(i) = Matrix(i);}
+	CtorCount++;
+	log->getErrorStream() << "MATRIX Constructed: " << CtorCount;
+	log->addedError();
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -54,10 +76,17 @@ MATRIX::MATRIX( const MATRIX& Matrix )
 void MATRIX::Set_Size( int n_rows )
 {
 	//assert( n_rows < 1 );
+	NewCount-=(num_rows*num_cols);
+	log->getErrorStream()<<(num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
+	log->addedError();
 	num_rows = n_rows;
 	num_cols = 1;
 	delete [] matrix_ptr;
+
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
+	NewCount+=(num_rows*num_cols);
+	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
+	log->addedError();
 	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{(*this)(i) = 0;}
 	return;
@@ -67,10 +96,16 @@ void MATRIX::Set_Size( int n_rows, int n_cols )
 {
 	//assert( n_rows < 1 );
 	//assert( n_cols < 1 );
+	NewCount-=(num_rows*num_cols);
+	log->getErrorStream()<<(num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
+	log->addedError();
 	num_rows = n_rows;
 	num_cols = n_cols;
 	delete [] matrix_ptr;
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
+	NewCount+=(num_rows*num_cols);
+	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
+	log->addedError();
 	Set_Value(0.0);
 	return;
 }
@@ -151,10 +186,16 @@ double& MATRIX::operator ()( int row, int col ) const
 MATRIX& MATRIX::operator = ( const MATRIX& Matrix ) 
 {
 	if(matrix_ptr==Matrix.matrix_ptr){return(*this);}
+	NewCount-=(num_rows*num_cols);
+	log->getErrorStream()<<(num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
+	log->addedError();
 	num_rows = Matrix.num_rows;
 	num_cols = Matrix.num_cols;
 	delete [] matrix_ptr;
 	matrix_ptr = new double[num_rows*num_cols];
+	NewCount+=(num_rows*num_cols);
+	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
+	log->addedError();
 	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{(*this)(i) = Matrix(i);}
 	return( *this );

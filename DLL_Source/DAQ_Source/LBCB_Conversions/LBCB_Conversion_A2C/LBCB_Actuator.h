@@ -62,6 +62,8 @@ private:
 	VECTOR currentplatformpin;
 	//string id;
 	static ErrorLogger *log;
+	static int NewCount;
+	static int CtorCount;
 };
 
 #endif 

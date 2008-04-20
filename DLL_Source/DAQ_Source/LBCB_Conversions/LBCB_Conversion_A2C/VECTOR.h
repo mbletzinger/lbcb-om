@@ -51,6 +51,8 @@ private:
 	size_t num_rows;
 	double *vector_ptr;
 	static ErrorLogger *log;
+	static int CtorCount;
+	static int NewCount;
 };
 
 #endif // !defined(AFX_VECTOR_H__A5EBC5C3_5F3C_4683_B472_ABD5DDC71BE3__INCLUDED_)

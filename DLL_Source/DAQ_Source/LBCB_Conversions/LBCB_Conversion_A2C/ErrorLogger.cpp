@@ -24,8 +24,18 @@ void ErrorLogger::setFile(string Filename)
 {
 	LogFilename = Filename;
 }
-void ErrorLogger::addError(string Error)
+void ErrorLogger::addedError()
 {
-	ErrorStream << Error << endl;
+	ErrorStream << endl;
 	ContainsErrors = true;
+}
+
+bool ErrorLogger::hasError()
+{
+	return ContainsErrors;
+	}
+
+ostream& ErrorLogger::getErrorStream()
+{
+	return ErrorStream;
 }
