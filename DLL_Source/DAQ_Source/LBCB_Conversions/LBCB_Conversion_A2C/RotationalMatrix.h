@@ -14,6 +14,7 @@
 #include <iostream>
 #include <string>
 #include "ErrorLogger.h"
+#include "MemoryCounter.h"
 
 //typedef basic_string <char> string;
 using std::string;
@@ -32,12 +33,14 @@ public:
 	MATRIX operator() (const double theta );
 	MATRIX operator() (const double theta, const int flg);
 	static void SetErrorLogger(ErrorLogger *log);
+	static void LogMemory();
 
 private:
 	double angle; // Angle in radian
 	MATRIX RotMatrix;
 	int type;     // [1:Roll, 2:Pitch, 3:Yaw]
 	static ErrorLogger *log;
+	static MemoryCounter* CtorCounter;
 };
 
 #endif // !defined(AFX_ROTATIONALMATRIX_H__5D24F279_AF6B_48EE_8A8C_673B01380508__INCLUDED_)

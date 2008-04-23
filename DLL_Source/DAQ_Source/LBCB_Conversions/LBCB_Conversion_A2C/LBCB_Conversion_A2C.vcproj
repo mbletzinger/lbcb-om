@@ -303,6 +303,10 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\MemoryCounter.cpp"
+				>
+			</File>
+			<File
 				RelativePath="RotationalMatrix.cpp"
 				>
 				<FileConfiguration
@@ -365,6 +369,10 @@
 			</File>
 			<File
 				RelativePath="MATRIX.h"
+				>
+			</File>
+			<File
+				RelativePath=".\MemoryCounter.h"
 				>
 			</File>
 			<File

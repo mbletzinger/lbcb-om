@@ -18,13 +18,17 @@
 
 using namespace std;
 ErrorLogger elog;
+static long RunCounter = 0;
+const long MemoryDumpCount = 50;
 
 _declspec(dllexport) void LBCB_conversion_A2C(long size, long type, double motion_center[], long length, double sensor_reading[], double cartesian_value[], long* error)
 	{
 		int i;
-
+#ifdef FINE_MEM_COUNT
 		elog.getErrorStream() << "LBCB_conversion_A2C started";
 		elog.addedError();
+#endif
+
 		VECTOR MotionCenter(3), PlatformCenter(3), ActuatorSpace(12), CartesianData(12), MotionCenterData(12), Limitation(6);
 		MATRIX basepin(3,6), platformpin(3,6);
 
@@ -223,8 +227,21 @@ _declspec(dllexport) void LBCB_conversion_A2C(long size, long type, double motio
 			if (length == 12) {cartesian_value[i+6] = MotionCenterData(i+7);}
 		}
 
+#ifdef FINE_MEM_COUNT
 		elog.getErrorStream() << "LBCB_conversion_A2C finished";
 		elog.addedError();
+#endif
+
+		if(RunCounter >= MemoryDumpCount) {
+			RunCounter = 0;
+			LBCB::LogMemory();
+			LBCB_Actuator::LogMemory();
+			MATRIX::LogMemory();
+			RotationalMatrix::LogMemory();
+			VECTOR::LogMemory();
+		} else {
+			RunCounter++;
+		}
 
 		*error = 0;
 		if(elog.hasError()) {

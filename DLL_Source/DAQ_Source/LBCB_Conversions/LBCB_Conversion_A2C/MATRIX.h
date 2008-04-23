@@ -18,6 +18,7 @@
 #include <vector>
 
 #include "ErrorLogger.h"
+#include "MemoryCounter.h"
 
 using namespace std;
 
@@ -65,13 +66,19 @@ public:
 	//void Pitch( const double angle );
 	//void Yaw( const double angle );
 	static void SetErrorLogger(ErrorLogger *log);
+	static void LogMemory();
+
 
 private:
 	int num_rows, num_cols;
 	double *matrix_ptr;
 	static ErrorLogger *log;
+	static MemoryCounter* CtorCounter;
+	static MemoryCounter* DoublesCounter;
+#ifdef FINE_MEM_COUNT
 	static int CtorCount;
 	static int NewCount;
+#endif
 };
 
 #endif // !defined(AFX_MATRIX_H__BB56D4B1_555E_46B6_A585_7C31890E0139__INCLUDED_)

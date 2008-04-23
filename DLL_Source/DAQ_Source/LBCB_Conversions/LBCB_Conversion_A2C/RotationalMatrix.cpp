@@ -20,6 +20,7 @@
 
 using std::string;
 ErrorLogger* RotationalMatrix::log = NULL;
+MemoryCounter* RotationalMatrix::CtorCounter = new MemoryCounter("RotationalMatrix");
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -30,10 +31,13 @@ RotationalMatrix::RotationalMatrix( const double theta, const int flg )
 {
 	RotMatrix.Set_Size(3,3);
 	TypeChange( theta, type );
+	CtorCounter->UpdateCount(1);
+
 }
 
 RotationalMatrix::~RotationalMatrix()
 {
+	CtorCounter->UpdateCount(-1);
 }
 
 void RotationalMatrix::TypeChange( const int flg )
@@ -101,4 +105,8 @@ MATRIX RotationalMatrix::operator () ( const double theta, const int flg)
  void RotationalMatrix::SetErrorLogger(ErrorLogger* log)
 {
 	RotationalMatrix::log = log;
+	CtorCounter->SetErrorLogger(log);
 }
+ void RotationalMatrix::LogMemory() {
+	 CtorCounter->LogMemory();
+ }

@@ -13,6 +13,7 @@
 #include "MATRIX.h"
 #include "LBCB_Actuator.h"
 #include "ErrorLogger.h"
+#include "MemoryCounter.h"
 
 class LBCB  
 {
@@ -40,6 +41,7 @@ public:
 	void Cartesian2Actuator( VECTOR const & CartesianData, VECTOR & ActuatorSpace);
 	void Actuator2Cartesian( VECTOR const & ActuatorSpace, VECTOR & CartesianData, VECTOR const & Limitation );
 	static void SetErrorLogger(ErrorLogger* log);
+	static void LogMemory();
 private:
 	LBCB();
 	static bool flag;
@@ -48,8 +50,11 @@ private:
 	VECTOR *BasePin, *PlatFormPin;
 	VECTOR currentcartesian;
 	static ErrorLogger *log;
+	static MemoryCounter* CtorCounter;
+#ifdef FINE_MEM_COUNT
 	static int CtorCount;
 	static int NewCount;
+#endif
 };
 
 #endif // _MSC_VER > 1000

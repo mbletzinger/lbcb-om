@@ -26,9 +26,14 @@
 //////////////////////////////////////////////////////////////////////
 bool LBCB::flag = false;
 ErrorLogger* LBCB::log = NULL;
+MemoryCounter* LBCB::CtorCounter = new MemoryCounter("LBCB");
 LBCB* LBCB::instance = NULL;
-int LBCB::CtorCount = 0;
-int LBCB::NewCount = 0;
+
+#ifdef FINE_MEM_COUNT
+	int LBCB::CtorCount = 0;
+	int LBCB::NewCount = 0;
+#endif
+
 LBCB* LBCB::Create( )
 {
 	if(!flag)
@@ -48,9 +53,12 @@ LBCB::LBCB( )
 	BasePin = new VECTOR[6];
 	PlatFormPin = new VECTOR[6];
 	Actuator_ptr = new LBCB_Actuator[6];
+	CtorCounter->UpdateCount(1);
+#ifdef FINE_MEM_COUNT
 	CtorCount++;
 	log->getErrorStream() << "LBCB Constructed: " << CtorCount;
 	log->addedError();
+#endif
 }
 
 LBCB::~LBCB()
@@ -59,9 +67,12 @@ LBCB::~LBCB()
 	delete [] PlatFormPin;
 	delete [] Actuator_ptr;
 	//delete [] instance;
+	CtorCounter->UpdateCount(-1);
+#ifdef FINE_MEM_COUNT
 	CtorCount--;
 	log->getErrorStream() << "LBCB Destroyed: " << CtorCount;
 	log->addedError();
+#endif
 }
 
 void LBCB::Set_PinParam( const MATRIX &basepin, const MATRIX &platformpin )
@@ -323,4 +334,9 @@ void LBCB::Actuator2Cartesian( VECTOR const & ActuatorSpaceData, VECTOR & Cartes
  void LBCB::SetErrorLogger(ErrorLogger* log)
 {
 	LBCB::log = log;
+	CtorCounter->SetErrorLogger(log);
 }
+
+ void LBCB::LogMemory() {
+	 CtorCounter->LogMemory();
+ }

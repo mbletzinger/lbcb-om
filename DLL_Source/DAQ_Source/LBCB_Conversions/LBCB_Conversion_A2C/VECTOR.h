@@ -12,22 +12,23 @@
 #include <iostream>
 #include <string>
 #include "ErrorLogger.h"
+#include "MemoryCounter.h"
 
 class VECTOR  
 {
 public:
 	// Constrcutor and Destructor
-	VECTOR( size_t n_rows=1 );
+	VECTOR( int n_rows=1 );
 	~VECTOR();
 	VECTOR( const VECTOR& Vector );  // Copy Constructor
 
 	// Member Function with Access to the Member Variables
-	void Set_Size( size_t n_rows );
+	void Set_Size( int n_rows );
 	void Set_Value( double value );
 	void Set_Value( int row, double value );
 
 	// Member Function to show the Member Variables
-	size_t Size( ) const;
+	int Size( ) const;
 	double Value( int row ) const;
 	double Norm( ) const;
 	VECTOR NormalizedVector( ) const;
@@ -46,13 +47,19 @@ public:
 	double DotProduct( const VECTOR& Vector )   const;
 	VECTOR CrossProduct( const VECTOR& Vector ) const;
 	static void SetErrorLogger(ErrorLogger *log);
+	static void LogMemory();
 
 private:
-	size_t num_rows;
+	int num_rows;
 	double *vector_ptr;
 	static ErrorLogger *log;
+#ifdef FINE_MEM_COUNT
 	static int CtorCount;
 	static int NewCount;
+#endif
+	static MemoryCounter* CtorCounter;
+	static MemoryCounter* DoublesCounter;
+
 };
 
 #endif // !defined(AFX_VECTOR_H__A5EBC5C3_5F3C_4683_B472_ABD5DDC71BE3__INCLUDED_)

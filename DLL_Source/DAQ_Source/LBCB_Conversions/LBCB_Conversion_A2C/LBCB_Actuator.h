@@ -13,7 +13,7 @@
 #include "MATRIX.h"
 #include <string>
 #include "ErrorLogger.h"
-
+#include "MemoryCounter.h"
 
 class LBCB_Actuator  
 {
@@ -51,6 +51,7 @@ public:
 	//void   Display( void )            const;
 //    string ID( void ) const
 	static void SetErrorLogger(ErrorLogger *log);
+	static void LogMemory();
 
 private:
 	double max_length;
@@ -62,8 +63,11 @@ private:
 	VECTOR currentplatformpin;
 	//string id;
 	static ErrorLogger *log;
+	static MemoryCounter* CtorCounter;
+#ifdef FINE_MEM_COUNT
 	static int NewCount;
 	static int CtorCount;
+#endif
 };
 
 #endif 

@@ -22,8 +22,12 @@
 //#define NDEBUG
 
 ErrorLogger* LBCB_Actuator::log = NULL;
+MemoryCounter* LBCB_Actuator::CtorCounter = new MemoryCounter("LBCB_Actuator");
+
+#ifdef FINE_MEM_COUNT
 int LBCB_Actuator::CtorCount = 0;
 int LBCB_Actuator::NewCount = 0;
+#endif
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -34,16 +38,23 @@ LBCB_Actuator::LBCB_Actuator()
 	basepin.Set_Size(3);
 	nominalplatformpin.Set_Size(3);
 	currentplatformpin.Set_Size(3);
+	CtorCounter->UpdateCount(1);
+
+#ifdef FINE_MEM_COUNT
 	CtorCount++;
 	log->getErrorStream() << "LBCB_Actuator Constructed: " << CtorCount;
 	log->addedError();
+#endif
 }
 
 LBCB_Actuator::~LBCB_Actuator()
 {
+	CtorCounter->UpdateCount(-1);
+#ifdef FINE_MEM_COUNT
 	CtorCount--;
 	log->getErrorStream() << "LBCB_Actuator Destroyed: " << CtorCount;
 	log->addedError();
+#endif
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -253,4 +264,8 @@ VECTOR LBCB_Actuator::CurrentPlatFormPin( void ) const
  void LBCB_Actuator::SetErrorLogger(ErrorLogger* log)
 {
 	LBCB_Actuator::log = log;
+	CtorCounter->SetErrorLogger(log);
 }
+ void LBCB_Actuator::LogMemory() {
+	 CtorCounter->LogMemory();
+ }

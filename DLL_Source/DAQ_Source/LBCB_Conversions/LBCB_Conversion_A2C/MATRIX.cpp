@@ -17,9 +17,12 @@
 
 //#define NDEBUG
 ErrorLogger* MATRIX::log = NULL;
+MemoryCounter* MATRIX::CtorCounter = new MemoryCounter("MATRIX");
+MemoryCounter* MATRIX::DoublesCounter = new MemoryCounter("MATRIX::Doubles");
+#ifdef FINE_MEM_COUNT
 int MATRIX::CtorCount = 0;
 int MATRIX::NewCount = 0;
-
+#endif
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -30,26 +33,36 @@ MATRIX::MATRIX( int n_rows, int n_cols )
 	//assert( n_rows < 1 );
 	//assert( n_cols < 1 );
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
+	DoublesCounter->UpdateCount(num_rows*num_cols);
+	CtorCounter->UpdateCount(1);
+#ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows*num_cols);
 	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
 	log->addedError();
+#endif
 	Set_Value(0.0);
 	//for ( int i=1; i<=num_rows*num_cols; i++)
 	//{(*this)(i) = 0;}
+#ifdef FINE_MEM_COUNT
 	CtorCount++;
 	log->getErrorStream() << "MATRIX Constructed: " << CtorCount;
 	log->addedError();
+#endif
 }
 
 MATRIX::~MATRIX()
 {
 	delete [] matrix_ptr;
+	DoublesCounter->UpdateCount(-num_rows*num_cols);
+	CtorCounter->UpdateCount(-1);
+#ifdef FINE_MEM_COUNT
 	NewCount-=(num_rows*num_cols);
 	log->getErrorStream()<< (num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
 	log->addedError();
 	CtorCount--;
 	log->getErrorStream() << "MATRIX Destroyed: " << CtorCount;
 	log->addedError();
+#endif
 }
 
 MATRIX::MATRIX( const MATRIX& Matrix )
@@ -58,16 +71,22 @@ MATRIX::MATRIX( const MATRIX& Matrix )
 	num_cols = Matrix.num_cols;
 	// Check for negatives and zeros here
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
+	DoublesCounter->UpdateCount(num_rows*num_cols);
+	CtorCounter->UpdateCount(1);
 
+#ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows*num_cols);
 	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
 	log->addedError();
+#endif
 
 	for ( int i=1; i<=(num_rows*num_cols);i++ )
 	{(*this)(i) = Matrix(i);}
+#ifdef FINE_MEM_COUNT
 	CtorCount++;
 	log->getErrorStream() << "MATRIX Constructed: " << CtorCount;
 	log->addedError();
+#endif
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -76,17 +95,24 @@ MATRIX::MATRIX( const MATRIX& Matrix )
 void MATRIX::Set_Size( int n_rows )
 {
 	//assert( n_rows < 1 );
+#ifdef FINE_MEM_COUNT
 	NewCount-=(num_rows*num_cols);
 	log->getErrorStream()<<(num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
 	log->addedError();
+#endif
+	DoublesCounter->UpdateCount(-num_rows*num_cols);
+
 	num_rows = n_rows;
 	num_cols = 1;
 	delete [] matrix_ptr;
 
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
+#ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows*num_cols);
 	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
 	log->addedError();
+#endif
+	DoublesCounter->UpdateCount(num_rows*num_cols);
 	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{(*this)(i) = 0;}
 	return;
@@ -96,16 +122,22 @@ void MATRIX::Set_Size( int n_rows, int n_cols )
 {
 	//assert( n_rows < 1 );
 	//assert( n_cols < 1 );
+#ifdef FINE_MEM_COUNT
 	NewCount-=(num_rows*num_cols);
 	log->getErrorStream()<<(num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
 	log->addedError();
+#endif
+	DoublesCounter->UpdateCount(-num_rows*num_cols);
 	num_rows = n_rows;
 	num_cols = n_cols;
 	delete [] matrix_ptr;
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
+	DoublesCounter->UpdateCount(num_rows*num_cols);
+#ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows*num_cols);
 	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
 	log->addedError();
+#endif
 	Set_Value(0.0);
 	return;
 }
@@ -186,16 +218,24 @@ double& MATRIX::operator ()( int row, int col ) const
 MATRIX& MATRIX::operator = ( const MATRIX& Matrix ) 
 {
 	if(matrix_ptr==Matrix.matrix_ptr){return(*this);}
+#ifdef FINE_MEM_COUNT
 	NewCount-=(num_rows*num_cols);
 	log->getErrorStream()<<(num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
 	log->addedError();
+#endif
+	DoublesCounter->UpdateCount(-num_rows*num_cols);
+
 	num_rows = Matrix.num_rows;
 	num_cols = Matrix.num_cols;
 	delete [] matrix_ptr;
 	matrix_ptr = new double[num_rows*num_cols];
+#ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows*num_cols);
 	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
 	log->addedError();
+#endif
+	DoublesCounter->UpdateCount(num_rows*num_cols);
+
 	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{(*this)(i) = Matrix(i);}
 	return( *this );
@@ -442,8 +482,13 @@ void MATRIX::Transpose( MATRIX& Matrix ) const
  void MATRIX::SetErrorLogger(ErrorLogger* log)
 {
 	MATRIX::log = log;
+	CtorCounter->SetErrorLogger(log);
 }
+ void MATRIX::LogMemory() {
+	 CtorCounter->LogMemory();
+	 DoublesCounter->LogMemory();
 
+ }
 /*
 void MATRIX::Roll( const double angle )
 {

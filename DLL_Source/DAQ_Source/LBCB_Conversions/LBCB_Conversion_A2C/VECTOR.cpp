@@ -19,70 +19,94 @@
 
 //#define NDEBUG
 ErrorLogger* VECTOR::log = NULL;
+#ifdef FINE_MEM_COUNT
 int VECTOR::CtorCount = 0;
 int VECTOR::NewCount = 0;
+#endif
+MemoryCounter* VECTOR::CtorCounter = new MemoryCounter("VECTOR");
+MemoryCounter* VECTOR::DoublesCounter = new MemoryCounter("VECTOR::Doubles");
+
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-VECTOR::VECTOR( size_t n_rows )
+VECTOR::VECTOR( int n_rows )
 :num_rows( n_rows ), vector_ptr(NULL)
 {
 	//assert( n_rows < 1 );
 	if(num_rows<1){num_rows=1;}
-	vector_ptr = new double[num_rows];
+	vector_ptr = new double[(size_t)num_rows];
+#ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows);
 	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
 	log->addedError();
-
-	for (int i=1; i<=(int)num_rows; i++)
-	{(*this)(i) = 0;}
 	CtorCount++;
 	log->getErrorStream() << "VECTOR Constructed: " << CtorCount;
 	log->addedError();
+#endif
+	CtorCounter->UpdateCount(1);
+	DoublesCounter->UpdateCount(num_rows);
+
+	for (int i=1; i<=(int)num_rows; i++)
+	{(*this)(i) = 0;}
 }
 
 VECTOR::~VECTOR()
 {
 	delete [] vector_ptr;
+#ifdef FINE_MEM_COUNT
 	NewCount-=(num_rows);
 	log->getErrorStream()<<(num_rows) << " less VECTOR::doubles: " << NewCount;
 	log->addedError();
 	CtorCount--;
 	log->getErrorStream() << "VECTOR Destroyed: " << CtorCount;
 	log->addedError();
+#endif
+	CtorCounter->UpdateCount(-1);
+	DoublesCounter->UpdateCount(-num_rows);
+
 }
 
 VECTOR::VECTOR( const VECTOR& Vector )
 {
 	num_rows = Vector.num_rows;
-	vector_ptr = new double[num_rows];
+	vector_ptr = new double[(size_t)num_rows];
+#ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows);
 	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
 	log->addedError();
-	for (int i=1; i<=(int)num_rows; i++)
-	{(*this)(i) = Vector(i);}
 	CtorCount++;
 	log->getErrorStream() << "VECTOR Constructed: " << CtorCount;
 	log->addedError();
+#endif
+	CtorCounter->UpdateCount(1);
+	DoublesCounter->UpdateCount(num_rows);
+	for (int i=1; i<=(int)num_rows; i++)
+	{(*this)(i) = Vector(i);}
 }
 
 //////////////////////////////////////////////////////////////////////
 // Member Function with Access to the Member Variables
 //////////////////////////////////////////////////////////////////////
-void VECTOR::Set_Size( size_t n_rows )
+void VECTOR::Set_Size( int n_rows )
 {
 	//assert( n_rows < 1 );
+#ifdef FINE_MEM_COUNT
 	NewCount-=(num_rows);
 	log->getErrorStream()<<(num_rows) << " less VECTOR::doubles: " << NewCount;
 	log->addedError();
+#endif
+	DoublesCounter->UpdateCount(-num_rows);
 	if(n_rows<1){n_rows=1;}
 	num_rows = n_rows;
 	delete [] vector_ptr;
 	vector_ptr = new double[num_rows];
+#ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows);
 	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
 	log->addedError();
+#endif
+	DoublesCounter->UpdateCount(num_rows);
 	for (int i=1; i<=(int)num_rows; i++)
 	{(*this)(i) = 0;}
 	return;
@@ -107,7 +131,7 @@ void VECTOR::Set_Value( int row, double value )
 //////////////////////////////////////////////////////////////////////
 // Member Function to show the Member Variables
 //////////////////////////////////////////////////////////////////////
-size_t VECTOR::Size() const
+int VECTOR::Size() const
 {
 	return( num_rows );
 }
@@ -154,15 +178,21 @@ double& VECTOR::operator ()( int row ) const
 VECTOR& VECTOR::operator = ( const VECTOR& Vector )
 {
 	if(vector_ptr==Vector.vector_ptr) {return(*this);}
+#ifdef FINE_MEM_COUNT
 	NewCount-=(num_rows);
 	log->getErrorStream()<<(num_rows) << " less VECTOR::doubles: " << NewCount;
 	log->addedError();
+#endif
+	DoublesCounter->UpdateCount(-num_rows);
 	num_rows = Vector.num_rows;
 	delete [] vector_ptr;
 	vector_ptr = new double[num_rows];
+#ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows);
 	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
 	log->addedError();
+#endif
+	DoublesCounter->UpdateCount(num_rows);
 	for( int i=1; i<=(int)num_rows; i++)
 	{(*this)(i)=Vector(i);}
 	return( *this );
@@ -229,3 +259,7 @@ VECTOR VECTOR::CrossProduct( const VECTOR &Vector ) const
 {
 	VECTOR::log = log;
 }
+ void VECTOR::LogMemory() {
+	 CtorCounter->LogMemory();
+	 DoublesCounter->LogMemory();
+ }
