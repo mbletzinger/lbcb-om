@@ -17,8 +17,7 @@
 #include <fstream>
 #include <vector>
 
-#include "ErrorLogger.h"
-#include "MemoryCounter.h"
+#include "ThreadLocalObjects.h"
 
 using namespace std;
 
@@ -26,7 +25,8 @@ class MATRIX
 {
 public:
 	// Constructor and Destructor
-	MATRIX( int n_rows=1, int n_cols=1 );
+	MATRIX( int n_rows, int n_cols, ThreadLocalObjects* tlo );
+	MATRIX();
 	~MATRIX();
 	MATRIX( const MATRIX& Matrix ); // Copy Constructor
 
@@ -62,19 +62,14 @@ public:
 	void LinearSolver( const VECTOR& b, VECTOR& x ) const;
 	void Inverse( MATRIX& Matrix ) const;
 	void Transpose( MATRIX& Matrix ) const;
-	//void Roll( const double angle );
-	//void Pitch( const double angle );
-	//void Yaw( const double angle );
-	static void SetErrorLogger(ErrorLogger *log);
-	static void LogMemory();
+	void SetThreadLocalObjects(ThreadLocalObjects* mytlo);
 
 
 private:
 	int num_rows, num_cols;
 	double *matrix_ptr;
-	static ErrorLogger *log;
-	static MemoryCounter* CtorCounter;
-	static MemoryCounter* DoublesCounter;
+	ThreadLocalObjects* tlo;
+	bool PartiallyConstructed;
 #ifdef FINE_MEM_COUNT
 	static int CtorCount;
 	static int NewCount;

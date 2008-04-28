@@ -21,8 +21,6 @@
 
 //#define NDEBUG
 
-ErrorLogger* LBCB_Actuator::log = NULL;
-MemoryCounter* LBCB_Actuator::CtorCounter = new MemoryCounter("LBCB_Actuator");
 
 #ifdef FINE_MEM_COUNT
 int LBCB_Actuator::CtorCount = 0;
@@ -33,12 +31,9 @@ int LBCB_Actuator::NewCount = 0;
 //////////////////////////////////////////////////////////////////////
 
 LBCB_Actuator::LBCB_Actuator()
-:max_length(0),min_length(0),nom_length(0),cur_length(0)
+:nom_length(0),cur_length(0)
 {
-	basepin.Set_Size(3);
-	nominalplatformpin.Set_Size(3);
-	currentplatformpin.Set_Size(3);
-	CtorCounter->UpdateCount(1);
+	PartiallyConstructed = true;
 
 #ifdef FINE_MEM_COUNT
 	CtorCount++;
@@ -49,7 +44,7 @@ LBCB_Actuator::LBCB_Actuator()
 
 LBCB_Actuator::~LBCB_Actuator()
 {
-	CtorCounter->UpdateCount(-1);
+	tlo->GetMemoryCounterFactory()->UpdateCount("LBCB_Actuator",-1);
 #ifdef FINE_MEM_COUNT
 	CtorCount--;
 	log->getErrorStream() << "LBCB_Actuator Destroyed: " << CtorCount;
@@ -60,18 +55,6 @@ LBCB_Actuator::~LBCB_Actuator()
 //////////////////////////////////////////////////////////////////////
 // Member Function with access to the Member Variables
 //////////////////////////////////////////////////////////////////////
-
-void LBCB_Actuator::Set_MaximumLength( const double length )
-{
-	max_length = length;
-	return;
-}
-
-void LBCB_Actuator::Set_MinimumLength( const double length )
-{
-	min_length = length;
-	return;
-}
 
 void LBCB_Actuator::Set_NominalLength( const double length )
 {
@@ -108,12 +91,12 @@ void LBCB_Actuator::CartesianCoordinatesInput( VECTOR const &cartesianinput )
 {
 	//assert( cartesianinput.Size() != 6 );
 	double roll_angle, pitch_angle, yaw_angle;
-	VECTOR translation(3);
-	VECTOR directional_vector(3);
+	VECTOR translation(3,tlo);
+	VECTOR directional_vector(3,tlo);
 	//MATRIX Roll(3), Pitch(3), Yaw(3);
-	RotationalMatrix Roll( 0, 1 );
-	RotationalMatrix Pitch( 0, 2 );
-	RotationalMatrix Yaw( 0, 3 );
+	RotationalMatrix Roll( 0, 1,tlo );
+	RotationalMatrix Pitch( 0, 2, tlo );
+	RotationalMatrix Yaw( 0, 3, tlo );
 
 	translation(1) = cartesianinput(1);
 	translation(2) = cartesianinput(2);
@@ -164,11 +147,11 @@ void LBCB_Actuator::Jacobian( VECTOR const & cartesian, VECTOR & DL_Dd ) const
 	Ppy = nominalplatformpin(2);
 	Ppz = nominalplatformpin(3);
 
-	VECTOR phai(3);
+	VECTOR phai(3, tlo);
 	phai = currentplatformpin - basepin;
 	phai = phai/cur_length;
 
-	MATRIX J(3,3);
+	MATRIX J(3,3,tlo);
 	
 	// Jacobian Element
 	J(1,1) = 0;
@@ -204,15 +187,6 @@ void LBCB_Actuator::Jacobian( VECTOR const & cartesian, VECTOR & DL_Dd ) const
 // Member Function to show the Member Variables
 //////////////////////////////////////////////////////////////////////
 
-double LBCB_Actuator::MaximumLength( void ) const
-{
-	return max_length;
-}
-
-double LBCB_Actuator::MinimumLength( void ) const
-{ 
-	return min_length;
-}
 
 double LBCB_Actuator::NominalLength( void ) const
 {
@@ -261,11 +235,19 @@ VECTOR LBCB_Actuator::CurrentPlatFormPin( void ) const
 	return;
 }*/
 
- void LBCB_Actuator::SetErrorLogger(ErrorLogger* log)
+void LBCB_Actuator::SetThreadLocalObjects(ThreadLocalObjects* mytlo)
 {
-	LBCB_Actuator::log = log;
-	CtorCounter->SetErrorLogger(log);
+	tlo = mytlo;
+	if(PartiallyConstructed)
+	{
+		tlo->GetMemoryCounterFactory()->UpdateCount("LBCB_Actuator",1);
+		basepin.SetThreadLocalObjects(tlo);
+		basepin.Set_Size(3);
+		nominalplatformpin.SetThreadLocalObjects(tlo);
+		nominalplatformpin.Set_Size(3);
+		currentplatformpin.SetThreadLocalObjects(tlo);
+		currentplatformpin.Set_Size(3);
+		PartiallyConstructed = false;
+	}
 }
- void LBCB_Actuator::LogMemory() {
-	 CtorCounter->LogMemory();
- }
+

@@ -11,14 +11,14 @@
 
 #include <iostream>
 #include <string>
-#include "ErrorLogger.h"
-#include "MemoryCounter.h"
+#include "ThreadLocalObjects.h"
 
 class VECTOR  
 {
 public:
 	// Constrcutor and Destructor
-	VECTOR( int n_rows=1 );
+	VECTOR( int n_rows, ThreadLocalObjects* tlo);
+	VECTOR();
 	~VECTOR();
 	VECTOR( const VECTOR& Vector );  // Copy Constructor
 
@@ -46,19 +46,17 @@ public:
 	// Vector Function
 	double DotProduct( const VECTOR& Vector )   const;
 	VECTOR CrossProduct( const VECTOR& Vector ) const;
-	static void SetErrorLogger(ErrorLogger *log);
-	static void LogMemory();
+	void SetThreadLocalObjects(ThreadLocalObjects* mytlo);
 
 private:
 	int num_rows;
 	double *vector_ptr;
-	static ErrorLogger *log;
+	ThreadLocalObjects* tlo;
+	bool PartiallyConstructed;
 #ifdef FINE_MEM_COUNT
 	static int CtorCount;
 	static int NewCount;
 #endif
-	static MemoryCounter* CtorCounter;
-	static MemoryCounter* DoublesCounter;
 
 };
 

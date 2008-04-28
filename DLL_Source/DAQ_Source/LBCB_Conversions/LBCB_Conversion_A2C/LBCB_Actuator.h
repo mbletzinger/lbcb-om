@@ -12,8 +12,7 @@
 #include "VECTOR.h"
 #include "MATRIX.h"
 #include <string>
-#include "ErrorLogger.h"
-#include "MemoryCounter.h"
+#include "ThreadLocalObjects.h"
 
 class LBCB_Actuator  
 {
@@ -40,8 +39,6 @@ public:
 	void Jacobian( VECTOR const &cartesian, VECTOR &DL_Dd ) const;
 
 	// Member Function to show the Member Variables
-	double MaximumLength( void )      const;
-	double MinimumLength( void )      const;
 	double NominalLength( void )      const;
 	double CurrentLength( void )      const;
 	double CurrentStroke( void )      const;
@@ -50,20 +47,18 @@ public:
 	VECTOR CurrentPlatFormPin( void ) const;
 	//void   Display( void )            const;
 //    string ID( void ) const
-	static void SetErrorLogger(ErrorLogger *log);
-	static void LogMemory();
+	void SetThreadLocalObjects(ThreadLocalObjects* mytlo);
 
 private:
-	double max_length;
-	double min_length;
 	double nom_length;
 	double cur_length;
 	VECTOR basepin;
 	VECTOR nominalplatformpin;
 	VECTOR currentplatformpin;
 	//string id;
-	static ErrorLogger *log;
-	static MemoryCounter* CtorCounter;
+	ThreadLocalObjects* tlo;
+	bool PartiallyConstructed;
+
 #ifdef FINE_MEM_COUNT
 	static int NewCount;
 	static int CtorCount;

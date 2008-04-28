@@ -18,26 +18,24 @@
 //#include <assert.h>
 #include <exception>
 
-using std::string;
-ErrorLogger* RotationalMatrix::log = NULL;
-MemoryCounter* RotationalMatrix::CtorCounter = new MemoryCounter("RotationalMatrix");
+using namespace std;
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-RotationalMatrix::RotationalMatrix( const double theta, const int flg )
-:angle( theta ), type(flg)
+RotationalMatrix::RotationalMatrix( const double theta, const int flg, ThreadLocalObjects* mytlo )
+:angle( theta ), type(flg), tlo(mytlo)
 {
 	RotMatrix.Set_Size(3,3);
 	TypeChange( theta, type );
-	CtorCounter->UpdateCount(1);
+	tlo->GetMemoryCounterFactory()->UpdateCount("RotationalMatrix",1);
 
 }
 
 RotationalMatrix::~RotationalMatrix()
 {
-	CtorCounter->UpdateCount(-1);
+	tlo->GetMemoryCounterFactory()->UpdateCount("RotationalMatrix",-1);
 }
 
 void RotationalMatrix::TypeChange( const int flg )
@@ -102,11 +100,3 @@ MATRIX RotationalMatrix::operator () ( const double theta, const int flg)
 	TypeChange( angle, type );
 	return( RotMatrix );
 }
- void RotationalMatrix::SetErrorLogger(ErrorLogger* log)
-{
-	RotationalMatrix::log = log;
-	CtorCounter->SetErrorLogger(log);
-}
- void RotationalMatrix::LogMemory() {
-	 CtorCounter->LogMemory();
- }

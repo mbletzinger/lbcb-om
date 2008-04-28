@@ -11,6 +11,7 @@
 #include "VECTOR.h"
 #include "MATRIX.h"
 #include "LBCB_Actuator.h"
+#include "LBCB_Parameters.h"
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -24,36 +25,43 @@
 //////////////////////////////////////////////////////////////////////
 // Function for the singleton
 //////////////////////////////////////////////////////////////////////
-bool LBCB::flag = false;
-ErrorLogger* LBCB::log = NULL;
-MemoryCounter* LBCB::CtorCounter = new MemoryCounter("LBCB");
-LBCB* LBCB::instance = NULL;
 
 #ifdef FINE_MEM_COUNT
 	int LBCB::CtorCount = 0;
 	int LBCB::NewCount = 0;
 #endif
 
-LBCB* LBCB::Create( )
-{
-	if(!flag)
-	{
-		flag = true;
-		instance = new LBCB;
-	}
-	return instance;
-}
-
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-LBCB::LBCB( )
+LBCB::LBCB(ThreadLocalObjects* mytlo ) : tlo(mytlo)
 {
-	BasePin = new VECTOR[6];
-	PlatFormPin = new VECTOR[6];
 	Actuator_ptr = new LBCB_Actuator[6];
-	CtorCounter->UpdateCount(1);
+	tlo->GetMemoryCounterFactory()->UpdateCount("LBCB",1);
+
+	VECTOR NomLength(6, tlo);
+	VECTOR temp(3, tlo);
+	LBCB_Parameters* Params = LBCB_Parameters::GetInstance();
+	VECTOR* BasePin = Params->GetBasePin();
+	VECTOR* PlatformPin = Params->GetPlatformPin();
+
+	for (int i=0; i<=5; i++)
+	{
+		temp = PlatformPin[i] - BasePin[i];
+		NomLength(i+1) = temp.Norm();
+	}
+	// Initialize the Coordinate and Actuator Length
+	currentcartesian.Set_Size( 6 );
+
+	for ( int i=0; i<=5; i++)
+	{
+		Actuator_ptr[i].SetThreadLocalObjects(tlo);
+		Actuator_ptr[i].Set_NominalLength( NomLength(i+1) );
+		Actuator_ptr[i].Set_BasePin( BasePin[i] );
+		Actuator_ptr[i].Set_NominalPlatFormPin( PlatformPin[i] );
+	}
+
 #ifdef FINE_MEM_COUNT
 	CtorCount++;
 	log->getErrorStream() << "LBCB Constructed: " << CtorCount;
@@ -63,11 +71,9 @@ LBCB::LBCB( )
 
 LBCB::~LBCB()
 {
-	delete [] BasePin;
-	delete [] PlatFormPin;
 	delete [] Actuator_ptr;
 	//delete [] instance;
-	CtorCounter->UpdateCount(-1);
+	tlo->GetMemoryCounterFactory()->UpdateCount("LBCB",-1);
 #ifdef FINE_MEM_COUNT
 	CtorCount--;
 	log->getErrorStream() << "LBCB Destroyed: " << CtorCount;
@@ -75,83 +81,11 @@ LBCB::~LBCB()
 #endif
 }
 
-void LBCB::Set_PinParam( const MATRIX &basepin, const MATRIX &platformpin )
-{
-	//////////////////////////
-	// Vector declaration for actuator pin locations
-	for ( int i=0; i<=5; i++)
-	{
-		BasePin[i].Set_Size( 3 );
-		PlatFormPin[i].Set_Size( 3 );
-		for (int j=1; j<=3; j++)
-		{
-			BasePin[i](j)     = basepin(j,i+1);
-			PlatFormPin[i](j) = platformpin(j,i+1);
-		}
-	}
-
-	// Actuator x1 parameter setting
-	VECTOR MaxLength(6), MinLength(6), NomLength(6);
-/*	MaxLength(1) = 16.586;
-	MaxLength(2) = 16.586;
-	MaxLength(3) = 12.175;
-	MaxLength(4) = 12.175;
-	MaxLength(5) = 12.175;
-	MaxLength(6) = 12.175;
-
-	MinLength(1) = 12.586;
-	MinLength(2) = 12.586;
-	MinLength(3) = 10.175;
-	MinLength(4) = 10.175;
-	MinLength(5) = 10.175;
-	MinLength(6) = 10.175;
-*/
-	VECTOR temp(3);
-	for (int i=0; i<=5; i++)
-	{
-		temp = PlatFormPin[i] - BasePin[i];
-		NomLength(i+1) = temp.Norm();
-	}
-	// Initialize the Coordinate and Actuator Length
-	currentcartesian.Set_Size( 6 );
-
-	for ( int i=0; i<=5; i++)
-	{
-		Actuator_ptr[i].Set_MaximumLength( MaxLength(i+1) );
-		Actuator_ptr[i].Set_MinimumLength( MinLength(i+1) );
-		Actuator_ptr[i].Set_NominalLength( NomLength(i+1) );
-		Actuator_ptr[i].Set_BasePin( BasePin[i] );
-		Actuator_ptr[i].Set_NominalPlatFormPin( PlatFormPin[i] );
-	}
-	return;
-}
-
 
 //////////////////////////////////////////////////////////////////////
 // Member Function to show the Member Variables
 //////////////////////////////////////////////////////////////////////
 
-/*void LBCB::Display_BasePin( void ) const
-{
-	for (int i=0; i<=5; i++)
-	{
-		cout << "Actuator " << i+1 << " Base Pin Location " << endl;
-		Actuator_ptr[i].BasePin().Display();
-		cout << endl;
-	}
-	return;
-}
-
-void LBCB::Display_PlatFormPin( void ) const
-{
-	for (int i=0; i<=5; i++)
-	{
-		cout << "Actuator " << i+1 << " Platform Pin Location " << endl;
-		Actuator_ptr[i].NominalPlatFormPin().Display();
-		cout << endl;
-	}
-	return;
-}*/
 
 VECTOR LBCB::CurrentCartesianCoordinates( void ) const
 {
@@ -160,7 +94,7 @@ VECTOR LBCB::CurrentCartesianCoordinates( void ) const
 
 VECTOR LBCB::CurrentActuatorLength( void ) const
 {
-	VECTOR temp(6);
+	VECTOR temp(6,tlo);
 	for (int i=0; i<=5; i++)
 	{temp(i+1) = Actuator_ptr[i].CurrentLength();}
 	return( temp );
@@ -168,7 +102,7 @@ VECTOR LBCB::CurrentActuatorLength( void ) const
 
 VECTOR LBCB::CurrentActuatorStroke( void ) const
 {
-	VECTOR temp(6);
+	VECTOR temp(6,tlo);
 	for (int i=0; i<=5; i++)
 	{temp(i+1) = Actuator_ptr[i].CurrentStroke();}
 	return( temp );
@@ -182,8 +116,8 @@ void LBCB::Cartesian2Actuator( VECTOR const & Cart_Disp, VECTOR const & Cart_For
 	//assert( cartesianinput.Size() != 6 );
 	//assert( actuatorstroke.Size() != 6 );
 
-	MATRIX Convert_Matrix(6,6);
-	VECTOR BasePin_vec(3), Directional_vec(3), temp(3), Moment_vec(3);
+	MATRIX Convert_Matrix(6,6,tlo);
+	VECTOR BasePin_vec(3,tlo), Directional_vec(3,tlo), temp(3,tlo), Moment_vec(3,tlo);
 	double k;
 
 	for( int i=0; i<=5; i++)
@@ -219,17 +153,17 @@ void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loa
 	//if( actuatorstroke.Size()!=6||limitation.Size()!=6){return;}
 	// Temporary actuator stroke vector 
 	VECTOR temp_stroke( CurrentActuatorStroke() );
-	VECTOR error(6);
+	VECTOR error(6,tlo);
 	
 	// Current Cartesian Displacement as starting point
 	cartesiandisp = currentcartesian;
 
 	// Error in actuator stroke
 	error = actuatorstroke - temp_stroke;
-	MATRIX JacobianMatrix(6,6);
-	VECTOR DL_Dd(6), D_cartesian(6), cartesiantrans(3);
-	VECTOR force(3), moment(3), temp_check(6);
-	VECTOR dummy1(6),dummy2(6);
+	MATRIX JacobianMatrix(6,6,tlo);
+	VECTOR DL_Dd(6,tlo), D_cartesian(6,tlo), cartesiantrans(3,tlo);
+	VECTOR force(3,tlo), moment(3,tlo), temp_check(6,tlo);
+	VECTOR dummy1(6,tlo),dummy2(6,tlo);
 	int check=true;
 	int num_iteration;
 	num_iteration = 0;
@@ -267,6 +201,13 @@ void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loa
 	VECTOR *Directional_Vector, *ForceArm_Vector;
 	Directional_Vector = new VECTOR[6];
 	ForceArm_Vector = new VECTOR[6];
+
+	for(int i = 0; i < 6; i++) 
+	{
+		Directional_Vector[i].SetThreadLocalObjects(tlo);
+		ForceArm_Vector[i].SetThreadLocalObjects(tlo);
+	}
+
 	cartesiantrans(1) = cartesiandisp(1);
 	cartesiantrans(2) = cartesiandisp(2);
 	cartesiantrans(3) = cartesiandisp(3);
@@ -295,18 +236,19 @@ void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loa
 
 void LBCB::Cartesian2Actuator( VECTOR const & CartesianData, VECTOR & ActuatorSpaceData )
 {
-	VECTOR Cart_Disp(6), Cart_Force(6), Act_Stroke(6), Act_Force(6);
+	VECTOR Cart_Disp(6,tlo), Cart_Force(6,tlo), Act_Stroke(6,tlo), Act_Force(6,tlo);
+// Force and Moment conversion is not necessary because all force commands are transformed into displacement commands
 
 	for (int i=1; i<=6; i++){
 		Cart_Disp(i)  = CartesianData(i);
-		Cart_Force(i) = CartesianData(i+6);
+//		Cart_Force(i) = CartesianData(i+6);
 	}
 
 	Cartesian2Actuator( Cart_Disp, Cart_Force, Act_Stroke, Act_Force );
 
 	for (int i=1; i<=6; i++){
 		ActuatorSpaceData(i)   = Act_Stroke(i);
-		ActuatorSpaceData(i+6) = Act_Force(i);
+//		ActuatorSpaceData(i+6) = Act_Force(i);
 	}
 
 	return;
@@ -314,29 +256,17 @@ void LBCB::Cartesian2Actuator( VECTOR const & CartesianData, VECTOR & ActuatorSp
 	
 void LBCB::Actuator2Cartesian( VECTOR const & ActuatorSpaceData, VECTOR & CartesianData, VECTOR const & Limitation  )
 {
-	VECTOR Cart_Disp(6), Cart_Force(6), Act_Stroke(6), Act_Force(6);
+	VECTOR Cart_Disp(6,tlo), Cart_Force(6,tlo), Act_Stroke(6,tlo), Act_Force(6,tlo);
 
 	for (int i=1; i<=6; i++){
 		Act_Stroke(i) = ActuatorSpaceData(i);
-		Act_Force(i)  = ActuatorSpaceData(i+6);
 	}
 
 	Actuator2Cartesian( Act_Stroke, Act_Force, Cart_Disp, Cart_Force, Limitation );
 
 	for (int i=1; i<=6; i++){
 		CartesianData(i)   = Cart_Disp(i);
-		CartesianData(i+6) = Cart_Force(i);
 	}
 
 	return;
 }
-
- void LBCB::SetErrorLogger(ErrorLogger* log)
-{
-	LBCB::log = log;
-	CtorCounter->SetErrorLogger(log);
-}
-
- void LBCB::LogMemory() {
-	 CtorCounter->LogMemory();
- }

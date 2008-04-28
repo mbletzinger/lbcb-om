@@ -18,24 +18,22 @@
 #include <exception>
 
 //#define NDEBUG
-ErrorLogger* VECTOR::log = NULL;
 #ifdef FINE_MEM_COUNT
 int VECTOR::CtorCount = 0;
 int VECTOR::NewCount = 0;
 #endif
-MemoryCounter* VECTOR::CtorCounter = new MemoryCounter("VECTOR");
-MemoryCounter* VECTOR::DoublesCounter = new MemoryCounter("VECTOR::Doubles");
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-VECTOR::VECTOR( int n_rows )
-:num_rows( n_rows ), vector_ptr(NULL)
+VECTOR::VECTOR( int n_rows, ThreadLocalObjects* mytlo )
+:num_rows( n_rows ), vector_ptr(NULL),tlo(mytlo), PartiallyConstructed(false)
 {
 	//assert( n_rows < 1 );
 	if(num_rows<1){num_rows=1;}
 	vector_ptr = new double[(size_t)num_rows];
+	tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR.doubles",num_rows);
 #ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows);
 	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
@@ -44,11 +42,17 @@ VECTOR::VECTOR( int n_rows )
 	log->getErrorStream() << "VECTOR Constructed: " << CtorCount;
 	log->addedError();
 #endif
-	CtorCounter->UpdateCount(1);
-	DoublesCounter->UpdateCount(num_rows);
-
+	tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR",1);
 	for (int i=1; i<=(int)num_rows; i++)
 	{(*this)(i) = 0;}
+}
+VECTOR::VECTOR() 
+{
+	num_rows = 1;
+	vector_ptr = new double[(size_t)num_rows];
+	for (int i=1; i<=(int)num_rows; i++)
+	{(*this)(i) = 0;}
+	PartiallyConstructed = true;
 }
 
 VECTOR::~VECTOR()
@@ -62,8 +66,9 @@ VECTOR::~VECTOR()
 	log->getErrorStream() << "VECTOR Destroyed: " << CtorCount;
 	log->addedError();
 #endif
-	CtorCounter->UpdateCount(-1);
-	DoublesCounter->UpdateCount(-num_rows);
+	tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR.doubles",-num_rows);
+	tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR",-1);
+
 
 }
 
@@ -79,8 +84,8 @@ VECTOR::VECTOR( const VECTOR& Vector )
 	log->getErrorStream() << "VECTOR Constructed: " << CtorCount;
 	log->addedError();
 #endif
-	CtorCounter->UpdateCount(1);
-	DoublesCounter->UpdateCount(num_rows);
+	tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR.doubles",num_rows);
+	tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR",1);
 	for (int i=1; i<=(int)num_rows; i++)
 	{(*this)(i) = Vector(i);}
 }
@@ -96,7 +101,7 @@ void VECTOR::Set_Size( int n_rows )
 	log->getErrorStream()<<(num_rows) << " less VECTOR::doubles: " << NewCount;
 	log->addedError();
 #endif
-	DoublesCounter->UpdateCount(-num_rows);
+	tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR.doubles",-num_rows);
 	if(n_rows<1){n_rows=1;}
 	num_rows = n_rows;
 	delete [] vector_ptr;
@@ -106,7 +111,7 @@ void VECTOR::Set_Size( int n_rows )
 	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
 	log->addedError();
 #endif
-	DoublesCounter->UpdateCount(num_rows);
+	tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR.doubles",num_rows);
 	for (int i=1; i<=(int)num_rows; i++)
 	{(*this)(i) = 0;}
 	return;
@@ -155,7 +160,7 @@ double VECTOR::Norm() const
 
 VECTOR VECTOR::NormalizedVector() const
 {
-	VECTOR temp(num_rows);
+	VECTOR temp(num_rows,tlo);
 	if(Norm()==0){return(temp);}
 
 	for( int i=1; i<=(int)num_rows; i++)
@@ -183,7 +188,7 @@ VECTOR& VECTOR::operator = ( const VECTOR& Vector )
 	log->getErrorStream()<<(num_rows) << " less VECTOR::doubles: " << NewCount;
 	log->addedError();
 #endif
-	DoublesCounter->UpdateCount(-num_rows);
+	tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR.doubles",-num_rows);
 	num_rows = Vector.num_rows;
 	delete [] vector_ptr;
 	vector_ptr = new double[num_rows];
@@ -192,7 +197,7 @@ VECTOR& VECTOR::operator = ( const VECTOR& Vector )
 	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
 	log->addedError();
 #endif
-	DoublesCounter->UpdateCount(num_rows);
+	tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR.doubles",num_rows);
 	for( int i=1; i<=(int)num_rows; i++)
 	{(*this)(i)=Vector(i);}
 	return( *this );
@@ -201,7 +206,7 @@ VECTOR& VECTOR::operator = ( const VECTOR& Vector )
 VECTOR VECTOR::operator + ( const VECTOR& Vector ) const
 {
 	//assert( num_rows != Vector.num_rows );
-	VECTOR temp(num_rows);
+	VECTOR temp(num_rows,tlo);
 	for ( int i=1; i<=(int)num_rows; i++)
 	{temp(i) = (*this)(i) + Vector(i);}
 	return( temp );
@@ -210,7 +215,7 @@ VECTOR VECTOR::operator + ( const VECTOR& Vector ) const
 VECTOR VECTOR::operator - ( const VECTOR& Vector ) const
 {
 	//assert( num_rows != Vector.num_rows );
-	VECTOR temp(num_rows);
+	VECTOR temp(num_rows,tlo);
 	for ( int i=1; i<=(int)num_rows; i++)
 	{temp(i) = (*this)(i) - Vector(i);}
 	return( temp );
@@ -218,7 +223,7 @@ VECTOR VECTOR::operator - ( const VECTOR& Vector ) const
 
 VECTOR VECTOR::operator * ( const double value ) const
 {
-	VECTOR temp(num_rows);
+	VECTOR temp(num_rows,tlo);
 	for ( int i=1; i<=(int)num_rows; i++)
 	{temp(i) = value * (*this)(i);}
 	return( temp );
@@ -227,7 +232,7 @@ VECTOR VECTOR::operator * ( const double value ) const
 VECTOR VECTOR::operator / ( const double value ) const
 {
 	//assert( value == 0.0 );
-	VECTOR temp(num_rows);
+	VECTOR temp(num_rows,tlo);
 	for ( int i=1; i<=(int)num_rows; i++)
 	{temp(i) = (*this)(i)/value;}
 	return( temp );
@@ -249,17 +254,20 @@ VECTOR VECTOR::CrossProduct( const VECTOR &Vector ) const
 {
 	//assert( num_rows!=Vector.num_rows );
 	//assert( num_rows!=3 );
-	VECTOR temp(3);
+	VECTOR temp(3,tlo);
 	temp.vector_ptr[0] = vector_ptr[1]*Vector.vector_ptr[2] - vector_ptr[2]*Vector.vector_ptr[1];
 	temp.vector_ptr[1] = vector_ptr[2]*Vector.vector_ptr[0] - vector_ptr[0]*Vector.vector_ptr[2];
 	temp.vector_ptr[2] = vector_ptr[0]*Vector.vector_ptr[1] - vector_ptr[1]*Vector.vector_ptr[0];
 	return( temp );
 }
- void VECTOR::SetErrorLogger(ErrorLogger* log)
+void VECTOR::SetThreadLocalObjects(ThreadLocalObjects* mytlo)
 {
-	VECTOR::log = log;
+	tlo = mytlo;
+	if(PartiallyConstructed)
+	{
+		tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR",1);
+		tlo->GetMemoryCounterFactory()->UpdateCount("VECTOR.doubles",num_rows);
+		PartiallyConstructed = false;
+	}
 }
- void VECTOR::LogMemory() {
-	 CtorCounter->LogMemory();
-	 DoublesCounter->LogMemory();
- }
+

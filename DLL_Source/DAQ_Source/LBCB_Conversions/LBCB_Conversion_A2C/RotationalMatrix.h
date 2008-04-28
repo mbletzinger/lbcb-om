@@ -13,8 +13,7 @@
 #include "MATRIX.h"
 #include <iostream>
 #include <string>
-#include "ErrorLogger.h"
-#include "MemoryCounter.h"
+#include "ThreadLocalObjects.h"
 
 //typedef basic_string <char> string;
 using std::string;
@@ -22,7 +21,8 @@ using std::string;
 class RotationalMatrix  
 {
 public:
-	RotationalMatrix(const double theta=0.0, const int flg=1);
+//	RotationalMatrix(const double theta=0.0, const int flg=1, ThreadLocalObjects* tlo);
+	RotationalMatrix(const double theta, const int flg, ThreadLocalObjects* tlo);
 	virtual ~RotationalMatrix();
 
 	void TypeChange(int flg);
@@ -32,15 +32,12 @@ public:
 	MATRIX operator() (void);
 	MATRIX operator() (const double theta );
 	MATRIX operator() (const double theta, const int flg);
-	static void SetErrorLogger(ErrorLogger *log);
-	static void LogMemory();
 
 private:
 	double angle; // Angle in radian
 	MATRIX RotMatrix;
 	int type;     // [1:Roll, 2:Pitch, 3:Yaw]
-	static ErrorLogger *log;
-	static MemoryCounter* CtorCounter;
+	ThreadLocalObjects* tlo;
 };
 
 #endif // !defined(AFX_ROTATIONALMATRIX_H__5D24F279_AF6B_48EE_8A8C_673B01380508__INCLUDED_)

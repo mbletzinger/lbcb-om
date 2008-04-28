@@ -16,9 +16,6 @@
 #include <fstream>
 
 //#define NDEBUG
-ErrorLogger* MATRIX::log = NULL;
-MemoryCounter* MATRIX::CtorCounter = new MemoryCounter("MATRIX");
-MemoryCounter* MATRIX::DoublesCounter = new MemoryCounter("MATRIX::Doubles");
 #ifdef FINE_MEM_COUNT
 int MATRIX::CtorCount = 0;
 int MATRIX::NewCount = 0;
@@ -27,14 +24,14 @@ int MATRIX::NewCount = 0;
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-MATRIX::MATRIX( int n_rows, int n_cols )
-:num_rows(n_rows), num_cols(n_cols), matrix_ptr(NULL)
+MATRIX::MATRIX( int n_rows, int n_cols, ThreadLocalObjects* mytlo )
+:num_rows(n_rows), num_cols(n_cols), matrix_ptr(NULL), tlo(mytlo),PartiallyConstructed(false)
 {
 	//assert( n_rows < 1 );
 	//assert( n_cols < 1 );
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
-	DoublesCounter->UpdateCount(num_rows*num_cols);
-	CtorCounter->UpdateCount(1);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX.doubles",num_rows*num_cols);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX",1);
 #ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows*num_cols);
 	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
@@ -49,12 +46,17 @@ MATRIX::MATRIX( int n_rows, int n_cols )
 	log->addedError();
 #endif
 }
-
+MATRIX::MATRIX()
+{
+	matrix_ptr = new double[(size_t)num_rows*num_cols];
+	Set_Value(0.0);
+	PartiallyConstructed = true;
+}
 MATRIX::~MATRIX()
 {
 	delete [] matrix_ptr;
-	DoublesCounter->UpdateCount(-num_rows*num_cols);
-	CtorCounter->UpdateCount(-1);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX.doubles",-num_rows*num_cols);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX",-1);
 #ifdef FINE_MEM_COUNT
 	NewCount-=(num_rows*num_cols);
 	log->getErrorStream()<< (num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
@@ -71,8 +73,8 @@ MATRIX::MATRIX( const MATRIX& Matrix )
 	num_cols = Matrix.num_cols;
 	// Check for negatives and zeros here
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
-	DoublesCounter->UpdateCount(num_rows*num_cols);
-	CtorCounter->UpdateCount(1);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX.doubles",num_rows*num_cols);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX",1);
 
 #ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows*num_cols);
@@ -100,7 +102,7 @@ void MATRIX::Set_Size( int n_rows )
 	log->getErrorStream()<<(num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
 	log->addedError();
 #endif
-	DoublesCounter->UpdateCount(-num_rows*num_cols);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX.doubles",-num_rows*num_cols);
 
 	num_rows = n_rows;
 	num_cols = 1;
@@ -112,7 +114,7 @@ void MATRIX::Set_Size( int n_rows )
 	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
 	log->addedError();
 #endif
-	DoublesCounter->UpdateCount(num_rows*num_cols);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX.doubles",num_rows*num_cols);
 	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{(*this)(i) = 0;}
 	return;
@@ -127,12 +129,12 @@ void MATRIX::Set_Size( int n_rows, int n_cols )
 	log->getErrorStream()<<(num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
 	log->addedError();
 #endif
-	DoublesCounter->UpdateCount(-num_rows*num_cols);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX.doubles",-num_rows*num_cols);
 	num_rows = n_rows;
 	num_cols = n_cols;
 	delete [] matrix_ptr;
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
-	DoublesCounter->UpdateCount(num_rows*num_cols);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX.doubles",num_rows*num_cols);
 #ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows*num_cols);
 	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
@@ -223,7 +225,7 @@ MATRIX& MATRIX::operator = ( const MATRIX& Matrix )
 	log->getErrorStream()<<(num_rows*num_cols) << " less MATRIX::doubles: " << NewCount;
 	log->addedError();
 #endif
-	DoublesCounter->UpdateCount(-num_rows*num_cols);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX.doubles",-num_rows*num_cols);
 
 	num_rows = Matrix.num_rows;
 	num_cols = Matrix.num_cols;
@@ -234,7 +236,7 @@ MATRIX& MATRIX::operator = ( const MATRIX& Matrix )
 	log->getErrorStream() << (num_rows*num_cols) << " new MATRIX::doubles: " << NewCount;
 	log->addedError();
 #endif
-	DoublesCounter->UpdateCount(num_rows*num_cols);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX.doubles",num_rows*num_cols);
 
 	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{(*this)(i) = Matrix(i);}
@@ -245,7 +247,7 @@ MATRIX MATRIX::operator + ( const MATRIX& Matrix ) const
 {
 	//assert( num_rows != Matrix.num_rows );
 	//assert( num_cols != Matrix.num_cols );
-	MATRIX temp(num_rows, num_cols);
+	MATRIX temp(num_rows, num_cols,tlo);
 	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{temp(i) = (*this)(i) + Matrix(i);}
 	return( temp );
@@ -255,7 +257,7 @@ MATRIX MATRIX::operator - ( const MATRIX& Matrix ) const
 {
 	//assert( num_rows != Matrix.num_rows );
 	//assert( num_cols != Matrix.num_cols );
-	MATRIX temp(num_rows, num_cols);
+	MATRIX temp(num_rows, num_cols,tlo);
 	for ( int i=1; i<=(num_rows*num_cols); i++ )
 	{temp(i) = (*this)(i)-Matrix(i);}
 	return( temp );
@@ -264,7 +266,7 @@ MATRIX MATRIX::operator - ( const MATRIX& Matrix ) const
 MATRIX MATRIX::operator * ( const MATRIX& Matrix ) const
 {
 	//assert( num_cols != Matrix.num_rows );
-	MATRIX temp( num_rows, Matrix.num_cols );
+	MATRIX temp( num_rows, Matrix.num_cols ,tlo);
 	double sum;
 	for ( int i=1; i<=num_rows; i++ )
 	{
@@ -282,7 +284,7 @@ MATRIX MATRIX::operator * ( const MATRIX& Matrix ) const
 VECTOR MATRIX::operator * ( const VECTOR& Vector ) const
 {
 	//assert( num_cols != Vector.Size() );
-	VECTOR temp( num_rows );
+	VECTOR temp( num_rows ,tlo);
 	double sum;
 	for ( int i=1; i<=num_rows; i++)
 	{
@@ -296,7 +298,7 @@ VECTOR MATRIX::operator * ( const VECTOR& Vector ) const
 
 MATRIX MATRIX::operator * ( const double value ) const
 {
-	MATRIX temp(num_rows, num_cols);
+	MATRIX temp(num_rows, num_cols,tlo);
 	for ( int i=1; i<=num_rows*num_cols; i++ )
 	{temp(i) = (*this)(i) * value;}
 	return( temp );
@@ -305,7 +307,7 @@ MATRIX MATRIX::operator * ( const double value ) const
 MATRIX MATRIX::operator / ( const double value ) const
 {
 	//assert( value == 0.0 );
-	MATRIX temp(num_rows, num_cols);
+	MATRIX temp(num_rows, num_cols,tlo);
 	for ( int i=1; i<=num_rows*num_cols; i++ )
 	{temp(i) = (*this)(i) / value;}
 	return( temp );
@@ -333,7 +335,7 @@ void MATRIX::LUDecompose( vector<int>& index, int det_sign )
 {
 	int i, j, m, k,imax;
 	double big, dum, sum, temp;
-	VECTOR temp_vector( num_rows );
+	VECTOR temp_vector( num_rows, tlo );
 	index.reserve( num_rows );
 	det_sign = 1;
 
@@ -425,7 +427,7 @@ void MATRIX::LinearSolver( const VECTOR& b, VECTOR& x ) const
 	int i, j, ii=0, d_sign=1;
 	double sum;
 	vector<int> index(num_rows + 1);
-	MATRIX A( num_rows, num_cols );
+	MATRIX A( num_rows, num_cols, tlo );
 
 	x.Set_Size( num_rows );
 	A = (*this);
@@ -457,7 +459,7 @@ void MATRIX::LinearSolver( const VECTOR& b, VECTOR& x ) const
 void MATRIX::Inverse( MATRIX& rhs ) const
 {
 	int i, j;
-	VECTOR unit_vec( num_rows ), temp_vec( num_rows );
+	VECTOR unit_vec( num_rows, tlo ), temp_vec( num_rows, tlo );
 
 	for (j=1; j<=num_rows; j++)
 	{
@@ -479,47 +481,13 @@ void MATRIX::Transpose( MATRIX& Matrix ) const
 	}
 	return;
 }
- void MATRIX::SetErrorLogger(ErrorLogger* log)
+void MATRIX::SetThreadLocalObjects(ThreadLocalObjects* mytlo)
 {
-	MATRIX::log = log;
-	CtorCounter->SetErrorLogger(log);
+	tlo = mytlo;
+	if(PartiallyConstructed)
+	{
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX.doubles",num_rows*num_cols);
+	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX",1);
+	PartiallyConstructed = false;
+	}
 }
- void MATRIX::LogMemory() {
-	 CtorCounter->LogMemory();
-	 DoublesCounter->LogMemory();
-
- }
-/*
-void MATRIX::Roll( const double angle )
-{
-	Set_Size( 3, 3 );
-	Identity();
-	(*this)(2,2) =  cos( angle );
-	(*this)(2,3) = -sin( angle );
-	(*this)(3,2) =  sin( angle );
-	(*this)(3,3) =  cos( angle );
-	return;
-}
-
-void MATRIX::Pitch( const double angle )
-{
-	Set_Size( 3, 3 );
-	Identity();
-	(*this)(1,1) =  cos( angle );
-	(*this)(1,3) =  sin( angle );
-	(*this)(3,1) = -sin( angle );
-	(*this)(3,3) =  cos( angle );
-	return;
-}
-
-void MATRIX::Yaw( const double angle )
-{
-	Set_Size( 3, 3 );
-	Identity();
-	(*this)(1,1) =  cos( angle );
-	(*this)(1,2) = -sin( angle );
-	(*this)(2,1) =  sin( angle );
-	(*this)(2,2) =  cos( angle );
-	return;
-}
-*/

@@ -12,25 +12,15 @@
 #include "VECTOR.h"
 #include "MATRIX.h"
 #include "LBCB_Actuator.h"
-#include "ErrorLogger.h"
-#include "MemoryCounter.h"
+#include "ThreadLocalObjects.h"
 
 class LBCB  
 {
 public:
-	static LBCB* Create( );
-	//virtual ~LBCB();
 
-	//LBCB();
+	LBCB(ThreadLocalObjects* tlo);
 	~LBCB();
 
-	// Set LBCB Parameters
-	void Set_PinParam( MATRIX const & basepin, MATRIX const & platformpin );
-	//void Set_PlatFormPin( MATRIX const & platformpin );
-
-	// Member Function to show the Member Variables
-	//void Display_BasePin( void )               const;
-	//void Display_PlatFormPin( void )           const;
 	VECTOR CurrentCartesianCoordinates( void ) const;
 	VECTOR CurrentActuatorLength( void )       const;
 	VECTOR CurrentActuatorStroke( void )       const;
@@ -40,17 +30,10 @@ public:
 	void Actuator2Cartesian( VECTOR const & Act_Stroke, VECTOR const & ACt_Force, VECTOR & Cart_Disp, VECTOR & Cart_Force, VECTOR const & Limitation );
 	void Cartesian2Actuator( VECTOR const & CartesianData, VECTOR & ActuatorSpace);
 	void Actuator2Cartesian( VECTOR const & ActuatorSpace, VECTOR & CartesianData, VECTOR const & Limitation );
-	static void SetErrorLogger(ErrorLogger* log);
-	static void LogMemory();
 private:
-	LBCB();
-	static bool flag;
-	static LBCB *instance;
 	LBCB_Actuator *Actuator_ptr;
-	VECTOR *BasePin, *PlatFormPin;
 	VECTOR currentcartesian;
-	static ErrorLogger *log;
-	static MemoryCounter* CtorCounter;
+	ThreadLocalObjects* tlo;
 #ifdef FINE_MEM_COUNT
 	static int CtorCount;
 	static int NewCount;

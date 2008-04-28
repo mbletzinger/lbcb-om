@@ -283,6 +283,10 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\LBCB_Parameters.cpp"
+				>
+			</File>
+			<File
 				RelativePath="MATRIX.cpp"
 				>
 				<FileConfiguration
@@ -307,6 +311,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\MemoryCounterFactory.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RigidTransform.cpp"
+				>
+			</File>
+			<File
 				RelativePath="RotationalMatrix.cpp"
 				>
 				<FileConfiguration
@@ -325,6 +337,14 @@
 						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\ThreadLocalFactory.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ThreadLocalObjects.cpp"
+				>
 			</File>
 			<File
 				RelativePath="VECTOR.cpp"
@@ -356,7 +376,7 @@
 				>
 			</File>
 			<File
-				RelativePath="LBCB.h"
+				RelativePath=".\LBCB.h"
 				>
 			</File>
 			<File
@@ -368,6 +388,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\LBCB_Parameters.h"
+				>
+			</File>
+			<File
 				RelativePath="MATRIX.h"
 				>
 			</File>
@@ -376,11 +400,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\MemoryCounterFactory.h"
+				>
+			</File>
+			<File
 				RelativePath="RigidTransform.h"
 				>
 			</File>
 			<File
 				RelativePath="RotationalMatrix.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ThreadLocalFactory.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ThreadLocalObjects.h"
 				>
 			</File>
 			<File
