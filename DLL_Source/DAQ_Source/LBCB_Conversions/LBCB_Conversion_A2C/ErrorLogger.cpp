@@ -3,9 +3,9 @@
 using namespace std;
 
 CRITICAL_SECTION ErrorLogger::critical_section;
-string ErrorLogger::LogFilename = NULL;
+string ErrorLogger::LogFilename = "";
 
-ErrorLogger::ErrorLogger(string myprefix) : prefix(myprefix)
+ErrorLogger::ErrorLogger(DWORD id) : threadid(id)
 {
 	ContainsErrors = false;
 }
@@ -13,13 +13,20 @@ ErrorLogger::ErrorLogger(string myprefix) : prefix(myprefix)
 ErrorLogger::~ErrorLogger(void)
 {
 }
+void ErrorLogger::SetPrefix(string pfx)
+{
+	prefix = pfx;
+}
 
 void ErrorLogger::flush()
 {
 	if(! ContainsErrors) return;
+	ostringstream prfx;
+	prfx<<prefix<<"["<<threadid<<"]";
+
 	EnterCriticalSection(&critical_section);
 	ofstream Logout (LogFilename.c_str(), ios_base::out | ios_base::app);
-	Logout << prefix<< ":START"<<endl<<ErrorStream.str()<<prefix<<":END"<<endl;
+	Logout << prfx.str()<< ":START"<<endl<<ErrorStream.str()<<prfx.str()<<":END"<<endl;
 	Logout.close();
 	LeaveCriticalSection(&critical_section);
 	ContainsErrors = false;

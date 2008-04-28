@@ -25,9 +25,8 @@ using namespace std;
 //////////////////////////////////////////////////////////////////////
 
 RotationalMatrix::RotationalMatrix( const double theta, const int flg, ThreadLocalObjects* mytlo )
-:angle( theta ), type(flg), tlo(mytlo)
+:angle( theta ), type(flg), tlo(mytlo), RotMatrix(3,3,mytlo)
 {
-	RotMatrix.Set_Size(3,3);
 	TypeChange( theta, type );
 	tlo->GetMemoryCounterFactory()->UpdateCount("RotationalMatrix",1);
 

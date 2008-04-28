@@ -3,8 +3,7 @@
 #include <vector>
 
 
-
-MemoryCounterFactory::MemoryCounterFactory(void) : McntMap(),Counters(100),RunCounter(0)
+MemoryCounterFactory::MemoryCounterFactory(void) : RunCounter(0)
 {
 }
 
@@ -37,7 +36,7 @@ bool MemoryCounterFactory::IsRunCounterExpired()
 }
 void MemoryCounterFactory::UpdateCount(string Name, int change)
 {
-	MemoryCounter* mc = McntMap[Name];
+	MemoryCounter* mc = GetMemoryCounter(Name);
 	mc->UpdateCount(change);
 }
 void MemoryCounterFactory::LogMemoryUse()

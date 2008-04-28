@@ -6,9 +6,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LBCB_Conversion_A2C", "..\DAQ_Source\LBCB_Conversions\LBCB_Conversion_A2C\LBCB_Conversion_A2C.vcproj", "{17AB0628-9FD4-4AE4-9230-53F7494D98AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{17178470-4854-4D59-823B-844E3CD5FB5F}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\..\My Documents\Visual Studio 2008\Projects\examples\Dynamic Libraries\MathFuncsDll\MathFuncsDll.vcproj = ..\..\..\..\..\My Documents\Visual Studio 2008\Projects\examples\Dynamic Libraries\MathFuncsDll\MathFuncsDll.vcproj
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathFuncsDll", "..\..\..\..\..\My Documents\Visual Studio 2008\Projects\examples\Dynamic Libraries\MathFuncsDll\MathFuncsDll.vcproj", "{4B9DC320-E8CA-4536-9685-1579B9635748}"
 EndProject

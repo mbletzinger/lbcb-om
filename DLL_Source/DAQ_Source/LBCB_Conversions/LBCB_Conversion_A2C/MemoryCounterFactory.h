@@ -6,13 +6,6 @@
 
 using namespace std;
 
-struct CmpMemCnt
-{
-	inline bool operator()(string s1, string s2) const
-	{
-		return s1.compare(s2)< 0;
-	}
-};
 class MemoryCounterFactory
 {
 public:
@@ -26,7 +19,7 @@ public:
 	void LogMemoryUse();
 
 private:
-	map<string,MemoryCounter*, CmpMemCnt> McntMap;
+	map<string,MemoryCounter*> McntMap;
 	vector<MemoryCounter*> Counters;
 	long RunCounter;
 	static const long MemoryDumpCount = 50;

@@ -46,7 +46,7 @@ MATRIX::MATRIX( int n_rows, int n_cols, ThreadLocalObjects* mytlo )
 	log->addedError();
 #endif
 }
-MATRIX::MATRIX()
+MATRIX::MATRIX() : num_rows(1), num_cols(1)
 {
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
 	Set_Value(0.0);
@@ -71,6 +71,8 @@ MATRIX::MATRIX( const MATRIX& Matrix )
 {
 	num_rows = Matrix.num_rows;
 	num_cols = Matrix.num_cols;
+	tlo = Matrix.tlo;
+	PartiallyConstructed = Matrix.PartiallyConstructed;
 	// Check for negatives and zeros here
 	matrix_ptr = new double[(size_t)num_rows*num_cols];
 	tlo->GetMemoryCounterFactory()->UpdateCount("MATRIX.doubles",num_rows*num_cols);
@@ -307,9 +309,17 @@ MATRIX MATRIX::operator * ( const double value ) const
 MATRIX MATRIX::operator / ( const double value ) const
 {
 	//assert( value == 0.0 );
+	double rval = value;
+	if(value == 0.0) 
+	{
+		ErrorLogger* log = tlo->GetErrorLogger();
+		log->getErrorStream() << "MATRIX divide by zero detected";
+		log->addedError();
+		rval = 1.0;
+	}
 	MATRIX temp(num_rows, num_cols,tlo);
 	for ( int i=1; i<=num_rows*num_cols; i++ )
-	{temp(i) = (*this)(i) / value;}
+	{temp(i) = (*this)(i) / rval;}
 	return( temp );
 }
 

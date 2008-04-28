@@ -15,11 +15,12 @@ Prof. Amr S Elnashai <aelnash@uiuc.edu>
 #include "ErrorLogger.h"
 #include "ThreadLocalFactory.h"
 #include "ThreadLocalObjects.h"
+#include "MemoryCounterFactory.h"
 
 using namespace std;
 ThreadLocalFactory* tspace = NULL;
 
-ThreadLocalObjects* GetThreadLocalObjects(string funcname)
+ThreadLocalObjects* GetThreadLocalObjects()
 {
 
 	DWORD threadid = GetCurrentThreadId();
@@ -28,13 +29,13 @@ ThreadLocalObjects* GetThreadLocalObjects(string funcname)
 	{
 		return tlo;
 	}
-	ostringstream prefix;
-	prefix<<funcname<<"["<<threadid<<"]";
-	ErrorLogger* elog = new ErrorLogger(prefix.str());
+	ErrorLogger* elog = new ErrorLogger(threadid);
+	MemoryCounterFactory* mcf = new MemoryCounterFactory(); 
 	tlo = new ThreadLocalObjects();
 	tlo->SetErrorLogger(elog);
-	tlo->AddMemoryCounter("LBCB");
-	tlo->AddMemoryCounter("LBCB_Actuator");
+	tlo->SetMemoryCounterFactory(mcf);
+	tlo->AddMemoryCounter(string("LBCB"));
+	tlo->AddMemoryCounter(string("LBCB_Actuator"));
 	tlo->AddMemoryCounter("Parameters");
 	tlo->AddMemoryCounter("MATRIX");
 	tlo->AddMemoryCounter("MATRIX.doubles");
@@ -45,10 +46,11 @@ ThreadLocalObjects* GetThreadLocalObjects(string funcname)
 	return tlo;
 }
 
-int ProcessErrors(ThreadLocalObjects* tlo)
+int ProcessErrors(string name, ThreadLocalObjects* tlo)
 {
 	int result = 0;
 	ErrorLogger* elog = tlo->GetErrorLogger();
+	elog->SetPrefix(name);
 	if(elog->hasError()) {
 		result = 1;
 		elog->flush();
@@ -72,7 +74,7 @@ _declspec(dllexport) void LBCB_Conversion_A2C( double motion_center[], long leng
 	elog.addedError();
 #endif
 
-	ThreadLocalObjects* tlo = GetThreadLocalObjects("LBCB_Conversion_A2C");
+	ThreadLocalObjects* tlo = GetThreadLocalObjects();
 	VECTOR MotionCenter(3,tlo), PlatformCenter(3,tlo), ActuatorSpace(12,tlo), CartesianData(12,tlo), MotionCenterData(12,tlo), Limitation(6,tlo);
 	for(i=0; i<3; i++){MotionCenter(i+1) = motion_center[i];}
 
@@ -97,7 +99,7 @@ _declspec(dllexport) void LBCB_Conversion_A2C( double motion_center[], long leng
 	elog.addedError();
 #endif
 
-	*error = ProcessErrors(tlo);
+	*error = ProcessErrors("LBCB_Conversion_A2C",tlo);
 
 	return;
 }
@@ -107,7 +109,7 @@ _declspec(dllexport) void LBCB_conversion_C2A(double motion_center[], double sen
 
 	int i;
 
-	ThreadLocalObjects* tlo = GetThreadLocalObjects("LBCB_Conversion_C2A");
+	ThreadLocalObjects* tlo = GetThreadLocalObjects();
 
 	VECTOR ActuatorSpace(6,tlo), CartesianData(6,tlo);
 	VECTOR MotionCenterData(6,tlo);
@@ -133,7 +135,7 @@ _declspec(dllexport) void LBCB_conversion_C2A(double motion_center[], double sen
 		sensor_reading[i] = ActuatorSpace(i+1);
 	}
 
-	*error = ProcessErrors(tlo);
+	*error = ProcessErrors("LBCB_Conversion_C2A",tlo);
 	return;
 
 }
@@ -144,7 +146,7 @@ _declspec(dllexport) void LBCB_Conversion_Init(long size, long type)
 	ThreadLocalFactory::InitCSV();
 	ErrorLogger::InitCSV();
 	tspace = new ThreadLocalFactory();
-	ThreadLocalObjects* tlo = GetThreadLocalObjects("LBCB_Conversion_Init");
+	ThreadLocalObjects* tlo = GetThreadLocalObjects();
 	MATRIX basepin(3,6,tlo), platformpin(3,6,tlo);
 
 	if (size == 0 && type == 0){// Right Hand Small Scale LBCB
@@ -322,6 +324,7 @@ _declspec(dllexport) void LBCB_Conversion_Init(long size, long type)
 
 	LBCB_Parameters::Create(  basepin, platformpin,tlo );
 	ErrorLogger* elog = tlo->GetErrorLogger();
+	elog->SetPrefix("LBCB_Conversion_Init");
 
 	MemoryCounterFactory* mcf = tlo->GetMemoryCounterFactory(); 
 	mcf->LogMemoryUse();

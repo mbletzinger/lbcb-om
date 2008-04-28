@@ -1,7 +1,7 @@
 /* Copyright (C) 2007, University of Illinois.  All rights reserved.
-   Developed by Narutoshi Nakata <nakata@uiuc.edu>
-				Prof. B F Spencer Jr <bfs@uiuc.edu>
-				Prof. Amr S Elnashai <aelnash@uiuc.edu> 
+Developed by Narutoshi Nakata <nakata@uiuc.edu>
+Prof. B F Spencer Jr <bfs@uiuc.edu>
+Prof. Amr S Elnashai <aelnash@uiuc.edu> 
 */
 // LBCB.cpp: implementation of the LBCB class.
 //
@@ -27,15 +27,15 @@
 //////////////////////////////////////////////////////////////////////
 
 #ifdef FINE_MEM_COUNT
-	int LBCB::CtorCount = 0;
-	int LBCB::NewCount = 0;
+int LBCB::CtorCount = 0;
+int LBCB::NewCount = 0;
 #endif
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-LBCB::LBCB(ThreadLocalObjects* mytlo ) : tlo(mytlo)
+LBCB::LBCB(ThreadLocalObjects* mytlo ) : tlo(mytlo), currentcartesian(6,mytlo)
 {
 	Actuator_ptr = new LBCB_Actuator[6];
 	tlo->GetMemoryCounterFactory()->UpdateCount("LBCB",1);
@@ -51,8 +51,6 @@ LBCB::LBCB(ThreadLocalObjects* mytlo ) : tlo(mytlo)
 		temp = PlatformPin[i] - BasePin[i];
 		NomLength(i+1) = temp.Norm();
 	}
-	// Initialize the Coordinate and Actuator Length
-	currentcartesian.Set_Size( 6 );
 
 	for ( int i=0; i<=5; i++)
 	{
@@ -140,13 +138,13 @@ void LBCB::Cartesian2Actuator( VECTOR const & Cart_Disp, VECTOR const & Cart_For
 			Convert_Matrix(j+3,i+1) = Moment_vec(j);
 		}
 	}
-	
+
 	Convert_Matrix.LinearSolver( Cart_Force, Act_Force );
 	currentcartesian = Cart_Disp;
 
 	return;
 }
-	
+
 void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loadcellreading, VECTOR & cartesiandisp, VECTOR & cartesianforce, VECTOR const & limitation )
 {
 
@@ -154,7 +152,7 @@ void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loa
 	// Temporary actuator stroke vector 
 	VECTOR temp_stroke( CurrentActuatorStroke() );
 	VECTOR error(6,tlo);
-	
+
 	// Current Cartesian Displacement as starting point
 	cartesiandisp = currentcartesian;
 
@@ -167,7 +165,7 @@ void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loa
 	int check=true;
 	int num_iteration;
 	num_iteration = 0;
-		
+
 	while(check)
 	{
 		for(int i=0; i<=5; i++)
@@ -197,7 +195,7 @@ void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loa
 		if (num_iteration>10){check=false;}
 
 	}
-	
+
 	VECTOR *Directional_Vector, *ForceArm_Vector;
 	Directional_Vector = new VECTOR[6];
 	ForceArm_Vector = new VECTOR[6];
@@ -237,23 +235,23 @@ void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loa
 void LBCB::Cartesian2Actuator( VECTOR const & CartesianData, VECTOR & ActuatorSpaceData )
 {
 	VECTOR Cart_Disp(6,tlo), Cart_Force(6,tlo), Act_Stroke(6,tlo), Act_Force(6,tlo);
-// Force and Moment conversion is not necessary because all force commands are transformed into displacement commands
+	// Force and Moment conversion is not necessary because all force commands are transformed into displacement commands
 
 	for (int i=1; i<=6; i++){
 		Cart_Disp(i)  = CartesianData(i);
-//		Cart_Force(i) = CartesianData(i+6);
+		//		Cart_Force(i) = CartesianData(i+6);
 	}
 
 	Cartesian2Actuator( Cart_Disp, Cart_Force, Act_Stroke, Act_Force );
 
 	for (int i=1; i<=6; i++){
 		ActuatorSpaceData(i)   = Act_Stroke(i);
-//		ActuatorSpaceData(i+6) = Act_Force(i);
+		//		ActuatorSpaceData(i+6) = Act_Force(i);
 	}
 
 	return;
 }
-	
+
 void LBCB::Actuator2Cartesian( VECTOR const & ActuatorSpaceData, VECTOR & CartesianData, VECTOR const & Limitation  )
 {
 	VECTOR Cart_Disp(6,tlo), Cart_Force(6,tlo), Act_Stroke(6,tlo), Act_Force(6,tlo);

@@ -76,6 +76,8 @@ VECTOR::VECTOR( const VECTOR& Vector )
 {
 	num_rows = Vector.num_rows;
 	vector_ptr = new double[(size_t)num_rows];
+	tlo = Vector.tlo;
+	PartiallyConstructed = Vector.PartiallyConstructed;
 #ifdef FINE_MEM_COUNT
 	NewCount+=(num_rows);
 	log->getErrorStream() << (num_rows) << " new VECTOR::doubles: " << NewCount;
@@ -232,9 +234,18 @@ VECTOR VECTOR::operator * ( const double value ) const
 VECTOR VECTOR::operator / ( const double value ) const
 {
 	//assert( value == 0.0 );
+	double rval = value;
+	if(value == 0.0) 
+	{
+		ErrorLogger* log = tlo->GetErrorLogger();
+		log->getErrorStream() << "VECTOR divide by zero detected";
+		log->addedError();
+		rval = 1.0;
+	}
+
 	VECTOR temp(num_rows,tlo);
 	for ( int i=1; i<=(int)num_rows; i++)
-	{temp(i) = (*this)(i)/value;}
+	{temp(i) = (*this)(i)/rval;}
 	return( temp );
 }
 

@@ -9,13 +9,19 @@ class MemoryCounter
 public:
 	MemoryCounter(void);
 	MemoryCounter(string MyName);
+	MemoryCounter(const MemoryCounter&mcnt);
 	~MemoryCounter(void);
 	void UpdateCount(int count);
 	void LogMemory();
-	static void SetErrorLogger(ErrorLogger* elog);
+	void SetErrorLogger(ErrorLogger* elog);
 	void SetName(string Name);
+
+	MemoryCounter& operator=(const MemoryCounter&mcnt);
+	bool operator<(const MemoryCounter&mcnt);
+	bool operator==(const MemoryCounter&mcnt);
+	
 private:
-	static ErrorLogger* log;
+	ErrorLogger* log;
 	long memCount;
 	string Name;
 };
