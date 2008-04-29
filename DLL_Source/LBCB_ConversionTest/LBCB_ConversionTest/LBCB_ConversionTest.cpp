@@ -10,42 +10,42 @@
 
 using namespace std;
 
-#define MAX_THREADS 5
+#define MAX_THREADS 20
 
-const char* OutFileRoot = "c:\\Documents and Settings\\adminmbletzin\\Desktop\\LBCB_ConversionTest";
+const char* OutFileRoot = "c:\\Documents and Settings\\adminmbletzin\\Desktop\\Logs\\LBCB_ConversionTest";
 DWORD WINAPI ThreadCalc( LPVOID lpParam );
-HANDLE  hThreadArray[MAX_THREADS]; 
-DWORD   dwThreadIdArray[MAX_THREADS];
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 
+	HANDLE  hThreadArray[MAX_THREADS]; 
+	DWORD   dwThreadIdArray[MAX_THREADS];
 	long size = 1;
 	long type = 1;
 	LBCB_Conversion_Init(size, type);
-	LBCB_Conversion_SetErrorLogFile("c:\\Documents and Settings\\adminmbletzin\\Desktop\\DLLError.txt",60);
+	LBCB_Conversion_SetErrorLogFile("c:\\Documents and Settings\\adminmbletzin\\Desktop\\Logs\\DLLError.txt",65);
 
-	for (int i=1; i <= MAX_THREADS; i++) {
+	for (int i=0; i < MAX_THREADS; i++) {
 		int* sleept = new int(1);
-		*sleept = i*10;
-		ThreadCalc((LPVOID)sleept);
-		//hThreadArray[i] = CreateThread( 
-		//	NULL,                   // default security attributes
-		//	0,                      // use default stack size  
-		//	ThreadCalc,       // thread function name
-		//	sleept,          // argument to thread function 
-		//	0,                      // use default creation flags 
-		//	&dwThreadIdArray[i]);   // returns the thread identifier 
+		*sleept = (i+1)*5;
+//		ThreadCalc((LPVOID)sleept);
+		hThreadArray[i] = CreateThread( 
+			NULL,                   // default security attributes
+			0,                      // use default stack size  
+			ThreadCalc,       // thread function name
+			sleept,          // argument to thread function 
+			0,                      // use default creation flags 
+			&dwThreadIdArray[i]);   // returns the thread identifier 
 
 	}
-//	WaitForMultipleObjects(MAX_THREADS, hThreadArray, TRUE, INFINITE);
+	WaitForMultipleObjects(MAX_THREADS, hThreadArray, TRUE, INFINITE);
 
-	// Close all thread handles and free memory allocations.
+	 // Close all thread handles and free memory allocations.
 
-	//for(int i=0; i<MAX_THREADS; i++)
-	//{
-	//	CloseHandle(hThreadArray[i]);
-	//}
+	for(int i=0; i<MAX_THREADS; i++)
+	{
+		CloseHandle(hThreadArray[i]);
+	}
 
 	return 0;
 }

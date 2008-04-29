@@ -19,9 +19,11 @@ void ThreadLocalFactory::SetLocalObjects(DWORD thread, ThreadLocalObjects* tlo)
 }
 ThreadLocalObjects* ThreadLocalFactory::GetLocalObjects(DWORD thread)
 {
+	ThreadLocalObjects* result;
 	EnterCriticalSection(&critical_section);
-	return ObjMap[thread];
+	result =  ObjMap[thread];
 	LeaveCriticalSection(&critical_section);
+	return result;
 }
 void ThreadLocalFactory::InitCSV()
 {
