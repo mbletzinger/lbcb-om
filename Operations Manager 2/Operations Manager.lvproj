@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<Project Type="Project" LVVersion="8208000">
+<Project Type="Project" LVVersion="8508002">
    <Item Name="My Computer" Type="My Computer">
       <Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
       <Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
@@ -117,6 +117,12 @@
          <Item Name="X15.txt" Type="Document" URL="InputData/X15.txt"/>
       </Item>
       <Item Name="lib" Type="Folder">
+         <Item Name="Global Data" Type="Folder" URL="lib/Global Data">
+            <Property Name="NI.DISK" Type="Bool">true</Property>
+         </Item>
+         <Item Name="Logging" Type="Folder" URL="lib/Logging">
+            <Property Name="NI.DISK" Type="Bool">true</Property>
+         </Item>
          <Item Name="About LBCB Operation Manager.vi" Type="VI" URL="lib/About LBCB Operation Manager.vi"/>
          <Item Name="ActuatorArray2Cluster.vi" Type="VI" URL="lib/ActuatorArray2Cluster.vi"/>
          <Item Name="ActuatorCluster2Array.vi" Type="VI" URL="lib/ActuatorCluster2Array.vi"/>
@@ -306,1724 +312,1155 @@
       <Item Name="Operation Manager.ini" Type="Document" URL="Operation Manager.ini"/>
       <Item Name="OperationManagerGlobal.vi" Type="VI" URL="OperationManagerGlobal.vi"/>
       <Item Name="OperationManagerGlobalLargeFacility.vi" Type="VI" URL="OperationManagerGlobalLargeFacility.vi"/>
-      <Item Name="Dependencies" Type="Dependencies"/>
+      <Item Name="Dependencies" Type="Dependencies">
+         <Item Name="vi.lib" Type="Folder">
+            <Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
+            <Item Name="NI_MABase.lvlib" Type="Library" URL="/&lt;vilib&gt;/measure/NI_MABase.lvlib"/>
+            <Item Name="Merge Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Merge Errors.vi"/>
+            <Item Name="TCP Listen.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen.vi"/>
+            <Item Name="Internecine Avoider.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/Internecine Avoider.vi"/>
+            <Item Name="TCP Listen List Operations.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen List Operations.ctl"/>
+            <Item Name="TCP Listen Internal List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen Internal List.vi"/>
+            <Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
+            <Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
+            <Item Name="DialogType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogType.ctl"/>
+            <Item Name="General Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/General Error Handler.vi"/>
+            <Item Name="DialogTypeEnum.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogTypeEnum.ctl"/>
+            <Item Name="General Error Handler CORE.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/General Error Handler CORE.vi"/>
+            <Item Name="Check Special Tags.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Check Special Tags.vi"/>
+            <Item Name="TagReturnType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/TagReturnType.ctl"/>
+            <Item Name="Set String Value.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set String Value.vi"/>
+            <Item Name="GetRTHostConnectedProp.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetRTHostConnectedProp.vi"/>
+            <Item Name="Error Code Database.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Code Database.vi"/>
+            <Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
+            <Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
+            <Item Name="Format Message String.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Format Message String.vi"/>
+            <Item Name="Find Tag.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Find Tag.vi"/>
+            <Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
+            <Item Name="Set Bold Text.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set Bold Text.vi"/>
+            <Item Name="Details Display Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Details Display Dialog.vi"/>
+            <Item Name="ErrWarn.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/ErrWarn.ctl"/>
+            <Item Name="eventvkey.ctl" Type="VI" URL="/&lt;vilib&gt;/event_ctls.llb/eventvkey.ctl"/>
+            <Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
+            <Item Name="Three Button Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog.vi"/>
+            <Item Name="Three Button Dialog CORE.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Three Button Dialog CORE.vi"/>
+            <Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
+            <Item Name="Convert property node font to graphics font.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Convert property node font to graphics font.vi"/>
+            <Item Name="Get Text Rect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Get Text Rect.vi"/>
+            <Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
+            <Item Name="GetHelpDir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetHelpDir.vi"/>
+            <Item Name="DAQmx Read.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read.vi"/>
+            <Item Name="DAQmx Read (Analog 1D Wfm NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog 1D Wfm NChan NSamp).vi"/>
+            <Item Name="DAQmx Fill In Error Info.vi" Type="VI" URL="/&lt;vilib&gt;/daqmx/miscellaneous.llb/DAQmx Fill In Error Info.vi"/>
+            <Item Name="DAQmx Read (Analog 1D DBL 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog 1D DBL 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Read (Analog 1D DBL NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog 1D DBL NChan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Analog 1D Wfm NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog 1D Wfm NChan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Analog 2D DBL NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog 2D DBL NChan NSamp).vi"/>
+            <Item Name="DAQmx Read (Analog DBL 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog DBL 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Analog Wfm 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog Wfm 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Analog Wfm 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog Wfm 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Read (Digital 1D Bool 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D Bool 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Digital 1D U32 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D U32 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Read (Digital 1D U8 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D U8 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Read (Digital 1D Wfm NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D Wfm NChan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Digital 2D U32 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 2D U32 NChan NSamp).vi"/>
+            <Item Name="DAQmx Read (Digital 2D U8 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 2D U8 NChan NSamp).vi"/>
+            <Item Name="DAQmx Read (Digital Bool 1Line 1Point).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital Bool 1Line 1Point).vi"/>
+            <Item Name="DAQmx Read (Digital Wfm 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital Wfm 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Read (Raw 1D I16).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Raw 1D I16).vi"/>
+            <Item Name="DAQmx Read (Raw 1D I32).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Raw 1D I32).vi"/>
+            <Item Name="DAQmx Read (Raw 1D I8).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Raw 1D I8).vi"/>
+            <Item Name="DAQmx Read (Raw 1D U16).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Raw 1D U16).vi"/>
+            <Item Name="DAQmx Read (Raw 1D U32).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Raw 1D U32).vi"/>
+            <Item Name="DAQmx Read (Raw 1D U8).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Raw 1D U8).vi"/>
+            <Item Name="DAQmx Read (Digital 1D Wfm NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D Wfm NChan NSamp).vi"/>
+            <Item Name="DAQmx Read (Digital Wfm 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital Wfm 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Counter 1D DBL 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter 1D DBL 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Read (Counter DBL 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter DBL 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Counter U32 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter U32 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Counter 1D U32 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter 1D U32 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Read (Digital 1D U8 NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D U8 NChan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Digital 1D U32 NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D U32 NChan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Digital U8 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital U8 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Digital U32 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital U32 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Digital 1D Bool NChan 1Samp 1Line).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D Bool NChan 1Samp 1Line).vi"/>
+            <Item Name="DAQmx Read (Digital 2D Bool NChan 1Samp NLine).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 2D Bool NChan 1Samp NLine).vi"/>
+            <Item Name="DAQmx Read (Analog 2D U16 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog 2D U16 NChan NSamp).vi"/>
+            <Item Name="DAQmx Read (Analog 2D I16 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog 2D I16 NChan NSamp).vi"/>
+            <Item Name="DAQmx Read (Analog 2D I32 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog 2D I32 NChan NSamp).vi"/>
+            <Item Name="DAQmx Read (Analog 2D U32 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog 2D U32 NChan NSamp).vi"/>
+            <Item Name="DAQmx Read (Digital U16 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital U16 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Digital 1D U16 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D U16 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Read (Digital 1D U16 NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D U16 NChan 1Samp).vi"/>
+            <Item Name="DAQmx Read (Digital 2D U16 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 2D U16 NChan NSamp).vi"/>
+            <Item Name="DAQmx Write.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write.vi"/>
+            <Item Name="DAQmx Write (Analog 1D DBL 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 1D DBL 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Write (Analog 1D DBL NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 1D DBL NChan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Analog 1D Wfm NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 1D Wfm NChan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Analog 2D DBL NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 2D DBL NChan NSamp).vi"/>
+            <Item Name="DAQmx Write (Analog DBL 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog DBL 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Analog Wfm 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog Wfm 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Analog Wfm 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog Wfm 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Write (Digital 2D U32 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 2D U32 NChan NSamp).vi"/>
+            <Item Name="DAQmx Write (Digital 2D U8 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 2D U8 NChan NSamp).vi"/>
+            <Item Name="DAQmx Write (Digital 1D Bool 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D Bool 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Digital 1D U32 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D U32 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Write (Digital 1D U8 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D U8 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Write (Digital Bool 1Line 1Point).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital Bool 1Line 1Point).vi"/>
+            <Item Name="DAQmx Write (Digital Wfm 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital Wfm 1Chan NSamp).vi"/>
+            <Item Name="DWDT Uncompress Digital.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DWDTOps.llb/DWDT Uncompress Digital.vi"/>
+            <Item Name="DTbl Uncompress Digital.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DTblOps.llb/DTbl Uncompress Digital.vi"/>
+            <Item Name="DTbl Digital Size.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DTblOps.llb/DTbl Digital Size.vi"/>
+            <Item Name="DAQmx Write (Raw 1D I16).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Raw 1D I16).vi"/>
+            <Item Name="DAQmx Write (Raw 1D I32).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Raw 1D I32).vi"/>
+            <Item Name="DAQmx Write (Raw 1D I8).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Raw 1D I8).vi"/>
+            <Item Name="DAQmx Write (Raw 1D U16).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Raw 1D U16).vi"/>
+            <Item Name="DAQmx Write (Raw 1D U32).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Raw 1D U32).vi"/>
+            <Item Name="DAQmx Write (Raw 1D U8).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Raw 1D U8).vi"/>
+            <Item Name="DAQmx Write (Digital 1D Wfm NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D Wfm NChan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Digital Wfm 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital Wfm 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Analog 1D Wfm NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 1D Wfm NChan NSamp).vi"/>
+            <Item Name="DAQmx Write (Digital 1D Wfm NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D Wfm NChan NSamp).vi"/>
+            <Item Name="DAQmx Write (Digital U8 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital U8 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Digital U32 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital U32 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Digital 1D U32 NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D U32 NChan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Digital 1D U8 NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D U8 NChan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Digital 2D Bool NChan 1Samp NLine).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 2D Bool NChan 1Samp NLine).vi"/>
+            <Item Name="DAQmx Write (Digital 1D Bool NChan 1Samp 1Line).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D Bool NChan 1Samp 1Line).vi"/>
+            <Item Name="DAQmx Write (Analog 2D I16 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 2D I16 NChan NSamp).vi"/>
+            <Item Name="DAQmx Write (Analog 2D U16 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 2D U16 NChan NSamp).vi"/>
+            <Item Name="DAQmx Write (Counter Frequency 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter Frequency 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Counter Ticks 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter Ticks 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Counter Time 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter Time 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Counter 1D Frequency NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter 1D Frequency NChan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Counter 1D Time NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter 1D Time NChan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Counter 1DTicks NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter 1DTicks NChan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Analog 2D I32 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 2D I32 NChan NSamp).vi"/>
+            <Item Name="DAQmx Write (Digital U16 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital U16 1Chan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Digital 1D U16 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D U16 1Chan NSamp).vi"/>
+            <Item Name="DAQmx Write (Digital 1D U16 NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D U16 NChan 1Samp).vi"/>
+            <Item Name="DAQmx Write (Digital 2D U16 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 2D U16 NChan NSamp).vi"/>
+            <Item Name="Dynamic To Waveform Array.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/transition.llb/Dynamic To Waveform Array.vi"/>
+            <Item Name="How many pts in the wave.vi" Type="VI" URL="/&lt;vilib&gt;/express/express arith-compare/FormulaBlock.llb/How many pts in the wave.vi"/>
+            <Item Name="ex_Modify Signal Name.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_Modify Signal Name.vi"/>
+            <Item Name="Waveform Array To Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/transition.llb/Waveform Array To Dynamic.vi"/>
+            <Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
+            <Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
+            <Item Name="imagedata.ctl" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/imagedata.ctl"/>
+            <Item Name="Read BMP File Data.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File Data.vi"/>
+            <Item Name="Read BMP Header Info.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP Header Info.vi"/>
+            <Item Name="Calc Long Word Padded Width.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Calc Long Word Padded Width.vi"/>
+            <Item Name="Flip and Pad for Picture Control.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Flip and Pad for Picture Control.vi"/>
+            <Item Name="Draw Flattened Pixmap.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Draw Flattened Pixmap.vi"/>
+            <Item Name="FixBadRect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pictutil.llb/FixBadRect.vi"/>
+            <Item Name="Read Characters From File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Characters From File.vi"/>
+            <Item Name="Open File+.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Open File+.vi"/>
+            <Item Name="Read File+ (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read File+ (string).vi"/>
+            <Item Name="compatReadText.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatReadText.vi"/>
+            <Item Name="Close File+.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Close File+.vi"/>
+            <Item Name="Find First Error.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Find First Error.vi"/>
+            <Item Name="NI_Matrix.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/Matrix/NI_Matrix.lvlib"/>
+            <Item Name="Read From XML File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Read From XML File.vi"/>
+            <Item Name="Read From XML File(array).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Read From XML File(array).vi"/>
+            <Item Name="Open_Create_Replace File.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/Open_Create_Replace File.vi"/>
+            <Item Name="compatFileDialog.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatFileDialog.vi"/>
+            <Item Name="compatOpenFileOperation.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatOpenFileOperation.vi"/>
+            <Item Name="compatCalcOffset.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatCalcOffset.vi"/>
+            <Item Name="ParseXMLFragments.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/ParseXMLFragments.vi"/>
+            <Item Name="FindFirstTag.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindFirstTag.vi"/>
+            <Item Name="FindEmptyElement.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindEmptyElement.vi"/>
+            <Item Name="FindElement.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindElement.vi"/>
+            <Item Name="FindMatchingCloseTag.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindMatchingCloseTag.vi"/>
+            <Item Name="FindCloseTagByName.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindCloseTagByName.vi"/>
+            <Item Name="FindElementStartByName.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindElementStartByName.vi"/>
+            <Item Name="Read From XML File(string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Read From XML File(string).vi"/>
+            <Item Name="compatOverwrite.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatOverwrite.vi"/>
+            <Item Name="Write Characters To File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write Characters To File.vi"/>
+            <Item Name="Write File+ (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write File+ (string).vi"/>
+            <Item Name="compatWriteText.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatWriteText.vi"/>
+            <Item Name="Open/Create/Replace File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Open/Create/Replace File.vi"/>
+            <Item Name="Write to XML File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File.vi"/>
+            <Item Name="Write to XML File(string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File(string).vi"/>
+            <Item Name="Write to XML File(array).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File(array).vi"/>
+            <Item Name="Error to Warning.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error to Warning.vi"/>
+            <Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
+            <Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
+            <Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
+            <Item Name="DAQmx Timing.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing.vi"/>
+            <Item Name="DAQmx Timing (Sample Clock).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Sample Clock).vi"/>
+            <Item Name="DAQmx Timing (Handshaking).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Handshaking).vi"/>
+            <Item Name="DAQmx Timing (Implicit).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Implicit).vi"/>
+            <Item Name="DAQmx Timing (Use Waveform).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Use Waveform).vi"/>
+            <Item Name="DAQmx Timing (Change Detection).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Change Detection).vi"/>
+            <Item Name="DAQmx Timing (Burst Import Clock).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Burst Import Clock).vi"/>
+            <Item Name="DAQmx Timing (Burst Export Clock).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Burst Export Clock).vi"/>
+            <Item Name="DAQmx Timing (Pipelined Sample Clock).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Pipelined Sample Clock).vi"/>
+            <Item Name="DAQmx Start Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Start Task.vi"/>
+            <Item Name="exnFormulaBlock how many pts in the wave.vi" Type="VI" URL="/&lt;vilib&gt;/express/express arith-compare/Formula/Block/exnFormulaBlock how many pts in the wave.vi"/>
+            <Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
+            <Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
+         </Item>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
+         <Item Name="OperationManagerGlobal.vi" Type="VI" URL="NTCP library/.svn/OperationManagerGlobal.vi"/>
+         <Item Name="GetChannelNameArray.vi" Type="VI" URL="NTCP library/.svn/lib/GetChannelNameArray.vi"/>
+         <Item Name="ExternalSensorsDataString.vi" Type="VI" URL="NTCP library/.svn/text-base/ExternalSensorsDataString.vi"/>
+         <Item Name="Open ntcp command queue.vi" Type="VI" URL="NTCP library/.svn/text-base/Open ntcp command queue.vi"/>
+         <Item Name="ProposeCommand.vi" Type="VI" URL="NTCP library/.svn/text-base/ProposeCommand.vi"/>
+         <Item Name="ntcp cmd - parse and enqueue.vi" Type="VI" URL="NTCP library/.svn/text-base/ntcp cmd - parse and enqueue.vi"/>
+         <Item Name="WriteLogFile.vi" Type="VI" URL="NTCP library/.svn/text-base/WriteLogFile.vi"/>
+         <Item Name="OM reply - parse and enqueue.vi" Type="VI" URL="NTCP library/.svn/text-base/OM reply - parse and enqueue.vi"/>
+         <Item Name="Open OM reply queue.vi" Type="VI" URL="NTCP library/.svn/text-base/Open OM reply queue.vi"/>
+         <Item Name="NTCP return.vi" Type="VI" URL="NTCP library/.svn/text-base/NTCP return.vi"/>
+         <Item Name="TCP read command.vi" Type="VI" URL="NTCP library/.svn/text-base/TCP read command.vi"/>
+         <Item Name="Error to Warning.vi" Type="VI" URL="../../Program Files/National Instruments/LabVIEW 7.0/examples/comm/TCP.llb/Error to Warning.vi"/>
+         <Item Name="ntcp command.vi" Type="VI" URL="NTCP library/.svn/text-base/ntcp command.vi"/>
+         <Item Name="Generate 12-value control pt return value.vi" Type="VI" URL="NTCP library/.svn/text-base/Generate 12-value control pt return value.vi"/>
+         <Item Name="Error to Warning.vi" Type="VI" URL="../../../../Program Files/National Instruments/LabVIEW 7.0/examples/comm/TCP.llb/Error to Warning.vi"/>
+         <Item Name="LBCB Operation Manager Menu.rtm" Type="Document" URL="BuildFiles/LBCB Operation Manager Menu.rtm"/>
+         <Item Name="Adjust LBCB LVDT Measurement.vi" Type="VI" URL="lib/Adjust LBCB LVDT Measurement.vi"/>
+         <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
+         <Item Name="systemexec" Type="VI" URL="systemexec"/>
+      </Item>
       <Item Name="Build Specifications" Type="Build">
          <Item Name="Operations Manager 2" Type="EXE">
-            <Property Name="Absolute[0]" Type="Bool">false</Property>
-            <Property Name="Absolute[1]" Type="Bool">false</Property>
-            <Property Name="Absolute[2]" Type="Bool">false</Property>
-            <Property Name="Absolute[3]" Type="Bool">false</Property>
-            <Property Name="Absolute[4]" Type="Bool">false</Property>
-            <Property Name="Absolute[5]" Type="Bool">false</Property>
-            <Property Name="Absolute[6]" Type="Bool">false</Property>
-            <Property Name="ActiveXInfoEnumCLSIDsItemCount" Type="Int">0</Property>
-            <Property Name="ActiveXInfoMajorVersion" Type="Int">0</Property>
-            <Property Name="ActiveXInfoMinorVersion" Type="Int">0</Property>
-            <Property Name="ActiveXInfoObjCLSIDsItemCount" Type="Int">0</Property>
-            <Property Name="ActiveXInfoProgIDPrefix" Type="Str"></Property>
-            <Property Name="ActiveXServerName" Type="Str"></Property>
-            <Property Name="AliasID" Type="Str">{70B20583-C803-4F2F-8E06-8C90BD37741D}</Property>
-            <Property Name="AliasName" Type="Str">Project.aliases</Property>
-            <Property Name="ApplicationID" Type="Str">{682C94EA-AC13-4434-B6A7-51FA5225B779}</Property>
-            <Property Name="ApplicationName" Type="Str">LBCB Operations Manager 2.exe</Property>
-            <Property Name="AutoIncrement" Type="Bool">false</Property>
-            <Property Name="BuildName" Type="Str">Operations Manager 2</Property>
-            <Property Name="CommandLineArguments" Type="Bool">false</Property>
-            <Property Name="CopyErrors" Type="Bool">false</Property>
-            <Property Name="CustomIcon" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
-            <Property Name="DebuggingEXE" Type="Bool">false</Property>
-            <Property Name="DebugServerWaitOnLaunch" Type="Bool">false</Property>
-            <Property Name="DefaultLanguage" Type="Str">English</Property>
-            <Property Name="DependencyApplyDestination" Type="Bool">true</Property>
-            <Property Name="DependencyApplyInclusion" Type="Bool">true</Property>
-            <Property Name="DependencyApplyProperties" Type="Bool">true</Property>
-            <Property Name="DependencyFolderDestination" Type="Int">0</Property>
-            <Property Name="DependencyFolderInclusion" Type="Str">As needed</Property>
-            <Property Name="DependencyFolderPropertiesItemCount" Type="Int">0</Property>
-            <Property Name="DestinationID[0]" Type="Str">{BA5B0CC0-871F-46E0-BD60-BB5CA539E67A}</Property>
-            <Property Name="DestinationID[1]" Type="Str">{BA5B0CC0-871F-46E0-BD60-BB5CA539E67A}</Property>
-            <Property Name="DestinationID[2]" Type="Str">{5A9074F9-F4D2-4A26-982B-8833BB7836F9}</Property>
-            <Property Name="DestinationID[3]" Type="Str">{88E4050B-FE49-4FB3-A43C-0E373C620FD0}</Property>
-            <Property Name="DestinationID[4]" Type="Str">{BAF9E251-5899-40F5-8085-AEC0A3961687}</Property>
-            <Property Name="DestinationID[5]" Type="Str">{F72CB94A-374B-4057-91EA-BCAA524014BC}</Property>
-            <Property Name="DestinationID[6]" Type="Str">{3DE685FD-F3F2-41AA-854D-7509E02262E0}</Property>
-            <Property Name="DestinationItemCount" Type="Int">7</Property>
-            <Property Name="DestinationName[0]" Type="Str">LBCB Operations Manager 2.exe</Property>
-            <Property Name="DestinationName[1]" Type="Str">Destination Directory</Property>
-            <Property Name="DestinationName[2]" Type="Str">Support Directory</Property>
-            <Property Name="DestinationName[3]" Type="Str">Operations Manager LLB</Property>
-            <Property Name="DestinationName[4]" Type="Str">Config</Property>
-            <Property Name="DestinationName[5]" Type="Str">DigitalFilter</Property>
-            <Property Name="DestinationName[6]" Type="Str">image</Property>
-            <Property Name="Disconnect" Type="Bool">true</Property>
-            <Property Name="IncludeHWConfig" Type="Bool">false</Property>
-            <Property Name="IncludeSCC" Type="Bool">true</Property>
-            <Property Name="INIID" Type="Str">{6FD68DC5-C420-4B79-92C3-51E09742247F}</Property>
-            <Property Name="ININame" Type="Str">LabVIEW.ini</Property>
-            <Property Name="LOGID" Type="Str">{0977BECC-F48E-4520-8BAD-D10CF34BA2CA}</Property>
-            <Property Name="MathScript" Type="Bool">false</Property>
-            <Property Name="Path[0]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/internal.llb</Property>
-            <Property Name="Path[1]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008</Property>
-            <Property Name="Path[2]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/data</Property>
-            <Property Name="Path[3]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/Operations Manager.llb</Property>
-            <Property Name="Path[4]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/Config</Property>
-            <Property Name="Path[5]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/DigitalFilter</Property>
-            <Property Name="Path[6]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/image</Property>
-            <Property Name="ShowHWConfig" Type="Bool">false</Property>
-            <Property Name="SourceInfoItemCount" Type="Int">195</Property>
-            <Property Name="SourceItem[0].ApplyDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[0].ApplyInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[0].Destination" Type="Int">4</Property>
-            <Property Name="SourceItem[0].FolderDestination" Type="Int">4</Property>
-            <Property Name="SourceItem[0].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[0].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[0].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[0].ItemID" Type="Ref">/My Computer/Config</Property>
-            <Property Name="SourceItem[1].Destination" Type="Int">4</Property>
-            <Property Name="SourceItem[1].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[1].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[1].FolderDestination" Type="Int">4</Property>
-            <Property Name="SourceItem[1].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[1].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[1].ItemID" Type="Ref">/My Computer/Config/Config_Default.xml</Property>
-            <Property Name="SourceItem[10].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[10].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[10].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[10].ItemID" Type="Ref">/My Computer/Coordinate Alignment/CoordinateAlignment061807.txt</Property>
-            <Property Name="SourceItem[100].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[100].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[100].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[100].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[100].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[100].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[100].ItemID" Type="Ref">/My Computer/lib/Load Digital Filter File.vi</Property>
-            <Property Name="SourceItem[101].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[101].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[101].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[101].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[101].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[101].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[101].ItemID" Type="Ref">/My Computer/lib/Middle Loop Property.vi</Property>
-            <Property Name="SourceItem[102].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[102].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[102].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[102].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[102].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[102].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[102].ItemID" Type="Ref">/My Computer/lib/Middle PID Controller.vi</Property>
-            <Property Name="SourceItem[103].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[103].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[103].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[103].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[103].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[103].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[103].ItemID" Type="Ref">/My Computer/lib/MilisecLogger.vi</Property>
-            <Property Name="SourceItem[104].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[104].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[104].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[104].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[104].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[104].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[104].ItemID" Type="Ref">/My Computer/lib/MilisecLoggerCoverter.vi</Property>
-            <Property Name="SourceItem[105].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[105].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[105].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[105].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[105].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[105].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[105].ItemID" Type="Ref">/My Computer/lib/MixedModeCommandControl.vi</Property>
-            <Property Name="SourceItem[106].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[106].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[106].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[106].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[106].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[106].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[106].ItemID" Type="Ref">/My Computer/lib/MixedModeControl.vi</Property>
-            <Property Name="SourceItem[107].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[107].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[107].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[107].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[107].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[107].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[107].ItemID" Type="Ref">/My Computer/lib/MixedModeDataTrigger.vi</Property>
-            <Property Name="SourceItem[108].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[108].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[108].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[108].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[108].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[108].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[108].ItemID" Type="Ref">/My Computer/lib/MixedModeInputType.vi</Property>
-            <Property Name="SourceItem[109].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[109].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[109].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[109].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[109].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[109].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[109].ItemID" Type="Ref">/My Computer/lib/MixedModeInputType_rev.vi</Property>
-            <Property Name="SourceItem[11].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[11].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[11].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[11].ItemID" Type="Ref">/My Computer/Coordinate Alignment/CoordinateAlignment061907.txt</Property>
-            <Property Name="SourceItem[110].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[110].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[110].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[110].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[110].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[110].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[110].ItemID" Type="Ref">/My Computer/lib/MixedModeLoopProperty.vi</Property>
-            <Property Name="SourceItem[111].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[111].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[111].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[111].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[111].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[111].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[111].ItemID" Type="Ref">/My Computer/lib/MultiSignalDigitalFilter.vi</Property>
-            <Property Name="SourceItem[112].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[112].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[112].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[112].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[112].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[112].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[112].ItemID" Type="Ref">/My Computer/lib/PlotInputData.vi</Property>
-            <Property Name="SourceItem[113].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[113].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[113].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[113].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[113].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[113].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[113].ItemID" Type="Ref">/My Computer/lib/RampHold.vi</Property>
-            <Property Name="SourceItem[114].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[114].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[114].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[114].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[114].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[114].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[114].ItemID" Type="Ref">/My Computer/lib/RampInputType.vi</Property>
-            <Property Name="SourceItem[115].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[115].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[115].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[115].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[115].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[115].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[115].ItemID" Type="Ref">/My Computer/lib/ReplaceArray.vi</Property>
-            <Property Name="SourceItem[116].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[116].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[116].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[116].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[116].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[116].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[116].ItemID" Type="Ref">/My Computer/lib/Save Config Data.vi</Property>
-            <Property Name="SourceItem[117].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[117].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[117].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[117].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[117].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[117].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[117].ItemID" Type="Ref">/My Computer/lib/Servo Limit.vi</Property>
-            <Property Name="SourceItem[118].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[118].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[118].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[118].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[118].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[118].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[118].ItemID" Type="Ref">/My Computer/lib/SetLocalCoordinates.vi</Property>
-            <Property Name="SourceItem[119].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[119].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[119].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[119].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[119].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[119].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[119].ItemID" Type="Ref">/My Computer/lib/Shift Cartesian Axes.vi</Property>
-            <Property Name="SourceItem[12].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[12].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[12].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[12].ItemID" Type="Ref">/My Computer/Coordinate Alignment/DataCheck.txt</Property>
-            <Property Name="SourceItem[120].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[120].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[120].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[120].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[120].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[120].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[120].ItemID" Type="Ref">/My Computer/lib/StepRampInputTypeRev.vi</Property>
-            <Property Name="SourceItem[121].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[121].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[121].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[121].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[121].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[121].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[121].ItemID" Type="Ref">/My Computer/lib/StepwiseRamp.vi</Property>
-            <Property Name="SourceItem[122].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[122].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[122].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[122].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[122].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[122].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[122].ItemID" Type="Ref">/My Computer/lib/vector2cluster.vi</Property>
-            <Property Name="SourceItem[123].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[123].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[123].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[123].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[123].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[123].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[123].ItemID" Type="Ref">/My Computer/lib/WavechartWithCaption.vi</Property>
-            <Property Name="SourceItem[124].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[124].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[124].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[124].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[124].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[124].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[124].ItemID" Type="Ref">/My Computer/lib/WriteTextData.vi</Property>
-            <Property Name="SourceItem[125].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[125].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[125].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[125].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[125].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[125].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[125].ItemID" Type="Ref">/My Computer/lib/XY Chart Buffer_rev.vi</Property>
-            <Property Name="SourceItem[126].ApplyDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[126].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[126].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[126].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[126].ItemID" Type="Ref">/My Computer/NTCP library</Property>
-            <Property Name="SourceItem[127].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[127].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[127].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[127].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[127].ItemID" Type="Ref">/My Computer/NTCP library/.svn</Property>
-            <Property Name="SourceItem[128].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[128].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[128].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[128].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[128].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base</Property>
-            <Property Name="SourceItem[129].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[129].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[129].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[129].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/About NTCP Socket.vi.svn-base</Property>
-            <Property Name="SourceItem[13].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[13].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[13].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[13].ItemID" Type="Ref">/My Computer/Coordinate Alignment/DataCheckOrg.txt</Property>
-            <Property Name="SourceItem[130].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[130].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[130].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[130].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/ExternalSensorsDataString.vi.svn-base</Property>
-            <Property Name="SourceItem[131].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[131].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[131].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[131].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/Generate 12-value control pt return value.vi.svn-base</Property>
-            <Property Name="SourceItem[132].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[132].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[132].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[132].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/ntcp cmd - parse and enqueue.vi.svn-base</Property>
-            <Property Name="SourceItem[133].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[133].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[133].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[133].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/ntcp command.vi.svn-base</Property>
-            <Property Name="SourceItem[134].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[134].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[134].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[134].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/NTCP return.vi.svn-base</Property>
-            <Property Name="SourceItem[135].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[135].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[135].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[135].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/NTCP Socket.vi.svn-base</Property>
-            <Property Name="SourceItem[136].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[136].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[136].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[136].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/NTCPtestcommand.vi.svn-base</Property>
-            <Property Name="SourceItem[137].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[137].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[137].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[137].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/NTCPtestreceiver.vi.svn-base</Property>
-            <Property Name="SourceItem[138].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[138].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[138].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[138].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/OM reply - parse and enqueue.vi.svn-base</Property>
-            <Property Name="SourceItem[139].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[139].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[139].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[139].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/Open ntcp command queue.vi.svn-base</Property>
-            <Property Name="SourceItem[14].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[14].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[14].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[14].ItemID" Type="Ref">/My Computer/Coordinate Alignment/GetTransformation.asv</Property>
-            <Property Name="SourceItem[140].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[140].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[140].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[140].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/Open OM reply queue.vi.svn-base</Property>
-            <Property Name="SourceItem[141].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[141].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[141].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[141].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/ProposeCommand.vi.svn-base</Property>
-            <Property Name="SourceItem[142].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[142].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[142].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[142].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/TCP read command.vi.svn-base</Property>
-            <Property Name="SourceItem[143].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[143].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[143].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[143].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base/WriteLogFile.vi.svn-base</Property>
-            <Property Name="SourceItem[144].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[144].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[144].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[144].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[144].ItemID" Type="Ref">/My Computer/NTCP library/.svn/props</Property>
-            <Property Name="SourceItem[145].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[145].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[145].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[145].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[145].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base</Property>
-            <Property Name="SourceItem[146].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[146].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[146].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[146].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/About NTCP Socket.vi.svn-base</Property>
-            <Property Name="SourceItem[147].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[147].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[147].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[147].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/ExternalSensorsDataString.vi.svn-base</Property>
-            <Property Name="SourceItem[148].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[148].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[148].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[148].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/Generate 12-value control pt return value.vi.svn-base</Property>
-            <Property Name="SourceItem[149].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[149].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[149].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[149].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/ntcp cmd - parse and enqueue.vi.svn-base</Property>
-            <Property Name="SourceItem[15].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[15].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[15].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[15].ItemID" Type="Ref">/My Computer/Coordinate Alignment/InputDualLBCB.txt</Property>
-            <Property Name="SourceItem[150].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[150].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[150].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[150].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/ntcp command.vi.svn-base</Property>
-            <Property Name="SourceItem[151].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[151].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[151].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[151].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/NTCP return.vi.svn-base</Property>
-            <Property Name="SourceItem[152].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[152].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[152].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[152].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/NTCP Socket.vi.svn-base</Property>
-            <Property Name="SourceItem[153].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[153].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[153].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[153].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/NTCPtestcommand.vi.svn-base</Property>
-            <Property Name="SourceItem[154].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[154].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[154].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[154].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/NTCPtestreceiver.vi.svn-base</Property>
-            <Property Name="SourceItem[155].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[155].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[155].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[155].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/OM reply - parse and enqueue.vi.svn-base</Property>
-            <Property Name="SourceItem[156].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[156].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[156].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[156].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/Open ntcp command queue.vi.svn-base</Property>
-            <Property Name="SourceItem[157].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[157].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[157].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[157].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/Open OM reply queue.vi.svn-base</Property>
-            <Property Name="SourceItem[158].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[158].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[158].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[158].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/ProposeCommand.vi.svn-base</Property>
-            <Property Name="SourceItem[159].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[159].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[159].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[159].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/TCP read command.vi.svn-base</Property>
-            <Property Name="SourceItem[16].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[16].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[16].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[16].ItemID" Type="Ref">/My Computer/Coordinate Alignment/KryptonDualContinuous.txt</Property>
-            <Property Name="SourceItem[160].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[160].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[160].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[160].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base/WriteLogFile.vi.svn-base</Property>
-            <Property Name="SourceItem[161].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[161].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[161].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[161].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[161].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp</Property>
-            <Property Name="SourceItem[162].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[162].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[162].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[162].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[162].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/prop-base</Property>
-            <Property Name="SourceItem[163].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[163].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[163].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[163].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[163].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/props</Property>
-            <Property Name="SourceItem[164].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[164].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[164].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[164].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[164].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/text-base</Property>
-            <Property Name="SourceItem[165].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[165].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[165].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[165].ItemID" Type="Ref">/My Computer/NTCP library/.svn/all-wcprops</Property>
-            <Property Name="SourceItem[166].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[166].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[166].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[166].ItemID" Type="Ref">/My Computer/NTCP library/.svn/entries</Property>
-            <Property Name="SourceItem[167].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[167].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[167].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[167].ItemID" Type="Ref">/My Computer/NTCP library/.svn/format</Property>
-            <Property Name="SourceItem[168].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[168].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[168].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[168].ItemID" Type="Ref">/My Computer/NTCP library/About NTCP Socket.vi</Property>
-            <Property Name="SourceItem[169].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[169].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[169].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[169].ItemID" Type="Ref">/My Computer/NTCP library/ExternalSensorsDataString.vi</Property>
-            <Property Name="SourceItem[17].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[17].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[17].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[17].ItemID" Type="Ref">/My Computer/Coordinate Alignment/KryptonDualContinuous0613.txt</Property>
-            <Property Name="SourceItem[170].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[170].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[170].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[170].ItemID" Type="Ref">/My Computer/NTCP library/Generate 12-value control pt return value.vi</Property>
-            <Property Name="SourceItem[171].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[171].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[171].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[171].ItemID" Type="Ref">/My Computer/NTCP library/ntcp cmd - parse and enqueue.vi</Property>
-            <Property Name="SourceItem[172].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[172].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[172].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[172].ItemID" Type="Ref">/My Computer/NTCP library/ntcp command.vi</Property>
-            <Property Name="SourceItem[173].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[173].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[173].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[173].ItemID" Type="Ref">/My Computer/NTCP library/NTCP return.vi</Property>
-            <Property Name="SourceItem[174].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[174].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[174].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[174].ItemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
-            <Property Name="SourceItem[175].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[175].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[175].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[175].ItemID" Type="Ref">/My Computer/NTCP library/NTCPtestcommand.vi</Property>
-            <Property Name="SourceItem[176].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[176].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[176].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[176].ItemID" Type="Ref">/My Computer/NTCP library/NTCPtestreceiver.vi</Property>
-            <Property Name="SourceItem[177].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[177].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[177].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[177].ItemID" Type="Ref">/My Computer/NTCP library/OM reply - parse and enqueue.vi</Property>
-            <Property Name="SourceItem[178].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[178].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[178].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[178].ItemID" Type="Ref">/My Computer/NTCP library/Open ntcp command queue.vi</Property>
-            <Property Name="SourceItem[179].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[179].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[179].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[179].ItemID" Type="Ref">/My Computer/NTCP library/Open OM reply queue.vi</Property>
-            <Property Name="SourceItem[18].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[18].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[18].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[18].ItemID" Type="Ref">/My Computer/Coordinate Alignment/KryptonDualStepWise.txt</Property>
-            <Property Name="SourceItem[180].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[180].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[180].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[180].ItemID" Type="Ref">/My Computer/NTCP library/ProposeCommand.vi</Property>
-            <Property Name="SourceItem[181].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[181].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[181].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[181].ItemID" Type="Ref">/My Computer/NTCP library/TCP read command.vi</Property>
-            <Property Name="SourceItem[182].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[182].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[182].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[182].ItemID" Type="Ref">/My Computer/NTCP library/WriteLogFile.vi</Property>
-            <Property Name="SourceItem[183].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[183].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[183].ItemID" Type="Ref">/My Computer/TestData</Property>
-            <Property Name="SourceItem[184].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[184].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[184].ItemID" Type="Ref">/My Computer/TestData/.svn</Property>
-            <Property Name="SourceItem[185].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[185].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[185].ItemID" Type="Ref">/My Computer/TestData/.svn/prop-base</Property>
-            <Property Name="SourceItem[186].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[186].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[186].ItemID" Type="Ref">/My Computer/TestData/.svn/props</Property>
-            <Property Name="SourceItem[187].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[187].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[187].ItemID" Type="Ref">/My Computer/TestData/.svn/text-base</Property>
-            <Property Name="SourceItem[188].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[188].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[188].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp</Property>
-            <Property Name="SourceItem[189].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[189].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[189].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/prop-base</Property>
-            <Property Name="SourceItem[19].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[19].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[19].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[19].ItemID" Type="Ref">/My Computer/Coordinate Alignment/KryptonDualStepWise0613.txt</Property>
-            <Property Name="SourceItem[190].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[190].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[190].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/props</Property>
-            <Property Name="SourceItem[191].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[191].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[191].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/text-base</Property>
-            <Property Name="SourceItem[192].Inclusion" Type="Str">Startup VI</Property>
-            <Property Name="SourceItem[192].ItemID" Type="Ref">/My Computer/Operations Manager 2.vi</Property>
-            <Property Name="SourceItem[192].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[192].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[192].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[193].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[193].ItemID" Type="Ref">/My Computer/Operation Manager.ini</Property>
-            <Property Name="SourceItem[194].Destination" Type="Int">1</Property>
-            <Property Name="SourceItem[194].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[194].ItemID" Type="Ref">/My Computer/OperationManagerGlobal.vi</Property>
-            <Property Name="SourceItem[194].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[194].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[194].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[2].Destination" Type="Int">4</Property>
-            <Property Name="SourceItem[2].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[2].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[2].FolderDestination" Type="Int">4</Property>
-            <Property Name="SourceItem[2].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[2].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[2].ItemID" Type="Ref">/My Computer/Config/Config_Default.xml.bak</Property>
-            <Property Name="SourceItem[20].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[20].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[20].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[20].ItemID" Type="Ref">/My Computer/Coordinate Alignment/PlotKryptonData.asv</Property>
-            <Property Name="SourceItem[21].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[21].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[21].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[21].ItemID" Type="Ref">/My Computer/Coordinate Alignment/Test1_61207_DynamicLBCB1.txt</Property>
-            <Property Name="SourceItem[22].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[22].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[22].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[22].ItemID" Type="Ref">/My Computer/Coordinate Alignment/Test1_61207_DynamicLBCB2.txt</Property>
-            <Property Name="SourceItem[23].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[23].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[23].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[23].ItemID" Type="Ref">/My Computer/Coordinate Alignment/Test1_61307_LBCB1Dynamic.txt</Property>
-            <Property Name="SourceItem[24].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[24].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[24].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[24].ItemID" Type="Ref">/My Computer/Coordinate Alignment/Test1_61307_LBCB2Dynamic.txt</Property>
-            <Property Name="SourceItem[25].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[25].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[25].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[25].ItemID" Type="Ref">/My Computer/Coordinate Alignment/Transformation.txt</Property>
-            <Property Name="SourceItem[26].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[26].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[26].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[26].ItemID" Type="Ref">/My Computer/Coordinate Alignment/Transformation061907.txt</Property>
-            <Property Name="SourceItem[27].ApplyDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[27].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[27].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[27].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[27].ItemID" Type="Ref">/My Computer/Data Transmission</Property>
-            <Property Name="SourceItem[28].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[28].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[28].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[28].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[28].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[28].ItemID" Type="Ref">/My Computer/Data Transmission/Data Transmission Launcher.vi</Property>
-            <Property Name="SourceItem[28].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[28].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[28].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[29].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[29].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[29].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[29].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[29].ItemID" Type="Ref">/My Computer/Data Transmission/Data Transmission Test.vi</Property>
-            <Property Name="SourceItem[29].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[29].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[29].VIPropertiesVISetting[0]" Type="Bool">true</Property>
-            <Property Name="SourceItem[3].Destination" Type="Int">4</Property>
-            <Property Name="SourceItem[3].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[3].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[3].FolderDestination" Type="Int">4</Property>
-            <Property Name="SourceItem[3].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[3].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[3].ItemID" Type="Ref">/My Computer/Config/Config_Default2.xml</Property>
-            <Property Name="SourceItem[30].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[30].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[30].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[30].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[30].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[30].ItemID" Type="Ref">/My Computer/Data Transmission/DataTransmissionActions.vi</Property>
-            <Property Name="SourceItem[30].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[30].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[30].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[31].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[31].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[31].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[31].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[31].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[31].ItemID" Type="Ref">/My Computer/Data Transmission/DataTransmissionGlobals.vi</Property>
-            <Property Name="SourceItem[31].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[31].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[31].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[32].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[32].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[32].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[32].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[32].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[32].ItemID" Type="Ref">/My Computer/Data Transmission/DataTransmissionTcpWriter.vi</Property>
-            <Property Name="SourceItem[32].VIPropertiesItemCount" Type="Int">2</Property>
-            <Property Name="SourceItem[32].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[32].VIPropertiesSettingOption[1]" Type="Str">Run when opened</Property>
-            <Property Name="SourceItem[32].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[32].VIPropertiesVISetting[1]" Type="Bool">true</Property>
-            <Property Name="SourceItem[33].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[33].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[33].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[33].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[33].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[33].ItemID" Type="Ref">/My Computer/Data Transmission/TransmitData.vi</Property>
-            <Property Name="SourceItem[33].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[33].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[33].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[34].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[34].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[34].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[34].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[34].ItemID" Type="Ref">/My Computer/Data Transmission/LaunchDataTransmissionTcpWriterVi.vi</Property>
-            <Property Name="SourceItem[35].ApplyDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[35].ApplyInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[35].Destination" Type="Int">5</Property>
-            <Property Name="SourceItem[35].FolderDestination" Type="Int">5</Property>
-            <Property Name="SourceItem[35].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[35].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[35].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[35].ItemID" Type="Ref">/My Computer/DigitalFilter</Property>
-            <Property Name="SourceItem[36].Destination" Type="Int">5</Property>
-            <Property Name="SourceItem[36].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[36].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[36].FolderDestination" Type="Int">5</Property>
-            <Property Name="SourceItem[36].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[36].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[36].ItemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn0008.txt</Property>
-            <Property Name="SourceItem[37].Destination" Type="Int">5</Property>
-            <Property Name="SourceItem[37].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[37].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[37].FolderDestination" Type="Int">5</Property>
-            <Property Name="SourceItem[37].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[37].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[37].ItemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn004.txt</Property>
-            <Property Name="SourceItem[38].Destination" Type="Int">5</Property>
-            <Property Name="SourceItem[38].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[38].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[38].FolderDestination" Type="Int">5</Property>
-            <Property Name="SourceItem[38].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[38].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[38].ItemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn005.txt</Property>
-            <Property Name="SourceItem[39].Destination" Type="Int">5</Property>
-            <Property Name="SourceItem[39].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[39].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[39].FolderDestination" Type="Int">5</Property>
-            <Property Name="SourceItem[39].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[39].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[39].ItemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn01.txt</Property>
-            <Property Name="SourceItem[4].Destination" Type="Int">4</Property>
-            <Property Name="SourceItem[4].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[4].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[4].FolderDestination" Type="Int">4</Property>
-            <Property Name="SourceItem[4].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[4].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[4].ItemID" Type="Ref">/My Computer/Config/Config_Default_bak.xml</Property>
-            <Property Name="SourceItem[40].Destination" Type="Int">5</Property>
-            <Property Name="SourceItem[40].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[40].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[40].FolderDestination" Type="Int">5</Property>
-            <Property Name="SourceItem[40].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[40].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[40].ItemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn02.txt</Property>
-            <Property Name="SourceItem[41].ApplyDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[41].ApplyInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[41].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[41].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[41].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[41].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[41].ItemID" Type="Ref">/My Computer/DLL</Property>
-            <Property Name="SourceItem[42].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[42].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[42].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[42].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[42].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[42].ItemID" Type="Ref">/My Computer/DLL/AdaptiveMiddleLoop.dll</Property>
-            <Property Name="SourceItem[43].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[43].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[43].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[43].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[43].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[43].ItemID" Type="Ref">/My Computer/DLL/AutoBalance.dll</Property>
-            <Property Name="SourceItem[44].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[44].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[44].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[44].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[44].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[44].ItemID" Type="Ref">/My Computer/DLL/AutoBalance2.dll</Property>
-            <Property Name="SourceItem[45].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[45].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[45].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[45].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[45].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[45].ItemID" Type="Ref">/My Computer/DLL/FunctionGenerator.dll</Property>
-            <Property Name="SourceItem[46].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[46].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[46].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[46].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[46].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[46].ItemID" Type="Ref">/My Computer/DLL/LBCB_Conversion_A2C.dll</Property>
-            <Property Name="SourceItem[47].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[47].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[47].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[47].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[47].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[47].ItemID" Type="Ref">/My Computer/DLL/LBCB_Conversion_C2A.dll</Property>
-            <Property Name="SourceItem[48].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[48].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[48].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[48].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[48].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[48].ItemID" Type="Ref">/My Computer/DLL/MiddlePIDController.dll</Property>
-            <Property Name="SourceItem[49].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[49].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[49].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[49].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[49].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[49].ItemID" Type="Ref">/My Computer/DLL/MixedMode2DirecMethod.dll</Property>
-            <Property Name="SourceItem[5].Destination" Type="Int">4</Property>
-            <Property Name="SourceItem[5].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[5].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[5].FolderDestination" Type="Int">4</Property>
-            <Property Name="SourceItem[5].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[5].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[5].ItemID" Type="Ref">/My Computer/Config/Config_Default_large.xml</Property>
-            <Property Name="SourceItem[50].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[50].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[50].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[50].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[50].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[50].ItemID" Type="Ref">/My Computer/DLL/MixedModeControl2Step.dll</Property>
-            <Property Name="SourceItem[51].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[51].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[51].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[51].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[51].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[51].ItemID" Type="Ref">/My Computer/DLL/RampHold.dll</Property>
-            <Property Name="SourceItem[52].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[52].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[52].FolderDestination" Type="Int">2</Property>
-            <Property Name="SourceItem[52].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[52].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[52].ItemID" Type="Ref">/My Computer/DLL/StepwiseRamp.dll</Property>
-            <Property Name="SourceItem[53].ApplyDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[53].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[53].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[53].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[53].ItemID" Type="Ref">/My Computer/External Actuators</Property>
-            <Property Name="SourceItem[54].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[54].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[54].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[54].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[54].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Actions.ctl</Property>
-            <Property Name="SourceItem[55].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[55].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[55].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[55].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[55].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Commands.ctl</Property>
-            <Property Name="SourceItem[56].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[56].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[56].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[56].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Direct DAQ.vi</Property>
-            <Property Name="SourceItem[57].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[57].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[57].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[57].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[57].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Feedback.ctl</Property>
-            <Property Name="SourceItem[58].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[58].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[58].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[58].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[58].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Global Values.vi</Property>
-            <Property Name="SourceItem[59].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[59].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[59].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[59].ItemID" Type="Ref">/My Computer/External Actuators/External Actuator Control Test.vi</Property>
-            <Property Name="SourceItem[6].Destination" Type="Int">4</Property>
-            <Property Name="SourceItem[6].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[6].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[6].FolderDestination" Type="Int">4</Property>
-            <Property Name="SourceItem[6].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[6].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[6].ItemID" Type="Ref">/My Computer/Config/Config_Default_small.xml.xml</Property>
-            <Property Name="SourceItem[60].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[60].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[60].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[60].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[60].ItemID" Type="Ref">/My Computer/External Actuators/External Actuator Control.vi</Property>
-            <Property Name="SourceItem[61].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[61].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[61].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[61].ItemID" Type="Ref">/My Computer/External Actuators/External Control Test.vi</Property>
-            <Property Name="SourceItem[62].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[62].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[62].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[62].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[62].ItemID" Type="Ref">/My Computer/External Actuators/RampHold_Ext.vi</Property>
-            <Property Name="SourceItem[63].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[63].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[63].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[63].ItemID" Type="Ref">/My Computer/External Actuators/RampHold_Test.vi</Property>
-            <Property Name="SourceItem[64].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[64].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[64].ItemID" Type="Ref">/My Computer/IconFiles</Property>
-            <Property Name="SourceItem[65].ApplyDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[65].ApplyInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[65].Destination" Type="Int">6</Property>
-            <Property Name="SourceItem[65].FolderDestination" Type="Int">6</Property>
-            <Property Name="SourceItem[65].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[65].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[65].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[65].ItemID" Type="Ref">/My Computer/image</Property>
-            <Property Name="SourceItem[66].Destination" Type="Int">6</Property>
-            <Property Name="SourceItem[66].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[66].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[66].FolderDestination" Type="Int">6</Property>
-            <Property Name="SourceItem[66].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[66].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[66].ItemID" Type="Ref">/My Computer/image/LBCB.bmp</Property>
-            <Property Name="SourceItem[67].Destination" Type="Int">6</Property>
-            <Property Name="SourceItem[67].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[67].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[67].FolderDestination" Type="Int">6</Property>
-            <Property Name="SourceItem[67].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[67].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[67].ItemID" Type="Ref">/My Computer/image/Thumbs.db</Property>
-            <Property Name="SourceItem[68].Destination" Type="Int">6</Property>
-            <Property Name="SourceItem[68].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[68].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[68].FolderDestination" Type="Int">6</Property>
-            <Property Name="SourceItem[68].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[68].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[68].ItemID" Type="Ref">/My Computer/image/UILogoCL1c_mdf.bmp</Property>
-            <Property Name="SourceItem[69].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[69].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[69].ItemID" Type="Ref">/My Computer/InputData</Property>
-            <Property Name="SourceItem[7].Destination" Type="Int">4</Property>
-            <Property Name="SourceItem[7].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[7].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[7].FolderDestination" Type="Int">4</Property>
-            <Property Name="SourceItem[7].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[7].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[7].ItemID" Type="Ref">/My Computer/Config/Config_Default_small2.xml</Property>
-            <Property Name="SourceItem[70].ApplyDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[70].ApplyInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[70].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[70].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[70].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[70].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[70].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[70].ItemID" Type="Ref">/My Computer/lib</Property>
-            <Property Name="SourceItem[71].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[71].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[71].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[71].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[71].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[71].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[71].ItemID" Type="Ref">/My Computer/lib/About LBCB Operation Manager.vi</Property>
-            <Property Name="SourceItem[71].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[71].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[71].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[72].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[72].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[72].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[72].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[72].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[72].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[72].ItemID" Type="Ref">/My Computer/lib/ActuatorArray2Cluster.vi</Property>
-            <Property Name="SourceItem[72].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[72].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[72].VIPropertiesVISetting[0]" Type="Bool">true</Property>
-            <Property Name="SourceItem[73].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[73].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[73].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[73].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[73].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[73].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[73].ItemID" Type="Ref">/My Computer/lib/ActuatorCluster2Array.vi</Property>
-            <Property Name="SourceItem[74].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[74].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[74].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[74].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[74].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[74].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[74].ItemID" Type="Ref">/My Computer/lib/Adaptive Middle Controller.vi</Property>
-            <Property Name="SourceItem[74].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[74].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[74].VIPropertiesVISetting[0]" Type="Bool">true</Property>
-            <Property Name="SourceItem[75].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[75].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[75].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[75].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[75].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[75].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[75].ItemID" Type="Ref">/My Computer/lib/Add New Events.vi</Property>
-            <Property Name="SourceItem[76].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[76].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[76].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[76].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[76].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[76].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[76].ItemID" Type="Ref">/My Computer/lib/Auto Balance Controller.vi</Property>
-            <Property Name="SourceItem[77].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[77].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[77].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[77].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[77].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[77].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[77].ItemID" Type="Ref">/My Computer/lib/Auto Balance Loop.vi</Property>
-            <Property Name="SourceItem[78].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[78].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[78].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[78].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[78].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[78].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[78].ItemID" Type="Ref">/My Computer/lib/CartesianArray2Cluster.vi</Property>
-            <Property Name="SourceItem[79].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[79].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[79].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[79].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[79].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[79].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[79].ItemID" Type="Ref">/My Computer/lib/CartesianCluster2Array.vi</Property>
-            <Property Name="SourceItem[8].Destination" Type="Int">4</Property>
-            <Property Name="SourceItem[8].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[8].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[8].FolderDestination" Type="Int">4</Property>
-            <Property Name="SourceItem[8].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[8].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[8].ItemID" Type="Ref">/My Computer/Config/NTCP Socket.ini</Property>
-            <Property Name="SourceItem[80].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[80].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[80].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[80].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[80].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[80].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[80].ItemID" Type="Ref">/My Computer/lib/CartesianGlobal2Indiv.vi</Property>
-            <Property Name="SourceItem[81].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[81].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[81].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[81].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[81].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[81].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[81].ItemID" Type="Ref">/My Computer/lib/Channel List.vi</Property>
-            <Property Name="SourceItem[82].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[82].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[82].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[82].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[82].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[82].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[82].ItemID" Type="Ref">/My Computer/lib/DAQ Property.vi</Property>
-            <Property Name="SourceItem[83].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[83].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[83].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[83].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[83].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[83].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[83].ItemID" Type="Ref">/My Computer/lib/Displacement Limit.vi</Property>
-            <Property Name="SourceItem[84].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[84].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[84].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[84].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[84].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[84].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[84].ItemID" Type="Ref">/My Computer/lib/Double2Wave.vi</Property>
-            <Property Name="SourceItem[85].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[85].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[85].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[85].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[85].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[85].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[85].ItemID" Type="Ref">/My Computer/lib/Double2WaveWithFlag.vi</Property>
-            <Property Name="SourceItem[86].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[86].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[86].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[86].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[86].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[86].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[86].ItemID" Type="Ref">/My Computer/lib/ExtractArray.vi</Property>
-            <Property Name="SourceItem[87].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[87].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[87].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[87].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[87].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[87].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[87].ItemID" Type="Ref">/My Computer/lib/ExtractCartesianArray.vi</Property>
-            <Property Name="SourceItem[88].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[88].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[88].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[88].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[88].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[88].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[88].ItemID" Type="Ref">/My Computer/lib/ExtractCartesianDAQArray.vi</Property>
-            <Property Name="SourceItem[89].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[89].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[89].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[89].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[89].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[89].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[89].ItemID" Type="Ref">/My Computer/lib/Force Limit.vi</Property>
-            <Property Name="SourceItem[9].ApplyDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[9].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[9].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[9].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[9].ItemID" Type="Ref">/My Computer/Coordinate Alignment</Property>
-            <Property Name="SourceItem[90].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[90].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[90].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[90].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[90].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[90].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[90].ItemID" Type="Ref">/My Computer/lib/FunctionGenerator.vi</Property>
-            <Property Name="SourceItem[91].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[91].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[91].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[91].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[91].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[91].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[91].ItemID" Type="Ref">/My Computer/lib/GetChannelNameArray.vi</Property>
-            <Property Name="SourceItem[92].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[92].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[92].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[92].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[92].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[92].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[92].ItemID" Type="Ref">/My Computer/lib/GetSamplingRate.vi</Property>
-            <Property Name="SourceItem[93].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[93].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[93].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[93].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[93].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[93].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[93].ItemID" Type="Ref">/My Computer/lib/InputUpdate.vi</Property>
-            <Property Name="SourceItem[94].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[94].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[94].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[94].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[94].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[94].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[94].ItemID" Type="Ref">/My Computer/lib/InsertCartesianArray.vi</Property>
-            <Property Name="SourceItem[95].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[95].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[95].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[95].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[95].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[95].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[95].ItemID" Type="Ref">/My Computer/lib/Jacobian Setup.vi</Property>
-            <Property Name="SourceItem[96].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[96].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[96].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[96].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[96].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[96].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[96].ItemID" Type="Ref">/My Computer/lib/LBCB_Conversions.vi</Property>
-            <Property Name="SourceItem[97].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[97].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[97].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[97].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[97].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[97].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[97].ItemID" Type="Ref">/My Computer/lib/LBCB_Conversions2.vi</Property>
-            <Property Name="SourceItem[98].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[98].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[98].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[98].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[98].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[98].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[98].ItemID" Type="Ref">/My Computer/lib/Limit Check.vi</Property>
-            <Property Name="SourceItem[99].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[99].DisableDestination" Type="Bool">true</Property>
-            <Property Name="SourceItem[99].DisableInclusion" Type="Bool">true</Property>
-            <Property Name="SourceItem[99].FolderDestination" Type="Int">3</Property>
-            <Property Name="SourceItem[99].FolderInclusion" Type="Str">Dynamic VI (for non-VIs, always include)</Property>
-            <Property Name="SourceItem[99].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[99].ItemID" Type="Ref">/My Computer/lib/Load Config Data.vi</Property>
-            <Property Name="StripLib" Type="Bool">true</Property>
-            <Property Name="SupportedLanguageCount" Type="Int">0</Property>
-            <Property Name="TLBID" Type="Str">{6FFF5DFE-FB91-436A-BAF0-F5DE4FFFFC7D}</Property>
-            <Property Name="UseFFRTE" Type="Bool">false</Property>
-            <Property Name="VersionInfoCompanyName" Type="Str">University of Illinois</Property>
-            <Property Name="VersionInfoFileDescription" Type="Str"></Property>
-            <Property Name="VersionInfoFileType" Type="Int">1</Property>
-            <Property Name="VersionInfoFileVersionBuild" Type="Int">0</Property>
-            <Property Name="VersionInfoFileVersionMajor" Type="Int">1</Property>
-            <Property Name="VersionInfoFileVersionMinor" Type="Int">5</Property>
-            <Property Name="VersionInfoFileVersionPatch" Type="Int">1</Property>
-            <Property Name="VersionInfoInternalName" Type="Str">Operations Manager</Property>
-            <Property Name="VersionInfoLegalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
-            <Property Name="VersionInfoProductName" Type="Str">Operations Manager</Property>
+            <Property Name="App_applicationGUID" Type="Str">{682C94EA-AC13-4434-B6A7-51FA5225B779}</Property>
+            <Property Name="App_applicationName" Type="Str">LBCB Operations Manager 2.exe</Property>
+            <Property Name="App_companyName" Type="Str">University of Illinois</Property>
+            <Property Name="App_fileType" Type="Int">1</Property>
+            <Property Name="App_fileVersion.major" Type="Int">1</Property>
+            <Property Name="App_fileVersion.minor" Type="Int">5</Property>
+            <Property Name="App_fileVersion.patch" Type="Int">1</Property>
+            <Property Name="App_INI_aliasGUID" Type="Str">{70B20583-C803-4F2F-8E06-8C90BD37741D}</Property>
+            <Property Name="App_INI_GUID" Type="Str">{6FD68DC5-C420-4B79-92C3-51E09742247F}</Property>
+            <Property Name="App_internalName" Type="Str">Operations Manager</Property>
+            <Property Name="App_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
+            <Property Name="App_productName" Type="Str">Operations Manager</Property>
+            <Property Name="Bld_buildSpecName" Type="Str">Operations Manager 2</Property>
+            <Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+            <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+            <Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
+            <Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+            <Property Name="Destination[0].destName" Type="Str">LBCB Operations Manager 2.exe</Property>
+            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/internal.llb</Property>
+            <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[0].type" Type="Str">App</Property>
+            <Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/data</Property>
+            <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[2].destName" Type="Str">Destination Directory</Property>
+            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build</Property>
+            <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[3].destName" Type="Str">Operations Manager LLB</Property>
+            <Property Name="Destination[3].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/NI_AB_PROJECTNAME.llb</Property>
+            <Property Name="Destination[3].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[3].type" Type="Str">LLB</Property>
+            <Property Name="Destination[4].destName" Type="Str">Config</Property>
+            <Property Name="Destination[4].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/Config</Property>
+            <Property Name="Destination[4].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[5].destName" Type="Str">DigitalFilter</Property>
+            <Property Name="Destination[5].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/DigitalFilter</Property>
+            <Property Name="Destination[5].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[6].destName" Type="Str">image</Property>
+            <Property Name="Destination[6].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/image</Property>
+            <Property Name="Destination[6].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="DestinationCount" Type="Int">7</Property>
+            <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
+            <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
+            <Property Name="Source[0].itemID" Type="Str">{C6B59FD9-DFDD-4EBE-81D3-C2632ABCE77D}</Property>
+            <Property Name="Source[0].type" Type="Str">Container</Property>
+            <Property Name="Source[1].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[1].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[1].destinationIndex" Type="Int">4</Property>
+            <Property Name="Source[1].itemID" Type="Ref">/My Computer/Config</Property>
+            <Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[1].type" Type="Str">Container</Property>
+            <Property Name="Source[10].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[10].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[10].itemID" Type="Ref">/My Computer/Coordinate Alignment</Property>
+            <Property Name="Source[10].type" Type="Str">Container</Property>
+            <Property Name="Source[100].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[100].itemID" Type="Ref">/My Computer/lib/vector2cluster.vi</Property>
+            <Property Name="Source[100].type" Type="Str">VI</Property>
+            <Property Name="Source[101].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[101].itemID" Type="Ref">/My Computer/lib/WavechartWithCaption.vi</Property>
+            <Property Name="Source[101].type" Type="Str">VI</Property>
+            <Property Name="Source[102].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[102].itemID" Type="Ref">/My Computer/lib/WriteTextData.vi</Property>
+            <Property Name="Source[102].type" Type="Str">VI</Property>
+            <Property Name="Source[103].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[103].itemID" Type="Ref">/My Computer/lib/XY Chart Buffer_rev.vi</Property>
+            <Property Name="Source[103].type" Type="Str">VI</Property>
+            <Property Name="Source[104].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[104].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[104].itemID" Type="Ref">/My Computer/NTCP library</Property>
+            <Property Name="Source[104].type" Type="Str">Container</Property>
+            <Property Name="Source[105].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[105].itemID" Type="Ref">/My Computer/Operations Manager 2.vi</Property>
+            <Property Name="Source[105].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[105].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[105].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[105].sourceInclusion" Type="Str">TopLevel</Property>
+            <Property Name="Source[105].type" Type="Str">VI</Property>
+            <Property Name="Source[106].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[106].itemID" Type="Ref">/My Computer/Operation Manager.ini</Property>
+            <Property Name="Source[106].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[107].destinationIndex" Type="Int">2</Property>
+            <Property Name="Source[107].itemID" Type="Ref">/My Computer/OperationManagerGlobal.vi</Property>
+            <Property Name="Source[107].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[107].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[107].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[107].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[107].type" Type="Str">VI</Property>
+            <Property Name="Source[11].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[11].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[11].itemID" Type="Ref">/My Computer/Data Transmission</Property>
+            <Property Name="Source[11].type" Type="Str">Container</Property>
+            <Property Name="Source[12].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[12].itemID" Type="Ref">/My Computer/Data Transmission/Data Transmission Launcher.vi</Property>
+            <Property Name="Source[12].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[12].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[12].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[12].type" Type="Str">VI</Property>
+            <Property Name="Source[13].itemID" Type="Ref">/My Computer/Data Transmission/Data Transmission Test.vi</Property>
+            <Property Name="Source[13].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[13].properties[0].value" Type="Bool">true</Property>
+            <Property Name="Source[13].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[13].type" Type="Str">VI</Property>
+            <Property Name="Source[14].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[14].itemID" Type="Ref">/My Computer/Data Transmission/DataTransmissionActions.vi</Property>
+            <Property Name="Source[14].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[14].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[14].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[14].type" Type="Str">VI</Property>
+            <Property Name="Source[15].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[15].itemID" Type="Ref">/My Computer/Data Transmission/DataTransmissionGlobals.vi</Property>
+            <Property Name="Source[15].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[15].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[15].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[15].type" Type="Str">VI</Property>
+            <Property Name="Source[16].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[16].itemID" Type="Ref">/My Computer/Data Transmission/DataTransmissionTcpWriter.vi</Property>
+            <Property Name="Source[16].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[16].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[16].properties[1].type" Type="Str">Run when opened</Property>
+            <Property Name="Source[16].properties[1].value" Type="Bool">true</Property>
+            <Property Name="Source[16].propertiesCount" Type="Int">2</Property>
+            <Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[16].type" Type="Str">VI</Property>
+            <Property Name="Source[17].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[17].itemID" Type="Ref">/My Computer/Data Transmission/TransmitData.vi</Property>
+            <Property Name="Source[17].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[17].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[17].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[17].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[17].type" Type="Str">VI</Property>
+            <Property Name="Source[18].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[18].itemID" Type="Ref">/My Computer/Data Transmission/LaunchDataTransmissionTcpWriterVi.vi</Property>
+            <Property Name="Source[18].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[18].type" Type="Str">VI</Property>
+            <Property Name="Source[19].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[19].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[19].destinationIndex" Type="Int">5</Property>
+            <Property Name="Source[19].itemID" Type="Ref">/My Computer/DigitalFilter</Property>
+            <Property Name="Source[19].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[19].type" Type="Str">Container</Property>
+            <Property Name="Source[2].destinationIndex" Type="Int">4</Property>
+            <Property Name="Source[2].itemID" Type="Ref">/My Computer/Config/Config_Default.xml</Property>
+            <Property Name="Source[20].destinationIndex" Type="Int">5</Property>
+            <Property Name="Source[20].itemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn0008.txt</Property>
+            <Property Name="Source[21].destinationIndex" Type="Int">5</Property>
+            <Property Name="Source[21].itemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn004.txt</Property>
+            <Property Name="Source[22].destinationIndex" Type="Int">5</Property>
+            <Property Name="Source[22].itemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn005.txt</Property>
+            <Property Name="Source[23].destinationIndex" Type="Int">5</Property>
+            <Property Name="Source[23].itemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn01.txt</Property>
+            <Property Name="Source[24].destinationIndex" Type="Int">5</Property>
+            <Property Name="Source[24].itemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn02.txt</Property>
+            <Property Name="Source[25].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[25].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[25].destinationIndex" Type="Int">1</Property>
+            <Property Name="Source[25].itemID" Type="Ref">/My Computer/DLL</Property>
+            <Property Name="Source[25].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[25].type" Type="Str">Container</Property>
+            <Property Name="Source[26].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[26].itemID" Type="Ref">/My Computer/DLL/AdaptiveMiddleLoop.dll</Property>
+            <Property Name="Source[27].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[27].itemID" Type="Ref">/My Computer/DLL/AutoBalance.dll</Property>
+            <Property Name="Source[28].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[28].itemID" Type="Ref">/My Computer/DLL/AutoBalance2.dll</Property>
+            <Property Name="Source[29].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[29].itemID" Type="Ref">/My Computer/DLL/FunctionGenerator.dll</Property>
+            <Property Name="Source[3].destinationIndex" Type="Int">4</Property>
+            <Property Name="Source[3].itemID" Type="Ref">/My Computer/Config/Config_Default.xml.bak</Property>
+            <Property Name="Source[30].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[30].itemID" Type="Ref">/My Computer/DLL/LBCB_Conversion_A2C.dll</Property>
+            <Property Name="Source[31].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[31].itemID" Type="Ref">/My Computer/DLL/LBCB_Conversion_C2A.dll</Property>
+            <Property Name="Source[32].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[32].itemID" Type="Ref">/My Computer/DLL/MiddlePIDController.dll</Property>
+            <Property Name="Source[33].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[33].itemID" Type="Ref">/My Computer/DLL/MixedMode2DirecMethod.dll</Property>
+            <Property Name="Source[34].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[34].itemID" Type="Ref">/My Computer/DLL/MixedModeControl2Step.dll</Property>
+            <Property Name="Source[35].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[35].itemID" Type="Ref">/My Computer/DLL/RampHold.dll</Property>
+            <Property Name="Source[36].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[36].itemID" Type="Ref">/My Computer/DLL/StepwiseRamp.dll</Property>
+            <Property Name="Source[37].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[37].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[37].itemID" Type="Ref">/My Computer/External Actuators</Property>
+            <Property Name="Source[37].type" Type="Str">Container</Property>
+            <Property Name="Source[38].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[38].itemID" Type="Ref">/My Computer/External Actuators/Actuator Actions.ctl</Property>
+            <Property Name="Source[38].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[38].type" Type="Str">VI</Property>
+            <Property Name="Source[39].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[39].itemID" Type="Ref">/My Computer/External Actuators/Actuator Commands.ctl</Property>
+            <Property Name="Source[39].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[39].type" Type="Str">VI</Property>
+            <Property Name="Source[4].destinationIndex" Type="Int">4</Property>
+            <Property Name="Source[4].itemID" Type="Ref">/My Computer/Config/Config_Default2.xml</Property>
+            <Property Name="Source[40].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[40].itemID" Type="Ref">/My Computer/External Actuators/Actuator Feedback.ctl</Property>
+            <Property Name="Source[40].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[40].type" Type="Str">VI</Property>
+            <Property Name="Source[41].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[41].itemID" Type="Ref">/My Computer/External Actuators/Actuator Global Values.vi</Property>
+            <Property Name="Source[41].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[41].type" Type="Str">VI</Property>
+            <Property Name="Source[42].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[42].itemID" Type="Ref">/My Computer/External Actuators/External Actuator Control.vi</Property>
+            <Property Name="Source[42].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[42].type" Type="Str">VI</Property>
+            <Property Name="Source[43].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[43].itemID" Type="Ref">/My Computer/External Actuators/RampHold_Ext.vi</Property>
+            <Property Name="Source[43].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[43].type" Type="Str">VI</Property>
+            <Property Name="Source[44].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[44].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[44].destinationIndex" Type="Int">6</Property>
+            <Property Name="Source[44].itemID" Type="Ref">/My Computer/image</Property>
+            <Property Name="Source[44].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[44].type" Type="Str">Container</Property>
+            <Property Name="Source[45].destinationIndex" Type="Int">6</Property>
+            <Property Name="Source[45].itemID" Type="Ref">/My Computer/image/LBCB.bmp</Property>
+            <Property Name="Source[46].destinationIndex" Type="Int">6</Property>
+            <Property Name="Source[46].itemID" Type="Ref">/My Computer/image/Thumbs.db</Property>
+            <Property Name="Source[47].destinationIndex" Type="Int">6</Property>
+            <Property Name="Source[47].itemID" Type="Ref">/My Computer/image/UILogoCL1c_mdf.bmp</Property>
+            <Property Name="Source[48].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[48].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[48].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[48].itemID" Type="Ref">/My Computer/lib</Property>
+            <Property Name="Source[48].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[48].type" Type="Str">Container</Property>
+            <Property Name="Source[49].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[49].itemID" Type="Ref">/My Computer/lib/About LBCB Operation Manager.vi</Property>
+            <Property Name="Source[49].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[49].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[49].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[49].type" Type="Str">VI</Property>
+            <Property Name="Source[5].destinationIndex" Type="Int">4</Property>
+            <Property Name="Source[5].itemID" Type="Ref">/My Computer/Config/Config_Default_bak.xml</Property>
+            <Property Name="Source[50].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[50].itemID" Type="Ref">/My Computer/lib/ActuatorArray2Cluster.vi</Property>
+            <Property Name="Source[50].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[50].properties[0].value" Type="Bool">true</Property>
+            <Property Name="Source[50].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[50].type" Type="Str">VI</Property>
+            <Property Name="Source[51].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[51].itemID" Type="Ref">/My Computer/lib/ActuatorCluster2Array.vi</Property>
+            <Property Name="Source[51].type" Type="Str">VI</Property>
+            <Property Name="Source[52].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[52].itemID" Type="Ref">/My Computer/lib/Adaptive Middle Controller.vi</Property>
+            <Property Name="Source[52].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[52].properties[0].value" Type="Bool">true</Property>
+            <Property Name="Source[52].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[52].type" Type="Str">VI</Property>
+            <Property Name="Source[53].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[53].itemID" Type="Ref">/My Computer/lib/Add New Events.vi</Property>
+            <Property Name="Source[53].type" Type="Str">VI</Property>
+            <Property Name="Source[54].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[54].itemID" Type="Ref">/My Computer/lib/Auto Balance Controller.vi</Property>
+            <Property Name="Source[54].type" Type="Str">VI</Property>
+            <Property Name="Source[55].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[55].itemID" Type="Ref">/My Computer/lib/Auto Balance Loop.vi</Property>
+            <Property Name="Source[55].type" Type="Str">VI</Property>
+            <Property Name="Source[56].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[56].itemID" Type="Ref">/My Computer/lib/CartesianArray2Cluster.vi</Property>
+            <Property Name="Source[56].type" Type="Str">VI</Property>
+            <Property Name="Source[57].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[57].itemID" Type="Ref">/My Computer/lib/CartesianCluster2Array.vi</Property>
+            <Property Name="Source[57].type" Type="Str">VI</Property>
+            <Property Name="Source[58].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[58].itemID" Type="Ref">/My Computer/lib/CartesianGlobal2Indiv.vi</Property>
+            <Property Name="Source[58].type" Type="Str">VI</Property>
+            <Property Name="Source[59].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[59].itemID" Type="Ref">/My Computer/lib/Channel List.vi</Property>
+            <Property Name="Source[59].type" Type="Str">VI</Property>
+            <Property Name="Source[6].destinationIndex" Type="Int">4</Property>
+            <Property Name="Source[6].itemID" Type="Ref">/My Computer/Config/Config_Default_large.xml</Property>
+            <Property Name="Source[60].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[60].itemID" Type="Ref">/My Computer/lib/DAQ Property.vi</Property>
+            <Property Name="Source[60].type" Type="Str">VI</Property>
+            <Property Name="Source[61].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[61].itemID" Type="Ref">/My Computer/lib/Displacement Limit.vi</Property>
+            <Property Name="Source[61].type" Type="Str">VI</Property>
+            <Property Name="Source[62].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[62].itemID" Type="Ref">/My Computer/lib/Double2Wave.vi</Property>
+            <Property Name="Source[62].type" Type="Str">VI</Property>
+            <Property Name="Source[63].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[63].itemID" Type="Ref">/My Computer/lib/Double2WaveWithFlag.vi</Property>
+            <Property Name="Source[63].type" Type="Str">VI</Property>
+            <Property Name="Source[64].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[64].itemID" Type="Ref">/My Computer/lib/ExtractArray.vi</Property>
+            <Property Name="Source[64].type" Type="Str">VI</Property>
+            <Property Name="Source[65].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[65].itemID" Type="Ref">/My Computer/lib/ExtractCartesianArray.vi</Property>
+            <Property Name="Source[65].type" Type="Str">VI</Property>
+            <Property Name="Source[66].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[66].itemID" Type="Ref">/My Computer/lib/ExtractCartesianDAQArray.vi</Property>
+            <Property Name="Source[66].type" Type="Str">VI</Property>
+            <Property Name="Source[67].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[67].itemID" Type="Ref">/My Computer/lib/Force Limit.vi</Property>
+            <Property Name="Source[67].type" Type="Str">VI</Property>
+            <Property Name="Source[68].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[68].itemID" Type="Ref">/My Computer/lib/FunctionGenerator.vi</Property>
+            <Property Name="Source[68].type" Type="Str">VI</Property>
+            <Property Name="Source[69].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[69].itemID" Type="Ref">/My Computer/lib/GetChannelNameArray.vi</Property>
+            <Property Name="Source[69].type" Type="Str">VI</Property>
+            <Property Name="Source[7].destinationIndex" Type="Int">4</Property>
+            <Property Name="Source[7].itemID" Type="Ref">/My Computer/Config/Config_Default_small.xml.xml</Property>
+            <Property Name="Source[70].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[70].itemID" Type="Ref">/My Computer/lib/GetSamplingRate.vi</Property>
+            <Property Name="Source[70].type" Type="Str">VI</Property>
+            <Property Name="Source[71].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[71].itemID" Type="Ref">/My Computer/lib/InputUpdate.vi</Property>
+            <Property Name="Source[71].type" Type="Str">VI</Property>
+            <Property Name="Source[72].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[72].itemID" Type="Ref">/My Computer/lib/InsertCartesianArray.vi</Property>
+            <Property Name="Source[72].type" Type="Str">VI</Property>
+            <Property Name="Source[73].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[73].itemID" Type="Ref">/My Computer/lib/Jacobian Setup.vi</Property>
+            <Property Name="Source[73].type" Type="Str">VI</Property>
+            <Property Name="Source[74].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[74].itemID" Type="Ref">/My Computer/lib/LBCB_Conversions.vi</Property>
+            <Property Name="Source[74].type" Type="Str">VI</Property>
+            <Property Name="Source[75].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[75].itemID" Type="Ref">/My Computer/lib/LBCB_Conversions2.vi</Property>
+            <Property Name="Source[75].type" Type="Str">VI</Property>
+            <Property Name="Source[76].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[76].itemID" Type="Ref">/My Computer/lib/Limit Check.vi</Property>
+            <Property Name="Source[76].type" Type="Str">VI</Property>
+            <Property Name="Source[77].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[77].itemID" Type="Ref">/My Computer/lib/Load Config Data.vi</Property>
+            <Property Name="Source[77].type" Type="Str">VI</Property>
+            <Property Name="Source[78].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[78].itemID" Type="Ref">/My Computer/lib/Load Digital Filter File.vi</Property>
+            <Property Name="Source[78].type" Type="Str">VI</Property>
+            <Property Name="Source[79].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[79].itemID" Type="Ref">/My Computer/lib/Middle Loop Property.vi</Property>
+            <Property Name="Source[79].type" Type="Str">VI</Property>
+            <Property Name="Source[8].destinationIndex" Type="Int">4</Property>
+            <Property Name="Source[8].itemID" Type="Ref">/My Computer/Config/Config_Default_small2.xml</Property>
+            <Property Name="Source[80].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[80].itemID" Type="Ref">/My Computer/lib/Middle PID Controller.vi</Property>
+            <Property Name="Source[80].type" Type="Str">VI</Property>
+            <Property Name="Source[81].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[81].itemID" Type="Ref">/My Computer/lib/MilisecLogger.vi</Property>
+            <Property Name="Source[81].type" Type="Str">VI</Property>
+            <Property Name="Source[82].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[82].itemID" Type="Ref">/My Computer/lib/MilisecLoggerCoverter.vi</Property>
+            <Property Name="Source[82].type" Type="Str">VI</Property>
+            <Property Name="Source[83].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[83].itemID" Type="Ref">/My Computer/lib/MixedModeCommandControl.vi</Property>
+            <Property Name="Source[83].type" Type="Str">VI</Property>
+            <Property Name="Source[84].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[84].itemID" Type="Ref">/My Computer/lib/MixedModeControl.vi</Property>
+            <Property Name="Source[84].type" Type="Str">VI</Property>
+            <Property Name="Source[85].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[85].itemID" Type="Ref">/My Computer/lib/MixedModeDataTrigger.vi</Property>
+            <Property Name="Source[85].type" Type="Str">VI</Property>
+            <Property Name="Source[86].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[86].itemID" Type="Ref">/My Computer/lib/MixedModeInputType.vi</Property>
+            <Property Name="Source[86].type" Type="Str">VI</Property>
+            <Property Name="Source[87].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[87].itemID" Type="Ref">/My Computer/lib/MixedModeInputType_rev.vi</Property>
+            <Property Name="Source[87].type" Type="Str">VI</Property>
+            <Property Name="Source[88].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[88].itemID" Type="Ref">/My Computer/lib/MixedModeLoopProperty.vi</Property>
+            <Property Name="Source[88].type" Type="Str">VI</Property>
+            <Property Name="Source[89].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[89].itemID" Type="Ref">/My Computer/lib/MultiSignalDigitalFilter.vi</Property>
+            <Property Name="Source[89].type" Type="Str">VI</Property>
+            <Property Name="Source[9].destinationIndex" Type="Int">4</Property>
+            <Property Name="Source[9].itemID" Type="Ref">/My Computer/Config/NTCP Socket.ini</Property>
+            <Property Name="Source[90].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[90].itemID" Type="Ref">/My Computer/lib/PlotInputData.vi</Property>
+            <Property Name="Source[90].type" Type="Str">VI</Property>
+            <Property Name="Source[91].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[91].itemID" Type="Ref">/My Computer/lib/RampHold.vi</Property>
+            <Property Name="Source[91].type" Type="Str">VI</Property>
+            <Property Name="Source[92].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[92].itemID" Type="Ref">/My Computer/lib/RampInputType.vi</Property>
+            <Property Name="Source[92].type" Type="Str">VI</Property>
+            <Property Name="Source[93].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[93].itemID" Type="Ref">/My Computer/lib/ReplaceArray.vi</Property>
+            <Property Name="Source[93].type" Type="Str">VI</Property>
+            <Property Name="Source[94].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[94].itemID" Type="Ref">/My Computer/lib/Save Config Data.vi</Property>
+            <Property Name="Source[94].type" Type="Str">VI</Property>
+            <Property Name="Source[95].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[95].itemID" Type="Ref">/My Computer/lib/Servo Limit.vi</Property>
+            <Property Name="Source[95].type" Type="Str">VI</Property>
+            <Property Name="Source[96].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[96].itemID" Type="Ref">/My Computer/lib/SetLocalCoordinates.vi</Property>
+            <Property Name="Source[96].type" Type="Str">VI</Property>
+            <Property Name="Source[97].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[97].itemID" Type="Ref">/My Computer/lib/Shift Cartesian Axes.vi</Property>
+            <Property Name="Source[97].type" Type="Str">VI</Property>
+            <Property Name="Source[98].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[98].itemID" Type="Ref">/My Computer/lib/StepRampInputTypeRev.vi</Property>
+            <Property Name="Source[98].type" Type="Str">VI</Property>
+            <Property Name="Source[99].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[99].itemID" Type="Ref">/My Computer/lib/StepwiseRamp.vi</Property>
+            <Property Name="Source[99].type" Type="Str">VI</Property>
+            <Property Name="SourceCount" Type="Int">108</Property>
          </Item>
          <Item Name="NTCP Socket" Type="EXE">
-            <Property Name="Absolute[0]" Type="Bool">false</Property>
-            <Property Name="Absolute[1]" Type="Bool">false</Property>
-            <Property Name="Absolute[2]" Type="Bool">false</Property>
-            <Property Name="Absolute[3]" Type="Bool">false</Property>
-            <Property Name="ActiveXInfoEnumCLSIDsItemCount" Type="Int">0</Property>
-            <Property Name="ActiveXInfoMajorVersion" Type="Int">0</Property>
-            <Property Name="ActiveXInfoMinorVersion" Type="Int">0</Property>
-            <Property Name="ActiveXInfoObjCLSIDsItemCount" Type="Int">0</Property>
-            <Property Name="ActiveXInfoProgIDPrefix" Type="Str"></Property>
-            <Property Name="ActiveXServerName" Type="Str"></Property>
-            <Property Name="AliasID" Type="Str">{3FDC05E5-85FC-41C8-AA93-E036D595BB9A}</Property>
-            <Property Name="AliasName" Type="Str">Project.aliases</Property>
-            <Property Name="ApplicationID" Type="Str">{D44DC029-5577-46EC-B20E-36E00AF92BCF}</Property>
-            <Property Name="ApplicationName" Type="Str">NTCP Socket.exe</Property>
-            <Property Name="AutoIncrement" Type="Bool">false</Property>
-            <Property Name="BuildName" Type="Str">NTCP Socket</Property>
-            <Property Name="CommandLineArguments" Type="Bool">false</Property>
-            <Property Name="CopyErrors" Type="Bool">false</Property>
-            <Property Name="CustomIcon" Type="Ref">/My Computer/IconFiles/NTCP socket.ico</Property>
-            <Property Name="DebuggingEXE" Type="Bool">false</Property>
-            <Property Name="DebugServerWaitOnLaunch" Type="Bool">false</Property>
-            <Property Name="DefaultLanguage" Type="Str">English</Property>
-            <Property Name="DependencyApplyDestination" Type="Bool">true</Property>
-            <Property Name="DependencyApplyInclusion" Type="Bool">true</Property>
-            <Property Name="DependencyApplyProperties" Type="Bool">true</Property>
-            <Property Name="DependencyFolderDestination" Type="Int">0</Property>
-            <Property Name="DependencyFolderInclusion" Type="Str">As needed</Property>
-            <Property Name="DependencyFolderPropertiesItemCount" Type="Int">0</Property>
-            <Property Name="DestinationID[0]" Type="Str">{2FFE165A-A3A8-44A2-BDA9-300936D077A0}</Property>
-            <Property Name="DestinationID[1]" Type="Str">{2FFE165A-A3A8-44A2-BDA9-300936D077A0}</Property>
-            <Property Name="DestinationID[2]" Type="Str">{673E0A5B-E38F-4022-8F1C-A3BE83693A3D}</Property>
-            <Property Name="DestinationID[3]" Type="Str">{157FE2FD-1E4D-41EF-828B-7F14EBE31993}</Property>
-            <Property Name="DestinationItemCount" Type="Int">4</Property>
-            <Property Name="DestinationName[0]" Type="Str">NTCP Socket.exe</Property>
-            <Property Name="DestinationName[1]" Type="Str">Destination Directory</Property>
-            <Property Name="DestinationName[2]" Type="Str">Support Directory</Property>
-            <Property Name="DestinationName[3]" Type="Str">NTCP Socket</Property>
-            <Property Name="Disconnect" Type="Bool">true</Property>
-            <Property Name="IncludeHWConfig" Type="Bool">false</Property>
-            <Property Name="IncludeSCC" Type="Bool">true</Property>
-            <Property Name="INIID" Type="Str">{8EA92FC2-B237-4CF6-B612-F3835540162A}</Property>
-            <Property Name="ININame" Type="Str">LabVIEW.ini</Property>
-            <Property Name="LOGID" Type="Str">{A6B681FD-D209-47E7-BAD8-FE86109E243E}</Property>
-            <Property Name="MathScript" Type="Bool">false</Property>
-            <Property Name="Path[0]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/internal.llb</Property>
-            <Property Name="Path[1]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008</Property>
-            <Property Name="Path[2]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/data</Property>
-            <Property Name="Path[3]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/NTCP Socket.llb</Property>
-            <Property Name="ShowHWConfig" Type="Bool">false</Property>
-            <Property Name="SourceInfoItemCount" Type="Int">42</Property>
-            <Property Name="SourceItem[0].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[0].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[0].ItemID" Type="Ref">/My Computer/Config</Property>
-            <Property Name="SourceItem[1].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[1].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[1].ItemID" Type="Ref">/My Computer/Coordinate Alignment</Property>
-            <Property Name="SourceItem[10].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[10].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[10].ItemID" Type="Ref">/My Computer/NTCP library</Property>
-            <Property Name="SourceItem[11].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[11].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[11].ItemID" Type="Ref">/My Computer/NTCP library/.svn</Property>
-            <Property Name="SourceItem[12].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[12].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[12].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base</Property>
-            <Property Name="SourceItem[13].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[13].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[13].ItemID" Type="Ref">/My Computer/NTCP library/.svn/props</Property>
-            <Property Name="SourceItem[14].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[14].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[14].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base</Property>
-            <Property Name="SourceItem[15].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[15].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[15].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp</Property>
-            <Property Name="SourceItem[16].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[16].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[16].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/prop-base</Property>
-            <Property Name="SourceItem[17].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[17].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[17].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/props</Property>
-            <Property Name="SourceItem[18].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[18].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[18].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/text-base</Property>
-            <Property Name="SourceItem[19].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[19].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[19].ItemID" Type="Ref">/My Computer/NTCP library/About NTCP Socket.vi</Property>
-            <Property Name="SourceItem[19].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[19].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[19].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[2].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[2].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[2].ItemID" Type="Ref">/My Computer/Data Transmission</Property>
-            <Property Name="SourceItem[20].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[20].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[20].ItemID" Type="Ref">/My Computer/NTCP library/ExternalSensorsDataString.vi</Property>
-            <Property Name="SourceItem[20].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[20].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[20].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[21].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[21].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[21].ItemID" Type="Ref">/My Computer/NTCP library/Generate 12-value control pt return value.vi</Property>
-            <Property Name="SourceItem[21].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[21].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[21].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[22].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[22].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[22].ItemID" Type="Ref">/My Computer/NTCP library/ntcp cmd - parse and enqueue.vi</Property>
-            <Property Name="SourceItem[22].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[22].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[22].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[23].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[23].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[23].ItemID" Type="Ref">/My Computer/NTCP library/ntcp command.vi</Property>
-            <Property Name="SourceItem[23].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[23].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[23].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[24].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[24].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[24].ItemID" Type="Ref">/My Computer/NTCP library/NTCP return.vi</Property>
-            <Property Name="SourceItem[24].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[24].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[24].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[25].Inclusion" Type="Str">Startup VI</Property>
-            <Property Name="SourceItem[25].ItemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
-            <Property Name="SourceItem[26].ItemID" Type="Ref">/My Computer/NTCP library/NTCPtestcommand.vi</Property>
-            <Property Name="SourceItem[26].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[26].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[26].VIPropertiesVISetting[0]" Type="Bool">true</Property>
-            <Property Name="SourceItem[27].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[27].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[27].ItemID" Type="Ref">/My Computer/NTCP library/OM reply - parse and enqueue.vi</Property>
-            <Property Name="SourceItem[27].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[27].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[27].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[28].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[28].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[28].ItemID" Type="Ref">/My Computer/NTCP library/Open ntcp command queue.vi</Property>
-            <Property Name="SourceItem[28].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[28].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[28].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[29].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[29].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[29].ItemID" Type="Ref">/My Computer/NTCP library/Open OM reply queue.vi</Property>
-            <Property Name="SourceItem[29].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[29].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[29].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[3].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[3].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[3].ItemID" Type="Ref">/My Computer/DigitalFilter</Property>
-            <Property Name="SourceItem[30].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[30].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[30].ItemID" Type="Ref">/My Computer/NTCP library/ProposeCommand.vi</Property>
-            <Property Name="SourceItem[30].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[30].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[30].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[31].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[31].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[31].ItemID" Type="Ref">/My Computer/NTCP library/TCP read command.vi</Property>
-            <Property Name="SourceItem[31].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[31].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[31].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[32].Destination" Type="Int">3</Property>
-            <Property Name="SourceItem[32].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[32].ItemID" Type="Ref">/My Computer/NTCP library/WriteLogFile.vi</Property>
-            <Property Name="SourceItem[32].VIPropertiesItemCount" Type="Int">1</Property>
-            <Property Name="SourceItem[32].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
-            <Property Name="SourceItem[32].VIPropertiesVISetting[0]" Type="Bool">false</Property>
-            <Property Name="SourceItem[33].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[33].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[33].ItemID" Type="Ref">/My Computer/TestData</Property>
-            <Property Name="SourceItem[34].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[34].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[34].ItemID" Type="Ref">/My Computer/TestData/.svn</Property>
-            <Property Name="SourceItem[35].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[35].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[35].ItemID" Type="Ref">/My Computer/TestData/.svn/prop-base</Property>
-            <Property Name="SourceItem[36].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[36].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[36].ItemID" Type="Ref">/My Computer/TestData/.svn/props</Property>
-            <Property Name="SourceItem[37].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[37].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[37].ItemID" Type="Ref">/My Computer/TestData/.svn/text-base</Property>
-            <Property Name="SourceItem[38].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[38].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[38].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp</Property>
-            <Property Name="SourceItem[39].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[39].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[39].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/prop-base</Property>
-            <Property Name="SourceItem[4].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[4].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[4].ItemID" Type="Ref">/My Computer/DLL</Property>
-            <Property Name="SourceItem[40].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[40].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[40].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/props</Property>
-            <Property Name="SourceItem[41].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[41].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[41].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/text-base</Property>
-            <Property Name="SourceItem[5].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[5].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[5].ItemID" Type="Ref">/My Computer/External Actuators</Property>
-            <Property Name="SourceItem[6].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[6].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[6].ItemID" Type="Ref">/My Computer/IconFiles</Property>
-            <Property Name="SourceItem[7].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[7].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[7].ItemID" Type="Ref">/My Computer/image</Property>
-            <Property Name="SourceItem[8].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[8].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[8].ItemID" Type="Ref">/My Computer/InputData</Property>
-            <Property Name="SourceItem[9].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[9].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[9].ItemID" Type="Ref">/My Computer/lib</Property>
-            <Property Name="StripLib" Type="Bool">true</Property>
-            <Property Name="SupportedLanguageCount" Type="Int">0</Property>
-            <Property Name="TLBID" Type="Str">{8910A146-55CE-4254-87A9-65927A845C6A}</Property>
-            <Property Name="UseFFRTE" Type="Bool">false</Property>
-            <Property Name="VersionInfoCompanyName" Type="Str">University of Illinois</Property>
-            <Property Name="VersionInfoFileDescription" Type="Str"></Property>
-            <Property Name="VersionInfoFileType" Type="Int">1</Property>
-            <Property Name="VersionInfoFileVersionBuild" Type="Int">0</Property>
-            <Property Name="VersionInfoFileVersionMajor" Type="Int">1</Property>
-            <Property Name="VersionInfoFileVersionMinor" Type="Int">5</Property>
-            <Property Name="VersionInfoFileVersionPatch" Type="Int">0</Property>
-            <Property Name="VersionInfoInternalName" Type="Str">NTCP Socket</Property>
-            <Property Name="VersionInfoLegalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
-            <Property Name="VersionInfoProductName" Type="Str">NTCP Socket</Property>
+            <Property Name="App_applicationGUID" Type="Str">{D44DC029-5577-46EC-B20E-36E00AF92BCF}</Property>
+            <Property Name="App_applicationName" Type="Str">NTCP Socket.exe</Property>
+            <Property Name="App_companyName" Type="Str">University of Illinois</Property>
+            <Property Name="App_fileType" Type="Int">1</Property>
+            <Property Name="App_fileVersion.major" Type="Int">1</Property>
+            <Property Name="App_fileVersion.minor" Type="Int">5</Property>
+            <Property Name="App_INI_aliasGUID" Type="Str">{3FDC05E5-85FC-41C8-AA93-E036D595BB9A}</Property>
+            <Property Name="App_INI_GUID" Type="Str">{8EA92FC2-B237-4CF6-B612-F3835540162A}</Property>
+            <Property Name="App_internalName" Type="Str">NTCP Socket</Property>
+            <Property Name="App_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
+            <Property Name="App_productName" Type="Str">NTCP Socket</Property>
+            <Property Name="Bld_buildSpecName" Type="Str">NTCP Socket</Property>
+            <Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+            <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+            <Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
+            <Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+            <Property Name="Destination[0].destName" Type="Str">NTCP Socket.exe</Property>
+            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM2 with External Actuators 01 Apr 2008/internal.llb</Property>
+            <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[0].type" Type="Str">App</Property>
+            <Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM2 with External Actuators 01 Apr 2008/data</Property>
+            <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[2].destName" Type="Str">Destination Directory</Property>
+            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM2 with External Actuators 01 Apr 2008</Property>
+            <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[3].destName" Type="Str">NTCP Socket</Property>
+            <Property Name="Destination[3].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM2 with External Actuators 01 Apr 2008/NTCP Socket.llb</Property>
+            <Property Name="Destination[3].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[3].type" Type="Str">LLB</Property>
+            <Property Name="DestinationCount" Type="Int">4</Property>
+            <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/NTCP socket.ico</Property>
+            <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
+            <Property Name="Source[0].itemID" Type="Str">{7FE15022-DFF7-45A6-A100-156BF041C349}</Property>
+            <Property Name="Source[0].type" Type="Str">Container</Property>
+            <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[1].itemID" Type="Ref">/My Computer/Config</Property>
+            <Property Name="Source[1].type" Type="Str">Container</Property>
+            <Property Name="Source[10].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[10].itemID" Type="Ref">/My Computer/lib</Property>
+            <Property Name="Source[10].type" Type="Str">Container</Property>
+            <Property Name="Source[11].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[11].itemID" Type="Ref">/My Computer/NTCP library</Property>
+            <Property Name="Source[11].type" Type="Str">Container</Property>
+            <Property Name="Source[12].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[12].itemID" Type="Ref">/My Computer/NTCP library/.svn</Property>
+            <Property Name="Source[12].type" Type="Str">Container</Property>
+            <Property Name="Source[13].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[13].itemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base</Property>
+            <Property Name="Source[13].type" Type="Str">Container</Property>
+            <Property Name="Source[14].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[14].itemID" Type="Ref">/My Computer/NTCP library/.svn/props</Property>
+            <Property Name="Source[14].type" Type="Str">Container</Property>
+            <Property Name="Source[15].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[15].itemID" Type="Ref">/My Computer/NTCP library/.svn/text-base</Property>
+            <Property Name="Source[15].type" Type="Str">Container</Property>
+            <Property Name="Source[16].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[16].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp</Property>
+            <Property Name="Source[16].type" Type="Str">Container</Property>
+            <Property Name="Source[17].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[17].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/prop-base</Property>
+            <Property Name="Source[17].type" Type="Str">Container</Property>
+            <Property Name="Source[18].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[18].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/props</Property>
+            <Property Name="Source[18].type" Type="Str">Container</Property>
+            <Property Name="Source[19].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[19].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/text-base</Property>
+            <Property Name="Source[19].type" Type="Str">Container</Property>
+            <Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[2].itemID" Type="Ref">/My Computer/Coordinate Alignment</Property>
+            <Property Name="Source[2].type" Type="Str">Container</Property>
+            <Property Name="Source[20].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[20].itemID" Type="Ref">/My Computer/NTCP library/About NTCP Socket.vi</Property>
+            <Property Name="Source[20].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[20].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[20].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[20].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[20].type" Type="Str">VI</Property>
+            <Property Name="Source[21].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[21].itemID" Type="Ref">/My Computer/NTCP library/ExternalSensorsDataString.vi</Property>
+            <Property Name="Source[21].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[21].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[21].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[21].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[21].type" Type="Str">VI</Property>
+            <Property Name="Source[22].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[22].itemID" Type="Ref">/My Computer/NTCP library/Generate 12-value control pt return value.vi</Property>
+            <Property Name="Source[22].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[22].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[22].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[22].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[22].type" Type="Str">VI</Property>
+            <Property Name="Source[23].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[23].itemID" Type="Ref">/My Computer/NTCP library/ntcp cmd - parse and enqueue.vi</Property>
+            <Property Name="Source[23].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[23].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[23].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[23].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[23].type" Type="Str">VI</Property>
+            <Property Name="Source[24].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[24].itemID" Type="Ref">/My Computer/NTCP library/ntcp command.vi</Property>
+            <Property Name="Source[24].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[24].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[24].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[24].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[24].type" Type="Str">VI</Property>
+            <Property Name="Source[25].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[25].itemID" Type="Ref">/My Computer/NTCP library/NTCP return.vi</Property>
+            <Property Name="Source[25].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[25].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[25].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[25].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[25].type" Type="Str">VI</Property>
+            <Property Name="Source[26].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[26].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
+            <Property Name="Source[26].sourceInclusion" Type="Str">TopLevel</Property>
+            <Property Name="Source[26].type" Type="Str">VI</Property>
+            <Property Name="Source[27].itemID" Type="Ref">/My Computer/NTCP library/NTCPtestcommand.vi</Property>
+            <Property Name="Source[27].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[27].properties[0].value" Type="Bool">true</Property>
+            <Property Name="Source[27].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[27].type" Type="Str">VI</Property>
+            <Property Name="Source[28].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[28].itemID" Type="Ref">/My Computer/NTCP library/OM reply - parse and enqueue.vi</Property>
+            <Property Name="Source[28].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[28].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[28].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[28].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[28].type" Type="Str">VI</Property>
+            <Property Name="Source[29].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[29].itemID" Type="Ref">/My Computer/NTCP library/Open ntcp command queue.vi</Property>
+            <Property Name="Source[29].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[29].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[29].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[29].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[29].type" Type="Str">VI</Property>
+            <Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[3].itemID" Type="Ref">/My Computer/Data Transmission</Property>
+            <Property Name="Source[3].type" Type="Str">Container</Property>
+            <Property Name="Source[30].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[30].itemID" Type="Ref">/My Computer/NTCP library/Open OM reply queue.vi</Property>
+            <Property Name="Source[30].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[30].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[30].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[30].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[30].type" Type="Str">VI</Property>
+            <Property Name="Source[31].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[31].itemID" Type="Ref">/My Computer/NTCP library/ProposeCommand.vi</Property>
+            <Property Name="Source[31].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[31].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[31].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[31].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[31].type" Type="Str">VI</Property>
+            <Property Name="Source[32].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[32].itemID" Type="Ref">/My Computer/NTCP library/TCP read command.vi</Property>
+            <Property Name="Source[32].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[32].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[32].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[32].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[32].type" Type="Str">VI</Property>
+            <Property Name="Source[33].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[33].itemID" Type="Ref">/My Computer/NTCP library/WriteLogFile.vi</Property>
+            <Property Name="Source[33].properties[0].type" Type="Str">Remove front panel</Property>
+            <Property Name="Source[33].properties[0].value" Type="Bool">false</Property>
+            <Property Name="Source[33].propertiesCount" Type="Int">1</Property>
+            <Property Name="Source[33].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[33].type" Type="Str">VI</Property>
+            <Property Name="Source[34].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[34].itemID" Type="Ref">/My Computer/TestData</Property>
+            <Property Name="Source[34].type" Type="Str">Container</Property>
+            <Property Name="Source[35].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[35].itemID" Type="Ref">/My Computer/TestData/.svn</Property>
+            <Property Name="Source[35].type" Type="Str">Container</Property>
+            <Property Name="Source[36].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[36].itemID" Type="Ref">/My Computer/TestData/.svn/prop-base</Property>
+            <Property Name="Source[36].type" Type="Str">Container</Property>
+            <Property Name="Source[37].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[37].itemID" Type="Ref">/My Computer/TestData/.svn/props</Property>
+            <Property Name="Source[37].type" Type="Str">Container</Property>
+            <Property Name="Source[38].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[38].itemID" Type="Ref">/My Computer/TestData/.svn/text-base</Property>
+            <Property Name="Source[38].type" Type="Str">Container</Property>
+            <Property Name="Source[39].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[39].itemID" Type="Ref">/My Computer/TestData/.svn/tmp</Property>
+            <Property Name="Source[39].type" Type="Str">Container</Property>
+            <Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[4].itemID" Type="Ref">/My Computer/DigitalFilter</Property>
+            <Property Name="Source[4].type" Type="Str">Container</Property>
+            <Property Name="Source[40].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[40].itemID" Type="Ref">/My Computer/TestData/.svn/tmp/prop-base</Property>
+            <Property Name="Source[40].type" Type="Str">Container</Property>
+            <Property Name="Source[41].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[41].itemID" Type="Ref">/My Computer/TestData/.svn/tmp/props</Property>
+            <Property Name="Source[41].type" Type="Str">Container</Property>
+            <Property Name="Source[42].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[42].itemID" Type="Ref">/My Computer/TestData/.svn/tmp/text-base</Property>
+            <Property Name="Source[42].type" Type="Str">Container</Property>
+            <Property Name="Source[5].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[5].itemID" Type="Ref">/My Computer/DLL</Property>
+            <Property Name="Source[5].type" Type="Str">Container</Property>
+            <Property Name="Source[6].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[6].itemID" Type="Ref">/My Computer/External Actuators</Property>
+            <Property Name="Source[6].type" Type="Str">Container</Property>
+            <Property Name="Source[7].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[7].itemID" Type="Ref">/My Computer/IconFiles</Property>
+            <Property Name="Source[7].type" Type="Str">Container</Property>
+            <Property Name="Source[8].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[8].itemID" Type="Ref">/My Computer/image</Property>
+            <Property Name="Source[8].type" Type="Str">Container</Property>
+            <Property Name="Source[9].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[9].itemID" Type="Ref">/My Computer/InputData</Property>
+            <Property Name="Source[9].type" Type="Str">Container</Property>
+            <Property Name="SourceCount" Type="Int">43</Property>
          </Item>
          <Item Name="External Actuator Control" Type="EXE">
-            <Property Name="Absolute[0]" Type="Bool">false</Property>
-            <Property Name="Absolute[1]" Type="Bool">false</Property>
-            <Property Name="Absolute[2]" Type="Bool">false</Property>
-            <Property Name="ActiveXInfoEnumCLSIDsItemCount" Type="Int">0</Property>
-            <Property Name="ActiveXInfoMajorVersion" Type="Int">0</Property>
-            <Property Name="ActiveXInfoMinorVersion" Type="Int">0</Property>
-            <Property Name="ActiveXInfoObjCLSIDsItemCount" Type="Int">0</Property>
-            <Property Name="ActiveXInfoProgIDPrefix" Type="Str"></Property>
-            <Property Name="ActiveXServerName" Type="Str"></Property>
-            <Property Name="AliasID" Type="Str">{4377C809-8E16-4E95-860A-689907F4672F}</Property>
-            <Property Name="AliasName" Type="Str">Project.aliases</Property>
-            <Property Name="ApplicationID" Type="Str">{AAB88994-83AE-4547-B3D5-8A9E69E06247}</Property>
-            <Property Name="ApplicationName" Type="Str">External Actuator Control.exe</Property>
-            <Property Name="AutoIncrement" Type="Bool">false</Property>
-            <Property Name="BuildName" Type="Str">External Actuator Control</Property>
-            <Property Name="CommandLineArguments" Type="Bool">false</Property>
-            <Property Name="CopyErrors" Type="Bool">false</Property>
-            <Property Name="DebuggingEXE" Type="Bool">false</Property>
-            <Property Name="DebugServerWaitOnLaunch" Type="Bool">false</Property>
-            <Property Name="DefaultLanguage" Type="Str">English</Property>
-            <Property Name="DependencyApplyDestination" Type="Bool">true</Property>
-            <Property Name="DependencyApplyInclusion" Type="Bool">true</Property>
-            <Property Name="DependencyApplyProperties" Type="Bool">true</Property>
-            <Property Name="DependencyFolderDestination" Type="Int">0</Property>
-            <Property Name="DependencyFolderInclusion" Type="Str">As needed</Property>
-            <Property Name="DependencyFolderPropertiesItemCount" Type="Int">0</Property>
-            <Property Name="DestinationID[0]" Type="Str">{61C4B992-9D9E-4A2D-AA3B-2B83EBDECE1F}</Property>
-            <Property Name="DestinationID[1]" Type="Str">{61C4B992-9D9E-4A2D-AA3B-2B83EBDECE1F}</Property>
-            <Property Name="DestinationID[2]" Type="Str">{486CE3C3-6286-465B-BF0A-55D940069C03}</Property>
-            <Property Name="DestinationItemCount" Type="Int">3</Property>
-            <Property Name="DestinationName[0]" Type="Str">External Actuator Control.exe</Property>
-            <Property Name="DestinationName[1]" Type="Str">Destination Directory</Property>
-            <Property Name="DestinationName[2]" Type="Str">Support Directory</Property>
-            <Property Name="Disconnect" Type="Bool">true</Property>
-            <Property Name="IncludeHWConfig" Type="Bool">false</Property>
-            <Property Name="IncludeSCC" Type="Bool">true</Property>
-            <Property Name="INIID" Type="Str">{99A10263-0289-48EF-8EC1-B9DEBCB3EDF5}</Property>
-            <Property Name="ININame" Type="Str">LabVIEW.ini</Property>
-            <Property Name="LOGID" Type="Str">{55505A7A-B9F8-49C1-B387-9A253CECDA37}</Property>
-            <Property Name="MathScript" Type="Bool">false</Property>
-            <Property Name="Path[0]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008/internal.llb</Property>
-            <Property Name="Path[1]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008</Property>
-            <Property Name="Path[2]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 26 Feb 2008/data</Property>
-            <Property Name="ShowHWConfig" Type="Bool">false</Property>
-            <Property Name="SourceInfoItemCount" Type="Int">38</Property>
-            <Property Name="SourceItem[0].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[0].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[0].ItemID" Type="Ref">/My Computer/Config</Property>
-            <Property Name="SourceItem[1].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[1].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[1].ItemID" Type="Ref">/My Computer/Coordinate Alignment</Property>
-            <Property Name="SourceItem[10].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[10].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Global Values.vi</Property>
-            <Property Name="SourceItem[11].Inclusion" Type="Str">Startup VI</Property>
-            <Property Name="SourceItem[11].ItemID" Type="Ref">/My Computer/External Actuators/External Actuator Control Test.vi</Property>
-            <Property Name="SourceItem[12].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[12].ItemID" Type="Ref">/My Computer/External Actuators/External Actuator Control.vi</Property>
-            <Property Name="SourceItem[13].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[13].ItemID" Type="Ref">/My Computer/External Actuators/External Control Test.vi</Property>
-            <Property Name="SourceItem[14].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[14].ItemID" Type="Ref">/My Computer/External Actuators/RampHold_Ext.vi</Property>
-            <Property Name="SourceItem[15].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[15].ItemID" Type="Ref">/My Computer/External Actuators/RampHold_Test.vi</Property>
-            <Property Name="SourceItem[16].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[16].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[16].ItemID" Type="Ref">/My Computer/IconFiles</Property>
-            <Property Name="SourceItem[17].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[17].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[17].ItemID" Type="Ref">/My Computer/image</Property>
-            <Property Name="SourceItem[18].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[18].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[18].ItemID" Type="Ref">/My Computer/InputData</Property>
-            <Property Name="SourceItem[19].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[19].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[19].ItemID" Type="Ref">/My Computer/lib</Property>
-            <Property Name="SourceItem[2].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[2].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[2].ItemID" Type="Ref">/My Computer/Data Transmission</Property>
-            <Property Name="SourceItem[20].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[20].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[20].ItemID" Type="Ref">/My Computer/NTCP library</Property>
-            <Property Name="SourceItem[21].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[21].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[21].ItemID" Type="Ref">/My Computer/NTCP library/.svn</Property>
-            <Property Name="SourceItem[22].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[22].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[22].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base</Property>
-            <Property Name="SourceItem[23].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[23].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[23].ItemID" Type="Ref">/My Computer/NTCP library/.svn/props</Property>
-            <Property Name="SourceItem[24].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[24].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[24].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base</Property>
-            <Property Name="SourceItem[25].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[25].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[25].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp</Property>
-            <Property Name="SourceItem[26].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[26].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[26].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/prop-base</Property>
-            <Property Name="SourceItem[27].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[27].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[27].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/props</Property>
-            <Property Name="SourceItem[28].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[28].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[28].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/text-base</Property>
-            <Property Name="SourceItem[29].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[29].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[29].ItemID" Type="Ref">/My Computer/TestData</Property>
-            <Property Name="SourceItem[3].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[3].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[3].ItemID" Type="Ref">/My Computer/DigitalFilter</Property>
-            <Property Name="SourceItem[30].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[30].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[30].ItemID" Type="Ref">/My Computer/TestData/.svn</Property>
-            <Property Name="SourceItem[31].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[31].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[31].ItemID" Type="Ref">/My Computer/TestData/.svn/prop-base</Property>
-            <Property Name="SourceItem[32].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[32].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[32].ItemID" Type="Ref">/My Computer/TestData/.svn/props</Property>
-            <Property Name="SourceItem[33].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[33].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[33].ItemID" Type="Ref">/My Computer/TestData/.svn/text-base</Property>
-            <Property Name="SourceItem[34].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[34].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[34].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp</Property>
-            <Property Name="SourceItem[35].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[35].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[35].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/prop-base</Property>
-            <Property Name="SourceItem[36].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[36].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[36].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/props</Property>
-            <Property Name="SourceItem[37].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[37].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[37].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/text-base</Property>
-            <Property Name="SourceItem[4].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[4].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[4].ItemID" Type="Ref">/My Computer/DLL</Property>
-            <Property Name="SourceItem[5].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[5].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[5].ItemID" Type="Ref">/My Computer/External Actuators</Property>
-            <Property Name="SourceItem[6].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[6].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Actions.ctl</Property>
-            <Property Name="SourceItem[7].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[7].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Commands.ctl</Property>
-            <Property Name="SourceItem[8].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[8].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Direct DAQ.vi</Property>
-            <Property Name="SourceItem[9].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[9].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Feedback.ctl</Property>
-            <Property Name="StripLib" Type="Bool">true</Property>
-            <Property Name="SupportedLanguageCount" Type="Int">0</Property>
-            <Property Name="TLBID" Type="Str">{B7AE93E0-C3C3-4CBA-97FE-485CA58A8912}</Property>
-            <Property Name="UseFFRTE" Type="Bool">false</Property>
-            <Property Name="VersionInfoCompanyName" Type="Str">University of Illinois</Property>
-            <Property Name="VersionInfoFileDescription" Type="Str"></Property>
-            <Property Name="VersionInfoFileType" Type="Int">1</Property>
-            <Property Name="VersionInfoFileVersionBuild" Type="Int">0</Property>
-            <Property Name="VersionInfoFileVersionMajor" Type="Int">1</Property>
-            <Property Name="VersionInfoFileVersionMinor" Type="Int">0</Property>
-            <Property Name="VersionInfoFileVersionPatch" Type="Int">0</Property>
-            <Property Name="VersionInfoInternalName" Type="Str">External Actuator Control</Property>
-            <Property Name="VersionInfoLegalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
-            <Property Name="VersionInfoProductName" Type="Str">External Actuator Control</Property>
+            <Property Name="App_applicationGUID" Type="Str">{AAB88994-83AE-4547-B3D5-8A9E69E06247}</Property>
+            <Property Name="App_applicationName" Type="Str">External Actuator Control.exe</Property>
+            <Property Name="App_companyName" Type="Str">University of Illinois</Property>
+            <Property Name="App_fileType" Type="Int">1</Property>
+            <Property Name="App_fileVersion.major" Type="Int">1</Property>
+            <Property Name="App_INI_aliasGUID" Type="Str">{4377C809-8E16-4E95-860A-689907F4672F}</Property>
+            <Property Name="App_INI_GUID" Type="Str">{99A10263-0289-48EF-8EC1-B9DEBCB3EDF5}</Property>
+            <Property Name="App_internalName" Type="Str">External Actuator Control</Property>
+            <Property Name="App_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
+            <Property Name="App_productName" Type="Str">External Actuator Control</Property>
+            <Property Name="Bld_buildSpecName" Type="Str">External Actuator Control</Property>
+            <Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+            <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+            <Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
+            <Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+            <Property Name="Destination[0].destName" Type="Str">External Actuator Control.exe</Property>
+            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM2 with External Actuators 26 Feb 2008/internal.llb</Property>
+            <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[0].type" Type="Str">App</Property>
+            <Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM2 with External Actuators 26 Feb 2008/data</Property>
+            <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[2].destName" Type="Str">Destination Directory</Property>
+            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM2 with External Actuators 26 Feb 2008</Property>
+            <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="DestinationCount" Type="Int">3</Property>
+            <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
+            <Property Name="Source[0].itemID" Type="Str">{7FE15022-DFF7-45A6-A100-156BF041C349}</Property>
+            <Property Name="Source[0].type" Type="Str">Container</Property>
+            <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[1].itemID" Type="Ref">/My Computer/Config</Property>
+            <Property Name="Source[1].type" Type="Str">Container</Property>
+            <Property Name="Source[10].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[10].itemID" Type="Ref">/My Computer/External Actuators/Actuator Feedback.ctl</Property>
+            <Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[10].type" Type="Str">VI</Property>
+            <Property Name="Source[11].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[11].itemID" Type="Ref">/My Computer/External Actuators/Actuator Global Values.vi</Property>
+            <Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[11].type" Type="Str">VI</Property>
+            <Property Name="Source[12].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[12].itemID" Type="Ref">/My Computer/External Actuators/External Actuator Control Test.vi</Property>
+            <Property Name="Source[12].sourceInclusion" Type="Str">TopLevel</Property>
+            <Property Name="Source[12].type" Type="Str">VI</Property>
+            <Property Name="Source[13].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[13].itemID" Type="Ref">/My Computer/External Actuators/External Actuator Control.vi</Property>
+            <Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[13].type" Type="Str">VI</Property>
+            <Property Name="Source[14].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[14].itemID" Type="Ref">/My Computer/External Actuators/External Control Test.vi</Property>
+            <Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[14].type" Type="Str">VI</Property>
+            <Property Name="Source[15].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[15].itemID" Type="Ref">/My Computer/External Actuators/RampHold_Ext.vi</Property>
+            <Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[15].type" Type="Str">VI</Property>
+            <Property Name="Source[16].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[16].itemID" Type="Ref">/My Computer/External Actuators/RampHold_Test.vi</Property>
+            <Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[16].type" Type="Str">VI</Property>
+            <Property Name="Source[17].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[17].itemID" Type="Ref">/My Computer/IconFiles</Property>
+            <Property Name="Source[17].type" Type="Str">Container</Property>
+            <Property Name="Source[18].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[18].itemID" Type="Ref">/My Computer/image</Property>
+            <Property Name="Source[18].type" Type="Str">Container</Property>
+            <Property Name="Source[19].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[19].itemID" Type="Ref">/My Computer/InputData</Property>
+            <Property Name="Source[19].type" Type="Str">Container</Property>
+            <Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[2].itemID" Type="Ref">/My Computer/Coordinate Alignment</Property>
+            <Property Name="Source[2].type" Type="Str">Container</Property>
+            <Property Name="Source[20].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[20].itemID" Type="Ref">/My Computer/lib</Property>
+            <Property Name="Source[20].type" Type="Str">Container</Property>
+            <Property Name="Source[21].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[21].itemID" Type="Ref">/My Computer/NTCP library</Property>
+            <Property Name="Source[21].type" Type="Str">Container</Property>
+            <Property Name="Source[22].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[22].itemID" Type="Ref">/My Computer/NTCP library/.svn</Property>
+            <Property Name="Source[22].type" Type="Str">Container</Property>
+            <Property Name="Source[23].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[23].itemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base</Property>
+            <Property Name="Source[23].type" Type="Str">Container</Property>
+            <Property Name="Source[24].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[24].itemID" Type="Ref">/My Computer/NTCP library/.svn/props</Property>
+            <Property Name="Source[24].type" Type="Str">Container</Property>
+            <Property Name="Source[25].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[25].itemID" Type="Ref">/My Computer/NTCP library/.svn/text-base</Property>
+            <Property Name="Source[25].type" Type="Str">Container</Property>
+            <Property Name="Source[26].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[26].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp</Property>
+            <Property Name="Source[26].type" Type="Str">Container</Property>
+            <Property Name="Source[27].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[27].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/prop-base</Property>
+            <Property Name="Source[27].type" Type="Str">Container</Property>
+            <Property Name="Source[28].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[28].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/props</Property>
+            <Property Name="Source[28].type" Type="Str">Container</Property>
+            <Property Name="Source[29].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[29].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/text-base</Property>
+            <Property Name="Source[29].type" Type="Str">Container</Property>
+            <Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[3].itemID" Type="Ref">/My Computer/Data Transmission</Property>
+            <Property Name="Source[3].type" Type="Str">Container</Property>
+            <Property Name="Source[30].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[30].itemID" Type="Ref">/My Computer/TestData</Property>
+            <Property Name="Source[30].type" Type="Str">Container</Property>
+            <Property Name="Source[31].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[31].itemID" Type="Ref">/My Computer/TestData/.svn</Property>
+            <Property Name="Source[31].type" Type="Str">Container</Property>
+            <Property Name="Source[32].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[32].itemID" Type="Ref">/My Computer/TestData/.svn/prop-base</Property>
+            <Property Name="Source[32].type" Type="Str">Container</Property>
+            <Property Name="Source[33].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[33].itemID" Type="Ref">/My Computer/TestData/.svn/props</Property>
+            <Property Name="Source[33].type" Type="Str">Container</Property>
+            <Property Name="Source[34].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[34].itemID" Type="Ref">/My Computer/TestData/.svn/text-base</Property>
+            <Property Name="Source[34].type" Type="Str">Container</Property>
+            <Property Name="Source[35].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[35].itemID" Type="Ref">/My Computer/TestData/.svn/tmp</Property>
+            <Property Name="Source[35].type" Type="Str">Container</Property>
+            <Property Name="Source[36].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[36].itemID" Type="Ref">/My Computer/TestData/.svn/tmp/prop-base</Property>
+            <Property Name="Source[36].type" Type="Str">Container</Property>
+            <Property Name="Source[37].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[37].itemID" Type="Ref">/My Computer/TestData/.svn/tmp/props</Property>
+            <Property Name="Source[37].type" Type="Str">Container</Property>
+            <Property Name="Source[38].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[38].itemID" Type="Ref">/My Computer/TestData/.svn/tmp/text-base</Property>
+            <Property Name="Source[38].type" Type="Str">Container</Property>
+            <Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[4].itemID" Type="Ref">/My Computer/DigitalFilter</Property>
+            <Property Name="Source[4].type" Type="Str">Container</Property>
+            <Property Name="Source[5].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[5].itemID" Type="Ref">/My Computer/DLL</Property>
+            <Property Name="Source[5].type" Type="Str">Container</Property>
+            <Property Name="Source[6].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[6].itemID" Type="Ref">/My Computer/External Actuators</Property>
+            <Property Name="Source[6].type" Type="Str">Container</Property>
+            <Property Name="Source[7].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[7].itemID" Type="Ref">/My Computer/External Actuators/Actuator Actions.ctl</Property>
+            <Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[7].type" Type="Str">VI</Property>
+            <Property Name="Source[8].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[8].itemID" Type="Ref">/My Computer/External Actuators/Actuator Commands.ctl</Property>
+            <Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[8].type" Type="Str">VI</Property>
+            <Property Name="Source[9].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[9].itemID" Type="Ref">/My Computer/External Actuators/Actuator Direct DAQ.vi</Property>
+            <Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[9].type" Type="Str">VI</Property>
+            <Property Name="SourceCount" Type="Int">39</Property>
          </Item>
          <Item Name="External Actuator Control With Ramp" Type="EXE">
-            <Property Name="Absolute[0]" Type="Bool">false</Property>
-            <Property Name="Absolute[1]" Type="Bool">false</Property>
-            <Property Name="Absolute[2]" Type="Bool">false</Property>
-            <Property Name="ActiveXInfoEnumCLSIDsItemCount" Type="Int">0</Property>
-            <Property Name="ActiveXInfoMajorVersion" Type="Int">0</Property>
-            <Property Name="ActiveXInfoMinorVersion" Type="Int">0</Property>
-            <Property Name="ActiveXInfoObjCLSIDsItemCount" Type="Int">0</Property>
-            <Property Name="ActiveXInfoProgIDPrefix" Type="Str"></Property>
-            <Property Name="ActiveXServerName" Type="Str"></Property>
-            <Property Name="AliasID" Type="Str">{CE8F20E8-AA75-4773-ACCE-428A5066B4CB}</Property>
-            <Property Name="AliasName" Type="Str">Project.aliases</Property>
-            <Property Name="ApplicationID" Type="Str">{9664BDB8-2059-46B7-84C8-8AA7482A4019}</Property>
-            <Property Name="ApplicationName" Type="Str">External Actuator Control With Ramp.exe</Property>
-            <Property Name="AutoIncrement" Type="Bool">false</Property>
-            <Property Name="BuildName" Type="Str">External Actuator Control With Ramp</Property>
-            <Property Name="CommandLineArguments" Type="Bool">false</Property>
-            <Property Name="CopyErrors" Type="Bool">false</Property>
-            <Property Name="DebuggingEXE" Type="Bool">false</Property>
-            <Property Name="DebugServerWaitOnLaunch" Type="Bool">false</Property>
-            <Property Name="DefaultLanguage" Type="Str">English</Property>
-            <Property Name="DependencyApplyDestination" Type="Bool">true</Property>
-            <Property Name="DependencyApplyInclusion" Type="Bool">true</Property>
-            <Property Name="DependencyApplyProperties" Type="Bool">true</Property>
-            <Property Name="DependencyFolderDestination" Type="Int">0</Property>
-            <Property Name="DependencyFolderInclusion" Type="Str">As needed</Property>
-            <Property Name="DependencyFolderPropertiesItemCount" Type="Int">0</Property>
-            <Property Name="DestinationID[0]" Type="Str">{949F79A8-DAA7-4BB9-ADF3-FE810A066AED}</Property>
-            <Property Name="DestinationID[1]" Type="Str">{949F79A8-DAA7-4BB9-ADF3-FE810A066AED}</Property>
-            <Property Name="DestinationID[2]" Type="Str">{B2EB8944-44E3-409D-9B7A-B43737283CAF}</Property>
-            <Property Name="DestinationItemCount" Type="Int">3</Property>
-            <Property Name="DestinationName[0]" Type="Str">External Actuator Control With Ramp.exe</Property>
-            <Property Name="DestinationName[1]" Type="Str">Destination Directory</Property>
-            <Property Name="DestinationName[2]" Type="Str">Support Directory</Property>
-            <Property Name="Disconnect" Type="Bool">true</Property>
-            <Property Name="IncludeHWConfig" Type="Bool">false</Property>
-            <Property Name="IncludeSCC" Type="Bool">true</Property>
-            <Property Name="INIID" Type="Str">{28CC7297-9AD8-4470-9730-858D00CD2093}</Property>
-            <Property Name="ININame" Type="Str">LabVIEW.ini</Property>
-            <Property Name="LOGID" Type="Str">{1169476F-97C5-4BE3-BD0F-831A7DD81696}</Property>
-            <Property Name="MathScript" Type="Bool">false</Property>
-            <Property Name="Path[0]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/internal.llb</Property>
-            <Property Name="Path[1]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008</Property>
-            <Property Name="Path[2]" Type="Path">../../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/data</Property>
-            <Property Name="ShowHWConfig" Type="Bool">false</Property>
-            <Property Name="SourceInfoItemCount" Type="Int">37</Property>
-            <Property Name="SourceItem[0].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[0].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[0].ItemID" Type="Ref">/My Computer/Config</Property>
-            <Property Name="SourceItem[1].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[1].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[1].ItemID" Type="Ref">/My Computer/Coordinate Alignment</Property>
-            <Property Name="SourceItem[10].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[10].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Global Values.vi</Property>
-            <Property Name="SourceItem[11].Inclusion" Type="Str">Startup VI</Property>
-            <Property Name="SourceItem[11].ItemID" Type="Ref">/My Computer/External Actuators/External Actuator Control.vi</Property>
-            <Property Name="SourceItem[12].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[12].ItemID" Type="Ref">/My Computer/External Actuators/External Control Test.vi</Property>
-            <Property Name="SourceItem[13].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[13].ItemID" Type="Ref">/My Computer/External Actuators/RampHold_Ext.vi</Property>
-            <Property Name="SourceItem[14].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[14].ItemID" Type="Ref">/My Computer/External Actuators/RampHold_Test.vi</Property>
-            <Property Name="SourceItem[15].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[15].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[15].ItemID" Type="Ref">/My Computer/IconFiles</Property>
-            <Property Name="SourceItem[16].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[16].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[16].ItemID" Type="Ref">/My Computer/image</Property>
-            <Property Name="SourceItem[17].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[17].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[17].ItemID" Type="Ref">/My Computer/InputData</Property>
-            <Property Name="SourceItem[18].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[18].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[18].ItemID" Type="Ref">/My Computer/lib</Property>
-            <Property Name="SourceItem[19].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[19].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[19].ItemID" Type="Ref">/My Computer/NTCP library</Property>
-            <Property Name="SourceItem[2].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[2].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[2].ItemID" Type="Ref">/My Computer/Data Transmission</Property>
-            <Property Name="SourceItem[20].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[20].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[20].ItemID" Type="Ref">/My Computer/NTCP library/.svn</Property>
-            <Property Name="SourceItem[21].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[21].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[21].ItemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base</Property>
-            <Property Name="SourceItem[22].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[22].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[22].ItemID" Type="Ref">/My Computer/NTCP library/.svn/props</Property>
-            <Property Name="SourceItem[23].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[23].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[23].ItemID" Type="Ref">/My Computer/NTCP library/.svn/text-base</Property>
-            <Property Name="SourceItem[24].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[24].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[24].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp</Property>
-            <Property Name="SourceItem[25].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[25].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[25].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/prop-base</Property>
-            <Property Name="SourceItem[26].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[26].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[26].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/props</Property>
-            <Property Name="SourceItem[27].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[27].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[27].ItemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/text-base</Property>
-            <Property Name="SourceItem[28].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[28].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[28].ItemID" Type="Ref">/My Computer/TestData</Property>
-            <Property Name="SourceItem[29].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[29].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[29].ItemID" Type="Ref">/My Computer/TestData/.svn</Property>
-            <Property Name="SourceItem[3].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[3].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[3].ItemID" Type="Ref">/My Computer/DigitalFilter</Property>
-            <Property Name="SourceItem[30].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[30].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[30].ItemID" Type="Ref">/My Computer/TestData/.svn/prop-base</Property>
-            <Property Name="SourceItem[31].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[31].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[31].ItemID" Type="Ref">/My Computer/TestData/.svn/props</Property>
-            <Property Name="SourceItem[32].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[32].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[32].ItemID" Type="Ref">/My Computer/TestData/.svn/text-base</Property>
-            <Property Name="SourceItem[33].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[33].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[33].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp</Property>
-            <Property Name="SourceItem[34].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[34].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[34].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/prop-base</Property>
-            <Property Name="SourceItem[35].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[35].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[35].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/props</Property>
-            <Property Name="SourceItem[36].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[36].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[36].ItemID" Type="Ref">/My Computer/TestData/.svn/tmp/text-base</Property>
-            <Property Name="SourceItem[4].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[4].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[4].ItemID" Type="Ref">/My Computer/DLL</Property>
-            <Property Name="SourceItem[5].Destination" Type="Int">0</Property>
-            <Property Name="SourceItem[5].IsFolder" Type="Bool">true</Property>
-            <Property Name="SourceItem[5].ItemID" Type="Ref">/My Computer/External Actuators</Property>
-            <Property Name="SourceItem[6].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[6].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Actions.ctl</Property>
-            <Property Name="SourceItem[7].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[7].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Commands.ctl</Property>
-            <Property Name="SourceItem[8].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[8].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Direct DAQ.vi</Property>
-            <Property Name="SourceItem[9].Inclusion" Type="Str">Always Included</Property>
-            <Property Name="SourceItem[9].ItemID" Type="Ref">/My Computer/External Actuators/Actuator Feedback.ctl</Property>
-            <Property Name="StripLib" Type="Bool">true</Property>
-            <Property Name="SupportedLanguageCount" Type="Int">0</Property>
-            <Property Name="TLBID" Type="Str">{20B42CE4-F648-46B9-9FBE-1E55DDAD3A8E}</Property>
-            <Property Name="UseFFRTE" Type="Bool">false</Property>
-            <Property Name="VersionInfoCompanyName" Type="Str">University of Illinois</Property>
-            <Property Name="VersionInfoFileDescription" Type="Str"></Property>
-            <Property Name="VersionInfoFileType" Type="Int">1</Property>
-            <Property Name="VersionInfoFileVersionBuild" Type="Int">0</Property>
-            <Property Name="VersionInfoFileVersionMajor" Type="Int">1</Property>
-            <Property Name="VersionInfoFileVersionMinor" Type="Int">0</Property>
-            <Property Name="VersionInfoFileVersionPatch" Type="Int">0</Property>
-            <Property Name="VersionInfoInternalName" Type="Str">External Actuator Control With Ramp</Property>
-            <Property Name="VersionInfoLegalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
-            <Property Name="VersionInfoProductName" Type="Str">External Actuator Control With Ramp</Property>
+            <Property Name="App_applicationGUID" Type="Str">{9664BDB8-2059-46B7-84C8-8AA7482A4019}</Property>
+            <Property Name="App_applicationName" Type="Str">External Actuator Control With Ramp.exe</Property>
+            <Property Name="App_companyName" Type="Str">University of Illinois</Property>
+            <Property Name="App_fileType" Type="Int">1</Property>
+            <Property Name="App_fileVersion.major" Type="Int">1</Property>
+            <Property Name="App_INI_aliasGUID" Type="Str">{CE8F20E8-AA75-4773-ACCE-428A5066B4CB}</Property>
+            <Property Name="App_INI_GUID" Type="Str">{28CC7297-9AD8-4470-9730-858D00CD2093}</Property>
+            <Property Name="App_internalName" Type="Str">External Actuator Control With Ramp</Property>
+            <Property Name="App_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
+            <Property Name="App_productName" Type="Str">External Actuator Control With Ramp</Property>
+            <Property Name="Bld_buildSpecName" Type="Str">External Actuator Control With Ramp</Property>
+            <Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+            <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+            <Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
+            <Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+            <Property Name="Destination[0].destName" Type="Str">External Actuator Control With Ramp.exe</Property>
+            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM2 with External Actuators 01 Apr 2008/internal.llb</Property>
+            <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[0].type" Type="Str">App</Property>
+            <Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM2 with External Actuators 01 Apr 2008/data</Property>
+            <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[2].destName" Type="Str">Destination Directory</Property>
+            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM2 with External Actuators 01 Apr 2008</Property>
+            <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="DestinationCount" Type="Int">3</Property>
+            <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
+            <Property Name="Source[0].itemID" Type="Str">{7FE15022-DFF7-45A6-A100-156BF041C349}</Property>
+            <Property Name="Source[0].type" Type="Str">Container</Property>
+            <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[1].itemID" Type="Ref">/My Computer/Config</Property>
+            <Property Name="Source[1].type" Type="Str">Container</Property>
+            <Property Name="Source[10].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[10].itemID" Type="Ref">/My Computer/External Actuators/Actuator Feedback.ctl</Property>
+            <Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[10].type" Type="Str">VI</Property>
+            <Property Name="Source[11].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[11].itemID" Type="Ref">/My Computer/External Actuators/Actuator Global Values.vi</Property>
+            <Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[11].type" Type="Str">VI</Property>
+            <Property Name="Source[12].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[12].itemID" Type="Ref">/My Computer/External Actuators/External Actuator Control.vi</Property>
+            <Property Name="Source[12].sourceInclusion" Type="Str">TopLevel</Property>
+            <Property Name="Source[12].type" Type="Str">VI</Property>
+            <Property Name="Source[13].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[13].itemID" Type="Ref">/My Computer/External Actuators/External Control Test.vi</Property>
+            <Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[13].type" Type="Str">VI</Property>
+            <Property Name="Source[14].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[14].itemID" Type="Ref">/My Computer/External Actuators/RampHold_Ext.vi</Property>
+            <Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[14].type" Type="Str">VI</Property>
+            <Property Name="Source[15].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[15].itemID" Type="Ref">/My Computer/External Actuators/RampHold_Test.vi</Property>
+            <Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[15].type" Type="Str">VI</Property>
+            <Property Name="Source[16].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[16].itemID" Type="Ref">/My Computer/IconFiles</Property>
+            <Property Name="Source[16].type" Type="Str">Container</Property>
+            <Property Name="Source[17].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[17].itemID" Type="Ref">/My Computer/image</Property>
+            <Property Name="Source[17].type" Type="Str">Container</Property>
+            <Property Name="Source[18].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[18].itemID" Type="Ref">/My Computer/InputData</Property>
+            <Property Name="Source[18].type" Type="Str">Container</Property>
+            <Property Name="Source[19].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[19].itemID" Type="Ref">/My Computer/lib</Property>
+            <Property Name="Source[19].type" Type="Str">Container</Property>
+            <Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[2].itemID" Type="Ref">/My Computer/Coordinate Alignment</Property>
+            <Property Name="Source[2].type" Type="Str">Container</Property>
+            <Property Name="Source[20].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[20].itemID" Type="Ref">/My Computer/NTCP library</Property>
+            <Property Name="Source[20].type" Type="Str">Container</Property>
+            <Property Name="Source[21].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[21].itemID" Type="Ref">/My Computer/NTCP library/.svn</Property>
+            <Property Name="Source[21].type" Type="Str">Container</Property>
+            <Property Name="Source[22].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[22].itemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base</Property>
+            <Property Name="Source[22].type" Type="Str">Container</Property>
+            <Property Name="Source[23].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[23].itemID" Type="Ref">/My Computer/NTCP library/.svn/props</Property>
+            <Property Name="Source[23].type" Type="Str">Container</Property>
+            <Property Name="Source[24].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[24].itemID" Type="Ref">/My Computer/NTCP library/.svn/text-base</Property>
+            <Property Name="Source[24].type" Type="Str">Container</Property>
+            <Property Name="Source[25].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[25].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp</Property>
+            <Property Name="Source[25].type" Type="Str">Container</Property>
+            <Property Name="Source[26].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[26].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/prop-base</Property>
+            <Property Name="Source[26].type" Type="Str">Container</Property>
+            <Property Name="Source[27].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[27].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/props</Property>
+            <Property Name="Source[27].type" Type="Str">Container</Property>
+            <Property Name="Source[28].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[28].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/text-base</Property>
+            <Property Name="Source[28].type" Type="Str">Container</Property>
+            <Property Name="Source[29].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[29].itemID" Type="Ref">/My Computer/TestData</Property>
+            <Property Name="Source[29].type" Type="Str">Container</Property>
+            <Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[3].itemID" Type="Ref">/My Computer/Data Transmission</Property>
+            <Property Name="Source[3].type" Type="Str">Container</Property>
+            <Property Name="Source[30].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[30].itemID" Type="Ref">/My Computer/TestData/.svn</Property>
+            <Property Name="Source[30].type" Type="Str">Container</Property>
+            <Property Name="Source[31].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[31].itemID" Type="Ref">/My Computer/TestData/.svn/prop-base</Property>
+            <Property Name="Source[31].type" Type="Str">Container</Property>
+            <Property Name="Source[32].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[32].itemID" Type="Ref">/My Computer/TestData/.svn/props</Property>
+            <Property Name="Source[32].type" Type="Str">Container</Property>
+            <Property Name="Source[33].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[33].itemID" Type="Ref">/My Computer/TestData/.svn/text-base</Property>
+            <Property Name="Source[33].type" Type="Str">Container</Property>
+            <Property Name="Source[34].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[34].itemID" Type="Ref">/My Computer/TestData/.svn/tmp</Property>
+            <Property Name="Source[34].type" Type="Str">Container</Property>
+            <Property Name="Source[35].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[35].itemID" Type="Ref">/My Computer/TestData/.svn/tmp/prop-base</Property>
+            <Property Name="Source[35].type" Type="Str">Container</Property>
+            <Property Name="Source[36].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[36].itemID" Type="Ref">/My Computer/TestData/.svn/tmp/props</Property>
+            <Property Name="Source[36].type" Type="Str">Container</Property>
+            <Property Name="Source[37].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[37].itemID" Type="Ref">/My Computer/TestData/.svn/tmp/text-base</Property>
+            <Property Name="Source[37].type" Type="Str">Container</Property>
+            <Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[4].itemID" Type="Ref">/My Computer/DigitalFilter</Property>
+            <Property Name="Source[4].type" Type="Str">Container</Property>
+            <Property Name="Source[5].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[5].itemID" Type="Ref">/My Computer/DLL</Property>
+            <Property Name="Source[5].type" Type="Str">Container</Property>
+            <Property Name="Source[6].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[6].itemID" Type="Ref">/My Computer/External Actuators</Property>
+            <Property Name="Source[6].type" Type="Str">Container</Property>
+            <Property Name="Source[7].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[7].itemID" Type="Ref">/My Computer/External Actuators/Actuator Actions.ctl</Property>
+            <Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[7].type" Type="Str">VI</Property>
+            <Property Name="Source[8].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[8].itemID" Type="Ref">/My Computer/External Actuators/Actuator Commands.ctl</Property>
+            <Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[8].type" Type="Str">VI</Property>
+            <Property Name="Source[9].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[9].itemID" Type="Ref">/My Computer/External Actuators/Actuator Direct DAQ.vi</Property>
+            <Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[9].type" Type="Str">VI</Property>
+            <Property Name="SourceCount" Type="Int">38</Property>
          </Item>
       </Item>
    </Item>
