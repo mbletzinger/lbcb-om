@@ -304,7 +304,7 @@
       <Item Name="Operations Manager 2.vi" Type="VI" URL="Operations Manager 2.vi"/>
       <Item Name="OperationManagerGlobalSmallFacility.vi" Type="VI" URL="OperationManagerGlobalSmallFacility.vi"/>
       <Item Name="Operation Manager.ini" Type="Document" URL="Operation Manager.ini"/>
-      <Item Name="OperationManagerGlobal.vi" Type="VI" URL="OperationManagerGlobal.vi"/>
+      <Item Name="OperationManagerGlobal.vi" Type="VI" URL="../../../../All Users/Desktop/OM2 with External Actuators 01 Apr 2008/OperationManagerGlobal.vi"/>
       <Item Name="OperationManagerGlobalLargeFacility.vi" Type="VI" URL="OperationManagerGlobalLargeFacility.vi"/>
       <Item Name="Dependencies" Type="Dependencies"/>
       <Item Name="Build Specifications" Type="Build">
@@ -1594,6 +1594,11 @@
             <Property Name="SourceItem[24].VIPropertiesVISetting[0]" Type="Bool">false</Property>
             <Property Name="SourceItem[25].Inclusion" Type="Str">Startup VI</Property>
             <Property Name="SourceItem[25].ItemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
+            <Property Name="SourceItem[25].VIPropertiesItemCount" Type="Int">2</Property>
+            <Property Name="SourceItem[25].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
+            <Property Name="SourceItem[25].VIPropertiesSettingOption[1]" Type="Str">Run when opened</Property>
+            <Property Name="SourceItem[25].VIPropertiesVISetting[0]" Type="Bool">false</Property>
+            <Property Name="SourceItem[25].VIPropertiesVISetting[1]" Type="Bool">false</Property>
             <Property Name="SourceItem[26].ItemID" Type="Ref">/My Computer/NTCP library/NTCPtestcommand.vi</Property>
             <Property Name="SourceItem[26].VIPropertiesItemCount" Type="Int">1</Property>
             <Property Name="SourceItem[26].VIPropertiesSettingOption[0]" Type="Str">Remove panel</Property>
