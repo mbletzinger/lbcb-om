@@ -5,8 +5,10 @@ clc;
 s= '%s%s%s';
 s = [s,repmat('%f',1,96)];
 hs = repmat('%s',1,97);
-orig_file = uigetfile('*.txt', 'Original Program Log','/Users/mbletzin/Work/MATLAB/');
-new_file = uigetfile('*.txt', 'New Program Log','/Users/mbletzin/Work/MATLAB/');
+%orig_file = uigetfile('*.txt', 'Original Program Log','/Users/mbletzin/Work/MATLAB/');
+orig_file = 'C:\Documents and Settings\All Users\Desktop\Logs\Original OM Log LV 82 Compiled.txt';
+%new_file = uigetfile('*.txt', 'New Program Log','/Users/mbletzin/Work/MATLAB/');
+new_file = 'C:\Documents and Settings\All Users\Desktop\Logs\ContLog_2008_May_11_20_24_05.txt';
 fid = fopen(new_file, 'r');
 headers = textscan(fid,hs,1,'Delimiter','\t');
 raw = textscan(fid, s);
@@ -63,6 +65,6 @@ for g = 1:5
 end
 subplot(2,3,6)
 h = barh(1:6,stats(91:96,:),'group');
-set(gca,'YTickLabel',hdr(91,96));
+%set(gca,'YTickLabel',hdr(91,96));
 set(gca,'YTick',1:6);
-legend(h, 'Orig Mean', 'Orig Std Dev', 'New Mean', 'New Std Dev');
+legend(h, 'Orig Mean', 'New Mean','Orig Std Dev', 'New Std Dev');

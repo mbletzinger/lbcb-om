@@ -68,17 +68,8 @@
          <Item Name="RampHold.dll" Type="Document" URL="DLL/RampHold.dll"/>
          <Item Name="StepwiseRamp.dll" Type="Document" URL="DLL/StepwiseRamp.dll"/>
       </Item>
-      <Item Name="External Actuators" Type="Folder">
-         <Item Name="Actuator Actions.ctl" Type="VI" URL="External Actuators/Actuator Actions.ctl"/>
-         <Item Name="Actuator Commands.ctl" Type="VI" URL="External Actuators/Actuator Commands.ctl"/>
-         <Item Name="Actuator Direct DAQ.vi" Type="VI" URL="External Actuators/Actuator Direct DAQ.vi"/>
-         <Item Name="Actuator Feedback.ctl" Type="VI" URL="External Actuators/Actuator Feedback.ctl"/>
-         <Item Name="Actuator Global Values.vi" Type="VI" URL="External Actuators/Actuator Global Values.vi"/>
-         <Item Name="External Actuator Control Test.vi" Type="VI" URL="External Actuators/External Actuator Control Test.vi"/>
-         <Item Name="External Actuator Control.vi" Type="VI" URL="External Actuators/External Actuator Control.vi"/>
-         <Item Name="External Control Test.vi" Type="VI" URL="External Actuators/External Control Test.vi"/>
-         <Item Name="RampHold_Ext.vi" Type="VI" URL="External Actuators/RampHold_Ext.vi"/>
-         <Item Name="RampHold_Test.vi" Type="VI" URL="External Actuators/RampHold_Test.vi"/>
+      <Item Name="External Actuators" Type="Folder" URL="External Actuators">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
       </Item>
       <Item Name="IconFiles" Type="Folder">
          <Item Name="LBCB Operation Manager.ico" Type="Document" URL="IconFiles/LBCB Operation Manager.ico"/>
@@ -116,130 +107,11 @@
          <Item Name="X003Fz300.txt" Type="Document" URL="InputData/X003Fz300.txt"/>
          <Item Name="X15.txt" Type="Document" URL="InputData/X15.txt"/>
       </Item>
-      <Item Name="lib" Type="Folder">
-         <Item Name="Global Data" Type="Folder" URL="lib/Global Data">
-            <Property Name="NI.DISK" Type="Bool">true</Property>
-         </Item>
-         <Item Name="Logging" Type="Folder" URL="lib/Logging">
-            <Property Name="NI.DISK" Type="Bool">true</Property>
-         </Item>
-         <Item Name="About LBCB Operation Manager.vi" Type="VI" URL="lib/About LBCB Operation Manager.vi"/>
-         <Item Name="ActuatorArray2Cluster.vi" Type="VI" URL="lib/ActuatorArray2Cluster.vi"/>
-         <Item Name="ActuatorCluster2Array.vi" Type="VI" URL="lib/ActuatorCluster2Array.vi"/>
-         <Item Name="Adaptive Middle Controller.vi" Type="VI" URL="lib/Adaptive Middle Controller.vi"/>
-         <Item Name="Add New Events.vi" Type="VI" URL="lib/Add New Events.vi"/>
-         <Item Name="Auto Balance Controller.vi" Type="VI" URL="lib/Auto Balance Controller.vi"/>
-         <Item Name="Auto Balance Loop.vi" Type="VI" URL="lib/Auto Balance Loop.vi"/>
-         <Item Name="CartesianArray2Cluster.vi" Type="VI" URL="lib/CartesianArray2Cluster.vi"/>
-         <Item Name="CartesianCluster2Array.vi" Type="VI" URL="lib/CartesianCluster2Array.vi"/>
-         <Item Name="CartesianGlobal2Indiv.vi" Type="VI" URL="lib/CartesianGlobal2Indiv.vi"/>
-         <Item Name="Channel List.vi" Type="VI" URL="lib/Channel List.vi"/>
-         <Item Name="DAQ Property.vi" Type="VI" URL="lib/DAQ Property.vi"/>
-         <Item Name="Displacement Limit.vi" Type="VI" URL="lib/Displacement Limit.vi"/>
-         <Item Name="Double2Wave.vi" Type="VI" URL="lib/Double2Wave.vi"/>
-         <Item Name="Double2WaveWithFlag.vi" Type="VI" URL="lib/Double2WaveWithFlag.vi"/>
-         <Item Name="ExtractArray.vi" Type="VI" URL="lib/ExtractArray.vi"/>
-         <Item Name="ExtractCartesianArray.vi" Type="VI" URL="lib/ExtractCartesianArray.vi"/>
-         <Item Name="ExtractCartesianDAQArray.vi" Type="VI" URL="lib/ExtractCartesianDAQArray.vi"/>
-         <Item Name="Force Limit.vi" Type="VI" URL="lib/Force Limit.vi"/>
-         <Item Name="FunctionGenerator.vi" Type="VI" URL="lib/FunctionGenerator.vi"/>
-         <Item Name="GetChannelNameArray.vi" Type="VI" URL="lib/GetChannelNameArray.vi"/>
-         <Item Name="GetSamplingRate.vi" Type="VI" URL="lib/GetSamplingRate.vi"/>
-         <Item Name="InputUpdate.vi" Type="VI" URL="lib/InputUpdate.vi"/>
-         <Item Name="InsertCartesianArray.vi" Type="VI" URL="lib/InsertCartesianArray.vi"/>
-         <Item Name="Jacobian Setup.vi" Type="VI" URL="lib/Jacobian Setup.vi"/>
-         <Item Name="LBCB_Conversions.vi" Type="VI" URL="lib/LBCB_Conversions.vi"/>
-         <Item Name="LBCB_Conversions2.vi" Type="VI" URL="lib/LBCB_Conversions2.vi"/>
-         <Item Name="Limit Check.vi" Type="VI" URL="lib/Limit Check.vi"/>
-         <Item Name="Load Config Data.vi" Type="VI" URL="lib/Load Config Data.vi"/>
-         <Item Name="Load Digital Filter File.vi" Type="VI" URL="lib/Load Digital Filter File.vi"/>
-         <Item Name="Middle Loop Property.vi" Type="VI" URL="lib/Middle Loop Property.vi"/>
-         <Item Name="Middle PID Controller.vi" Type="VI" URL="lib/Middle PID Controller.vi"/>
-         <Item Name="MilisecLogger.vi" Type="VI" URL="lib/MilisecLogger.vi"/>
-         <Item Name="MilisecLoggerCoverter.vi" Type="VI" URL="lib/MilisecLoggerCoverter.vi"/>
-         <Item Name="MixedModeCommandControl.vi" Type="VI" URL="lib/MixedModeCommandControl.vi"/>
-         <Item Name="MixedModeControl.vi" Type="VI" URL="lib/MixedModeControl.vi"/>
-         <Item Name="MixedModeDataTrigger.vi" Type="VI" URL="lib/MixedModeDataTrigger.vi"/>
-         <Item Name="MixedModeInputType.vi" Type="VI" URL="lib/MixedModeInputType.vi"/>
-         <Item Name="MixedModeInputType_rev.vi" Type="VI" URL="lib/MixedModeInputType_rev.vi"/>
-         <Item Name="MixedModeLoopProperty.vi" Type="VI" URL="lib/MixedModeLoopProperty.vi"/>
-         <Item Name="MultiSignalDigitalFilter.vi" Type="VI" URL="lib/MultiSignalDigitalFilter.vi"/>
-         <Item Name="PlotInputData.vi" Type="VI" URL="lib/PlotInputData.vi"/>
-         <Item Name="RampHold.vi" Type="VI" URL="lib/RampHold.vi"/>
-         <Item Name="RampInputType.vi" Type="VI" URL="lib/RampInputType.vi"/>
-         <Item Name="ReplaceArray.vi" Type="VI" URL="lib/ReplaceArray.vi"/>
-         <Item Name="Save Config Data.vi" Type="VI" URL="lib/Save Config Data.vi"/>
-         <Item Name="Servo Limit.vi" Type="VI" URL="lib/Servo Limit.vi"/>
-         <Item Name="SetLocalCoordinates.vi" Type="VI" URL="lib/SetLocalCoordinates.vi"/>
-         <Item Name="Shift Cartesian Axes.vi" Type="VI" URL="lib/Shift Cartesian Axes.vi"/>
-         <Item Name="StepRampInputTypeRev.vi" Type="VI" URL="lib/StepRampInputTypeRev.vi"/>
-         <Item Name="StepwiseRamp.vi" Type="VI" URL="lib/StepwiseRamp.vi"/>
-         <Item Name="vector2cluster.vi" Type="VI" URL="lib/vector2cluster.vi"/>
-         <Item Name="WavechartWithCaption.vi" Type="VI" URL="lib/WavechartWithCaption.vi"/>
-         <Item Name="WriteTextData.vi" Type="VI" URL="lib/WriteTextData.vi"/>
-         <Item Name="XY Chart Buffer_rev.vi" Type="VI" URL="lib/XY Chart Buffer_rev.vi"/>
+      <Item Name="lib" Type="Folder" URL="lib">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
       </Item>
-      <Item Name="NTCP library" Type="Folder">
-         <Item Name=".svn" Type="Folder">
-            <Item Name="prop-base" Type="Folder">
-               <Item Name="About NTCP Socket.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/About NTCP Socket.vi.svn-base"/>
-               <Item Name="ExternalSensorsDataString.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/ExternalSensorsDataString.vi.svn-base"/>
-               <Item Name="Generate 12-value control pt return value.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/Generate 12-value control pt return value.vi.svn-base"/>
-               <Item Name="ntcp cmd - parse and enqueue.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/ntcp cmd - parse and enqueue.vi.svn-base"/>
-               <Item Name="ntcp command.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/ntcp command.vi.svn-base"/>
-               <Item Name="NTCP return.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/NTCP return.vi.svn-base"/>
-               <Item Name="NTCP Socket.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/NTCP Socket.vi.svn-base"/>
-               <Item Name="NTCPtestcommand.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/NTCPtestcommand.vi.svn-base"/>
-               <Item Name="NTCPtestreceiver.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/NTCPtestreceiver.vi.svn-base"/>
-               <Item Name="OM reply - parse and enqueue.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/OM reply - parse and enqueue.vi.svn-base"/>
-               <Item Name="Open ntcp command queue.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/Open ntcp command queue.vi.svn-base"/>
-               <Item Name="Open OM reply queue.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/Open OM reply queue.vi.svn-base"/>
-               <Item Name="ProposeCommand.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/ProposeCommand.vi.svn-base"/>
-               <Item Name="TCP read command.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/TCP read command.vi.svn-base"/>
-               <Item Name="WriteLogFile.vi.svn-base" Type="Document" URL="NTCP library/.svn/prop-base/WriteLogFile.vi.svn-base"/>
-            </Item>
-            <Item Name="props" Type="Folder"/>
-            <Item Name="text-base" Type="Folder">
-               <Item Name="About NTCP Socket.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/About NTCP Socket.vi.svn-base"/>
-               <Item Name="ExternalSensorsDataString.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/ExternalSensorsDataString.vi.svn-base"/>
-               <Item Name="Generate 12-value control pt return value.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/Generate 12-value control pt return value.vi.svn-base"/>
-               <Item Name="ntcp cmd - parse and enqueue.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/ntcp cmd - parse and enqueue.vi.svn-base"/>
-               <Item Name="ntcp command.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/ntcp command.vi.svn-base"/>
-               <Item Name="NTCP return.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/NTCP return.vi.svn-base"/>
-               <Item Name="NTCP Socket.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/NTCP Socket.vi.svn-base"/>
-               <Item Name="NTCPtestcommand.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/NTCPtestcommand.vi.svn-base"/>
-               <Item Name="NTCPtestreceiver.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/NTCPtestreceiver.vi.svn-base"/>
-               <Item Name="OM reply - parse and enqueue.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/OM reply - parse and enqueue.vi.svn-base"/>
-               <Item Name="Open ntcp command queue.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/Open ntcp command queue.vi.svn-base"/>
-               <Item Name="Open OM reply queue.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/Open OM reply queue.vi.svn-base"/>
-               <Item Name="ProposeCommand.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/ProposeCommand.vi.svn-base"/>
-               <Item Name="TCP read command.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/TCP read command.vi.svn-base"/>
-               <Item Name="WriteLogFile.vi.svn-base" Type="VI" URL="NTCP library/.svn/text-base/WriteLogFile.vi.svn-base"/>
-            </Item>
-            <Item Name="tmp" Type="Folder">
-               <Item Name="prop-base" Type="Folder"/>
-               <Item Name="props" Type="Folder"/>
-               <Item Name="text-base" Type="Folder"/>
-            </Item>
-            <Item Name="all-wcprops" Type="Document" URL="NTCP library/.svn/all-wcprops"/>
-            <Item Name="entries" Type="Document" URL="NTCP library/.svn/entries"/>
-            <Item Name="format" Type="Document" URL="NTCP library/.svn/format"/>
-         </Item>
-         <Item Name="About NTCP Socket.vi" Type="VI" URL="NTCP library/About NTCP Socket.vi"/>
-         <Item Name="ExternalSensorsDataString.vi" Type="VI" URL="NTCP library/ExternalSensorsDataString.vi"/>
-         <Item Name="Generate 12-value control pt return value.vi" Type="VI" URL="NTCP library/Generate 12-value control pt return value.vi"/>
-         <Item Name="ntcp cmd - parse and enqueue.vi" Type="VI" URL="NTCP library/ntcp cmd - parse and enqueue.vi"/>
-         <Item Name="ntcp command.vi" Type="VI" URL="NTCP library/ntcp command.vi"/>
-         <Item Name="NTCP return.vi" Type="VI" URL="NTCP library/NTCP return.vi"/>
-         <Item Name="NTCP Socket.vi" Type="VI" URL="NTCP library/NTCP Socket.vi"/>
-         <Item Name="NTCPtestcommand.vi" Type="VI" URL="NTCP library/NTCPtestcommand.vi"/>
-         <Item Name="NTCPtestreceiver.vi" Type="VI" URL="NTCP library/NTCPtestreceiver.vi"/>
-         <Item Name="OM reply - parse and enqueue.vi" Type="VI" URL="NTCP library/OM reply - parse and enqueue.vi"/>
-         <Item Name="Open ntcp command queue.vi" Type="VI" URL="NTCP library/Open ntcp command queue.vi"/>
-         <Item Name="Open OM reply queue.vi" Type="VI" URL="NTCP library/Open OM reply queue.vi"/>
-         <Item Name="ProposeCommand.vi" Type="VI" URL="NTCP library/ProposeCommand.vi"/>
-         <Item Name="TCP read command.vi" Type="VI" URL="NTCP library/TCP read command.vi"/>
-         <Item Name="WriteLogFile.vi" Type="VI" URL="NTCP library/WriteLogFile.vi"/>
+      <Item Name="NTCP library" Type="Folder" URL="NTCP library">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
       </Item>
       <Item Name="TestData" Type="Folder">
          <Item Name=".svn" Type="Folder">
@@ -501,25 +373,9 @@
             <Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
          </Item>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
-         <Item Name="OperationManagerGlobal.vi" Type="VI" URL="NTCP library/.svn/OperationManagerGlobal.vi"/>
-         <Item Name="GetChannelNameArray.vi" Type="VI" URL="NTCP library/.svn/lib/GetChannelNameArray.vi"/>
-         <Item Name="ExternalSensorsDataString.vi" Type="VI" URL="NTCP library/.svn/text-base/ExternalSensorsDataString.vi"/>
-         <Item Name="Open ntcp command queue.vi" Type="VI" URL="NTCP library/.svn/text-base/Open ntcp command queue.vi"/>
-         <Item Name="ProposeCommand.vi" Type="VI" URL="NTCP library/.svn/text-base/ProposeCommand.vi"/>
-         <Item Name="ntcp cmd - parse and enqueue.vi" Type="VI" URL="NTCP library/.svn/text-base/ntcp cmd - parse and enqueue.vi"/>
-         <Item Name="WriteLogFile.vi" Type="VI" URL="NTCP library/.svn/text-base/WriteLogFile.vi"/>
-         <Item Name="OM reply - parse and enqueue.vi" Type="VI" URL="NTCP library/.svn/text-base/OM reply - parse and enqueue.vi"/>
-         <Item Name="Open OM reply queue.vi" Type="VI" URL="NTCP library/.svn/text-base/Open OM reply queue.vi"/>
-         <Item Name="NTCP return.vi" Type="VI" URL="NTCP library/.svn/text-base/NTCP return.vi"/>
-         <Item Name="TCP read command.vi" Type="VI" URL="NTCP library/.svn/text-base/TCP read command.vi"/>
-         <Item Name="Error to Warning.vi" Type="VI" URL="../../Program Files/National Instruments/LabVIEW 7.0/examples/comm/TCP.llb/Error to Warning.vi"/>
-         <Item Name="ntcp command.vi" Type="VI" URL="NTCP library/.svn/text-base/ntcp command.vi"/>
-         <Item Name="Generate 12-value control pt return value.vi" Type="VI" URL="NTCP library/.svn/text-base/Generate 12-value control pt return value.vi"/>
          <Item Name="Error to Warning.vi" Type="VI" URL="../../../../Program Files/National Instruments/LabVIEW 7.0/examples/comm/TCP.llb/Error to Warning.vi"/>
          <Item Name="LBCB Operation Manager Menu.rtm" Type="Document" URL="BuildFiles/LBCB Operation Manager Menu.rtm"/>
-         <Item Name="Adjust LBCB LVDT Measurement.vi" Type="VI" URL="lib/Adjust LBCB LVDT Measurement.vi"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
-         <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
          <Item Name="Operations Manager 2" Type="EXE">
@@ -541,34 +397,34 @@
             <Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
             <Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
             <Property Name="Destination[0].destName" Type="Str">LBCB Operations Manager 2.exe</Property>
-            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/internal.llb</Property>
+            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM with fixed logging /internal.llb</Property>
             <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[0].type" Type="Str">App</Property>
             <Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/data</Property>
+            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM with fixed logging /data</Property>
             <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[2].destName" Type="Str">Destination Directory</Property>
-            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build</Property>
+            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM with fixed logging </Property>
             <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[3].destName" Type="Str">Operations Manager LLB</Property>
-            <Property Name="Destination[3].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/NI_AB_PROJECTNAME.llb</Property>
+            <Property Name="Destination[3].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM with fixed logging /NI_AB_PROJECTNAME.llb</Property>
             <Property Name="Destination[3].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[3].type" Type="Str">LLB</Property>
             <Property Name="Destination[4].destName" Type="Str">Config</Property>
-            <Property Name="Destination[4].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/Config</Property>
+            <Property Name="Destination[4].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM with fixed logging /Config</Property>
             <Property Name="Destination[4].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[5].destName" Type="Str">DigitalFilter</Property>
-            <Property Name="Destination[5].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/DigitalFilter</Property>
+            <Property Name="Destination[5].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM with fixed logging /DigitalFilter</Property>
             <Property Name="Destination[5].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[6].destName" Type="Str">image</Property>
-            <Property Name="Destination[6].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build/image</Property>
+            <Property Name="Destination[6].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM with fixed logging /image</Property>
             <Property Name="Destination[6].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="DestinationCount" Type="Int">7</Property>
             <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{C6B59FD9-DFDD-4EBE-81D3-C2632ABCE77D}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{39FC156E-459D-4D15-9F74-7BC9A2D0626F}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[1].Container.applyInclusion" Type="Bool">true</Property>
@@ -717,7 +573,6 @@
             <Property Name="Source[37].type" Type="Str">Container</Property>
             <Property Name="Source[38].destinationIndex" Type="Int">3</Property>
             <Property Name="Source[38].itemID" Type="Ref">/My Computer/External Actuators/Actuator Actions.ctl</Property>
-            <Property Name="Source[38].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[38].type" Type="Str">VI</Property>
             <Property Name="Source[39].destinationIndex" Type="Int">3</Property>
             <Property Name="Source[39].itemID" Type="Ref">/My Computer/External Actuators/Actuator Commands.ctl</Property>
@@ -981,28 +836,28 @@
             <Property Name="Source[11].itemID" Type="Ref">/My Computer/NTCP library</Property>
             <Property Name="Source[11].type" Type="Str">Container</Property>
             <Property Name="Source[12].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[12].itemID" Type="Ref">/My Computer/NTCP library/.svn</Property>
+            <Property Name="Source[12].itemID" Type="Ref"></Property>
             <Property Name="Source[12].type" Type="Str">Container</Property>
             <Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[13].itemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base</Property>
+            <Property Name="Source[13].itemID" Type="Ref"></Property>
             <Property Name="Source[13].type" Type="Str">Container</Property>
             <Property Name="Source[14].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[14].itemID" Type="Ref">/My Computer/NTCP library/.svn/props</Property>
+            <Property Name="Source[14].itemID" Type="Ref"></Property>
             <Property Name="Source[14].type" Type="Str">Container</Property>
             <Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[15].itemID" Type="Ref">/My Computer/NTCP library/.svn/text-base</Property>
+            <Property Name="Source[15].itemID" Type="Ref"></Property>
             <Property Name="Source[15].type" Type="Str">Container</Property>
             <Property Name="Source[16].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[16].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp</Property>
+            <Property Name="Source[16].itemID" Type="Ref"></Property>
             <Property Name="Source[16].type" Type="Str">Container</Property>
             <Property Name="Source[17].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[17].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/prop-base</Property>
+            <Property Name="Source[17].itemID" Type="Ref"></Property>
             <Property Name="Source[17].type" Type="Str">Container</Property>
             <Property Name="Source[18].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[18].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/props</Property>
+            <Property Name="Source[18].itemID" Type="Ref"></Property>
             <Property Name="Source[18].type" Type="Str">Container</Property>
             <Property Name="Source[19].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[19].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/text-base</Property>
+            <Property Name="Source[19].itemID" Type="Ref"></Property>
             <Property Name="Source[19].type" Type="Str">Container</Property>
             <Property Name="Source[2].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[2].itemID" Type="Ref">/My Computer/Coordinate Alignment</Property>
@@ -1232,28 +1087,28 @@
             <Property Name="Source[21].itemID" Type="Ref">/My Computer/NTCP library</Property>
             <Property Name="Source[21].type" Type="Str">Container</Property>
             <Property Name="Source[22].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[22].itemID" Type="Ref">/My Computer/NTCP library/.svn</Property>
+            <Property Name="Source[22].itemID" Type="Ref"></Property>
             <Property Name="Source[22].type" Type="Str">Container</Property>
             <Property Name="Source[23].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[23].itemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base</Property>
+            <Property Name="Source[23].itemID" Type="Ref"></Property>
             <Property Name="Source[23].type" Type="Str">Container</Property>
             <Property Name="Source[24].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[24].itemID" Type="Ref">/My Computer/NTCP library/.svn/props</Property>
+            <Property Name="Source[24].itemID" Type="Ref"></Property>
             <Property Name="Source[24].type" Type="Str">Container</Property>
             <Property Name="Source[25].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[25].itemID" Type="Ref">/My Computer/NTCP library/.svn/text-base</Property>
+            <Property Name="Source[25].itemID" Type="Ref"></Property>
             <Property Name="Source[25].type" Type="Str">Container</Property>
             <Property Name="Source[26].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[26].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp</Property>
+            <Property Name="Source[26].itemID" Type="Ref"></Property>
             <Property Name="Source[26].type" Type="Str">Container</Property>
             <Property Name="Source[27].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[27].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/prop-base</Property>
+            <Property Name="Source[27].itemID" Type="Ref"></Property>
             <Property Name="Source[27].type" Type="Str">Container</Property>
             <Property Name="Source[28].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[28].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/props</Property>
+            <Property Name="Source[28].itemID" Type="Ref"></Property>
             <Property Name="Source[28].type" Type="Str">Container</Property>
             <Property Name="Source[29].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[29].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/text-base</Property>
+            <Property Name="Source[29].itemID" Type="Ref"></Property>
             <Property Name="Source[29].type" Type="Str">Container</Property>
             <Property Name="Source[3].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[3].itemID" Type="Ref">/My Computer/Data Transmission</Property>
@@ -1386,28 +1241,28 @@
             <Property Name="Source[20].itemID" Type="Ref">/My Computer/NTCP library</Property>
             <Property Name="Source[20].type" Type="Str">Container</Property>
             <Property Name="Source[21].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[21].itemID" Type="Ref">/My Computer/NTCP library/.svn</Property>
+            <Property Name="Source[21].itemID" Type="Ref"></Property>
             <Property Name="Source[21].type" Type="Str">Container</Property>
             <Property Name="Source[22].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[22].itemID" Type="Ref">/My Computer/NTCP library/.svn/prop-base</Property>
+            <Property Name="Source[22].itemID" Type="Ref"></Property>
             <Property Name="Source[22].type" Type="Str">Container</Property>
             <Property Name="Source[23].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[23].itemID" Type="Ref">/My Computer/NTCP library/.svn/props</Property>
+            <Property Name="Source[23].itemID" Type="Ref"></Property>
             <Property Name="Source[23].type" Type="Str">Container</Property>
             <Property Name="Source[24].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[24].itemID" Type="Ref">/My Computer/NTCP library/.svn/text-base</Property>
+            <Property Name="Source[24].itemID" Type="Ref"></Property>
             <Property Name="Source[24].type" Type="Str">Container</Property>
             <Property Name="Source[25].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[25].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp</Property>
+            <Property Name="Source[25].itemID" Type="Ref"></Property>
             <Property Name="Source[25].type" Type="Str">Container</Property>
             <Property Name="Source[26].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[26].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/prop-base</Property>
+            <Property Name="Source[26].itemID" Type="Ref"></Property>
             <Property Name="Source[26].type" Type="Str">Container</Property>
             <Property Name="Source[27].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[27].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/props</Property>
+            <Property Name="Source[27].itemID" Type="Ref"></Property>
             <Property Name="Source[27].type" Type="Str">Container</Property>
             <Property Name="Source[28].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[28].itemID" Type="Ref">/My Computer/NTCP library/.svn/tmp/text-base</Property>
+            <Property Name="Source[28].itemID" Type="Ref"></Property>
             <Property Name="Source[28].type" Type="Str">Container</Property>
             <Property Name="Source[29].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[29].itemID" Type="Ref">/My Computer/TestData</Property>
