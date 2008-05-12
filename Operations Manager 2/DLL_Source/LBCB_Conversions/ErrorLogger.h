@@ -20,7 +20,7 @@ public:
 	void SetPrefix(string pfx);
 	static void InitCSV();
 private:
-	ostringstream ErrorStream;
+	ostringstream* ErrorStream;
 	static string LogFilename;
 	string prefix;
 	DWORD threadid;

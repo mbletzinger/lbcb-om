@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\Documents and Settings\adminmbletzin\Desktop\Work\Operations Manager 2 NTCP Branch\DLL_Source\DAQ_Source\LBCB_Conversions\LBCB_Conversion_A2C&quot;"
+				AdditionalIncludeDirectories="&quot;C:\Documents and Settings\adminmbletzin\Desktop\Work\Operations Manager 2\DLL_Source\LBCB_Conversions&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -171,7 +171,7 @@
 	<References>
 		<ProjectReference
 			ReferencedProjectIdentifier="{17AB0628-9FD4-4AE4-9230-53F7494D98AB}"
-			RelativePathToProject="..\DAQ_Source\LBCB_Conversions\LBCB_Conversion_A2C\LBCB_Conversion_A2C.vcproj"
+			RelativePathToProject="..\LBCB_Conversions\LBCB_Conversion_A2C.vcproj"
 		/>
 	</References>
 	<Files>

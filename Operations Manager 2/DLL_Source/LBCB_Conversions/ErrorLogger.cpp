@@ -8,6 +8,7 @@ string ErrorLogger::LogFilename = "";
 ErrorLogger::ErrorLogger(DWORD id) : threadid(id)
 {
 	ContainsErrors = false;
+	ErrorStream = new ostringstream();
 }
 
 ErrorLogger::~ErrorLogger(void)
@@ -26,9 +27,11 @@ void ErrorLogger::flush()
 
 	EnterCriticalSection(&critical_section);
 	ofstream Logout (LogFilename.c_str(), ios_base::out | ios_base::app);
-	Logout << prfx.str()<< ":START"<<endl<<ErrorStream.str()<<prfx.str()<<":END"<<endl;
+	Logout << prfx.str()<< ":START"<<endl<<ErrorStream->str()<<prfx.str()<<":END"<<endl;
 	Logout.close();
 	LeaveCriticalSection(&critical_section);
+	delete ErrorStream;
+	ErrorStream = new ostringstream();
 	ContainsErrors = false;
 }
 void ErrorLogger::setFile(string Filename)
@@ -39,7 +42,7 @@ void ErrorLogger::setFile(string Filename)
 }
 void ErrorLogger::addedError()
 {
-	ErrorStream << endl;
+	*ErrorStream << endl;
 	ContainsErrors = true;
 }
 
@@ -50,7 +53,7 @@ bool ErrorLogger::hasError()
 
 ostream& ErrorLogger::getErrorStream()
 {
-	return ErrorStream;
+	return *ErrorStream;
 }
 void ErrorLogger::InitCSV()
 {

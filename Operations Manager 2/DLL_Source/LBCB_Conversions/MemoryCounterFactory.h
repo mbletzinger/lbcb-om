@@ -22,5 +22,5 @@ private:
 	map<string,MemoryCounter*> McntMap;
 	vector<MemoryCounter*> Counters;
 	long RunCounter;
-	static const long MemoryDumpCount = 50;
+	static const long MemoryDumpCount = 50000;
 };
