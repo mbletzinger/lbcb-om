@@ -324,8 +324,8 @@
          </Item>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="LBCB Operation Manager Menu.rtm" Type="Document" URL="BuildFiles/LBCB Operation Manager Menu.rtm"/>
-         <Item Name="systemexec" Type="VI" URL="systemexec"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
+         <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
          <Item Name="NTCP Socket" Type="EXE">
@@ -810,7 +810,7 @@
             <Property Name="Destination[5].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="DestinationCount" Type="Int">6</Property>
             <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
-            <Property Name="Source[0].itemID" Type="Str">{A35ACD3F-147D-46D1-9BFC-E696CEC3DB06}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{E16694CB-3DC2-4013-B74B-E98C32D7B2C5}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/Operations Manager 2.vi</Property>
