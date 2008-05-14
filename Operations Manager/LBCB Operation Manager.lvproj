@@ -10,8 +10,37 @@
       <Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
       <Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
       <Property Name="specify.custom.address" Type="Bool">false</Property>
+      <Item Name="Config" Type="Folder" URL="Config">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
+      </Item>
+      <Item Name="DigitalFilter" Type="Folder" URL="DigitalFilter">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
+      </Item>
+      <Item Name="IconFiles" Type="Folder" URL="IconFiles">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
+      </Item>
+      <Item Name="image" Type="Folder" URL="image">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
+      </Item>
+      <Item Name="InputFiles" Type="Folder" URL="InputFiles">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
+      </Item>
+      <Item Name="lib" Type="Folder" URL="lib">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
+      </Item>
+      <Item Name="NTCP library" Type="Folder" URL="NTCP library">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
+      </Item>
+      <Item Name="DLL" Type="Folder" URL="DLL">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
+      </Item>
       <Item Name="LBCB Operation Manager_Slave.vi" Type="VI" URL="LBCB Operation Manager_Slave.vi"/>
       <Item Name="LBCB Operation Manager.vi" Type="VI" URL="LBCB Operation Manager.vi"/>
+      <Item Name="Calibration Factor.xls" Type="Document" URL="Calibration Factor.xls"/>
+      <Item Name="Calibration Factors.xls" Type="Document" URL="Calibration Factors.xls"/>
+      <Item Name="Menu.rtm" Type="Document" URL="Menu.rtm"/>
+      <Item Name="OperationManagerGlobal.vi" Type="VI" URL="OperationManagerGlobal.vi"/>
+      <Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="OperationManagerGlobal_Slave.vi"/>
       <Item Name="Dependencies" Type="Dependencies">
          <Item Name="vi.lib" Type="Folder">
             <Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -180,61 +209,21 @@
             <Item Name="DAQmx Read (Digital 1D U16 NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D U16 NChan 1Samp).vi"/>
             <Item Name="DAQmx Read (Digital 2D U16 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 2D U16 NChan NSamp).vi"/>
             <Item Name="How many pts in the wave.vi" Type="VI" URL="/&lt;vilib&gt;/express/express arith-compare/FormulaBlock.llb/How many pts in the wave.vi"/>
+            <Item Name="Read Characters From File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Characters From File.vi"/>
+            <Item Name="Open File+.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Open File+.vi"/>
+            <Item Name="Read File+ (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read File+ (string).vi"/>
+            <Item Name="compatReadText.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatReadText.vi"/>
+            <Item Name="Merge Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Merge Errors.vi"/>
+            <Item Name="Open/Create/Replace File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Open/Create/Replace File.vi"/>
+            <Item Name="Error to Warning.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error to Warning.vi"/>
+            <Item Name="TCP Listen.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen.vi"/>
+            <Item Name="Internecine Avoider.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/Internecine Avoider.vi"/>
+            <Item Name="TCP Listen List Operations.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen List Operations.ctl"/>
+            <Item Name="TCP Listen Internal List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen Internal List.vi"/>
+            <Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
          </Item>
-         <Item Name="Menu.rtm" Type="Document" URL="Menu.rtm"/>
-         <Item Name="Load Config Data.vi" Type="VI" URL="lib/Load Config Data.vi"/>
-         <Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="OperationManagerGlobal_Slave.vi"/>
-         <Item Name="GetChannelNameArray.vi" Type="VI" URL="lib/GetChannelNameArray.vi"/>
-         <Item Name="Save Config Data.vi" Type="VI" URL="lib/Save Config Data.vi"/>
-         <Item Name="Auto Balance Loop.vi" Type="VI" URL="lib/Auto Balance Loop.vi"/>
-         <Item Name="Middle Loop Property.vi" Type="VI" URL="lib/Middle Loop Property.vi"/>
-         <Item Name="MixedModeLoopProperty.vi" Type="VI" URL="lib/MixedModeLoopProperty.vi"/>
-         <Item Name="Jacobian Setup.vi" Type="VI" URL="lib/Jacobian Setup.vi"/>
-         <Item Name="Servo Limit.vi" Type="VI" URL="lib/Servo Limit.vi"/>
-         <Item Name="Displacement Limit.vi" Type="VI" URL="lib/Displacement Limit.vi"/>
-         <Item Name="Force Limit.vi" Type="VI" URL="lib/Force Limit.vi"/>
-         <Item Name="About LBCB Operation Manager.vi" Type="VI" URL="lib/About LBCB Operation Manager.vi"/>
-         <Item Name="Add New Events.vi" Type="VI" URL="lib/Add New Events.vi"/>
-         <Item Name="Auto Balance Controlle_slave.vi" Type="VI" URL="lib/Auto Balance Controlle_slave.vi"/>
-         <Item Name="AutoBalance.dll" Type="Document" URL="DLL/AutoBalance.dll"/>
-         <Item Name="Limit Check.vi" Type="VI" URL="lib/Limit Check.vi"/>
-         <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
-         <Item Name="GetSamplingRate.vi" Type="VI" URL="lib/GetSamplingRate.vi"/>
-         <Item Name="FG_Measurement.vi" Type="VI" URL="lib/FG_Measurement.vi"/>
-         <Item Name="LBCB_Conversions.vi" Type="VI" URL="lib/LBCB_Conversions.vi"/>
-         <Item Name="LBCB_Conversion_C2A.dll" Type="Document" URL="DLL/LBCB_Conversion_C2A.dll"/>
-         <Item Name="LBCB_Conversion_A2C.dll" Type="Document" URL="DLL/LBCB_Conversion_A2C.dll"/>
-         <Item Name="SetLocalCoordinates.vi" Type="VI" URL="lib/SetLocalCoordinates.vi"/>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
-         <Item Name="Double2WaveWithFlag.vi" Type="VI" URL="lib/Double2WaveWithFlag.vi"/>
-         <Item Name="XY Chart Buffer_rev.vi" Type="VI" URL="lib/XY Chart Buffer_rev.vi"/>
-         <Item Name="Channel List.vi" Type="VI" URL="lib/Channel List.vi"/>
-         <Item Name="WriteTextData.vi" Type="VI" URL="lib/WriteTextData.vi"/>
-         <Item Name="FunctionGenerator.vi" Type="VI" URL="lib/FunctionGenerator.vi"/>
-         <Item Name="FunctionGenerator.dll" Type="Document" URL="DLL/FunctionGenerator.dll"/>
-         <Item Name="RampInputType.vi" Type="VI" URL="lib/RampInputType.vi"/>
-         <Item Name="PlotInputData.vi" Type="VI" URL="lib/PlotInputData.vi"/>
-         <Item Name="ntcp command.vi" Type="VI" URL="NTCP library/ntcp command.vi"/>
-         <Item Name="ProposeCommand.vi" Type="VI" URL="NTCP library/ProposeCommand.vi"/>
-         <Item Name="Generate 12-value control pt return value.vi" Type="VI" URL="NTCP library/Generate 12-value control pt return value.vi"/>
-         <Item Name="ExternalSensorsDataString.vi" Type="VI" URL="NTCP library/ExternalSensorsDataString.vi"/>
-         <Item Name="OperationManagerGlobal.vi" Type="VI" URL="OperationManagerGlobal.vi"/>
-         <Item Name="systemexec" Type="VI" URL="systemexec"/>
-         <Item Name="RampHold_slave.vi" Type="VI" URL="lib/RampHold_slave.vi"/>
-         <Item Name="RampHold.dll" Type="Document" URL="DLL/RampHold.dll"/>
-         <Item Name="FG_Pause.vi" Type="VI" URL="lib/FG_Pause.vi"/>
-         <Item Name="FG_Auto.vi" Type="VI" URL="lib/FG_Auto.vi"/>
-         <Item Name="FG_Execute.vi" Type="VI" URL="lib/FG_Execute.vi"/>
-         <Item Name="RampInputType_slave.vi" Type="VI" URL="lib/RampInputType_slave.vi"/>
-         <Item Name="Generate 12-value control pt return value_slave.vi" Type="VI" URL="NTCP library/Generate 12-value control pt return value_slave.vi"/>
-         <Item Name="ExternalSensorsDataString_slave.vi" Type="VI" URL="NTCP library/ExternalSensorsDataString_slave.vi"/>
-         <Item Name="MixedModeControl_slave.vi" Type="VI" URL="lib/MixedModeControl_slave.vi"/>
-         <Item Name="MixedMode2DirecMethod.dll" Type="Document" URL="DLL/MixedMode2DirecMethod.dll"/>
-         <Item Name="Shift Cartesian Axes.vi" Type="VI" URL="lib/Shift Cartesian Axes.vi"/>
-         <Item Name="ConsolidatedDAQChannelNames.vi" Type="VI" URL="lib/ConsolidatedDAQChannelNames.vi"/>
-         <Item Name="Auto Balance Controller.vi" Type="VI" URL="lib/Auto Balance Controller.vi"/>
-         <Item Name="RampHold.vi" Type="VI" URL="lib/RampHold.vi"/>
-         <Item Name="MixedModeControl.vi" Type="VI" URL="lib/MixedModeControl.vi"/>
+         <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
          <Item Name="LBCB OM 1n1" Type="EXE">
@@ -290,6 +279,40 @@
             <Property Name="Source[2].sourceInclusion" Type="Str">TopLevel</Property>
             <Property Name="Source[2].type" Type="Str">VI</Property>
             <Property Name="SourceCount" Type="Int">3</Property>
+         </Item>
+         <Item Name="NTCP" Type="EXE">
+            <Property Name="App_applicationGUID" Type="Str">{07FA17D6-C084-4745-8866-F9C9BB8BEF1E}</Property>
+            <Property Name="App_applicationName" Type="Str">NTCP Socket.exe</Property>
+            <Property Name="App_companyName" Type="Str">University Of Illinois</Property>
+            <Property Name="App_fileDescription" Type="Str">NTCP</Property>
+            <Property Name="App_fileType" Type="Int">1</Property>
+            <Property Name="App_fileVersion.major" Type="Int">1</Property>
+            <Property Name="App_fileVersion.minor" Type="Int">6</Property>
+            <Property Name="App_INI_aliasGUID" Type="Str">{FBF5AE5D-6586-4554-8AC7-AE214C9E936A}</Property>
+            <Property Name="App_INI_GUID" Type="Str">{F234365C-F793-4A3B-96CD-4F790030328F}</Property>
+            <Property Name="App_internalName" Type="Str">NTCP</Property>
+            <Property Name="App_legalCopyright" Type="Str">Copyright © 2008 </Property>
+            <Property Name="App_productName" Type="Str">NTCP</Property>
+            <Property Name="Bld_buildSpecName" Type="Str">NTCP</Property>
+            <Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+            <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+            <Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+            <Property Name="Destination[0].destName" Type="Str">NTCP Socket.exe</Property>
+            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/internal.llb</Property>
+            <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[0].type" Type="Str">App</Property>
+            <Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/data</Property>
+            <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="DestinationCount" Type="Int">2</Property>
+            <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/NTCP socket.ico</Property>
+            <Property Name="Source[0].itemID" Type="Str">{21C6198E-0EED-47DA-8E16-3D322FB125AB}</Property>
+            <Property Name="Source[0].type" Type="Str">Container</Property>
+            <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[1].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
+            <Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+            <Property Name="Source[1].type" Type="Str">VI</Property>
+            <Property Name="SourceCount" Type="Int">2</Property>
          </Item>
       </Item>
    </Item>
