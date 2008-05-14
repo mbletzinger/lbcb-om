@@ -24,6 +24,15 @@ ThreadLocalObjects* GetThreadLocalObjects()
 {
 
 	DWORD threadid = GetCurrentThreadId();
+	if(tspace == NULL) {
+		ErrorLogger::InitCSV();
+		ErrorLogger elog(threadid);
+		elog.getErrorStream()<<"LBCB_Conversions has not been initialized";
+		elog.addedError();
+		elog.SetPrefix("Main");
+		elog.flush();
+		return NULL;
+	}
 	ThreadLocalObjects* tlo = tspace->GetLocalObjects(threadid);
 	if(tlo != NULL)
 	{
@@ -65,7 +74,7 @@ int ProcessErrors(string name, ThreadLocalObjects* tlo)
 	return result;
 }
 
-_declspec(dllexport) void LBCB_Conversion_A2C( double motion_center[], long length, double sensor_reading[], double cartesian_value[], long* error)
+_declspec(dllexport) void LBCB_Conversion_A2C(long type, double motion_center[], long length, double sensor_reading[], double cartesian_value[], long* error)
 {
 	int i;
 
@@ -75,6 +84,9 @@ _declspec(dllexport) void LBCB_Conversion_A2C( double motion_center[], long leng
 #endif
 
 	ThreadLocalObjects* tlo = GetThreadLocalObjects();
+	if(tlo == NULL) {
+		return;
+	}
 	VECTOR MotionCenter(3,tlo), PlatformCenter(3,tlo), ActuatorSpace(12,tlo), CartesianData(12,tlo), MotionCenterData(12,tlo), Limitation(6,tlo);
 	for(i=0; i<3; i++){MotionCenter(i+1) = motion_center[i];}
 
@@ -84,7 +96,7 @@ _declspec(dllexport) void LBCB_Conversion_A2C( double motion_center[], long leng
 		if (length == 12) {ActuatorSpace(i+7) = sensor_reading[i+6];}
 		Limitation(i+1) = 0.00001;
 	}
-	LBCB lbcb(tlo);
+	LBCB lbcb(type, tlo);
 	lbcb.Actuator2Cartesian( ActuatorSpace, CartesianData, Limitation );
 	RigidTransform( PlatformCenter, CartesianData, MotionCenter, MotionCenterData,tlo );
 
@@ -104,18 +116,21 @@ _declspec(dllexport) void LBCB_Conversion_A2C( double motion_center[], long leng
 	return;
 }
 
-_declspec(dllexport) void LBCB_conversion_C2A(double motion_center[], double sensor_reading[], double cartesian_value[], long* error)
+_declspec(dllexport) void LBCB_conversion_C2A(long type, double motion_center[], double sensor_reading[], double cartesian_value[], long* error)
 {
 
 	int i;
 
 	ThreadLocalObjects* tlo = GetThreadLocalObjects();
 
+	if(tlo == NULL) {
+		return;
+	}
 	VECTOR ActuatorSpace(6,tlo), CartesianData(6,tlo);
 	VECTOR MotionCenterData(6,tlo);
 	VECTOR MotionCenter(3,tlo), PlatformCenter(3,tlo);
 
-	LBCB lbcb(tlo);
+	LBCB lbcb(type, tlo);
 
 	for( i = 0; i<6; i++)
 	{
@@ -140,189 +155,187 @@ _declspec(dllexport) void LBCB_conversion_C2A(double motion_center[], double sen
 
 }
 
-_declspec(dllexport) void LBCB_Conversion_Init(long size, long type)
+_declspec(dllexport) void LBCB_Conversion_Init(long size)
 {
 
 	ThreadLocalFactory::InitCSV();
 	ErrorLogger::InitCSV();
 	tspace = new ThreadLocalFactory();
 	ThreadLocalObjects* tlo = GetThreadLocalObjects();
-	MATRIX basepin(3,6,tlo), platformpin(3,6,tlo);
+	MATRIX rbasepin(3,6,tlo), rplatformpin(3,6,tlo), lbasepin(3,6,tlo), lplatformpin(3,6,tlo);
 
-	if (size == 0 && type == 0){// Right Hand Small Scale LBCB
-		basepin(1,1) = -19.184;
-		basepin(2,1) = 4.8039;
-		basepin(3,1) = -7.0262;
-		platformpin(1,1) = -5.4347;
-		platformpin(2,1) = 4.7978;
-		platformpin(3,1) = -2.5940;
+	if (size == 0){// Small Scale LBCB
+		rbasepin(1,1) = -19.184;
+		rbasepin(2,1) = 4.8039;
+		rbasepin(3,1) = -7.0262;
+		rplatformpin(1,1) = -5.4347;
+		rplatformpin(2,1) = 4.7978;
+		rplatformpin(3,1) = -2.5940;
 
-		basepin(1,2) = -19.184;
-		basepin(2,2) = -4.8039;
-		basepin(3,2) = -7.0262;
-		platformpin(1,2) = -5.4347;
-		platformpin(2,2) = -4.7978;
-		platformpin(3,2) = -2.5940;
+		rbasepin(1,2) = -19.184;
+		rbasepin(2,2) = -4.8039;
+		rbasepin(3,2) = -7.0262;
+		rplatformpin(1,2) = -5.4347;
+		rplatformpin(2,2) = -4.7978;
+		rplatformpin(3,2) = -2.5940;
 
-		basepin(1,3) = 0.079;
-		basepin(2,3) = -7.6005;
-		basepin(3,3) = -6.8945;
-		platformpin(1,3) = -0.1013;
-		platformpin(2,3) = 3.3364;
-		platformpin(3,3) = -3.9908;
+		rbasepin(1,3) = 0.079;
+		rbasepin(2,3) = -7.6005;
+		rbasepin(3,3) = -6.8945;
+		rplatformpin(1,3) = -0.1013;
+		rplatformpin(2,3) = 3.3364;
+		rplatformpin(3,3) = -3.9908;
 
-		basepin(1,4) = -5.6232;
-		basepin(2,4) = 0.0038;
-		basepin(3,4) = -13.63;
-		platformpin(1,4) = -5.6253;
-		platformpin(2,4) = 0.0477;
-		platformpin(3,4) = -2.62;
+		rbasepin(1,4) = -5.6232;
+		rbasepin(2,4) = 0.0038;
+		rbasepin(3,4) = -13.63;
+		rplatformpin(1,4) = -5.6253;
+		rplatformpin(2,4) = 0.0477;
+		rplatformpin(3,4) = -2.62;
 
-		basepin(1,5) = 5.9788;
-		basepin(2,5) = 4.8056;
-		basepin(3,5) = -13.63;
-		platformpin(1,5) = 6.0049;
-		platformpin(2,5) = 4.8093;
-		platformpin(3,5) = -2.62;
+		rbasepin(1,5) = 5.9788;
+		rbasepin(2,5) = 4.8056;
+		rbasepin(3,5) = -13.63;
+		rplatformpin(1,5) = 6.0049;
+		rplatformpin(2,5) = 4.8093;
+		rplatformpin(3,5) = -2.62;
 
-		basepin(1,6) = 5.9788;
-		basepin(2,6) = -4.8056;
-		basepin(3,6) = -13.63;
-		platformpin(1,6) = 6.0049;
-		platformpin(2,6) = -4.8093;
-		platformpin(3,6) = -2.62;
+		rbasepin(1,6) = 5.9788;
+		rbasepin(2,6) = -4.8056;
+		rbasepin(3,6) = -13.63;
+		rplatformpin(1,6) = 6.0049;
+		rplatformpin(2,6) = -4.8093;
+		rplatformpin(3,6) = -2.62;
+
+		lbasepin(1,1) = 19.225;
+		lbasepin(2,1) = 4.8;
+		lbasepin(3,1) = -7.13;
+		lplatformpin(1,1) = 5.4;
+		lplatformpin(2,1) = 4.8;
+		lplatformpin(3,1) = -2.5;
+
+		lbasepin(1,2) = 19.225;
+		lbasepin(2,2) = -4.8;
+		lbasepin(3,2) = -7.13;
+		lplatformpin(1,2) = 5.4;
+		lplatformpin(2,2) = -4.8;
+		lplatformpin(3,2) = -2.5;
+
+		lbasepin(1,3) = -0.1;
+		lbasepin(2,3) = -7.7;
+		lbasepin(3,3) = -7.05;
+		lplatformpin(1,3) = -0.1;
+		lplatformpin(2,3) = 3.3;
+		lplatformpin(3,3) = -4;
+
+		lbasepin(1,4) = 5.6025;
+		lbasepin(2,4) = 0.0;
+		lbasepin(3,4) = -13.80;
+		lplatformpin(1,4) = 5.6025;
+		lplatformpin(2,4) = 0.0;
+		lplatformpin(3,4) = -2.625;
+
+		lbasepin(1,5) = -5.9775;
+		lbasepin(2,5) = 4.8;
+		lbasepin(3,5) = -13.80;
+		lplatformpin(1,5) = -5.9775;
+		lplatformpin(2,5) = 4.8;
+		lplatformpin(3,5) = -2.625;
+
+		lbasepin(1,6) = -5.9775;
+		lbasepin(2,6) = -4.8;
+		lbasepin(3,6) = -13.80;
+		lplatformpin(1,6) = -5.9775;
+		lplatformpin(2,6) = -4.8;
+		lplatformpin(3,6) = -2.625;
 	}
-	else if (size == 0 && type == 1){// Left Hand Small Scale LBCB
-		basepin(1,1) = 19.225;
-		basepin(2,1) = 4.8;
-		basepin(3,1) = -7.13;
-		platformpin(1,1) = 5.4;
-		platformpin(2,1) = 4.8;
-		platformpin(3,1) = -2.5;
+	else if (size == 1) { // Large Scale LBCB
+		rbasepin(1,1) = -96.375;
+		rbasepin(2,1) = 24;
+		rbasepin(3,1) = -35.5;
+		rplatformpin(1,1) = -27;
+		rplatformpin(2,1) = 24;
+		rplatformpin(3,1) = -12.875;
 
-		basepin(1,2) = 19.225;
-		basepin(2,2) = -4.8;
-		basepin(3,2) = -7.13;
-		platformpin(1,2) = 5.4;
-		platformpin(2,2) = -4.8;
-		platformpin(3,2) = -2.5;
+		rbasepin(1,2) = -96.375;
+		rbasepin(2,2) = -24;
+		rbasepin(3,2) = -35.5;
+		rplatformpin(1,2) = -27;
+		rplatformpin(2,2) = -24;
+		rplatformpin(3,2) = -12.875;
 
-		basepin(1,3) = -0.1;
-		basepin(2,3) = -7.7;
-		basepin(3,3) = -7.05;
-		platformpin(1,3) = -0.1;
-		platformpin(2,3) = 3.3;
-		platformpin(3,3) = -4;
+		rbasepin(1,3) = 0.5;
+		rbasepin(2,3) = -37.375;
+		rbasepin(3,3) = -34.75;
+		rplatformpin(1,3) = 0.5;
+		rplatformpin(2,3) = 16.625;
+		rplatformpin(3,3) = -20.25;
 
-		basepin(1,4) = 5.6025;
-		basepin(2,4) = 0.0;
-		basepin(3,4) = -13.80;
-		platformpin(1,4) = 5.6025;
-		platformpin(2,4) = 0.0;
-		platformpin(3,4) = -2.625;
+		rbasepin(1,4) = -28;
+		rbasepin(2,4) = 0.0;
+		rbasepin(3,4) = -68.875;
+		rplatformpin(1,4) = -28;
+		rplatformpin(2,4) = 0.0;
+		rplatformpin(3,4) = -12.875;
 
-		basepin(1,5) = -5.9775;
-		basepin(2,5) = 4.8;
-		basepin(3,5) = -13.80;
-		platformpin(1,5) = -5.9775;
-		platformpin(2,5) = 4.8;
-		platformpin(3,5) = -2.625;
+		rbasepin(1,5) = 30;
+		rbasepin(2,5) = 24;
+		rbasepin(3,5) = -68.875;
+		rplatformpin(1,5) = 30;
+		rplatformpin(2,5) = 24;
+		rplatformpin(3,5) = -12.875;
 
-		basepin(1,6) = -5.9775;
-		basepin(2,6) = -4.8;
-		basepin(3,6) = -13.80;
-		platformpin(1,6) = -5.9775;
-		platformpin(2,6) = -4.8;
-		platformpin(3,6) = -2.625;
-	}
-	else if (size == 1 && type == 0) { // Right Hand Large Scale LBCB
-		basepin(1,1) = -96.375;
-		basepin(2,1) = 24;
-		basepin(3,1) = -35.5;
-		platformpin(1,1) = -27;
-		platformpin(2,1) = 24;
-		platformpin(3,1) = -12.875;
+		rbasepin(1,6) = 30;
+		rbasepin(2,6) = -24;
+		rbasepin(3,6) = -68.875;
+		rplatformpin(1,6) = 30;
+		rplatformpin(2,6) = -24;
+		rplatformpin(3,6) = -12.875;
 
-		basepin(1,2) = -96.375;
-		basepin(2,2) = -24;
-		basepin(3,2) = -35.5;
-		platformpin(1,2) = -27;
-		platformpin(2,2) = -24;
-		platformpin(3,2) = -12.875;
+		lbasepin(1,1) = 96.375;
+		lbasepin(2,1) = 24;
+		lbasepin(3,1) = -35.5;
+		lplatformpin(1,1) = 27;
+		lplatformpin(2,1) = 24;
+		lplatformpin(3,1) = -12.875;
 
-		basepin(1,3) = 0.5;
-		basepin(2,3) = -37.375;
-		basepin(3,3) = -34.75;
-		platformpin(1,3) = 0.5;
-		platformpin(2,3) = 16.625;
-		platformpin(3,3) = -20.25;
+		lbasepin(1,2) = 96.375;
+		lbasepin(2,2) = -24;
+		lbasepin(3,2) = -35.5;
+		lplatformpin(1,2) = 27;
+		lplatformpin(2,2) = -24;
+		lplatformpin(3,2) = -12.875;
 
-		basepin(1,4) = -28;
-		basepin(2,4) = 0.0;
-		basepin(3,4) = -68.875;
-		platformpin(1,4) = -28;
-		platformpin(2,4) = 0.0;
-		platformpin(3,4) = -12.875;
+		lbasepin(1,3) = -0.5;
+		lbasepin(2,3) = -37.375;
+		lbasepin(3,3) = -34.75;
+		lplatformpin(1,3) = -0.5;
+		lplatformpin(2,3) = 16.625;
+		lplatformpin(3,3) = -20.25;
 
-		basepin(1,5) = 30;
-		basepin(2,5) = 24;
-		basepin(3,5) = -68.875;
-		platformpin(1,5) = 30;
-		platformpin(2,5) = 24;
-		platformpin(3,5) = -12.875;
+		lbasepin(1,4) = 28;
+		lbasepin(2,4) = 0.0;
+		lbasepin(3,4) = -68.875;
+		lplatformpin(1,4) = 28;
+		lplatformpin(2,4) = 0.0;
+		lplatformpin(3,4) = -12.875;
 
-		basepin(1,6) = 30;
-		basepin(2,6) = -24;
-		basepin(3,6) = -68.875;
-		platformpin(1,6) = 30;
-		platformpin(2,6) = -24;
-		platformpin(3,6) = -12.875;
-	}
-	else { // Left Hand Large Scale LBCB
-		basepin(1,1) = 96.375;
-		basepin(2,1) = 24;
-		basepin(3,1) = -35.5;
-		platformpin(1,1) = 27;
-		platformpin(2,1) = 24;
-		platformpin(3,1) = -12.875;
+		lbasepin(1,5) = -30;
+		lbasepin(2,5) = 24;
+		lbasepin(3,5) = -68.875;
+		lplatformpin(1,5) = -30;
+		lplatformpin(2,5) = 24;
+		lplatformpin(3,5) = -12.875;
 
-		basepin(1,2) = 96.375;
-		basepin(2,2) = -24;
-		basepin(3,2) = -35.5;
-		platformpin(1,2) = 27;
-		platformpin(2,2) = -24;
-		platformpin(3,2) = -12.875;
-
-		basepin(1,3) = -0.5;
-		basepin(2,3) = -37.375;
-		basepin(3,3) = -34.75;
-		platformpin(1,3) = -0.5;
-		platformpin(2,3) = 16.625;
-		platformpin(3,3) = -20.25;
-
-		basepin(1,4) = 28;
-		basepin(2,4) = 0.0;
-		basepin(3,4) = -68.875;
-		platformpin(1,4) = 28;
-		platformpin(2,4) = 0.0;
-		platformpin(3,4) = -12.875;
-
-		basepin(1,5) = -30;
-		basepin(2,5) = 24;
-		basepin(3,5) = -68.875;
-		platformpin(1,5) = -30;
-		platformpin(2,5) = 24;
-		platformpin(3,5) = -12.875;
-
-		basepin(1,6) = -30;
-		basepin(2,6) = -24;
-		basepin(3,6) = -68.875;
-		platformpin(1,6) = -30;
-		platformpin(2,6) = -24;
-		platformpin(3,6) = -12.875;
+		lbasepin(1,6) = -30;
+		lbasepin(2,6) = -24;
+		lbasepin(3,6) = -68.875;
+		lplatformpin(1,6) = -30;
+		lplatformpin(2,6) = -24;
+		lplatformpin(3,6) = -12.875;
 	}
 
-	LBCB_Parameters::Create(  basepin, platformpin,tlo );
+	LBCB_Parameters::Create(rbasepin, rplatformpin, lbasepin, lplatformpin, tlo );
 	ErrorLogger* elog = tlo->GetErrorLogger();
 	elog->SetPrefix("LBCB_Conversion_Init");
 

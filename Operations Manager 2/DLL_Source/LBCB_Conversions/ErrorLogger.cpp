@@ -3,7 +3,7 @@
 using namespace std;
 
 CRITICAL_SECTION ErrorLogger::critical_section;
-string ErrorLogger::LogFilename = "";
+string ErrorLogger::LogFilename("c:\\LbcbDllLog.txt");
 
 ErrorLogger::ErrorLogger(DWORD id) : threadid(id)
 {

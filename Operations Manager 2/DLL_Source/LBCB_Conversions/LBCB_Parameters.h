@@ -17,20 +17,20 @@
 class LBCB_Parameters  
 {
 public:
-	static void Create( MATRIX const & basepin, MATRIX const & platformpin ,ThreadLocalObjects* tlo);
+	static void Create( MATRIX const & rbasepin, MATRIX const & rplatformpin, MATRIX const & lbasepin, MATRIX const & lplatformpin, ThreadLocalObjects* tlo);
 	static LBCB_Parameters* GetInstance( );
 
 	//LBCB_Parameters();
 	~LBCB_Parameters();
 
-	VECTOR* GetBasePin();
-	VECTOR* GetPlatformPin();
+	VECTOR* GetBasePin(long type);
+	VECTOR* GetPlatformPin(long type);
 
 
 private:
-	LBCB_Parameters( MATRIX const & basepin, MATRIX const & platformpin, ThreadLocalObjects* tlo );
+	LBCB_Parameters( MATRIX const & rbasepin, MATRIX const & rplatformpin, MATRIX const & lbasepin, MATRIX const & lplatformpin, ThreadLocalObjects* tlo );
 	static LBCB_Parameters *instance;
-	VECTOR *BasePin, *PlatformPin;
+	VECTOR *RightBasePin, *RightPlatformPin, *LeftBasePin, *LeftPlatformPin;
 	ThreadLocalObjects* tlo;
 
 #ifdef FINE_MEM_COUNT

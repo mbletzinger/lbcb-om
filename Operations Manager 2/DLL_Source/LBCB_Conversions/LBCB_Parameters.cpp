@@ -25,9 +25,9 @@ LBCB_Parameters* LBCB_Parameters::instance = NULL;
 	int LBCB_Parameters::NewCount = 0;
 #endif
 
-void LBCB_Parameters::Create( MATRIX const & basepin, MATRIX const & platformpin,ThreadLocalObjects* tlo )
+void LBCB_Parameters::Create( MATRIX const & rbasepin, MATRIX const & rplatformpin, MATRIX const & lbasepin, MATRIX const & lplatformpin, ThreadLocalObjects* tlo )
 {
-		instance = new LBCB_Parameters( basepin, platformpin, tlo );
+		instance = new LBCB_Parameters( rbasepin, rplatformpin, lbasepin, lplatformpin, tlo );
 }
 LBCB_Parameters* LBCB_Parameters::GetInstance()
 {
@@ -38,11 +38,13 @@ LBCB_Parameters* LBCB_Parameters::GetInstance()
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-LBCB_Parameters::LBCB_Parameters( MATRIX const & basepin, MATRIX const & platformpin,ThreadLocalObjects* mytlo ) 
+LBCB_Parameters::LBCB_Parameters( MATRIX const & rbasepin, MATRIX const & rplatformpin, MATRIX const & lbasepin, MATRIX const & lplatformpin, ThreadLocalObjects* mytlo ) 
 : tlo(mytlo)
 {
-	BasePin = new VECTOR[6];
-	PlatformPin = new VECTOR[6];
+	RightBasePin = new VECTOR[6];
+	RightPlatformPin = new VECTOR[6];
+	LeftBasePin = new VECTOR[6];
+	LeftPlatformPin = new VECTOR[6];
 
 #ifdef FINE_MEM_COUNT
 	CtorCount++;
@@ -53,22 +55,30 @@ LBCB_Parameters::LBCB_Parameters( MATRIX const & basepin, MATRIX const & platfor
 	// Vector declaration for actuator pin locations
 	for ( int i=0; i<=5; i++)
 	{
-		BasePin[i].SetThreadLocalObjects(tlo);
-		BasePin[i].Set_Size( 3 );
-		PlatformPin[i].SetThreadLocalObjects(tlo);
-		PlatformPin[i].Set_Size( 3 );
+		RightBasePin[i].SetThreadLocalObjects(tlo);
+		RightBasePin[i].Set_Size( 3 );
+		RightPlatformPin[i].SetThreadLocalObjects(tlo);
+		RightPlatformPin[i].Set_Size( 3 );
+		LeftBasePin[i].SetThreadLocalObjects(tlo);
+		LeftBasePin[i].Set_Size( 3 );
+		LeftPlatformPin[i].SetThreadLocalObjects(tlo);
+		LeftPlatformPin[i].Set_Size( 3 );
 		for (int j=1; j<=3; j++)
 		{
-			BasePin[i](j)     = basepin(j,i+1);
-			PlatformPin[i](j) = platformpin(j,i+1);
+			RightBasePin[i](j)     = rbasepin(j,i+1);
+			RightPlatformPin[i](j) = rplatformpin(j,i+1);
+			LeftBasePin[i](j)     = lbasepin(j,i+1);
+			LeftPlatformPin[i](j) = lplatformpin(j,i+1);
 		}
 	}
 }
 
 LBCB_Parameters::~LBCB_Parameters()
 {
-	delete [] BasePin;
-	delete [] PlatformPin;
+	delete [] RightBasePin;
+	delete [] RightPlatformPin;
+	delete [] LeftBasePin;
+	delete [] LeftPlatformPin;
 #ifdef FINE_MEM_COUNT
 	CtorCount--;
 	log->getErrorStream() << "LBCB_Parameters Destroyed: " << CtorCount;
@@ -80,13 +90,19 @@ LBCB_Parameters::~LBCB_Parameters()
 //////////////////////////////////////////////////////////////////////
 // Member Function to show the Member Variables
 //////////////////////////////////////////////////////////////////////
-VECTOR* LBCB_Parameters::GetBasePin()
+VECTOR* LBCB_Parameters::GetBasePin(long type)
 {
-	return BasePin;
+	if(type == 0) {
+		return RightBasePin;
+	}
+	return LeftBasePin;
 }
 
-VECTOR* LBCB_Parameters::GetPlatformPin()
+VECTOR* LBCB_Parameters::GetPlatformPin(long type)
 {
-	return PlatformPin;
+	if(type == 0) {
+		return RightPlatformPin;
+	}
+	return LeftPlatformPin;
 }
 

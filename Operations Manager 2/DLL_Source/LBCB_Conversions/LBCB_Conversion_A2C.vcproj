@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="LBCB_Conversion_A2C"
+	Name="LBCB_Conversions"
 	ProjectGUID="{17AB0628-9FD4-4AE4-9230-53F7494D98AB}"
 	RootNamespace="LBCB_Conversion_A2C"
 	TargetFrameworkVersion="0"
@@ -74,7 +74,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile=".\Release/LBCB_Conversion_A2C.dll"
+				OutputFile=".\Release/LBCB_Conversions.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				ProgramDatabaseFile=".\Release/LBCB_Conversion_A2C.pdb"

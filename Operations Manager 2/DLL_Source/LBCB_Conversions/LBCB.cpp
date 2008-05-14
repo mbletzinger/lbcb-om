@@ -35,7 +35,7 @@ int LBCB::NewCount = 0;
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-LBCB::LBCB(ThreadLocalObjects* mytlo ) : tlo(mytlo), currentcartesian(6,mytlo)
+LBCB::LBCB(long type, ThreadLocalObjects* mytlo ) : tlo(mytlo), currentcartesian(6,mytlo)
 {
 	Actuator_ptr = new LBCB_Actuator[6];
 	tlo->GetMemoryCounterFactory()->UpdateCount("LBCB",1);
@@ -43,8 +43,8 @@ LBCB::LBCB(ThreadLocalObjects* mytlo ) : tlo(mytlo), currentcartesian(6,mytlo)
 	VECTOR NomLength(6, tlo);
 	VECTOR temp(3, tlo);
 	LBCB_Parameters* Params = LBCB_Parameters::GetInstance();
-	VECTOR* BasePin = Params->GetBasePin();
-	VECTOR* PlatformPin = Params->GetPlatformPin();
+	VECTOR* BasePin = Params->GetBasePin(type);
+	VECTOR* PlatformPin = Params->GetPlatformPin(type);
 
 	for (int i=0; i<=5; i++)
 	{

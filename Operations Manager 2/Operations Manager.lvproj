@@ -324,7 +324,11 @@
          </Item>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="LBCB Operation Manager Menu.rtm" Type="Document" URL="BuildFiles/LBCB Operation Manager Menu.rtm"/>
+<<<<<<< .mine
+         <Item Name="LBCB_Conversions.dll" Type="Document" URL="DLL/LBCB_Conversions.dll"/>
+=======
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
+>>>>>>> .r64
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">

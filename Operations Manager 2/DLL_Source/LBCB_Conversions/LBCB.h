@@ -18,7 +18,7 @@ class LBCB
 {
 public:
 
-	LBCB(ThreadLocalObjects* tlo);
+	LBCB(long type, ThreadLocalObjects* tlo);
 	~LBCB();
 
 	VECTOR CurrentCartesianCoordinates( void ) const;
