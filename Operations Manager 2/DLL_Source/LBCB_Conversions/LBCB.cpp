@@ -239,7 +239,6 @@ void LBCB::Cartesian2Actuator( VECTOR const & CartesianData, VECTOR & ActuatorSp
 
 	for (int i=1; i<=6; i++){
 		Cart_Disp(i)  = CartesianData(i);
-		//		Cart_Force(i) = CartesianData(i+6);
 	}
 
 	Cartesian2Actuator( Cart_Disp, Cart_Force, Act_Stroke, Act_Force );
@@ -258,12 +257,14 @@ void LBCB::Actuator2Cartesian( VECTOR const & ActuatorSpaceData, VECTOR & Cartes
 
 	for (int i=1; i<=6; i++){
 		Act_Stroke(i) = ActuatorSpaceData(i);
+		Act_Force(i) = ActuatorSpaceData(i+6);
 	}
 
 	Actuator2Cartesian( Act_Stroke, Act_Force, Cart_Disp, Cart_Force, Limitation );
 
 	for (int i=1; i<=6; i++){
 		CartesianData(i)   = Cart_Disp(i);
+		CartesianData(i+6) = Cart_Force(i);
 	}
 
 	return;
