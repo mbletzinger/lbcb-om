@@ -44,7 +44,6 @@
          <Property Name="NI.DISK" Type="Bool">true</Property>
       </Item>
       <Item Name="Operations Manager 2.vi" Type="VI" URL="Operations Manager 2.vi"/>
-      <Item Name="Measurements Type.ctl" Type="VI" URL="../Operations Manager/lib/Measurements Type.ctl"/>
       <Item Name="OperationManagerGlobal.vi" Type="VI" URL="OperationManagerGlobal.vi"/>
       <Item Name="Dependencies" Type="Dependencies">
          <Item Name="vi.lib" Type="Folder">
@@ -234,8 +233,8 @@
          </Item>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="LBCB Operation Manager Menu.rtm" Type="Document" URL="BuildFiles/LBCB Operation Manager Menu.rtm"/>
-         <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
+         <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
          <Item Name="LBCB Operations Manager 2" Type="EXE">
