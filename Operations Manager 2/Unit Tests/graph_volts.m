@@ -5,9 +5,9 @@ clc;
 ns = repmat('%f',1,54);
 hs = repmat('%s',1,54);
 root = 'C:\Documents and Settings\adminmbletzin\Desktop\Saved Logs\VoltsLog_2008_May';
-files = {'_18_00_19_54.txt','_18_00_20_12.txt','_18_00_20_12.txt','_18_00_20_12.txt','_18_00_20_12.txt','_18_00_20_12.txt','_18_00_20_12.txt','_18_00_20_12.txt'};
+files = {'_18_01_14_54.txt'};
 last = 0;
-for f = 1:8
+for f = 1:1
     name = sprintf('%s%s',root,files{f});
     fid = fopen(name, 'r');
     clear headers;
@@ -28,7 +28,7 @@ for f = 1:8
     end
     t_c = size(volts);
     if f == 1
-        allvolts = zeros((t_c(1)+1000) * 8,t_c(2));
+        allvolts = zeros((t_c(1)),t_c(2));
     end
     for i = 1:t_c(1)
         for k = 1:t_c(2)
@@ -46,19 +46,23 @@ headers{37}
 
 sz = size(allvolts)
 allvolts(:,19);
-plotdata = zeros(sz(1),4);
-for i = 1:sz(1)
+grid on;
+plotdata = zeros(12*20,4);
+
+for i = 1:12*20
     plotdata(i,1) = allvolts(i,1);
-    plotdata(i,2) = allvolts(i,13);
-    plotdata(i,3) = allvolts(i,19);
-    plotdata(i,4) = allvolts(i,37);
+    plotdata(i,2) = allvolts(i,13) - allvolts(i,1);
+    plotdata(i,3) = allvolts(i,19) - allvolts(i,1);
+    plotdata(i,4) = allvolts(i,37) - allvolts(i,1);
 end
 hdrs = cell(54);
 for h = 1:54
     hdrs(h) = headers{h};
 end
-t_c = size(plotdata)
-h = plot(plotdata);
+t_c = size(plotdata);
+xdata = [1:t_c(1)]
+xdata = xdata * 0.05
+h = plot(xdata, plotdata);
 legend(h,[ hdrs(1) hdrs(13) hdrs(19) hdrs(37)]);
 % for g = 1:5
 %     strt = ((g - 1) * 18) + 1
