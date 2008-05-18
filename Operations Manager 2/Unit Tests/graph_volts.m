@@ -4,10 +4,10 @@ clc;
 
 ns = repmat('%f',1,54);
 hs = repmat('%s',1,54);
-root = '/Users/mbletzin/Work/MATLAB/VoltsLog_2008_May';
-files = {'_17_22_47_42.txt'};
+root = 'C:\Documents and Settings\adminmbletzin\Desktop\Saved Logs\VoltsLog_2008_May';
+files = {'_18_00_19_54.txt','_18_00_20_12.txt','_18_00_20_12.txt','_18_00_20_12.txt','_18_00_20_12.txt','_18_00_20_12.txt','_18_00_20_12.txt','_18_00_20_12.txt'};
 last = 0;
-for f = 1:1
+for f = 1:8
     name = sprintf('%s%s',root,files{f});
     fid = fopen(name, 'r');
     clear headers;
@@ -28,7 +28,7 @@ for f = 1:1
     end
     t_c = size(volts);
     if f == 1
-        allvolts = zeros(t_c(1),t_c(2));
+        allvolts = zeros((t_c(1)+1000) * 8,t_c(2));
     end
     for i = 1:t_c(1)
         for k = 1:t_c(2)
