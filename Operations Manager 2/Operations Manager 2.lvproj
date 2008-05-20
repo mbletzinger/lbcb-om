@@ -245,6 +245,7 @@
             <Property Name="App_fileType" Type="Int">1</Property>
             <Property Name="App_fileVersion.major" Type="Int">1</Property>
             <Property Name="App_fileVersion.minor" Type="Int">6</Property>
+            <Property Name="App_fileVersion.patch" Type="Int">1</Property>
             <Property Name="App_INI_aliasGUID" Type="Str">{69C8E868-8D2B-4437-8219-E8B4E96F275D}</Property>
             <Property Name="App_INI_GUID" Type="Str">{BFD44107-7699-4975-8568-10D01BD94818}</Property>
             <Property Name="App_internalName" Type="Str">LBCB Operations Manager 2</Property>
@@ -255,27 +256,27 @@
             <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
             <Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
             <Property Name="Destination[0].destName" Type="Str">LBCB Operations Manager 2.exe</Property>
-            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/internal.llb</Property>
+            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Version/internal.llb</Property>
             <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[0].type" Type="Str">App</Property>
             <Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/data</Property>
+            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Version/data</Property>
             <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[2].destName" Type="Str">Config</Property>
-            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/Config</Property>
+            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Version/Config</Property>
             <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[3].destName" Type="Str">DigitalFilter</Property>
-            <Property Name="Destination[3].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/DigitalFilter</Property>
+            <Property Name="Destination[3].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Version/DigitalFilter</Property>
             <Property Name="Destination[3].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[4].destName" Type="Str">root</Property>
-            <Property Name="Destination[4].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging</Property>
+            <Property Name="Destination[4].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Version</Property>
             <Property Name="Destination[4].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[5].destName" Type="Str">image</Property>
-            <Property Name="Destination[5].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/image</Property>
+            <Property Name="Destination[5].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Version/image</Property>
             <Property Name="Destination[5].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="DestinationCount" Type="Int">6</Property>
             <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
-            <Property Name="Source[0].itemID" Type="Str">{DD4CF6E5-2237-408C-991D-4119C5B2C773}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{D44BF459-E56A-4B56-BBA2-0BAED43F617F}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/Operations Manager 2.vi</Property>
