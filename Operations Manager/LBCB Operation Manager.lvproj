@@ -223,9 +223,26 @@
             <Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
             <Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
             <Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
-            <Item Name="How many pts in the wave.vi" Type="VI" URL="/&lt;vilib&gt;/express/express arith-compare/FormulaBlock.llb/How many pts in the wave.vi"/>
+            <Item Name="Config Data RefNum" Type="Document" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data RefNum"/>
+            <Item Name="Open Config Data.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Open Config Data.vi"/>
+            <Item Name="Config Data Open Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Open Reference.vi"/>
+            <Item Name="Config Data Registry Functions.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Registry Functions.ctl"/>
+            <Item Name="Config Data Registry.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Registry.vi"/>
+            <Item Name="Config Data.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data.ctl"/>
+            <Item Name="Config Data Section.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Section.ctl"/>
+            <Item Name="Config Data Set File Path.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Set File Path.vi"/>
+            <Item Name="Config Data Modify Functions.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Modify Functions.ctl"/>
+            <Item Name="Config Data Modify.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Modify.vi"/>
+            <Item Name="Add Quotes.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Add Quotes.vi"/>
+            <Item Name="Info From Config Data.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Info From Config Data.vi"/>
+            <Item Name="Config Data Read From File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Read From File.vi"/>
+            <Item Name="Config Data Get File Path.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Get File Path.vi"/>
+            <Item Name="String to Config Data.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/String to Config Data.vi"/>
+            <Item Name="Invalid Config Data Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Invalid Config Data Reference.vi"/>
+            <Item Name="Config Data Close Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Close Reference.vi"/>
          </Item>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
+         <Item Name="Error Logger.vi" Type="VI" URL="lib/Utilities/Error Logger.vi"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
@@ -264,23 +281,18 @@
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{05ABB54E-DD20-4D74-A64C-691F3F80E29D}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{1C4F1CFF-CE23-4720-A286-83FB6F13A661}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref"></Property>
             <Property Name="Source[1].properties[0].type" Type="Str">Remove front panel</Property>
             <Property Name="Source[1].properties[0].value" Type="Bool">false</Property>
-            <Property Name="Source[1].properties[1].type" Type="Str">Run when opened</Property>
-            <Property Name="Source[1].properties[1].value" Type="Bool">true</Property>
-            <Property Name="Source[1].propertiesCount" Type="Int">2</Property>
+            <Property Name="Source[1].propertiesCount" Type="Int">1</Property>
             <Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
-            <Property Name="Source[1].type" Type="Str">Source</Property>
-            <Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[2].itemID" Type="Ref">/My Computer/LBCB Operation Manager_Slave.vi</Property>
-            <Property Name="Source[2].properties[0].type" Type="Str">Remove front panel</Property>
-            <Property Name="Source[2].properties[0].value" Type="Bool">false</Property>
-            <Property Name="Source[2].propertiesCount" Type="Int">1</Property>
-            <Property Name="Source[2].sourceInclusion" Type="Str">TopLevel</Property>
+            <Property Name="Source[1].type" Type="Str">VI</Property>
+            <Property Name="Source[2].destinationIndex" Type="Int">2</Property>
+            <Property Name="Source[2].itemID" Type="Ref"></Property>
+            <Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[2].type" Type="Str">VI</Property>
             <Property Name="SourceCount" Type="Int">3</Property>
          </Item>
@@ -309,11 +321,11 @@
             <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/data</Property>
             <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="DestinationCount" Type="Int">2</Property>
-            <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/NTCP socket.ico</Property>
+            <Property Name="Exe_iconItemID" Type="Ref"></Property>
             <Property Name="Source[0].itemID" Type="Str">{21C6198E-0EED-47DA-8E16-3D322FB125AB}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[1].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
+            <Property Name="Source[1].itemID" Type="Ref"></Property>
             <Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
             <Property Name="Source[1].type" Type="Str">VI</Property>
             <Property Name="SourceCount" Type="Int">2</Property>
