@@ -245,7 +245,7 @@
             <Property Name="App_fileType" Type="Int">1</Property>
             <Property Name="App_fileVersion.major" Type="Int">1</Property>
             <Property Name="App_fileVersion.minor" Type="Int">6</Property>
-            <Property Name="App_fileVersion.patch" Type="Int">1</Property>
+            <Property Name="App_fileVersion.patch" Type="Int">2</Property>
             <Property Name="App_INI_aliasGUID" Type="Str">{69C8E868-8D2B-4437-8219-E8B4E96F275D}</Property>
             <Property Name="App_INI_GUID" Type="Str">{BFD44107-7699-4975-8568-10D01BD94818}</Property>
             <Property Name="App_internalName" Type="Str">LBCB Operations Manager 2</Property>
@@ -276,7 +276,7 @@
             <Property Name="Destination[5].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="DestinationCount" Type="Int">6</Property>
             <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
-            <Property Name="Source[0].itemID" Type="Str">{D44BF459-E56A-4B56-BBA2-0BAED43F617F}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{E2E63E0A-A5BF-4120-B586-6AF65641E356}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/Operations Manager 2.vi</Property>
@@ -318,6 +318,7 @@
             <Property Name="App_fileType" Type="Int">1</Property>
             <Property Name="App_fileVersion.major" Type="Int">1</Property>
             <Property Name="App_fileVersion.minor" Type="Int">6</Property>
+            <Property Name="App_fileVersion.patch" Type="Int">2</Property>
             <Property Name="App_INI_aliasGUID" Type="Str">{3E11E08B-F8CF-49D4-BA6D-96EE0A913B35}</Property>
             <Property Name="App_INI_GUID" Type="Str">{25F7E4C1-F35F-441B-ACD8-277815541B76}</Property>
             <Property Name="App_internalName" Type="Str">NTCP</Property>
@@ -328,21 +329,27 @@
             <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
             <Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
             <Property Name="Destination[0].destName" Type="Str">NTCP Socket.exe</Property>
-            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/internal.llb</Property>
+            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Version/internal.llb</Property>
             <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[0].type" Type="Str">App</Property>
             <Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/data</Property>
+            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Version/data</Property>
             <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
-            <Property Name="DestinationCount" Type="Int">2</Property>
+            <Property Name="Destination[2].destName" Type="Str">root</Property>
+            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Version</Property>
+            <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="DestinationCount" Type="Int">3</Property>
             <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/NTCP socket.ico</Property>
-            <Property Name="Source[0].itemID" Type="Str">{872AC139-4B58-4EFC-A20C-B9D39755EE1F}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{DB5986D5-31F6-4042-9C5D-50985CB971E1}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
             <Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
             <Property Name="Source[1].type" Type="Str">VI</Property>
-            <Property Name="SourceCount" Type="Int">2</Property>
+            <Property Name="Source[2].destinationIndex" Type="Int">2</Property>
+            <Property Name="Source[2].itemID" Type="Ref">/My Computer/Config/NTCP Socket.ini</Property>
+            <Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="SourceCount" Type="Int">3</Property>
          </Item>
       </Item>
    </Item>
