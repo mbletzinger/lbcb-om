@@ -242,7 +242,6 @@
             <Item Name="Config Data Close Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Close Reference.vi"/>
             <Item Name="LVRowAndColumnTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRowAndColumnTypeDef.ctl"/>
          </Item>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="Error Logger.vi" Type="VI" URL="lib/Utilities/Error Logger.vi"/>
          <Item Name="LBCB_Conversions2.vi" Type="VI" URL="../Operations Manager 2/lib/LBCB_Conversions2.vi"/>
          <Item Name="LBCB_Conversions.dll" Type="Document" URL="../Operations Manager 2/DLL/LBCB_Conversions.dll"/>
@@ -250,6 +249,7 @@
          <Item Name="TransmitData.vi" Type="VI" URL="../Operations Manager 2/Data Transmission/TransmitData.vi"/>
          <Item Name="DataTransmissionActions.vi" Type="VI" URL="../Operations Manager 2/Data Transmission/DataTransmissionActions.vi"/>
          <Item Name="DataTransmissionGlobals.vi" Type="VI" URL="../Operations Manager 2/Data Transmission/DataTransmissionGlobals.vi"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
