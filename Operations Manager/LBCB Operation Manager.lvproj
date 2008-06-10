@@ -249,8 +249,8 @@
          <Item Name="TransmitData.vi" Type="VI" URL="../Operations Manager 2/Data Transmission/TransmitData.vi"/>
          <Item Name="DataTransmissionActions.vi" Type="VI" URL="../Operations Manager 2/Data Transmission/DataTransmissionActions.vi"/>
          <Item Name="DataTransmissionGlobals.vi" Type="VI" URL="../Operations Manager 2/Data Transmission/DataTransmissionGlobals.vi"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
