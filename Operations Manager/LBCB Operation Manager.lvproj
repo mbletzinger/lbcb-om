@@ -37,10 +37,10 @@
       <Item Name="LBCB Operation Manager_Slave.vi" Type="VI" URL="LBCB Operation Manager_Slave.vi"/>
       <Item Name="LBCB Operation Manager.vi" Type="VI" URL="LBCB Operation Manager.vi"/>
       <Item Name="Calibration Factor.xls" Type="Document" URL="Calibration Factor.xls"/>
-      <Item Name="Calibration Factors.xls" Type="Document" URL="Calibration Factors.xls"/>
       <Item Name="Menu.rtm" Type="Document" URL="Menu.rtm"/>
       <Item Name="OperationManagerGlobal.vi" Type="VI" URL="OperationManagerGlobal.vi"/>
       <Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="OperationManagerGlobal_Slave.vi"/>
+      <Item Name="Calibration Factors.xls" Type="Document" URL="Calibration Factors.xls"/>
       <Item Name="Dependencies" Type="Dependencies">
          <Item Name="vi.lib" Type="Folder">
             <Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -249,7 +249,7 @@
          <Item Name="TransmitData.vi" Type="VI" URL="../Operations Manager 2/Data Transmission/TransmitData.vi"/>
          <Item Name="DataTransmissionActions.vi" Type="VI" URL="../Operations Manager 2/Data Transmission/DataTransmissionActions.vi"/>
          <Item Name="DataTransmissionGlobals.vi" Type="VI" URL="../Operations Manager 2/Data Transmission/DataTransmissionGlobals.vi"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
