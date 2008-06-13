@@ -252,8 +252,7 @@
          <Item Name="LBCB Conversions Actions.ctl" Type="VI" URL="../Operations Manager 2/lib/LBCB Conversions Actions.ctl"/>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
-         <Item Name="daqmx.rc" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/objmgr/daqmx.rc"/>
-         <Item Name="systemexec" Type="Document"/>
+         <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
          <Item Name="LBCB OM 1n1" Type="EXE">
@@ -307,7 +306,7 @@
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{AF3E4BFE-EA2A-465B-82FF-1B28DC4AFCDC}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{761E4F54-AEB4-4695-A570-57FF802F8CA0}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
