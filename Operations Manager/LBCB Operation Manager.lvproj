@@ -244,13 +244,33 @@
             <Item Name="Invalid Config Data Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Invalid Config Data Reference.vi"/>
             <Item Name="Config Data Close Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Close Reference.vi"/>
             <Item Name="NI_MABase.lvlib" Type="Library" URL="/&lt;vilib&gt;/measure/NI_MABase.lvlib"/>
+            <Item Name="Semaphore RefNum" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Semaphore RefNum"/>
+            <Item Name="Semaphore Action.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Semaphore Action.ctl"/>
+            <Item Name="Semaphore Size DB.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Semaphore Size DB.vi"/>
+            <Item Name="Semaphore Core.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/synch.llb/Semaphore Core.vi"/>
+            <Item Name="Validate Semaphore Size.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Validate Semaphore Size.vi"/>
+            <Item Name="Create Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Create Semaphore.vi"/>
+            <Item Name="Destroy Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Destroy Semaphore.vi"/>
+            <Item Name="Get Semaphore Status.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Get Semaphore Status.vi"/>
+            <Item Name="Release Semaphore_71.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Release Semaphore_71.vi"/>
+            <Item Name="Acquire Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Acquire Semaphore.vi"/>
+         </Item>
+         <Item Name="Items in Memory" Type="Folder">
+            <Item Name="Semaphore Example - Function.vi" Type="VI" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/examples/general/semaphore.llb/Semaphore Example - Function.vi"/>
+            <Item Name="Semaphore Example - Data Dev.vi" Type="VI" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/examples/general/semaphore.llb/Semaphore Example - Data Dev.vi"/>
+            <Item Name="Semaphore Example - Read Dat.vi" Type="VI" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/examples/general/semaphore.llb/Semaphore Example - Read Dat.vi"/>
+            <Item Name="Semaphore Example - Config R.vi" Type="VI" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/examples/general/semaphore.llb/Semaphore Example - Config R.vi"/>
+            <Item Name="Semaphore User 3.vi" Type="VI" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/examples/general/semaphore.llb/Semaphore User 3.vi"/>
+            <Item Name="Semaphore User 2.vi" Type="VI" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/examples/general/semaphore.llb/Semaphore User 2.vi"/>
+            <Item Name="Semaphore User 1.vi" Type="VI" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/examples/general/semaphore.llb/Semaphore User 1.vi"/>
+            <Item Name="Semaphore with SubVIs.vi" Type="VI" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/examples/general/semaphore.llb/Semaphore with SubVIs.vi"/>
          </Item>
          <Item Name="Error Logger.vi" Type="VI" URL="lib/Utilities/Error Logger.vi"/>
          <Item Name="LBCB_Conversions2.vi" Type="VI" URL="../Operations Manager 2/lib/LBCB_Conversions2.vi"/>
          <Item Name="LBCB_Conversions.dll" Type="Document" URL="../Operations Manager 2/DLL/LBCB_Conversions.dll"/>
          <Item Name="LBCB Conversions Actions.ctl" Type="VI" URL="../Operations Manager 2/lib/LBCB Conversions Actions.ctl"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
