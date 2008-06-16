@@ -243,15 +243,14 @@
             <Item Name="String to Config Data.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/String to Config Data.vi"/>
             <Item Name="Invalid Config Data Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Invalid Config Data Reference.vi"/>
             <Item Name="Config Data Close Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Close Reference.vi"/>
-            <Item Name="LVRowAndColumnTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRowAndColumnTypeDef.ctl"/>
             <Item Name="NI_MABase.lvlib" Type="Library" URL="/&lt;vilib&gt;/measure/NI_MABase.lvlib"/>
          </Item>
          <Item Name="Error Logger.vi" Type="VI" URL="lib/Utilities/Error Logger.vi"/>
          <Item Name="LBCB_Conversions2.vi" Type="VI" URL="../Operations Manager 2/lib/LBCB_Conversions2.vi"/>
          <Item Name="LBCB_Conversions.dll" Type="Document" URL="../Operations Manager 2/DLL/LBCB_Conversions.dll"/>
          <Item Name="LBCB Conversions Actions.ctl" Type="VI" URL="../Operations Manager 2/lib/LBCB Conversions Actions.ctl"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
