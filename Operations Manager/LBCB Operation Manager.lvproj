@@ -45,6 +45,7 @@
       <Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="OperationManagerGlobal_Slave.vi"/>
       <Item Name="Calibration Factors.xls" Type="Document" URL="Calibration Factors.xls"/>
       <Item Name="RampHoldTest.vi" Type="VI" URL="Test Utilities/RampHoldTest.vi"/>
+      <Item Name="fake log.txt" Type="Document" URL="fake log.txt"/>
       <Item Name="Dependencies" Type="Dependencies">
          <Item Name="vi.lib" Type="Folder">
             <Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -259,7 +260,7 @@
          <Item Name="LBCB_Conversions2.vi" Type="VI" URL="../Operations Manager 2/lib/LBCB_Conversions2.vi"/>
          <Item Name="LBCB_Conversions.dll" Type="Document" URL="../Operations Manager 2/DLL/LBCB_Conversions.dll"/>
          <Item Name="LBCB Conversions Actions.ctl" Type="VI" URL="../Operations Manager 2/lib/LBCB Conversions Actions.ctl"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
          <Item Name="semaphor" Type="VI" URL="semaphor"/>
@@ -316,7 +317,7 @@
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{761E4F54-AEB4-4695-A570-57FF802F8CA0}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{FF76BD31-7263-432D-B86C-E583F6D3931E}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -380,21 +381,27 @@
             <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
             <Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
             <Property Name="Destination[0].destName" Type="Str">NTCP Socket.exe</Property>
-            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/internal.llb</Property>
+            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/internal.llb</Property>
             <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="Destination[0].type" Type="Str">App</Property>
             <Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/OM Build with fixed logging/data</Property>
+            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/data</Property>
             <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
-            <Property Name="DestinationCount" Type="Int">2</Property>
-            <Property Name="Exe_iconItemID" Type="Ref"></Property>
-            <Property Name="Source[0].itemID" Type="Str">{21C6198E-0EED-47DA-8E16-3D322FB125AB}</Property>
+            <Property Name="Destination[2].destName" Type="Str">log</Property>
+            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/log</Property>
+            <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="DestinationCount" Type="Int">3</Property>
+            <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/NTCP socket.ico</Property>
+            <Property Name="Source[0].itemID" Type="Str">{FF76BD31-7263-432D-B86C-E583F6D3931E}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[1].itemID" Type="Ref"></Property>
+            <Property Name="Source[1].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
             <Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
             <Property Name="Source[1].type" Type="Str">VI</Property>
-            <Property Name="SourceCount" Type="Int">2</Property>
+            <Property Name="Source[2].destinationIndex" Type="Int">2</Property>
+            <Property Name="Source[2].itemID" Type="Ref">/My Computer/fake log.txt</Property>
+            <Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="SourceCount" Type="Int">3</Property>
          </Item>
       </Item>
    </Item>
