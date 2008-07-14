@@ -261,8 +261,8 @@
          <Item Name="LBCB_Conversions2.vi" Type="VI" URL="../Operations Manager 2/lib/LBCB_Conversions2.vi"/>
          <Item Name="LBCB_Conversions.dll" Type="Document" URL="../Operations Manager 2/DLL/LBCB_Conversions.dll"/>
          <Item Name="LBCB Conversions Actions.ctl" Type="VI" URL="../Operations Manager 2/lib/LBCB Conversions Actions.ctl"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
          <Item Name="semaphor" Type="VI" URL="semaphor"/>
       </Item>
@@ -273,7 +273,7 @@
             <Property Name="App_companyName" Type="Str">University of Illinois</Property>
             <Property Name="App_fileType" Type="Int">1</Property>
             <Property Name="App_fileVersion.major" Type="Int">1</Property>
-            <Property Name="App_fileVersion.minor" Type="Int">6</Property>
+            <Property Name="App_fileVersion.minor" Type="Int">7</Property>
             <Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
             <Property Name="App_INI_GUID" Type="Str">{2C4F13AB-15A9-450C-9083-C3C7C0D1641F}</Property>
             <Property Name="App_internalName" Type="Str">Single Box</Property>
@@ -318,7 +318,7 @@
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{53EE4824-CC1B-48CC-B8F2-A2440DE28BA5}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{9A0DB83D-449B-49D0-A82B-4C14AB9CCB66}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -371,7 +371,7 @@
             <Property Name="App_fileDescription" Type="Str">NTCP</Property>
             <Property Name="App_fileType" Type="Int">1</Property>
             <Property Name="App_fileVersion.major" Type="Int">1</Property>
-            <Property Name="App_fileVersion.minor" Type="Int">6</Property>
+            <Property Name="App_fileVersion.minor" Type="Int">7</Property>
             <Property Name="App_INI_aliasGUID" Type="Str">{FBF5AE5D-6586-4554-8AC7-AE214C9E936A}</Property>
             <Property Name="App_INI_GUID" Type="Str">{F234365C-F793-4A3B-96CD-4F790030328F}</Property>
             <Property Name="App_internalName" Type="Str">NTCP</Property>
@@ -393,7 +393,7 @@
             <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="DestinationCount" Type="Int">3</Property>
             <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/NTCP socket.ico</Property>
-            <Property Name="Source[0].itemID" Type="Str">{53EE4824-CC1B-48CC-B8F2-A2440DE28BA5}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{9A0DB83D-449B-49D0-A82B-4C14AB9CCB66}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
