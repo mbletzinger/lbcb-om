@@ -393,7 +393,7 @@
             <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="DestinationCount" Type="Int">3</Property>
             <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/NTCP socket.ico</Property>
-            <Property Name="Source[0].itemID" Type="Str">{9A0DB83D-449B-49D0-A82B-4C14AB9CCB66}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{89F91367-8D17-478A-BA44-B287EFDFDAE4}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
