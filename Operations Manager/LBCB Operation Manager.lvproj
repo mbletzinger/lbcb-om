@@ -261,7 +261,7 @@
          <Item Name="LBCB_Conversions2.vi" Type="VI" URL="../Operations Manager 2/lib/LBCB_Conversions2.vi"/>
          <Item Name="LBCB_Conversions.dll" Type="Document" URL="../Operations Manager 2/DLL/LBCB_Conversions.dll"/>
          <Item Name="LBCB Conversions Actions.ctl" Type="VI" URL="../Operations Manager 2/lib/LBCB Conversions Actions.ctl"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
          <Item Name="semaphor" Type="VI" URL="semaphor"/>
@@ -318,7 +318,7 @@
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{FF76BD31-7263-432D-B86C-E583F6D3931E}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{53EE4824-CC1B-48CC-B8F2-A2440DE28BA5}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -393,7 +393,7 @@
             <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="DestinationCount" Type="Int">3</Property>
             <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/NTCP socket.ico</Property>
-            <Property Name="Source[0].itemID" Type="Str">{FF76BD31-7263-432D-B86C-E583F6D3931E}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{53EE4824-CC1B-48CC-B8F2-A2440DE28BA5}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
