@@ -260,9 +260,9 @@
          <Item Name="LBCB_Conversions2.vi" Type="VI" URL="../Operations Manager 2/lib/LBCB_Conversions2.vi"/>
          <Item Name="LBCB_Conversions.dll" Type="Document" URL="../Operations Manager 2/DLL/LBCB_Conversions.dll"/>
          <Item Name="LBCB Conversions Actions.ctl" Type="VI" URL="../Operations Manager 2/lib/LBCB Conversions Actions.ctl"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="MixedModeControl2Step.dll" Type="Document" URL="lib/DLL/MixedModeControl2Step.dll"/>
          <Item Name="RampHold.dll" Type="Document" URL="lib/DLL/RampHold.dll"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
          <Item Name="semaphor" Type="VI" URL="semaphor"/>
@@ -314,12 +314,15 @@
             <Property Name="Destination[6].destName" Type="Str">image</Property>
             <Property Name="Destination[6].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/image</Property>
             <Property Name="Destination[6].path.type" Type="Str">&lt;none&gt;</Property>
-            <Property Name="DestinationCount" Type="Int">7</Property>
+            <Property Name="Destination[7].destName" Type="Str">NTCP library</Property>
+            <Property Name="Destination[7].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/NTCP library</Property>
+            <Property Name="Destination[7].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="DestinationCount" Type="Int">8</Property>
             <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{9A0DB83D-449B-49D0-A82B-4C14AB9CCB66}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{768D6486-9978-4CF7-A789-8816F508F039}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -338,6 +341,10 @@
             <Property Name="Source[13].itemID" Type="Ref">/My Computer/Data Transmission/DataTransmissionTcpWriter.vi</Property>
             <Property Name="Source[13].sourceInclusion" Type="Str">TopLevel</Property>
             <Property Name="Source[13].type" Type="Str">VI</Property>
+            <Property Name="Source[14].destinationIndex" Type="Int">7</Property>
+            <Property Name="Source[14].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
+            <Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[14].type" Type="Str">VI</Property>
             <Property Name="Source[2].destinationIndex" Type="Int">2</Property>
             <Property Name="Source[2].itemID" Type="Ref">/My Computer/OperationManagerGlobal.vi</Property>
             <Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
@@ -363,47 +370,7 @@
             <Property Name="Source[9].destinationIndex" Type="Int">6</Property>
             <Property Name="Source[9].itemID" Type="Ref">/My Computer/image/LBCB.bmp</Property>
             <Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="SourceCount" Type="Int">14</Property>
-         </Item>
-         <Item Name="NTCP" Type="EXE">
-            <Property Name="App_applicationGUID" Type="Str">{07FA17D6-C084-4745-8866-F9C9BB8BEF1E}</Property>
-            <Property Name="App_applicationName" Type="Str">NTCP Socket.exe</Property>
-            <Property Name="App_companyName" Type="Str">University Of Illinois</Property>
-            <Property Name="App_fileDescription" Type="Str">NTCP</Property>
-            <Property Name="App_fileType" Type="Int">1</Property>
-            <Property Name="App_fileVersion.major" Type="Int">1</Property>
-            <Property Name="App_fileVersion.minor" Type="Int">7</Property>
-            <Property Name="App_INI_aliasGUID" Type="Str">{FBF5AE5D-6586-4554-8AC7-AE214C9E936A}</Property>
-            <Property Name="App_INI_GUID" Type="Str">{F234365C-F793-4A3B-96CD-4F790030328F}</Property>
-            <Property Name="App_internalName" Type="Str">NTCP</Property>
-            <Property Name="App_legalCopyright" Type="Str">Copyright © 2008 </Property>
-            <Property Name="App_productName" Type="Str">NTCP</Property>
-            <Property Name="Bld_buildSpecName" Type="Str">NTCP</Property>
-            <Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-            <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-            <Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-            <Property Name="Destination[0].destName" Type="Str">NTCP Socket.exe</Property>
-            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/internal.llb</Property>
-            <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
-            <Property Name="Destination[0].type" Type="Str">App</Property>
-            <Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/data</Property>
-            <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
-            <Property Name="Destination[2].destName" Type="Str">log</Property>
-            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/log</Property>
-            <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
-            <Property Name="DestinationCount" Type="Int">3</Property>
-            <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/NTCP socket.ico</Property>
-            <Property Name="Source[0].itemID" Type="Str">{89F91367-8D17-478A-BA44-B287EFDFDAE4}</Property>
-            <Property Name="Source[0].type" Type="Str">Container</Property>
-            <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[1].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
-            <Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
-            <Property Name="Source[1].type" Type="Str">VI</Property>
-            <Property Name="Source[2].destinationIndex" Type="Int">2</Property>
-            <Property Name="Source[2].itemID" Type="Ref">/My Computer/fake log.txt</Property>
-            <Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="SourceCount" Type="Int">3</Property>
+            <Property Name="SourceCount" Type="Int">15</Property>
          </Item>
       </Item>
    </Item>
