@@ -257,7 +257,6 @@
             <Item Name="Get Semaphore Status.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Get Semaphore Status.vi"/>
             <Item Name="Release Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Release Semaphore.vi"/>
          </Item>
-         <Item Name="Error Logger.vi" Type="VI" URL="lib/Utilities/Error Logger.vi"/>
          <Item Name="LBCB_Conversions2.vi" Type="VI" URL="../Operations Manager 2/lib/LBCB_Conversions2.vi"/>
          <Item Name="LBCB_Conversions.dll" Type="Document" URL="../Operations Manager 2/DLL/LBCB_Conversions.dll"/>
          <Item Name="LBCB Conversions Actions.ctl" Type="VI" URL="../Operations Manager 2/lib/LBCB Conversions Actions.ctl"/>
