@@ -262,8 +262,6 @@
          <Item Name="RampHold.dll" Type="Document" URL="lib/DLL/RampHold.dll"/>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
-         <Item Name="systemexec" Type="VI" URL="systemexec"/>
-         <Item Name="semaphor" Type="VI" URL="semaphor"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
          <Item Name="LBCB OM 1n1" Type="EXE">
@@ -272,8 +270,7 @@
             <Property Name="App_companyName" Type="Str">University of Illinois</Property>
             <Property Name="App_fileType" Type="Int">1</Property>
             <Property Name="App_fileVersion.major" Type="Int">1</Property>
-            <Property Name="App_fileVersion.minor" Type="Int">7</Property>
-            <Property Name="App_fileVersion.patch" Type="Int">1</Property>
+            <Property Name="App_fileVersion.minor" Type="Int">8</Property>
             <Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
             <Property Name="App_INI_GUID" Type="Str">{2C4F13AB-15A9-450C-9083-C3C7C0D1641F}</Property>
             <Property Name="App_internalName" Type="Str">Single Box</Property>
@@ -321,7 +318,7 @@
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{13C6AFD1-D6FB-4138-AF40-A43EEF6474A9}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{123AED74-078C-4D42-8CB4-7EC767ACEEB8}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
