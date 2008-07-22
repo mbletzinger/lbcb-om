@@ -48,6 +48,8 @@
       <Item Name="fake log.txt" Type="Document" URL="fake log.txt"/>
       <Item Name="Sample Averaging Test.vi" Type="VI" URL="Test Utilities/Sample Averaging Test.vi"/>
       <Item Name="Time stamp test.vi" Type="VI" URL="Test Utilities/Time stamp test.vi"/>
+      <Item Name="OperationManagerGlobalLargeSystem.vi" Type="VI" URL="OperationManagerGlobalLargeSystem.vi"/>
+      <Item Name="OperationManagerGlobalSmallFacility.vi" Type="VI" URL="OperationManagerGlobalSmallFacility.vi"/>
       <Item Name="Dependencies" Type="Dependencies">
          <Item Name="vi.lib" Type="Folder">
             <Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -260,8 +262,10 @@
          </Item>
          <Item Name="MixedModeControl2Step.dll" Type="Document" URL="lib/DLL/MixedModeControl2Step.dll"/>
          <Item Name="RampHold.dll" Type="Document" URL="lib/DLL/RampHold.dll"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
+         <Item Name="systemexec" Type="VI" URL="systemexec"/>
+         <Item Name="semaphor" Type="VI" URL="semaphor"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
          <Item Name="LBCB OM 1n1" Type="EXE">
@@ -318,7 +322,7 @@
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{123AED74-078C-4D42-8CB4-7EC767ACEEB8}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{5536869B-6D1C-40D8-99F5-85DC1C7C2BE3}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -341,6 +345,14 @@
             <Property Name="Source[14].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
             <Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[14].type" Type="Str">VI</Property>
+            <Property Name="Source[15].destinationIndex" Type="Int">2</Property>
+            <Property Name="Source[15].itemID" Type="Ref">/My Computer/OperationManagerGlobalLargeSystem.vi</Property>
+            <Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[15].type" Type="Str">VI</Property>
+            <Property Name="Source[16].destinationIndex" Type="Int">2</Property>
+            <Property Name="Source[16].itemID" Type="Ref">/My Computer/OperationManagerGlobalSmallFacility.vi</Property>
+            <Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[16].type" Type="Str">VI</Property>
             <Property Name="Source[2].destinationIndex" Type="Int">2</Property>
             <Property Name="Source[2].itemID" Type="Ref">/My Computer/OperationManagerGlobal.vi</Property>
             <Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
@@ -366,7 +378,7 @@
             <Property Name="Source[9].destinationIndex" Type="Int">6</Property>
             <Property Name="Source[9].itemID" Type="Ref">/My Computer/image/LBCB.bmp</Property>
             <Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="SourceCount" Type="Int">15</Property>
+            <Property Name="SourceCount" Type="Int">17</Property>
          </Item>
       </Item>
    </Item>
