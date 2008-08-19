@@ -274,7 +274,7 @@
             <Property Name="App_companyName" Type="Str">University of Illinois</Property>
             <Property Name="App_fileType" Type="Int">1</Property>
             <Property Name="App_fileVersion.major" Type="Int">1</Property>
-            <Property Name="App_fileVersion.minor" Type="Int">8</Property>
+            <Property Name="App_fileVersion.minor" Type="Int">9</Property>
             <Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
             <Property Name="App_INI_GUID" Type="Str">{2C4F13AB-15A9-450C-9083-C3C7C0D1641F}</Property>
             <Property Name="App_internalName" Type="Str">Single Box</Property>
@@ -322,7 +322,7 @@
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{5536869B-6D1C-40D8-99F5-85DC1C7C2BE3}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{BA41AB5F-9ED7-42E6-AF0C-F07ADB5F082D}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
