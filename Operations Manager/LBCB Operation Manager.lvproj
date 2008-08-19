@@ -262,8 +262,8 @@
          </Item>
          <Item Name="MixedModeControl2Step.dll" Type="Document" URL="lib/DLL/MixedModeControl2Step.dll"/>
          <Item Name="RampHold.dll" Type="Document" URL="lib/DLL/RampHold.dll"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
          <Item Name="semaphor" Type="VI" URL="semaphor"/>
       </Item>
