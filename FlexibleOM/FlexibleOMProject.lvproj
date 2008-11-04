@@ -28,6 +28,16 @@
       <Item Name="Tests" Type="Folder" URL="Tests">
          <Property Name="NI.DISK" Type="Bool">true</Property>
       </Item>
+      <Item Name="Emulator" Type="Folder" URL="Emulator">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
+      </Item>
+      <Item Name="DLL Binaries" Type="Folder" URL="DLL Binaries">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
+      </Item>
+      <Item Name="LBCB Geometry.ctl" Type="VI" URL="Metadata/LBCB Geometry.ctl"/>
+      <Item Name="LBCB ID.ctl" Type="VI" URL="Metadata/LBCB ID.ctl"/>
+      <Item Name="LBCB Size.ctl" Type="VI" URL="Metadata/LBCB Size.ctl"/>
+      <Item Name="Motion Center.ctl" Type="VI" URL="Metadata/Motion Center.ctl"/>
       <Item Name="Dependencies" Type="Dependencies">
          <Item Name="vi.lib" Type="Folder">
             <Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
@@ -272,7 +282,6 @@
             <Item Name="Config Data Open Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Open Reference.vi"/>
             <Item Name="Open Config Data.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Open Config Data.vi"/>
          </Item>
-         <Item Name="LBCB_Conversions.dll" Type="Document" URL="DLL/LBCB_Conversions.dll"/>
          <Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
          <Item Name="App DataStore.vi" Type="VI" URL="Data Access Objects/Application/App DataStore.vi"/>
          <Item Name="Command Data.ctl" Type="VI" URL="../Operations Manager/lib/Global Data/Command Data.ctl"/>
