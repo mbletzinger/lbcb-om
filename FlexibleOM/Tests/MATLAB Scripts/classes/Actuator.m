@@ -5,9 +5,9 @@ classdef Actuator
     properties
     nominal_length = 0;
     current_length = 0;
-    basepin = [0,0,0];
-    nominal_platformpin = [0,0,0];
-    current_platformpin = [0,0,0];
+    basepin = zeros(3,1);
+    nominal_platformpin = zeros(3,1);
+    current_platformpin = zeros(3,1);
     end %properties
     methods
         function returnO = set.nominal_length(obj,value)
@@ -21,7 +21,7 @@ classdef Actuator
             returnO = obj;
         end
         function returnO = cartesianInput(obj, vector)
-            translation = [vector(1), vector(2), vector(3)];
+            translation = [vector(1); vector(2); vector(3);];
             roll = eye(3);
             roll(2,2) = cos(vector(4));
             roll(2,3) = -sin(vector(4));
@@ -38,13 +38,13 @@ classdef Actuator
             yaw(2,1) = sin(vector(6));
             yaw(2,2) = cos(vector(6));
             
-            obj.current_platformpin = roll * pitch * yaw * obj.nominal_platformpin * translation;
+            obj.current_platformpin = (roll * pitch * yaw) * obj.nominal_platformpin + translation;
             directional_vector = obj.current_platformpin - obj.basepin;
             obj.current_length = norm(directional_vector);
             returnO = obj;
 
         end
-        function DL_Dd = jacobian(cart)
+        function DL_Dd = jacobian(obj, cart)
             act_unit_vector  = (obj.current_platformpin - obj.basepin)/obj.current_length;
             J = zeros(3,3);
             J(1,2) = -sin(cart(5))*cos(cart(6))*obj.nominal_platformpin(1) ...

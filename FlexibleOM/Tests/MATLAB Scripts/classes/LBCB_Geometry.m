@@ -6,7 +6,8 @@ classdef LBCB_Geometry
     left_platpin = zeros(6.3);
    end
    methods
-       function obj = LBCB_Geometry()
+       function obj = LBCB_Geometry()   
+           
            obj.right_basepin = [ -19.184 4.8039 -7.0262; ...
                                  -19.184 -4.8039 -7.0262; ...
                                  0.079 -7.6005 -6.8945; ...
@@ -37,8 +38,6 @@ classdef LBCB_Geometry
        end
        function lbcb = createLBCB(obj,isLeft)
            lbcb = LBCB();
-           basepin = zeros(6,3);
-           platpin = zeros(6,3);
            if isLeft
                basepin = obj.left_basepin;
                platpin = obj.left_platpin;
@@ -47,8 +46,8 @@ classdef LBCB_Geometry
                platpin = obj.right_platpin;
            end
            for i = 1:6
-               lbcb.actuators(i).basepin(1:3) = basepin(i,1:3); 
-               lbcb.actuators(i).nominal_platformpin(1:3) = platpin(i,1:3);
+               lbcb.actuators(i).basepin = basepin(i,1:3)'; 
+               lbcb.actuators(i).nominal_platformpin = platpin(i,1:3)';
                lbcb.actuators(i).nominal_length = norm((platpin(i) - basepin(i)),2);
            end
        end
