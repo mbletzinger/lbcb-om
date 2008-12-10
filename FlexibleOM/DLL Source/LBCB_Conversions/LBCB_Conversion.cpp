@@ -155,7 +155,7 @@ _declspec(dllexport) void LBCB_conversion_C2A(long type, double motion_center[],
 
 }
 
-_declspec(dllexport) void LBCB_Conversion_Set_Size(long size)
+_declspec(dllexport) void LBCB_Conversion_Init(long size)
 {
 
 	ThreadLocalFactory::InitCSV();
