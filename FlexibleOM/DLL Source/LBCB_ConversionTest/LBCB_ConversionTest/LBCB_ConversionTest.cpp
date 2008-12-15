@@ -65,8 +65,8 @@ DWORD WINAPI ThreadCalc( LPVOID lpParam )
 	long type = 0;
 
 	for (int r=1; r <= 300; r++) { 
-		LBCB_Conversion_A2C(type, motion_center,length, sensor_readings, cartesian_value,&error);
-		LBCB_conversion_C2A(type, motion_center, return_sensor_readings, cartesian_value, &error);
+		LBCB_Conversion_A2C_Displacement(type, sensor_readings, cartesian_value,&error);
+		LBCB_Conversion_C2A_Displacement(type,return_sensor_readings, cartesian_value, &error);
 		ofstream Logout (filename.c_str(), ios_base::out | ios_base::app);
 		for (int i = 0; i < 6; i++) {
 			Logout<<(return_sensor_readings[i] - sensor_readings[i])<<",";

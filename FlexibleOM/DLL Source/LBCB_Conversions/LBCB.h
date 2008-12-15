@@ -26,11 +26,11 @@ public:
 	VECTOR CurrentActuatorStroke( void )       const;
 
 	// Member Function with access to the Member Variables
-	void Cartesian2Actuator( VECTOR const & Cart_Disp, VECTOR const & Cart_Force, VECTOR & Act_Stroke, VECTOR & Act_Force);
-	void Actuator2Cartesian( VECTOR const & Act_Stroke, VECTOR const & ACt_Force, VECTOR & Cart_Disp, VECTOR & Cart_Force, VECTOR const & Limitation );
-	void Cartesian2Actuator( VECTOR const & CartesianData, VECTOR & ActuatorSpace);
-	void Actuator2Cartesian( VECTOR const & ActuatorSpace, VECTOR & CartesianData, VECTOR const & Limitation );
-private:
+	void Cartesian2ActuatorDisplacement( VECTOR const & Cart_Disp,VECTOR & Act_Stroke);
+	void Cartesian2ActuatorForces( VECTOR const & Cart_Force, VECTOR & Act_Force);
+	void Actuator2CartesianDisplacement( VECTOR const & actuatorstroke, VECTOR & cartesiandisp, VECTOR const & limitation );
+	void Actuator2CartesianForces(VECTOR const & loadcellreading, VECTOR & cartesiandisp, VECTOR & cartesianforce);
+	private:
 	LBCB_Actuator *Actuator_ptr;
 	VECTOR currentcartesian;
 	ThreadLocalObjects* tlo;

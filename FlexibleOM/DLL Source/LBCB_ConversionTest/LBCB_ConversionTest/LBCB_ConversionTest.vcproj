@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\Documents and Settings\adminmbletzin\Desktop\Work\Operations Manager 2\DLL_Source\LBCB_Conversions&quot;"
+				AdditionalIncludeDirectories="$(SolutionDir)\..\LBCB_Conversions"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -120,6 +120,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="$(SolutionDir)\..\LBCB_Conversions"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -171,7 +172,7 @@
 	<References>
 		<ProjectReference
 			ReferencedProjectIdentifier="{17AB0628-9FD4-4AE4-9230-53F7494D98AB}"
-			RelativePathToProject="..\LBCB_Conversions\LBCB_Conversion_A2C.vcproj"
+			RelativePathToProject="..\LBCB_Conversions\LBCB_Conversion.vcproj"
 		/>
 	</References>
 	<Files>

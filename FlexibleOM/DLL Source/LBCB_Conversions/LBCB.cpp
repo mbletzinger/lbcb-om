@@ -109,20 +109,27 @@ VECTOR LBCB::CurrentActuatorStroke( void ) const
 //////////////////////////////////////////////////////////////////////
 // Member Function with access to the Member Variables
 //////////////////////////////////////////////////////////////////////	
-void LBCB::Cartesian2Actuator( VECTOR const & Cart_Disp, VECTOR const & Cart_Force, VECTOR & Act_Stroke, VECTOR & Act_Force)
+void LBCB::Cartesian2ActuatorDisplacement( VECTOR const & Cart_Disp, VECTOR & Act_Stroke)
 {
-	//assert( cartesianinput.Size() != 6 );
-	//assert( actuatorstroke.Size() != 6 );
 
+	for( int i=0; i<=5; i++)
+	{
+		Actuator_ptr[i].CartesianCoordinatesInput( Cart_Disp );
+		Act_Stroke(i+1) = Actuator_ptr[i].CurrentStroke();
+	}
+
+	currentcartesian = Cart_Disp;
+
+	return;
+}
+void LBCB::Cartesian2ActuatorForces( VECTOR const & Cart_Force, VECTOR & Act_Force)
+{
 	MATRIX Convert_Matrix(6,6,tlo);
 	VECTOR BasePin_vec(3,tlo), Directional_vec(3,tlo), temp(3,tlo), Moment_vec(3,tlo);
 	double k;
 
 	for( int i=0; i<=5; i++)
 	{
-		Actuator_ptr[i].CartesianCoordinatesInput( Cart_Disp );
-		Act_Stroke(i+1) = Actuator_ptr[i].CurrentStroke();
-
 		temp = Actuator_ptr[i].CurrentPlatFormPin() - Actuator_ptr[i].BasePin();
 		Directional_vec = temp.NormalizedVector();
 		BasePin_vec = Actuator_ptr[i].BasePin();
@@ -140,15 +147,13 @@ void LBCB::Cartesian2Actuator( VECTOR const & Cart_Disp, VECTOR const & Cart_For
 	}
 
 	Convert_Matrix.LinearSolver( Cart_Force, Act_Force );
-	currentcartesian = Cart_Disp;
 
 	return;
 }
 
-void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loadcellreading, VECTOR & cartesiandisp, VECTOR & cartesianforce, VECTOR const & limitation )
+void LBCB::Actuator2CartesianDisplacement( VECTOR const & actuatorstroke, VECTOR & cartesiandisp, VECTOR const & limitation )
 {
 
-	//if( actuatorstroke.Size()!=6||limitation.Size()!=6){return;}
 	// Temporary actuator stroke vector 
 	VECTOR temp_stroke( CurrentActuatorStroke() );
 	VECTOR error(6,tlo);
@@ -159,9 +164,7 @@ void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loa
 	// Error in actuator stroke
 	error = actuatorstroke - temp_stroke;
 	MATRIX JacobianMatrix(6,6,tlo);
-	VECTOR DL_Dd(6,tlo), D_cartesian(6,tlo), cartesiantrans(3,tlo);
-	VECTOR force(3,tlo), moment(3,tlo), temp_check(6,tlo);
-	VECTOR dummy1(6,tlo),dummy2(6,tlo);
+	VECTOR DL_Dd(6,tlo), D_cartesian(6,tlo), temp_check(6,tlo);
 	int check=true;
 	int num_iteration;
 	num_iteration = 0;
@@ -178,7 +181,7 @@ void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loa
 		JacobianMatrix.LinearSolver( error, D_cartesian );
 
 		cartesiandisp = cartesiandisp + D_cartesian;
-		Cartesian2Actuator( cartesiandisp, dummy1, temp_stroke, dummy2 );
+		Cartesian2ActuatorDisplacement( cartesiandisp,temp_stroke );
 		error = actuatorstroke - temp_stroke;
 
 		for( int j=1; j<=6; j++)
@@ -196,7 +199,13 @@ void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loa
 
 	}
 
+	return;
+}
+
+void LBCB::Actuator2CartesianForces(VECTOR const & loadcellreading, VECTOR & cartesiandisp, VECTOR & cartesianforce)
+{
 	VECTOR *Directional_Vector, *ForceArm_Vector;
+	VECTOR cartesiantrans(3,tlo), force(3,tlo), moment(3,tlo);
 	Directional_Vector = new VECTOR[6];
 	ForceArm_Vector = new VECTOR[6];
 
@@ -228,43 +237,6 @@ void LBCB::Actuator2Cartesian( VECTOR const & actuatorstroke, VECTOR const & loa
 
 	delete [] Directional_Vector;
 	delete [] ForceArm_Vector;
-
-	return;
-}
-
-void LBCB::Cartesian2Actuator( VECTOR const & CartesianData, VECTOR & ActuatorSpaceData )
-{
-	VECTOR Cart_Disp(6,tlo), Cart_Force(6,tlo), Act_Stroke(6,tlo), Act_Force(6,tlo);
-	// Force and Moment conversion is not necessary because all force commands are transformed into displacement commands
-
-	for (int i=1; i<=6; i++){
-		Cart_Disp(i)  = CartesianData(i);
-	}
-
-	Cartesian2Actuator( Cart_Disp, Cart_Force, Act_Stroke, Act_Force );
-
-	for (int i=1; i<=6; i++){
-		ActuatorSpaceData(i)   = Act_Stroke(i);
-	}
-
-	return;
-}
-
-void LBCB::Actuator2Cartesian( VECTOR const & ActuatorSpaceData, VECTOR & CartesianData, VECTOR const & Limitation  )
-{
-	VECTOR Cart_Disp(6,tlo), Cart_Force(6,tlo), Act_Stroke(6,tlo), Act_Force(6,tlo);
-
-	for (int i=1; i<=6; i++){
-		Act_Stroke(i) = ActuatorSpaceData(i);
-		Act_Force(i) =	ActuatorSpaceData(i+6);
-	}
-
-	Actuator2Cartesian( Act_Stroke, Act_Force, Cart_Disp, Cart_Force, Limitation );
-
-	for (int i=1; i<=6; i++){
-		CartesianData(i)   = Cart_Disp(i);
-		CartesianData(i+6) = Cart_Force(i);
-	}
 
 	return;
 }

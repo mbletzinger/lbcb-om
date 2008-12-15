@@ -74,7 +74,7 @@ int ProcessErrors(string name, ThreadLocalObjects* tlo)
 	return result;
 }
 
-_declspec(dllexport) void LBCB_Conversion_A2C(long type, double motion_center[], long length, double sensor_reading[], double cartesian_value[], long* error)
+_declspec(dllexport) void LBCB_Conversion_A2C_Displacement(long type, double lvdt[], double cartesian_displacement[], long* error)
 {
 	int i;
 
@@ -87,23 +87,19 @@ _declspec(dllexport) void LBCB_Conversion_A2C(long type, double motion_center[],
 	if(tlo == NULL) {
 		return;
 	}
-	VECTOR MotionCenter(3,tlo), PlatformCenter(3,tlo), ActuatorSpace(12,tlo), CartesianData(12,tlo), MotionCenterData(12,tlo), Limitation(6,tlo);
-	for(i=0; i<3; i++){MotionCenter(i+1) = motion_center[i];}
+	VECTOR ActuatorSpace(6,tlo), CartesianData(6,tlo), Limitation(6,tlo);
 
 	for( i = 0; i<6; i++)
 	{
-		ActuatorSpace(i+1) = sensor_reading[i];
-		if (length == 12) {ActuatorSpace(i+7) = sensor_reading[i+6];}
+		ActuatorSpace(i+1) = lvdt[i];
 		Limitation(i+1) = 0.00001;
 	}
 	LBCB lbcb(type, tlo);
-	lbcb.Actuator2Cartesian( ActuatorSpace, CartesianData, Limitation );
-	RigidTransform( PlatformCenter, CartesianData, MotionCenter, MotionCenterData,tlo );
+	lbcb.Actuator2CartesianDisplacement( ActuatorSpace, CartesianData, Limitation );
 
 	for( i = 0; i<6; i++)
 	{
-		cartesian_value[i] = MotionCenterData(i+1);
-		if (length == 12) {cartesian_value[i+6] = MotionCenterData(i+7);}
+		cartesian_displacement[i] = CartesianData(i+1);
 	}
 
 #ifdef FINE_MEM_COUNT
@@ -111,12 +107,51 @@ _declspec(dllexport) void LBCB_Conversion_A2C(long type, double motion_center[],
 	elog.addedError();
 #endif
 
-	*error = ProcessErrors("LBCB_Conversion_A2C",tlo);
+	*error = ProcessErrors("LBCB_Conversion_A2C_Displacement",tlo);
 
 	return;
 }
 
-_declspec(dllexport) void LBCB_conversion_C2A(long type, double motion_center[], double sensor_reading[], double cartesian_value[], long* error)
+_declspec(dllexport) void LBCB_Conversion_A2C_Forces(long type, double loadcell[], double cartesian_displacement[], 
+													 double cartesian_forces[], long* error)
+{
+	int i;
+
+#ifdef FINE_MEM_COUNT
+	elog.getErrorStream() << "LBCB_conversion_A2C started";
+	elog.addedError();
+#endif
+
+	ThreadLocalObjects* tlo = GetThreadLocalObjects();
+	if(tlo == NULL) {
+		return;
+	}
+	VECTOR ActuatorSpace(6,tlo), CartesianDisplacement(6,tlo), CartesianForces(6,tlo);
+
+	for( i = 0; i<6; i++)
+	{
+		ActuatorSpace(i+1) = loadcell[i];
+		CartesianDisplacement(i+1) = cartesian_displacement[i];
+	}
+	LBCB lbcb(type, tlo);
+	lbcb.Actuator2CartesianForces( ActuatorSpace, CartesianDisplacement, CartesianForces );
+
+	for( i = 0; i<6; i++)
+	{
+		cartesian_forces[i] = CartesianForces(i+1);
+	}
+
+#ifdef FINE_MEM_COUNT
+	elog.getErrorStream() << "LBCB_conversion_A2C finished";
+	elog.addedError();
+#endif
+
+	*error = ProcessErrors("LBCB_Conversion_A2C_Forces",tlo);
+
+	return;
+}
+
+_declspec(dllexport) void LBCB_Conversion_C2A_Displacement(long type, double lvdt[], double cartesian_displacement[], long* error)
 {
 
 	int i;
@@ -126,15 +161,73 @@ _declspec(dllexport) void LBCB_conversion_C2A(long type, double motion_center[],
 	if(tlo == NULL) {
 		return;
 	}
-	VECTOR ActuatorSpace(6,tlo), CartesianData(6,tlo);
-	VECTOR MotionCenterData(6,tlo);
-	VECTOR MotionCenter(3,tlo), PlatformCenter(3,tlo);
-
+	VECTOR ActuatorSpace(6,tlo),CartesianData(6,tlo);
 	LBCB lbcb(type, tlo);
 
 	for( i = 0; i<6; i++)
 	{
-		MotionCenterData(i+1) = cartesian_value[i];
+		CartesianData(i+1) = cartesian_displacement[i];
+	}
+
+	lbcb.Cartesian2ActuatorDisplacement( CartesianData, ActuatorSpace );
+
+	for( i = 0; i<6; i++)
+	{
+		lvdt[i] = ActuatorSpace(i+1);
+	}
+
+	*error = ProcessErrors("LBCB_Conversion_C2A_Displacement",tlo);
+	return;
+
+}
+
+_declspec(dllexport) void LBCB_Conversion_C2A_Forces(long type, double loadcell[], double cartesian_forces[], long* error)
+{
+
+	int i;
+
+	ThreadLocalObjects* tlo = GetThreadLocalObjects();
+
+	if(tlo == NULL) {
+		return;
+	}
+	VECTOR ActuatorSpace(6,tlo),CartesianData(6,tlo);
+	LBCB lbcb(type, tlo);
+
+	for( i = 0; i<6; i++)
+	{
+		CartesianData(i+1) = cartesian_forces[i];
+	}
+
+	lbcb.Cartesian2ActuatorForces( CartesianData, ActuatorSpace );
+
+	for( i = 0; i<6; i++)
+	{
+		loadcell[i] = ActuatorSpace(i+1);
+	}
+
+	*error = ProcessErrors("LBCB_Conversion_C2A_Forces",tlo);
+	return;
+
+}
+_declspec(dllexport) void LBCB_Conversion_RigidTransform(double motion_center[], double cartesian_displacement[], 
+														 double cartesian_forces[], long* error) {
+	int i;
+
+	ThreadLocalObjects* tlo = GetThreadLocalObjects();
+
+	if(tlo == NULL) {
+		return;
+	}
+	VECTOR MotionCenterData(12,tlo), CartesianData(12,tlo);
+	VECTOR MotionCenter(3,tlo), PlatformCenter(3,tlo);
+
+
+	for( i = 0; i<6; i++)
+	{
+		MotionCenterData(i+1) = cartesian_displacement[i];
+		MotionCenterData(i+6) = cartesian_forces[i];
+
 	}
 
 	for( i = 0; i<3; i++)
@@ -142,17 +235,12 @@ _declspec(dllexport) void LBCB_conversion_C2A(long type, double motion_center[],
 		MotionCenter(i+1) = motion_center[i];
 	}
 
+	// Platform Center is at [0 0 0]
 	RigidTransform( MotionCenter, MotionCenterData, PlatformCenter, CartesianData,tlo );
-	lbcb.Cartesian2Actuator( CartesianData, ActuatorSpace );
-
-	for( i = 0; i<6; i++)
-	{
-		sensor_reading[i] = ActuatorSpace(i+1);
+	for (i = 0; i < 6; i++) {
+		cartesian_displacement[i] = CartesianData(i);
+		cartesian_forces[i] = CartesianData(i+6);
 	}
-
-	*error = ProcessErrors("LBCB_Conversion_C2A",tlo);
-	return;
-
 }
 
 _declspec(dllexport) void LBCB_Conversion_Init(long size)
