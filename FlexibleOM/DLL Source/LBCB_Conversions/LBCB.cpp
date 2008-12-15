@@ -127,26 +127,26 @@ void LBCB::Cartesian2ActuatorForces( VECTOR const & Cart_Force, VECTOR & Act_For
 	MATRIX Convert_Matrix(6,6,tlo);
 	VECTOR BasePin_vec(3,tlo), Directional_vec(3,tlo), temp(3,tlo), Moment_vec(3,tlo);
 	double k;
-
+	
 	for( int i=0; i<=5; i++)
 	{
-		temp = Actuator_ptr[i].CurrentPlatFormPin() - Actuator_ptr[i].BasePin();
-		Directional_vec = temp.NormalizedVector();
+		temp = Actuator_ptr[i].CurrentPlatFormPin() - Actuator_ptr[i].BasePin(); // Vector representing the total length of each of the actuators
+		Directional_vec = temp.NormalizedVector(); // Matrix of the unit vectors pointing in the direction of each of the actuators
 		BasePin_vec = Actuator_ptr[i].BasePin();
 
 		k = 0;
-		for (int j=1; j<=3; j++){k += BasePin_vec(j)*Directional_vec(j);}
-		for (int j=1; j<=3; j++){temp(j) = BasePin_vec(j) - k*Directional_vec(j);}
+		for (int j=1; j<=3; j++){k += BasePin_vec(j)*Directional_vec(j);} // Calculate the projection of r_BPV onto e_DV.
+		for (int j=1; j<=3; j++){temp(j) = BasePin_vec(j) - k*Directional_vec(j);} // Subtract that projection to get a vector perpendicular to the actuator
+  
+		Moment_vec = temp.CrossProduct( Directional_vec ); // calculate the moment vector divided by force ... r_BPV x e_dv
 
-		Moment_vec = temp.CrossProduct( Directional_vec );
-
-		for (int j=1; j<=3; j++){
+		for (int j=1; j<=3; j++){  // Assemble the matrix
 			Convert_Matrix(j,i+1) = Directional_vec(j);
 			Convert_Matrix(j+3,i+1) = Moment_vec(j);
 		}
 	}
-
-	Convert_Matrix.LinearSolver( Cart_Force, Act_Force );
+	
+	Convert_Matrix.LinearSolver( Cart_Force, Act_Force );  // invert the matrix
 
 	return;
 }

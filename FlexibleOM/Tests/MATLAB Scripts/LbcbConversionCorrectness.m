@@ -6,8 +6,8 @@ end
 if(libisloaded('oldVersion'))
     unloadlibrary('oldVersion');
 end
-loadlibrary('LBCB_Conversions.dll', 'LBCB_Conversion.h','alias', 'newVersion');
 loadlibrary('LBCB_ConversionsOldVersion.dll', 'LBCB_ConversionOldVersion.h','alias', 'oldVersion');
+loadlibrary('LBCB_Conversions.dll', 'LBCB_Conversion.h','alias', 'newVersion');
 sizze = 0;
 calllib('oldVersion','LBCB_Conversion_Init',sizze);
 calllib('newVersion','LBCB_Conversion_Init',sizze);
@@ -24,26 +24,15 @@ for dof = 1:numdofs
     data = zeros(numpoints,numdofs);
     inputs = zeros(numpoints,numdofs);
     for d = 1:numpoints
-        inputs(d,dof) = sequence(d);
+        inputs(d,dof) = sequence(d)
     end
     oldActValues = calc.oldActuatorValues(inputs);
     oldCartValues = calc.oldCartValues(oldActValues);
     error = oldCartValues - inputs;
 %    finish
-    subplot(6,3,dof); plot(error);
+    subplot(2,3,dof); plot(sequence,error);
     ylabel(movelabels{dof});
     title('Old Version Errors');
-    legend('Dx','Dy','Dz','Rx','Ry','Rz');
-    newActValues = calc.newActuatorValues(inputs);
-    error = newActValues - oldActValues;
-    subplot(6,3,dof + numdofs); plot(error);
-    ylabel(movelabels{dof});
-    title('New Version Actuator Errors');
-    legend('X1','X2','Y1','Z1','Z2','Z3');
-    newCartValues = calc.newCartValues(oldActValues);
-    error = newCartValues - oldCartValues;
-    subplot(6,3,dof + numdofs * 2); plot(error);
-    ylabel(movelabels{dof});
-    title('New Version Cartesian Errors');
-    legend('Dx','Dy','Dz','Rx','Ry','Rz');
+    grid on;
 end
+legend('Dx','Dy','Dz','Rx','Ry','Rz');
