@@ -42,13 +42,11 @@
       <Item Name="Calibration Factor.xls" Type="Document" URL="Calibration Factor.xls"/>
       <Item Name="Menu.rtm" Type="Document" URL="Menu.rtm"/>
       <Item Name="OperationManagerGlobal.vi" Type="VI" URL="OperationManagerGlobal.vi"/>
-      <Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="OperationManagerGlobal_Slave.vi"/>
       <Item Name="Calibration Factors.xls" Type="Document" URL="Calibration Factors.xls"/>
       <Item Name="RampHoldTest.vi" Type="VI" URL="Test Utilities/RampHoldTest.vi"/>
       <Item Name="fake log.txt" Type="Document" URL="fake log.txt"/>
       <Item Name="Sample Averaging Test.vi" Type="VI" URL="Test Utilities/Sample Averaging Test.vi"/>
       <Item Name="Time stamp test.vi" Type="VI" URL="Test Utilities/Time stamp test.vi"/>
-      <Item Name="OperationManagerGlobalLargeSystem.vi" Type="VI" URL="OperationManagerGlobalLargeSystem.vi"/>
       <Item Name="OperationManagerGlobalSmallFacility.vi" Type="VI" URL="OperationManagerGlobalSmallFacility.vi"/>
       <Item Name="Dependencies" Type="Dependencies">
          <Item Name="vi.lib" Type="Folder">
@@ -262,8 +260,9 @@
          </Item>
          <Item Name="MixedModeControl2Step.dll" Type="Document" URL="lib/DLL/MixedModeControl2Step.dll"/>
          <Item Name="RampHold.dll" Type="Document" URL="lib/DLL/RampHold.dll"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
+         <Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="OperationManagerGlobal_Slave.vi"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
          <Item Name="semaphor" Type="VI" URL="semaphor"/>
       </Item>
@@ -319,65 +318,65 @@
             <Property Name="Destination[7].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/NTCP library</Property>
             <Property Name="Destination[7].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="DestinationCount" Type="Int">8</Property>
-            <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
+            <Property Name="Exe_iconItemID" Type="Ref"></Property>
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
             <Property Name="Source[0].itemID" Type="Str">{A1CA143F-6251-4C98-A890-2E19701C25CC}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
+            <Property Name="Source[1].itemID" Type="Ref"></Property>
             <Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
             <Property Name="Source[1].type" Type="Str">VI</Property>
             <Property Name="Source[10].destinationIndex" Type="Int">6</Property>
-            <Property Name="Source[10].itemID" Type="Ref">/My Computer/image/UILogoCL1c_mdf.bmp</Property>
+            <Property Name="Source[10].itemID" Type="Ref"></Property>
             <Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[11].destinationIndex" Type="Int">5</Property>
-            <Property Name="Source[11].itemID" Type="Ref">/My Computer/InputFiles/EC_Input2.txt</Property>
+            <Property Name="Source[11].itemID" Type="Ref"></Property>
             <Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[12].destinationIndex" Type="Int">5</Property>
-            <Property Name="Source[12].itemID" Type="Ref">/My Computer/InputFiles/Input.txt</Property>
+            <Property Name="Source[12].itemID" Type="Ref"></Property>
             <Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[13].itemID" Type="Ref">/My Computer/Data Transmission/DataTransmissionTcpWriter.vi</Property>
+            <Property Name="Source[13].itemID" Type="Ref"></Property>
             <Property Name="Source[13].sourceInclusion" Type="Str">TopLevel</Property>
             <Property Name="Source[13].type" Type="Str">VI</Property>
             <Property Name="Source[14].destinationIndex" Type="Int">7</Property>
-            <Property Name="Source[14].itemID" Type="Ref">/My Computer/NTCP library/NTCP Socket.vi</Property>
+            <Property Name="Source[14].itemID" Type="Ref"></Property>
             <Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[14].type" Type="Str">VI</Property>
             <Property Name="Source[15].destinationIndex" Type="Int">2</Property>
-            <Property Name="Source[15].itemID" Type="Ref">/My Computer/OperationManagerGlobalLargeSystem.vi</Property>
+            <Property Name="Source[15].itemID" Type="Ref"></Property>
             <Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[15].type" Type="Str">VI</Property>
             <Property Name="Source[16].destinationIndex" Type="Int">2</Property>
-            <Property Name="Source[16].itemID" Type="Ref">/My Computer/OperationManagerGlobalSmallFacility.vi</Property>
+            <Property Name="Source[16].itemID" Type="Ref"></Property>
             <Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[16].type" Type="Str">VI</Property>
             <Property Name="Source[2].destinationIndex" Type="Int">2</Property>
-            <Property Name="Source[2].itemID" Type="Ref">/My Computer/OperationManagerGlobal.vi</Property>
+            <Property Name="Source[2].itemID" Type="Ref"></Property>
             <Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[2].type" Type="Str">VI</Property>
             <Property Name="Source[3].destinationIndex" Type="Int">3</Property>
-            <Property Name="Source[3].itemID" Type="Ref">/My Computer/Config/Config_Default.xml</Property>
+            <Property Name="Source[3].itemID" Type="Ref"></Property>
             <Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[4].destinationIndex" Type="Int">4</Property>
-            <Property Name="Source[4].itemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn0008.txt</Property>
+            <Property Name="Source[4].itemID" Type="Ref"></Property>
             <Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[5].destinationIndex" Type="Int">4</Property>
-            <Property Name="Source[5].itemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn004.txt</Property>
+            <Property Name="Source[5].itemID" Type="Ref"></Property>
             <Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[6].destinationIndex" Type="Int">4</Property>
-            <Property Name="Source[6].itemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn005.txt</Property>
+            <Property Name="Source[6].itemID" Type="Ref"></Property>
             <Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[7].destinationIndex" Type="Int">4</Property>
-            <Property Name="Source[7].itemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn01.txt</Property>
+            <Property Name="Source[7].itemID" Type="Ref"></Property>
             <Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[8].destinationIndex" Type="Int">4</Property>
-            <Property Name="Source[8].itemID" Type="Ref">/My Computer/DigitalFilter/Butter8thWn02.txt</Property>
+            <Property Name="Source[8].itemID" Type="Ref"></Property>
             <Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[9].destinationIndex" Type="Int">6</Property>
-            <Property Name="Source[9].itemID" Type="Ref">/My Computer/image/LBCB.bmp</Property>
+            <Property Name="Source[9].itemID" Type="Ref"></Property>
             <Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
             <Property Name="SourceCount" Type="Int">17</Property>
          </Item>
