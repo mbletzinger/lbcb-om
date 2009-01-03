@@ -37,7 +37,6 @@
       <Item Name="Data Transmission" Type="Folder" URL="Data Transmission">
          <Property Name="NI.DISK" Type="Bool">true</Property>
       </Item>
-      <Item Name="LBCB Operation Manager_Slave.vi" Type="VI" URL="LBCB Operation Manager_Slave.vi"/>
       <Item Name="LBCB Operation Manager.vi" Type="VI" URL="LBCB Operation Manager.vi"/>
       <Item Name="Calibration Factor.xls" Type="Document" URL="Calibration Factor.xls"/>
       <Item Name="Menu.rtm" Type="Document" URL="Menu.rtm"/>
