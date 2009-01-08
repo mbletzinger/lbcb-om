@@ -257,10 +257,11 @@
             <Item Name="Get Semaphore Status.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Get Semaphore Status.vi"/>
             <Item Name="Release Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Release Semaphore.vi"/>
          </Item>
-         <Item Name="MixedModeControl2Step.dll" Type="Document" URL="lib/DLL/MixedModeControl2Step.dll"/>
          <Item Name="RampHold.dll" Type="Document" URL="lib/DLL/RampHold.dll"/>
          <Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="OperationManagerGlobal_Slave.vi"/>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
+         <Item Name="MixedModeLoopProperty.vi" Type="VI" URL="lib/MixedMode/MixedModeLoopProperty.vi"/>
+         <Item Name="MixedModeControl.vi" Type="VI" URL="lib/MixedMode/MixedModeControl.vi"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
          <Item Name="semaphor" Type="VI" URL="semaphor"/>
