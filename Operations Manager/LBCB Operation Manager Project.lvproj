@@ -260,7 +260,6 @@
          <Item Name="RampHold.dll" Type="Document" URL="lib/DLL/RampHold.dll"/>
          <Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="OperationManagerGlobal_Slave.vi"/>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
-         <Item Name="MixedModeLoopProperty.vi" Type="VI" URL="lib/MixedMode/MixedModeLoopProperty.vi"/>
          <Item Name="MixedModeControl.vi" Type="VI" URL="lib/MixedMode/MixedModeControl.vi"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
