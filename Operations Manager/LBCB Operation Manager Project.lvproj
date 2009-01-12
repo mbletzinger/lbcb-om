@@ -247,15 +247,6 @@
             <Item Name="Invalid Config Data Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Invalid Config Data Reference.vi"/>
             <Item Name="Config Data Close Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Close Reference.vi"/>
             <Item Name="NI_MABase.lvlib" Type="Library" URL="/&lt;vilib&gt;/measure/NI_MABase.lvlib"/>
-            <Item Name="Semaphore RefNum" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Semaphore RefNum"/>
-            <Item Name="Semaphore Action.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Semaphore Action.ctl"/>
-            <Item Name="Semaphore Size DB.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Semaphore Size DB.vi"/>
-            <Item Name="Semaphore Core.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/synch.llb/Semaphore Core.vi"/>
-            <Item Name="Validate Semaphore Size.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Validate Semaphore Size.vi"/>
-            <Item Name="Create Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Create Semaphore.vi"/>
-            <Item Name="Acquire Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Acquire Semaphore.vi"/>
-            <Item Name="Get Semaphore Status.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Get Semaphore Status.vi"/>
-            <Item Name="Release Semaphore.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/semaphor.llb/Release Semaphore.vi"/>
          </Item>
          <Item Name="RampHold.dll" Type="Document" URL="lib/DLL/RampHold.dll"/>
          <Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="OperationManagerGlobal_Slave.vi"/>
@@ -263,7 +254,6 @@
          <Item Name="MixedModeControl.vi" Type="VI" URL="lib/MixedMode/MixedModeControl.vi"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
-         <Item Name="semaphor" Type="VI" URL="semaphor"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
          <Item Name="LBCB OM 1n1" Type="EXE">
