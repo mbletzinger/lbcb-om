@@ -281,12 +281,16 @@
             <Item Name="Config Data Set File Path.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Set File Path.vi"/>
             <Item Name="Config Data Open Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Open Reference.vi"/>
             <Item Name="Open Config Data.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Open Config Data.vi"/>
+            <Item Name="Close Config Data.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Close Config Data.vi"/>
+            <Item Name="Config Data Write To File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Write To File.vi"/>
+            <Item Name="Config Data to String.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data to String.vi"/>
          </Item>
          <Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
          <Item Name="App DataStore.vi" Type="VI" URL="Data Access Objects/Application/App DataStore.vi"/>
          <Item Name="Command Data.ctl" Type="VI" URL="../Operations Manager/lib/Global Data/Command Data.ctl"/>
          <Item Name="GetSamplingRate.vi" Type="VI" URL="../Operations Manager/lib/GetSamplingRate.vi"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
+         <Item Name="Config Test States.ctl" Type="VI" URL="Configurations/Calibrations/Config Test States.ctl"/>
          <Item Name="semaphor" Type="VI" URL="semaphor"/>
       </Item>
       <Item Name="Build Specifications" Type="Build"/>
