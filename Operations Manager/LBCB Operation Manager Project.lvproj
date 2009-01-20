@@ -49,7 +49,6 @@
       <Item Name="fake log.txt" Type="Document" URL="fake log.txt"/>
       <Item Name="Sample Averaging Test.vi" Type="VI" URL="Test Utilities/Sample Averaging Test.vi"/>
       <Item Name="Time stamp test.vi" Type="VI" URL="Test Utilities/Time stamp test.vi"/>
-      <Item Name="OperationManagerGlobalSmallFacility.vi" Type="VI" URL="OperationManagerGlobalSmallFacility.vi"/>
       <Item Name="Dependencies" Type="Dependencies">
          <Item Name="vi.lib" Type="Folder">
             <Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -257,6 +256,7 @@
          <Item Name="MixedModeControl.vi" Type="VI" URL="lib/MixedMode/MixedModeControl.vi"/>
          <Item Name="StiffnessJacobian.ctl" Type="VI" URL="lib/MixedMode/StiffnessJacobian.ctl"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
+         <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
          <Item Name="LBCB OM 1n1" Type="EXE">
