@@ -49,7 +49,6 @@
       <Item Name="OperationManagerGlobal.vi" Type="VI" URL="OperationManagerGlobal.vi"/>
       <Item Name="Calibration Factors.xls" Type="Document" URL="Calibration Factors.xls"/>
       <Item Name="RampHoldTest.vi" Type="VI" URL="Test Utilities/RampHoldTest.vi"/>
-      <Item Name="fake log.txt" Type="Document" URL="fake log.txt"/>
       <Item Name="Sample Averaging Test.vi" Type="VI" URL="Test Utilities/Sample Averaging Test.vi"/>
       <Item Name="Time stamp test.vi" Type="VI" URL="Test Utilities/Time stamp test.vi"/>
       <Item Name="Dependencies" Type="Dependencies">
