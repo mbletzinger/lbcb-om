@@ -260,31 +260,24 @@
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
-         <Item Name="LBCB OM 1n1" Type="EXE">
+         <Item Name="LBCB OM 2.00" Type="EXE">
             <Property Name="App_applicationGUID" Type="Str">{57C3770E-1E04-49DB-9AC6-3F2971020B88}</Property>
             <Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
             <Property Name="App_companyName" Type="Str">University of Illinois</Property>
             <Property Name="App_fileType" Type="Int">1</Property>
-            <Property Name="App_fileVersion.major" Type="Int">1</Property>
-            <Property Name="App_fileVersion.minor" Type="Int">9</Property>
-            <Property Name="App_fileVersion.patch" Type="Int">1</Property>
+            <Property Name="App_fileVersion.major" Type="Int">2</Property>
             <Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
             <Property Name="App_INI_GUID" Type="Str">{2C4F13AB-15A9-450C-9083-C3C7C0D1641F}</Property>
-            <Property Name="App_internalName" Type="Str">Single Box</Property>
+            <Property Name="App_internalName" Type="Str">Master Slave</Property>
             <Property Name="App_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
             <Property Name="App_productName" Type="Str">LBCB Operation Manager</Property>
-            <Property Name="Bld_buildSpecName" Type="Str">LBCB OM 1n1</Property>
+            <Property Name="Bld_buildSpecName" Type="Str">LBCB OM 2.00</Property>
             <Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
             <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
             <Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
             <Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-            <Property Name="Bld_supportedLanguage[0]" Type="Str">ChineseS</Property>
-            <Property Name="Bld_supportedLanguage[1]" Type="Str">English</Property>
-            <Property Name="Bld_supportedLanguage[2]" Type="Str">French</Property>
-            <Property Name="Bld_supportedLanguage[3]" Type="Str">German</Property>
-            <Property Name="Bld_supportedLanguage[4]" Type="Str">Japanese</Property>
-            <Property Name="Bld_supportedLanguage[5]" Type="Str">Korean</Property>
-            <Property Name="Bld_supportedLanguageCount" Type="Int">6</Property>
+            <Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
+            <Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
             <Property Name="Destination[0].destName" Type="Str">LBCB Operation Manager.exe</Property>
             <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/internal.llb</Property>
             <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
@@ -307,71 +300,84 @@
             <Property Name="Destination[6].destName" Type="Str">image</Property>
             <Property Name="Destination[6].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/image</Property>
             <Property Name="Destination[6].path.type" Type="Str">&lt;none&gt;</Property>
-            <Property Name="Destination[7].destName" Type="Str">NTCP library</Property>
-            <Property Name="Destination[7].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/NTCP library</Property>
+            <Property Name="Destination[7].destName" Type="Str">Exec</Property>
+            <Property Name="Destination[7].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/Exec</Property>
             <Property Name="Destination[7].path.type" Type="Str">&lt;none&gt;</Property>
             <Property Name="DestinationCount" Type="Int">8</Property>
-            <Property Name="Exe_iconItemID" Type="Ref"></Property>
+            <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{A1CA143F-6251-4C98-A890-2E19701C25CC}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{A590325C-6616-409E-B542-480B9433EF2B}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[1].itemID" Type="Ref"></Property>
+            <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
             <Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
             <Property Name="Source[1].type" Type="Str">VI</Property>
-            <Property Name="Source[10].destinationIndex" Type="Int">6</Property>
-            <Property Name="Source[10].itemID" Type="Ref"></Property>
+            <Property Name="Source[10].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[10].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[10].destinationIndex" Type="Int">5</Property>
+            <Property Name="Source[10].itemID" Type="Ref">/My Computer/InputFiles</Property>
             <Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[11].destinationIndex" Type="Int">5</Property>
-            <Property Name="Source[11].itemID" Type="Ref"></Property>
+            <Property Name="Source[10].type" Type="Str">Container</Property>
+            <Property Name="Source[11].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[11].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[11].destinationIndex" Type="Int">6</Property>
+            <Property Name="Source[11].itemID" Type="Ref">/My Computer/image</Property>
             <Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[12].destinationIndex" Type="Int">5</Property>
-            <Property Name="Source[12].itemID" Type="Ref"></Property>
+            <Property Name="Source[11].type" Type="Str">Container</Property>
+            <Property Name="Source[12].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[12].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[12].destinationIndex" Type="Int">6</Property>
+            <Property Name="Source[12].itemID" Type="Ref">/My Computer/IconFiles</Property>
             <Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-            <Property Name="Source[13].itemID" Type="Ref"></Property>
-            <Property Name="Source[13].sourceInclusion" Type="Str">TopLevel</Property>
-            <Property Name="Source[13].type" Type="Str">VI</Property>
-            <Property Name="Source[14].destinationIndex" Type="Int">7</Property>
-            <Property Name="Source[14].itemID" Type="Ref"></Property>
+            <Property Name="Source[12].type" Type="Str">Container</Property>
+            <Property Name="Source[13].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[13].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[13].destinationIndex" Type="Int">4</Property>
+            <Property Name="Source[13].itemID" Type="Ref">/My Computer/DigitalFilter</Property>
+            <Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[13].type" Type="Str">Container</Property>
+            <Property Name="Source[14].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[14].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[14].destinationIndex" Type="Int">3</Property>
+            <Property Name="Source[14].itemID" Type="Ref">/My Computer/Config</Property>
             <Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[14].type" Type="Str">VI</Property>
-            <Property Name="Source[15].destinationIndex" Type="Int">2</Property>
-            <Property Name="Source[15].itemID" Type="Ref"></Property>
-            <Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[15].type" Type="Str">VI</Property>
-            <Property Name="Source[16].destinationIndex" Type="Int">2</Property>
-            <Property Name="Source[16].itemID" Type="Ref"></Property>
-            <Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[16].type" Type="Str">VI</Property>
-            <Property Name="Source[2].destinationIndex" Type="Int">2</Property>
-            <Property Name="Source[2].itemID" Type="Ref"></Property>
-            <Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[14].type" Type="Str">Container</Property>
+            <Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[2].itemID" Type="Ref">/My Computer/Exec/Continuous Logging.vi</Property>
             <Property Name="Source[2].type" Type="Str">VI</Property>
-            <Property Name="Source[3].destinationIndex" Type="Int">3</Property>
-            <Property Name="Source[3].itemID" Type="Ref"></Property>
+            <Property Name="Source[3].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[3].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[3].destinationIndex" Type="Int">7</Property>
+            <Property Name="Source[3].itemID" Type="Ref">/My Computer/Exec</Property>
             <Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[4].destinationIndex" Type="Int">4</Property>
-            <Property Name="Source[4].itemID" Type="Ref"></Property>
+            <Property Name="Source[3].type" Type="Str">Container</Property>
+            <Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[4].itemID" Type="Ref">/My Computer/Exec/Mixed Mode Widget.vi</Property>
             <Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[5].destinationIndex" Type="Int">4</Property>
-            <Property Name="Source[5].itemID" Type="Ref"></Property>
+            <Property Name="Source[4].type" Type="Str">VI</Property>
+            <Property Name="Source[5].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[5].itemID" Type="Ref">/My Computer/Exec/MixedModeStateMachine.vi</Property>
             <Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[6].destinationIndex" Type="Int">4</Property>
-            <Property Name="Source[6].itemID" Type="Ref"></Property>
+            <Property Name="Source[5].type" Type="Str">VI</Property>
+            <Property Name="Source[6].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[6].itemID" Type="Ref">/My Computer/Exec/NTCP Socket.vi</Property>
             <Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[7].destinationIndex" Type="Int">4</Property>
-            <Property Name="Source[7].itemID" Type="Ref"></Property>
+            <Property Name="Source[6].type" Type="Str">VI</Property>
+            <Property Name="Source[7].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[7].itemID" Type="Ref">/My Computer/Exec/Slave OM.vi</Property>
             <Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[8].destinationIndex" Type="Int">4</Property>
-            <Property Name="Source[8].itemID" Type="Ref"></Property>
+            <Property Name="Source[7].type" Type="Str">VI</Property>
+            <Property Name="Source[8].destinationIndex" Type="Int">0</Property>
+            <Property Name="Source[8].itemID" Type="Ref">/My Computer/Exec/Step Logging.vi</Property>
             <Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="Source[9].destinationIndex" Type="Int">6</Property>
-            <Property Name="Source[9].itemID" Type="Ref"></Property>
+            <Property Name="Source[8].type" Type="Str">VI</Property>
+            <Property Name="Source[9].destinationIndex" Type="Int">2</Property>
+            <Property Name="Source[9].itemID" Type="Ref">/My Computer/OperationManagerGlobal.vi</Property>
             <Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
-            <Property Name="SourceCount" Type="Int">17</Property>
+            <Property Name="Source[9].type" Type="Str">VI</Property>
+            <Property Name="SourceCount" Type="Int">15</Property>
          </Item>
       </Item>
    </Item>
