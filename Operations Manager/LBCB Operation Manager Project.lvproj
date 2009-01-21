@@ -40,6 +40,9 @@
       <Item Name="Exec" Type="Folder" URL="Exec">
          <Property Name="NI.DISK" Type="Bool">true</Property>
       </Item>
+      <Item Name="Logs" Type="Folder" URL="Logs">
+         <Property Name="NI.DISK" Type="Bool">true</Property>
+      </Item>
       <Item Name="LBCB Operation Manager.vi" Type="VI" URL="LBCB Operation Manager.vi"/>
       <Item Name="Calibration Factor.xls" Type="Document" URL="Calibration Factor.xls"/>
       <Item Name="Menu.rtm" Type="Document" URL="Menu.rtm"/>
@@ -303,12 +306,15 @@
             <Property Name="Destination[7].destName" Type="Str">Exec</Property>
             <Property Name="Destination[7].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/Exec</Property>
             <Property Name="Destination[7].path.type" Type="Str">&lt;none&gt;</Property>
-            <Property Name="DestinationCount" Type="Int">8</Property>
+            <Property Name="Destination[8].destName" Type="Str">Logs</Property>
+            <Property Name="Destination[8].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/Logs</Property>
+            <Property Name="Destination[8].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="DestinationCount" Type="Int">9</Property>
             <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{A590325C-6616-409E-B542-480B9433EF2B}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{4EB724AE-2BCB-46ED-9C6F-616E4C6CCA80}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -344,6 +350,12 @@
             <Property Name="Source[14].itemID" Type="Ref">/My Computer/Config</Property>
             <Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[14].type" Type="Str">Container</Property>
+            <Property Name="Source[15].Container.applyDestination" Type="Bool">true</Property>
+            <Property Name="Source[15].Container.applyInclusion" Type="Bool">true</Property>
+            <Property Name="Source[15].destinationIndex" Type="Int">8</Property>
+            <Property Name="Source[15].itemID" Type="Ref">/My Computer/Logs</Property>
+            <Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
+            <Property Name="Source[15].type" Type="Str">Container</Property>
             <Property Name="Source[2].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[2].itemID" Type="Ref">/My Computer/Exec/Continuous Logging.vi</Property>
             <Property Name="Source[2].type" Type="Str">VI</Property>
@@ -377,7 +389,7 @@
             <Property Name="Source[9].itemID" Type="Ref">/My Computer/OperationManagerGlobal.vi</Property>
             <Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
             <Property Name="Source[9].type" Type="Str">VI</Property>
-            <Property Name="SourceCount" Type="Int">15</Property>
+            <Property Name="SourceCount" Type="Int">16</Property>
          </Item>
       </Item>
    </Item>
