@@ -255,9 +255,9 @@
          </Item>
          <Item Name="RampHold.dll" Type="Document" URL="lib/DLL/RampHold.dll"/>
          <Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="OperationManagerGlobal_Slave.vi"/>
-         <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="MixedModeControl.vi" Type="VI" URL="lib/MixedMode/MixedModeControl.vi"/>
          <Item Name="StiffnessJacobian.ctl" Type="VI" URL="lib/MixedMode/StiffnessJacobian.ctl"/>
+         <Item Name="lvanlys.dll" Type="Document" URL="../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
@@ -281,39 +281,30 @@
             <Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
             <Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
             <Property Name="Destination[0].destName" Type="Str">LBCB Operation Manager.exe</Property>
-            <Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/internal.llb</Property>
-            <Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[0].path" Type="Path">../MEBs Latest Build/internal.llb</Property>
             <Property Name="Destination[0].type" Type="Str">App</Property>
             <Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-            <Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/data</Property>
-            <Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[1].path" Type="Path">../MEBs Latest Build/data</Property>
             <Property Name="Destination[2].destName" Type="Str">Destination Directory</Property>
-            <Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build</Property>
-            <Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[2].path" Type="Path">../MEBs Latest Build</Property>
             <Property Name="Destination[3].destName" Type="Str">Config</Property>
-            <Property Name="Destination[3].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/Config</Property>
-            <Property Name="Destination[3].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[3].path" Type="Path">../MEBs Latest Build/Config</Property>
             <Property Name="Destination[4].destName" Type="Str">DigitalFilter</Property>
-            <Property Name="Destination[4].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/DigitalFilter</Property>
-            <Property Name="Destination[4].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[4].path" Type="Path">../MEBs Latest Build/DigitalFilter</Property>
             <Property Name="Destination[5].destName" Type="Str">InputFiles</Property>
-            <Property Name="Destination[5].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/InputFiles</Property>
-            <Property Name="Destination[5].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[5].path" Type="Path">../MEBs Latest Build/InputFiles</Property>
             <Property Name="Destination[6].destName" Type="Str">image</Property>
-            <Property Name="Destination[6].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/image</Property>
-            <Property Name="Destination[6].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[6].path" Type="Path">../MEBs Latest Build/image</Property>
             <Property Name="Destination[7].destName" Type="Str">Exec</Property>
-            <Property Name="Destination[7].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/Exec</Property>
-            <Property Name="Destination[7].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[7].path" Type="Path">../MEBs Latest Build/Exec</Property>
             <Property Name="Destination[8].destName" Type="Str">Logs</Property>
-            <Property Name="Destination[8].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/Logs</Property>
-            <Property Name="Destination[8].path.type" Type="Str">&lt;none&gt;</Property>
+            <Property Name="Destination[8].path" Type="Path">../MEBs Latest Build/Logs</Property>
             <Property Name="DestinationCount" Type="Int">9</Property>
             <Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{BD4711B4-0481-4B7C-8CD6-47BC73014AFB}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{06FEECFB-4800-476C-86DF-4C98CCB2B015}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
