@@ -289,9 +289,9 @@
          <Item Name="App DataStore.vi" Type="VI" URL="Data Access Objects/Application/App DataStore.vi"/>
          <Item Name="Command Data.ctl" Type="VI" URL="../Operations Manager/lib/Global Data/Command Data.ctl"/>
          <Item Name="GetSamplingRate.vi" Type="VI" URL="../Operations Manager/lib/GetSamplingRate.vi"/>
-         <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
          <Item Name="Config Test States.ctl" Type="VI" URL="Configurations/Calibrations/Config Test States.ctl"/>
-         <Item Name="semaphor" Type="VI" URL="semaphor"/>
+         <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
+         <Item Name="daqmx.rc" Type="Document" URL="../../../../Program Files/National Instruments/LabVIEW 8.5/resource/objmgr/daqmx.rc"/>
       </Item>
       <Item Name="Build Specifications" Type="Build"/>
    </Item>
