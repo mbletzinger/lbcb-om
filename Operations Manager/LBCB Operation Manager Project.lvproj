@@ -259,6 +259,7 @@
          <Item Name="StiffnessJacobian.ctl" Type="VI" URL="lib/MixedMode/StiffnessJacobian.ctl"/>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
+         <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
          <Item Name="LBCB OM 2.00" Type="EXE">
