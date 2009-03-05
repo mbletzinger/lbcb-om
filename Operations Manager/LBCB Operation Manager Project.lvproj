@@ -259,20 +259,24 @@
          <Item Name="StiffnessJacobian.ctl" Type="VI" URL="lib/MixedMode/StiffnessJacobian.ctl"/>
          <Item Name="lvanlys.dll" Type="Document" URL="../../../../Program Files/National Instruments/LabVIEW 8.5/resource/lvanlys.dll"/>
          <Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll"/>
+         <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
-         <Item Name="LBCB OM 2.01" Type="EXE">
+         <Item Name="LBCB OM 2.02" Type="EXE">
             <Property Name="App_applicationGUID" Type="Str">{57C3770E-1E04-49DB-9AC6-3F2971020B88}</Property>
             <Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
+            <Property Name="App_autoIncrement" Type="Bool">true</Property>
             <Property Name="App_companyName" Type="Str">University of Illinois</Property>
             <Property Name="App_fileType" Type="Int">1</Property>
+            <Property Name="App_fileVersion.build" Type="Int">2</Property>
             <Property Name="App_fileVersion.major" Type="Int">2</Property>
+            <Property Name="App_fileVersion.patch" Type="Int">2</Property>
             <Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
             <Property Name="App_INI_GUID" Type="Str">{2C4F13AB-15A9-450C-9083-C3C7C0D1641F}</Property>
             <Property Name="App_internalName" Type="Str">Master Slave</Property>
             <Property Name="App_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
             <Property Name="App_productName" Type="Str">LBCB Operation Manager</Property>
-            <Property Name="Bld_buildSpecName" Type="Str">LBCB OM 2.01</Property>
+            <Property Name="Bld_buildSpecName" Type="Str">LBCB OM 2.02</Property>
             <Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
             <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
             <Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
@@ -303,7 +307,7 @@
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{32816DB4-B0FD-4EB3-AF63-EE02EEA45E02}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{92A1122A-FB96-43A0-A178-E2D226BF5DC2}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
