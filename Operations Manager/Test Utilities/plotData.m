@@ -1,11 +1,8 @@
 classdef plotData < handle
     properties
-        data = zeros(4,1);
+        data = zeros(3000,1);
         label = 'Label';
-        lineSeries = cell(4,1);
-        xOrY = zeros(4,1);
-        haveData = 0;
-        haveLineSeries = 0;
+        lineSeries = cell(20,2);
     end;
     methods
         function me = plotData(inLabel)
@@ -20,13 +17,12 @@ classdef plotData < handle
             end
         end;
         function addLineSeries(series,inXOrY)
-            if(haveLineSeries)
-                lineSeries = cat(lineSeries,series);
-                xOrY = cat(xOrY,inXOrY);
-            else
-                lineSeries = series;
-                xOrY = inXOrY;
-            end
+            [lgth, d] = lineSeries;
+            lineSeries(lgth,1) = series;
+            lineSeries(lgth,2) = inXOrY;
+        end
+        function removeLineSeries(series)
+            
         end
     end;
 end
