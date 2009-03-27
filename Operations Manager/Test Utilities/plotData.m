@@ -1,28 +1,35 @@
 classdef plotData < handle
     properties
-        data = zeros(3000,1);
+        data = zeros(3,1);
         label = 'Label';
-        lineSeries = cell(20,2);
+        shortLabel = 'Dx';
+        haveData=0;
+        dofType=0;
     end;
     methods
-        function me = plotData(inLabel)
-            me.label = Label;
-        end;
-        function me = addData(inData)
-            if(haveData)
-                data = cat(1, data,inData);
+        function me = plotData(inLabel,short)
+            me.label = inLabel;
+            me.shortLabel = short;
+        end
+        
+        function me = addData(me,inData)
+            if(me.haveData)
+                me.data = cat(1, me.data,inData);
             else
-                data = inData;
-                haveData = 1;
+                me.haveData = 1;
+                me.data = inData;
             end
-        end;
-        function addLineSeries(series,inXOrY)
-            [lgth, d] = lineSeries;
-            lineSeries(lgth,1) = series;
-            lineSeries(lgth,2) = inXOrY;
         end
-        function removeLineSeries(series)
-            
+        
+        function attachLineSeries(me,series,idx,isXData)
+            if(isXData)
+                set(series,'XDataSource',me.data);
+            else
+                set(series,'YDataSource',me.data);
+            end
         end
-    end;
+        function setDofType(me,dof)
+            me.dofType = dof;
+        end
+    end
 end

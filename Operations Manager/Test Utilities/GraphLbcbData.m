@@ -22,7 +22,7 @@ function varargout = GraphLbcbData(varargin)
 
 % Edit the above text to modify the response to help GraphLbcbData
 
-% Last Modified by GUIDE v2.5 23-Mar-2009 21:36:03
+% Last Modified by GUIDE v2.5 27-Mar-2009 14:59:41
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -53,6 +53,25 @@ function GraphLbcbData_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for GraphLbcbData
 handles.output = hObject;
+file = uigetfile('*.txt');
+handles.data = loadLbcbData(file,'LBCB1');
+handles.timePlot = plotSettings();
+init = num2cell(zeros(8,2)); % Initial values of plots
+
+s = plot(handles.timeAxis,init{1,1},init{1,2},'k',init{2,1},init{2,2},'b',...
+    init{3,1},init{3,2},'r',init{4,1},init{4,2},'g'...
+    ,init{5,1},init{5,2},'m',init{6,1},init{6,1},'k.',...
+    init{7,1},init{7,2},'b.',init{8,1},init{8,2},'r.'); % handles to plot
+handles.xyPlot.setLineSeries(s);
+
+handles.xylot = plotSettings();
+init = num2cell(zeros(5,2)); % Initial values of plots
+s = plot(handles.timeAxis,init{1,1},init{1,2},'k',init{2,1},init{2,2},'b',...
+    init{3,1},init{3,2},'r',init{4,1},init{4,2},'g'...
+    ,init{5,1},init{5,2},'m',init{6,1},init{6,1},'k.',...
+    init{7,1},init{7,2},'b.',init{8,1},init{8,2},'r.'); % handles to plot
+handles.xyPlot.setLineSeries(s);
+handles.labelFilter = dofLabelFilter(handles.data);
 
 % Update handles structure
 guidata(hObject, handles);
@@ -64,7 +83,7 @@ if strcmp(get(hObject,'Visible'),'off')
 end
 
 % UIWAIT makes GraphLbcbData wait for user response (see UIRESUME)
-% uiwait(handles.figure1);
+% uiwait(handles.LbcbData);
 
 
 % --- Outputs from this function are returned to the command line.
@@ -122,21 +141,21 @@ function PrintMenuItem_Callback(hObject, eventdata, handles)
 % hObject    handle to PrintMenuItem (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-printdlg(handles.figure1)
+printdlg(handles.LbcbData)
 
 % --------------------------------------------------------------------
 function CloseMenuItem_Callback(hObject, eventdata, handles)
 % hObject    handle to CloseMenuItem (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-selection = questdlg(['Close ' get(handles.figure1,'Name') '?'],...
-                     ['Close ' get(handles.figure1,'Name') '...'],...
+selection = questdlg(['Close ' get(handles.LbcbData,'Name') '?'],...
+                     ['Close ' get(handles.LbcbData,'Name') '...'],...
                      'Yes','No','Yes');
 if strcmp(selection,'No')
     return;
 end
 
-delete(handles.figure1)
+delete(handles.LbcbData)
 
 
 % --- Executes on selection change in popupmenu1.
@@ -539,3 +558,78 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
+% --- Executes on button press in CheckDx.
+function CheckDx_Callback(hObject, eventdata, handles)
+% hObject    handle to CheckDx (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of CheckDx
+
+
+% --- Executes on button press in DyCheck.
+function DyCheck_Callback(hObject, eventdata, handles)
+% hObject    handle to DyCheck (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of DyCheck
+
+
+% --- Executes on button press in DzCheck.
+function DzCheck_Callback(hObject, eventdata, handles)
+% hObject    handle to DzCheck (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of DzCheck
+
+
+% --- Executes on button press in RxCheck.
+function RxCheck_Callback(hObject, eventdata, handles)
+% hObject    handle to RxCheck (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of RxCheck
+
+
+% --- Executes on button press in RyCheck.
+function RyCheck_Callback(hObject, eventdata, handles)
+% hObject    handle to RyCheck (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of RyCheck
+
+
+% --- Executes on button press in RzCheck.
+function RzCheck_Callback(hObject, eventdata, handles)
+% hObject    handle to RzCheck (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of RzCheck
+
+function PopupMenuLists(hObject,handles)
+    dofs = [];
+    if(get(handles.DxCheck,'Value'))
+        dofs = [ 1 dofs];
+    end
+    if(get(handles.DyCheck,'Value'))
+        dofs = [ 2 dofs];
+    end
+    if(get(handles.DyCheck,'Value'))
+        dofs = [ 3 dofs];
+    end
+    if(get(handles.RxCheck,'Value'))
+        dofs = [ 4 dofs];
+    end
+    if(get(handles.RyCheck,'Value'))
+        dofs = [ 5 dofs];
+    end
+    if(get(handles.RzCheck,'Value'))
+        dofs = [ 6 dofs];
+    end
+
+end
