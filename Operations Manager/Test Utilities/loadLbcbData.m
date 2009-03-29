@@ -1,4 +1,4 @@
-function dataSet = loadLbcbData(file, LbcbId)
+function dataSet = loadLbcbData(file, cps)
     s= '%s%s%s';
     s = [s,repmat('%f',1,42)]; % extra servo error headers
     hs = repmat('%s',1,49);
@@ -61,11 +61,11 @@ function dataSet = loadLbcbData(file, LbcbId)
         end
         dataSet = cell(length(labels) + 1,1);
         timeData = 1:setSize;
-        p = plotData('Time','T');
+        p = plotData('Time','T','');
         p.addData(timeData);
         dataSet{1} = p;
         for i=1:length(labels)
-            p = plotData(labels{i,1},labels{i,2});
+            p = plotData(labels{i,1},labels{i,2},cps);
             p.addData(lbcbData(:,i));
             p.setDofType(labels{i,3});
             dataSet{i+1,1} = p;

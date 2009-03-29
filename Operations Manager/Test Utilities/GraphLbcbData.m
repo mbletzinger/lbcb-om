@@ -53,8 +53,11 @@ function GraphLbcbData_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for GraphLbcbData
 handles.output = hObject;
-file = uigetfile('*.txt');
-handles.data = loadLbcbData(file,'LBCB1');
+file = uigetfile('*.txt','Select LBCB 1 data file');
+data1 = loadLbcbData(file,'LBCB1');
+file = uigetfile('*.txt','Select LBCB 2 data file');
+data2 = loadLbcbData(file,'LBCB2');
+handles.data = cat(1,data1,data2);
 handles.timePlot = plotSettings();
 init = num2cell(zeros(8,2)); % Initial values of plots
 
@@ -632,4 +635,3 @@ function PopupMenuLists(hObject,handles)
         dofs = [ 6 dofs];
     end
 
-end

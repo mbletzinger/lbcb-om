@@ -3,21 +3,23 @@ classdef plotData < handle
         data = zeros(3,1);
         label = 'Label';
         shortLabel = 'Dx';
+        cps = 'LBCB1';
         haveData=0;
         dofType=0;
     end;
     methods
-        function me = plotData(inLabel,short)
-            me.label = inLabel;
+        function me = plotData(label,short,cps)
+            me.label = label;
             me.shortLabel = short;
+            me.cps = cps;
         end
         
-        function me = addData(me,inData)
+        function me = addData(me,data)
             if(me.haveData)
-                me.data = cat(1, me.data,inData);
+                me.data = cat(1, me.data,data);
             else
                 me.haveData = 1;
-                me.data = inData;
+                me.data = data;
             end
         end
         
