@@ -634,4 +634,5 @@ function PopupMenuLists(hObject,handles)
     if(get(handles.RzCheck,'Value'))
         dofs = [ 6 dofs];
     end
-
+    
+set(handles.timeAxisPopup1,'String',timeAxesMenu);
