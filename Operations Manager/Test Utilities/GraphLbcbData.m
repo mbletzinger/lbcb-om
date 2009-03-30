@@ -22,7 +22,7 @@ function varargout = GraphLbcbData(varargin)
 
 % Edit the above text to modify the response to help GraphLbcbData
 
-% Last Modified by GUIDE v2.5 27-Mar-2009 14:59:41
+% Last Modified by GUIDE v2.5 30-Mar-2009 10:20:03
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -53,28 +53,43 @@ function GraphLbcbData_OpeningFcn(hObject, eventdata, handles, varargin)
 
 % Choose default command line output for GraphLbcbData
 handles.output = hObject;
+data1 = {}; data2 = {};
 file = uigetfile('*.txt','Select LBCB 1 data file');
-data1 = loadLbcbData(file,'LBCB1');
+if(file ~= 0)
+    [timeData data1] = loadLbcbData(file,'LBCB1');
+end
+
 file = uigetfile('*.txt','Select LBCB 2 data file');
-data2 = loadLbcbData(file,'LBCB2');
+if(file ~= 0)
+    [timeData data2] = loadLbcbData(file,'LBCB2');
+end
+
 handles.data = cat(1,data1,data2);
 handles.timePlot = plotSettings();
-init = num2cell(zeros(8,2)); % Initial values of plots
 
-s = plot(handles.timeAxis,init{1,1},init{1,2},'k',init{2,1},init{2,2},'b',...
-    init{3,1},init{3,2},'r',init{4,1},init{4,2},'g'...
-    ,init{5,1},init{5,2},'m',init{6,1},init{6,1},'k.',...
-    init{7,1},init{7,2},'b.',init{8,1},init{8,2},'r.'); % handles to plot
-handles.xyPlot.setLineSeries(s);
+% s = plot(handles.timeAxis,init{1,1},init{1,2},'k',init{2,1},init{2,2},'b',...
+%     init{3,1},init{3,2},'r',init{4,1},init{4,2},'g'...
+%     ,init{5,1},init{5,2},'m',init{6,1},init{6,1},'k.',...
+%     init{7,1},init{7,2},'b.',init{8,1},init{8,2},'r.'); % handles to plot
+s = plot(handles.timeAxis,0,0,'k',0,0,'b',...
+   0,0,'r',0,0,'g',...
+    0,0,'m',0,0,'k.',...
+    0,0,'b.',0,0,'r.'); % handles to plot
+handles.timePlot.setLineSeries(s);
 
-handles.xylot = plotSettings();
+handles.xyPlot = plotSettings();
 init = num2cell(zeros(5,2)); % Initial values of plots
-s = plot(handles.timeAxis,init{1,1},init{1,2},'k',init{2,1},init{2,2},'b',...
-    init{3,1},init{3,2},'r',init{4,1},init{4,2},'g'...
-    ,init{5,1},init{5,2},'m',init{6,1},init{6,1},'k.',...
-    init{7,1},init{7,2},'b.',init{8,1},init{8,2},'r.'); % handles to plot
+% s = plot(handles.timeAxis,init{1,1},init{1,2},'k',init{2,1},init{2,2},'b',...
+%     init{3,1},init{3,2},'r',init{4,1},init{4,2},'g'...
+%     ,init{5,1},init{5,2},'m',init{6,1},init{6,1},'k.',...
+%     init{7,1},init{7,2},'b.',init{8,1},init{8,2},'r.'); % handles to plot
+s = plot(handles.timeAxis,0,0,'k',0,0,'b',...
+    0,0,'r',0,0,'g',...
+    0,0,'m',0,0,'k.',...
+    0,0,'b.',0,0,'r.'); % handles to plot
 handles.xyPlot.setLineSeries(s);
-handles.labelFilter = dofLabelFilter(handles.data);
+handles.dataSet = plotDataSet(handles.data,timeData);
+PopupMenuLists(hObject,handles)
 
 % Update handles structure
 guidata(hObject, handles);
@@ -104,7 +119,7 @@ function timeAxisButton_Callback(hObject, eventdata, handles)
 % hObject    handle to timeAxisButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-axes(handles.timeAxis);
+Axis(handles.timeAxis);
 cla;
 
 popup_sel_index = get(handles.popupmenu1, 'Value');
@@ -160,32 +175,6 @@ end
 
 delete(handles.LbcbData)
 
-
-% --- Executes on selection change in popupmenu1.
-function popupmenu1_Callback(hObject, eventdata, handles)
-% hObject    handle to popupmenu1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: contents = get(hObject,'String') returns popupmenu1 contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from popupmenu1
-
-
-% --- Executes during object creation, after setting all properties.
-function popupmenu1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to popupmenu1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: popupmenu controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-     set(hObject,'BackgroundColor','white');
-end
-
-set(hObject, 'String', {'plot(rand(5))', 'plot(sin(1:0.01:25))', 'bar(1:.5:10)', 'plot(membrane)', 'surf(peaks)'});
-
-
 % --- Executes on selection change in timeAxisPopup1.
 function timeAxisPopup1_Callback(hObject, eventdata, handles)
 % hObject    handle to timeAxisPopup1 (see GCBO)
@@ -194,6 +183,11 @@ function timeAxisPopup1_Callback(hObject, eventdata, handles)
 
 % Hints: contents = get(hObject,'String') returns timeAxisPopup1 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from timeAxisPopup1
+idx = get(hObject,'Value');
+lbl = handles.timeAxisMenu{idx};
+data = handles.dataSet.findData(lbl);
+handles.timePlot.setYdata(data,1);
+handles.timePlot.setXdata(handles.dataSet.timeData);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -537,38 +531,14 @@ function xyAxisButton_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-
-% --- Executes on selection change in dofPopup.
-function dofPopup_Callback(hObject, eventdata, handles)
-% hObject    handle to dofPopup (see GCBO)
+% --- Executes on button press in DxCheck.
+function DxCheck_Callback(hObject, eventdata, handles)
+% hObject    handle to DxCheck (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = get(hObject,'String') returns dofPopup contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from dofPopup
-
-
-% --- Executes during object creation, after setting all properties.
-function dofPopup_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to dofPopup (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: popupmenu controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-% --- Executes on button press in CheckDx.
-function CheckDx_Callback(hObject, eventdata, handles)
-% hObject    handle to CheckDx (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hint: get(hObject,'Value') returns toggle state of CheckDx
-
+% Hint: get(hObject,'Value') returns toggle state of DxCheck
+PopupMenuLists(hObject,handles);
 
 % --- Executes on button press in DyCheck.
 function DyCheck_Callback(hObject, eventdata, handles)
@@ -577,7 +547,7 @@ function DyCheck_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of DyCheck
-
+PopupMenuLists(hObject,handles);
 
 % --- Executes on button press in DzCheck.
 function DzCheck_Callback(hObject, eventdata, handles)
@@ -586,7 +556,7 @@ function DzCheck_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of DzCheck
-
+PopupMenuLists(hObject,handles);
 
 % --- Executes on button press in RxCheck.
 function RxCheck_Callback(hObject, eventdata, handles)
@@ -595,7 +565,7 @@ function RxCheck_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of RxCheck
-
+PopupMenuLists(hObject,handles);
 
 % --- Executes on button press in RyCheck.
 function RyCheck_Callback(hObject, eventdata, handles)
@@ -604,7 +574,7 @@ function RyCheck_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of RyCheck
-
+PopupMenuLists(hObject,handles);
 
 % --- Executes on button press in RzCheck.
 function RzCheck_Callback(hObject, eventdata, handles)
@@ -613,26 +583,49 @@ function RzCheck_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of RzCheck
+PopupMenuLists(hObject,handles)
 
 function PopupMenuLists(hObject,handles)
-    dofs = [];
-    if(get(handles.DxCheck,'Value'))
-        dofs = [ 1 dofs];
-    end
-    if(get(handles.DyCheck,'Value'))
-        dofs = [ 2 dofs];
-    end
-    if(get(handles.DyCheck,'Value'))
-        dofs = [ 3 dofs];
-    end
-    if(get(handles.RxCheck,'Value'))
-        dofs = [ 4 dofs];
-    end
-    if(get(handles.RyCheck,'Value'))
-        dofs = [ 5 dofs];
-    end
-    if(get(handles.RzCheck,'Value'))
-        dofs = [ 6 dofs];
-    end
-    
-set(handles.timeAxisPopup1,'String',timeAxesMenu);
+dofs = [];
+if(get(handles.DxCheck,'Value'))
+    dofs = [ 1 dofs];
+end
+if(get(handles.DyCheck,'Value'))
+    dofs = [ 2 dofs];
+end
+if(get(handles.DyCheck,'Value'))
+    dofs = [ 3 dofs];
+end
+if(get(handles.RxCheck,'Value'))
+    dofs = [ 4 dofs];
+end
+if(get(handles.RyCheck,'Value'))
+    dofs = [ 5 dofs];
+end
+if(get(handles.RzCheck,'Value'))
+    dofs = [ 6 dofs];
+end
+
+timeAxisMenu = handles.dataSet.getLabels(dofs,0);
+timeAxisMenu = cat(1,'None',timeAxisMenu, handles.dataSet.getForceLabels(dofs));
+handles.timeAxisMenu = timeAxisMenu;
+set(handles.timeAxisPopup1,'String',timeAxisMenu);
+set(handles.timeAxisPopup2,'String',timeAxisMenu);
+set(handles.timeAxisPopup3,'String',timeAxisMenu);
+set(handles.timeAxisPopup4,'String',timeAxisMenu);
+set(handles.timeAxisPopup5,'String',timeAxisMenu);
+set(handles.timeAxisPopup6,'String',timeAxisMenu);
+set(handles.timeAxisPopup7,'String',timeAxisMenu);
+set(handles.timeAxisPopup8,'String',timeAxisMenu);
+xyXAxisMenu = cat(1, 'None',handles.dataSet.getLabels(dofs,1));
+handles.xyXAxisMenu = xyXAxisMenu;
+set(handles.xyAxisPopupX,'String',xyXAxisMenu);
+xyYAxisMenu = cat(1,'None',handles.dataSet.getForceLabels(dofs));
+handles.xyYAxisMenu = xyYAxisMenu;
+set(handles.xyAxisPopupY1,'String',xyYAxisMenu);
+set(handles.xyAxisPopupY2,'String',xyYAxisMenu);
+set(handles.xyAxisPopupY3,'String',xyYAxisMenu);
+set(handles.xyAxisPopupY4,'String',xyYAxisMenu);
+set(handles.xyAxisPopupY5,'String',xyYAxisMenu);
+set(handles.xyAxisPopupY6,'String',xyYAxisMenu);
+guidata(hObject, handles);

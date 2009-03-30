@@ -1,12 +1,11 @@
-function dataSet = loadLbcbData(file, cps)
+function [timeData dataSet] = loadLbcbData(file, cps)
     s= '%s%s%s';
     s = [s,repmat('%f',1,42)]; % extra servo error headers
     hs = repmat('%s',1,49);
     fid = fopen(file, 'r');
     headers = textscan(fid,hs,1,'Delimiter','\t');
-    headers{:}
     raw = textscan(fid, s);
-    [raw_r,raw_c] = size(raw)
+    [raw_r,raw_c] = size(raw);
     
     % format of labels: long name, short name, dof type
     % dof types: 0=Time, 1=Dx,2=Dy,3=Dz,4=Rx,5=Ry,6=Rz
@@ -59,15 +58,14 @@ function dataSet = loadLbcbData(file, cps)
         for i=4:raw_c
                lbcbData(:,i-3) = raw{i};
         end
-        dataSet = cell(length(labels) + 1,1);
-        timeData = 1:setSize;
-        p = plotData('Time','T','');
-        p.addData(timeData);
-        dataSet{1} = p;
+        dataSet = cell(length(labels) ,1);
+        timeD = 1:setSize;
+        timeData = plotData('Time','T','');
+        timeData.addData(timeD);
         for i=1:length(labels)
             p = plotData(labels{i,1},labels{i,2},cps);
             p.addData(lbcbData(:,i));
             p.setDofType(labels{i,3});
-            dataSet{i+1,1} = p;
+            dataSet{i,1} = p;
         end        
 end

@@ -25,9 +25,9 @@ classdef plotData < handle
         
         function attachLineSeries(me,series,idx,isXData)
             if(isXData)
-                set(series,'XDataSource',me.data);
+                set(series,'XDataSource','me.data');
             else
-                set(series,'YDataSource',me.data);
+                set(series,'YDataSource','me.data');
             end
         end
         function setDofType(me,dof)
