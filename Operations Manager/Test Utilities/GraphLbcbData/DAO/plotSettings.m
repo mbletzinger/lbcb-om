@@ -5,18 +5,20 @@ classdef plotSettings < handle
         lineSeries = [];
     end
     methods
-        function me = setXdata(me,data,idx)
+        function me = setXData(me,data,idx)
             me.xdata = data;
-            for l = 1:length(me.lineSeries)
-                data.attachLineSeries(me.lineSeries(l),idx,1);
-            end
+            data.attachLineSeries(me.lineSeries(idx),idx,1);
         end
-        function me = setYdata(me,data,idx)
+        function me = setYData(me,data,idx)
             me.ydata{idx} = data;
             data.attachLineSeries(me.lineSeries(idx),idx,0);
         end
         function me = setLineSeries(me,series)
             me.lineSeries = series;
+        end
+        function me = clearPlot(me,idx)
+            set(series,'XData',0);
+            set(series,'YData',0);
         end
     end
 end

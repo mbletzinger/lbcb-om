@@ -15,7 +15,7 @@ classdef plotDataSet < handle
             for d = 1:length(dataSet)
                 label = sprintf('%s %s %s',dataSet{d}.cps,dataSet{d}.label,dataSet{d}.shortLabel);
                 me.lookupTable{d,1} = label;
-                me.lookupTable{d,2} = me.dataSet(d);
+                me.lookupTable{d,2} = me.dataSet{d};
             end
             for i = 1:13
                 lbls = {};
@@ -47,7 +47,7 @@ classdef plotDataSet < handle
             end
         end
         function results = findData(me,label)
-            results = {};
+            results = 0;
             for i=1:length(me.dataSet)
                 if  strcmp(me.lookupTable{i,1},label)
                     results = me.lookupTable{i,2};
