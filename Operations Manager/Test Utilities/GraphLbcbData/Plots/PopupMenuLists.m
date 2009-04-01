@@ -22,24 +22,32 @@ end
 timeAxisMenu = handles.dataSet.getLabels(dofs,0);
 timeAxisMenu = cat(1,'None',timeAxisMenu, handles.dataSet.getForceLabels(dofs));
 handles.timeAxisMenu = timeAxisMenu;
-set(handles.timeAxisPopup1,'String',timeAxisMenu);
-set(handles.timeAxisPopup2,'String',timeAxisMenu);
-set(handles.timeAxisPopup3,'String',timeAxisMenu);
-set(handles.timeAxisPopup4,'String',timeAxisMenu);
-set(handles.timeAxisPopup5,'String',timeAxisMenu);
-set(handles.timeAxisPopup6,'String',timeAxisMenu);
-set(handles.timeAxisPopup7,'String',timeAxisMenu);
-set(handles.timeAxisPopup8,'String',timeAxisMenu);
+setMenu(handles.timeAxisPopup1,timeAxisMenu);
+setMenu(handles.timeAxisPopup2,timeAxisMenu);
+setMenu(handles.timeAxisPopup3,timeAxisMenu);
+setMenu(handles.timeAxisPopup4,timeAxisMenu);
+setMenu(handles.timeAxisPopup5,timeAxisMenu);
+setMenu(handles.timeAxisPopup6,timeAxisMenu);
+setMenu(handles.timeAxisPopup7,timeAxisMenu);
+setMenu(handles.timeAxisPopup8,timeAxisMenu);
 xyXAxisMenu = cat(1, 'None',handles.dataSet.getLabels(dofs,1));
 handles.xyXAxisMenu = xyXAxisMenu;
-set(handles.xyAxisPopupX,'String',xyXAxisMenu);
+setMenu(handles.xyAxisPopupX,xyXAxisMenu);
 xyYAxisMenu = cat(1,'None',handles.dataSet.getForceLabels(dofs));
 handles.xyYAxisMenu = xyYAxisMenu;
-set(handles.xyAxisPopupY1,'String',xyYAxisMenu);
-set(handles.xyAxisPopupY2,'String',xyYAxisMenu);
-set(handles.xyAxisPopupY3,'String',xyYAxisMenu);
-set(handles.xyAxisPopupY4,'String',xyYAxisMenu);
-set(handles.xyAxisPopupY5,'String',xyYAxisMenu);
-set(handles.xyAxisPopupY6,'String',xyYAxisMenu);
+setMenu(handles.xyAxisPopupY1,xyYAxisMenu);
+setMenu(handles.xyAxisPopupY2,xyYAxisMenu);
+setMenu(handles.xyAxisPopupY3,xyYAxisMenu);
+setMenu(handles.xyAxisPopupY4,xyYAxisMenu);
+setMenu(handles.xyAxisPopupY5,xyYAxisMenu);
+setMenu(handles.xyAxisPopupY6,xyYAxisMenu);
 guidata(hObject, handles);
-
+end
+function setMenu(handle,newMenu)
+    idx = get(handle,'Value');
+    if idx ~= 1
+        oldMenu = get(handle,'String');
+        newMenu(idx) = oldMenu(idx);
+    end
+    set(handle,'String',newMenu);
+end

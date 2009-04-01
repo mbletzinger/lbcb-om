@@ -69,15 +69,11 @@ handles.timePlot = plotSettings();
 
 ts = plot(handles.timeAxis,0,0,'k',0,0,'b',0,0,'r',0,0,'g',0,0,'m',0,0,':k',0,0,':b',0,0,':r');
 handles.timePlot.setLineSeries(ts);
-[legend_h,object_h,plot_h,text_strings] =legend({'','','','','','','',''});
-handles.timePlotLegends = text_strings;
 
 handles.xyPlot = plotSettings();
 xys = plot(handles.xyAxis,0,0,'k',0,0,'b',0,0,'r',0,0,'g',0,0,'m',0,0,':k',0,0,':b',0,0,':r');
 handles.xyPlot.setLineSeries(xys);
 handles.dataSet = plotDataSet(handles.data,timeData);
-[legend_h,object_h,plot_h,text_strings] =legend({'','','','','','','',''});
-handles.xyPlotLegends = text_strings;
 
 PopupMenuLists(hObject,handles);
 
