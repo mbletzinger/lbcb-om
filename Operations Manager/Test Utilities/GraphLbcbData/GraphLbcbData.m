@@ -22,7 +22,7 @@ function varargout = GraphLbcbData(varargin)
 
 % Edit the above text to modify the response to help GraphLbcbData
 
-% Last Modified by GUIDE v2.5 30-Mar-2009 10:20:03
+% Last Modified by GUIDE v2.5 01-Apr-2009 11:52:37
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -76,6 +76,10 @@ handles.xyPlot.setLineSeries(xys);
 handles.dataSet = plotDataSet(handles.data,timeData);
 
 PopupMenuLists(hObject,handles);
+set(handles.timeAxis,'NextPlot','add');
+set(handles.xyAxis,'NextPlot','add');
+set(handles.LbcbData,'NextPlot','add');
+handles.timePlot.setXData(handles.dataSet.timeData,1);
 
 % Update handles structure
 guidata(hObject, handles);
@@ -99,23 +103,7 @@ function timeAxisButton_Callback(hObject, eventdata, handles)
 % hObject    handle to timeAxisButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-Axis(handles.timeAxis);
-cla;
-
-popup_sel_index = get(handles.popupmenu1, 'Value');
-switch popup_sel_index
-    case 1
-        plot(rand(5));
-    case 2
-        plot(sin(1:0.01:25.99));
-    case 3
-        bar(1:.5:10);
-    case 4
-        plot(membrane);
-    case 5
-        surf(peaks);
-end
-
+handles.timePlot.plotPopup();
 
 % --------------------------------------------------------------------
 function FileMenu_Callback(hObject, eventdata, handles)
@@ -331,7 +319,7 @@ function xyAxisPopupX_Callback(hObject, eventdata, handles)
 
 % Hints: contents = get(hObject,'String') returns xyAxisPopupX contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from xyAxisPopupX
-
+plotXyData(hObject,handles,1,1);
 
 % --- Executes during object creation, after setting all properties.
 function xyAxisPopupX_CreateFcn(hObject, eventdata, handles)
@@ -354,6 +342,7 @@ function xyAxisPopupY1_Callback(hObject, eventdata, handles)
 
 % Hints: contents = get(hObject,'String') returns xyAxisPopupY1 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from xyAxisPopupY1
+plotXyData(hObject,handles,1,0);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -377,6 +366,7 @@ function xyAxisPopupY2_Callback(hObject, eventdata, handles)
 
 % Hints: contents = get(hObject,'String') returns xyAxisPopupY2 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from xyAxisPopupY2
+plotXyData(hObject,handles,2,0);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -400,6 +390,7 @@ function xyAxisPopupY3_Callback(hObject, eventdata, handles)
 
 % Hints: contents = get(hObject,'String') returns xyAxisPopupY3 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from xyAxisPopupY3
+plotXyData(hObject,handles,3,0);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -423,6 +414,7 @@ function xyAxisPopupY4_Callback(hObject, eventdata, handles)
 
 % Hints: contents = get(hObject,'String') returns xyAxisPopupY4 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from xyAxisPopupY4
+plotXyData(hObject,handles,4,0);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -446,6 +438,7 @@ function xyAxisPopupY5_Callback(hObject, eventdata, handles)
 
 % Hints: contents = get(hObject,'String') returns xyAxisPopupY5 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from xyAxisPopupY5
+plotXyData(hObject,handles,5,0);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -469,6 +462,7 @@ function xyAxisPopupY6_Callback(hObject, eventdata, handles)
 
 % Hints: contents = get(hObject,'String') returns xyAxisPopupY6 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from xyAxisPopupY6
+plotXyData(hObject,handles,6,0);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -513,6 +507,7 @@ function xyAxisButton_Callback(hObject, eventdata, handles)
 % hObject    handle to xyAxisButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+handles.xyPlot.plotPopup();
 
 % --- Executes on button press in DxCheck.
 function DxCheck_Callback(hObject, eventdata, handles)
@@ -567,4 +562,22 @@ function RzCheck_Callback(hObject, eventdata, handles)
 
 % Hint: get(hObject,'Value') returns toggle state of RzCheck
 PopupMenuLists(hObject,handles)
+
+
+% --- Executes on button press in timePlotClearButton.
+function timePlotClearButton_Callback(hObject, eventdata, handles)
+% hObject    handle to timePlotClearButton (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+handles.timePlot.clearAll();
+resetPopups(handles,0);
+
+% --- Executes on button press in xyPlotClearButton.
+function xyPlotClearButton_Callback(hObject, eventdata, handles)
+% hObject    handle to xyPlotClearButton (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+handles.xyPlot.clearAll();
+resetPopups(handles,1);
+
 

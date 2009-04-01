@@ -1,0 +1,19 @@
+function resetPopups(handles,isXy)
+if(isXy)
+    set(handles.xyAxisPopupX,'Value',1);
+    set(handles.xyAxisPopupY1,'Value',1);
+    set(handles.xyAxisPopupY2,'Value',1);
+    set(handles.xyAxisPopupY3,'Value',1);
+    set(handles.xyAxisPopupY4,'Value',1);
+    set(handles.xyAxisPopupY5,'Value',1);
+    set(handles.xyAxisPopupY6,'Value',1);
+    return
+end
+set(handles.timeAxisPopup1,'Value',1);
+set(handles.timeAxisPopup2,'Value',1);
+set(handles.timeAxisPopup3,'Value',1);
+set(handles.timeAxisPopup4,'Value',1);
+set(handles.timeAxisPopup5,'Value',1);
+set(handles.timeAxisPopup6,'Value',1);
+set(handles.timeAxisPopup7,'Value',1);
+set(handles.timeAxisPopup8,'Value',1);
