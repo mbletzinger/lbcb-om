@@ -75,11 +75,31 @@ xys = plot(handles.xyAxis,0,0,'k',0,0,'b',0,0,'r',0,0,'g',0,0,'m',0,0,':k',0,0,'
 handles.xyPlot.setLineSeries(xys);
 handles.dataSet = plotDataSet(handles.data,timeData);
 
-PopupMenuLists(hObject,handles);
-set(handles.timeAxis,'NextPlot','add');
-set(handles.xyAxis,'NextPlot','add');
-set(handles.LbcbData,'NextPlot','add');
 handles.timePlot.setXData(handles.dataSet.timeData,1);
+
+checkHandles = [handles.DxCheck,handles.DyCheck,handles.DzCheck,...
+    handles.RxCheck,handles.RyCheck,handles.RzCheck];
+
+handles.timeMenus = dofMenus(handles.dataSet,0,0,1);
+handles.timeMenus.setCheckHandles(checkHandles);
+
+timeHandles = [handles.timeAxisPopup1,handles.timeAxisPopup2,handles.timeAxisPopup3,...
+    handles.timeAxisPopup4,handles.timeAxisPopup5,handles.timeAxisPopup6,...
+    handles.timeAxisPopup7,handles.timeAxisPopup8];
+
+handles.timeMenus.setPopupHandles(timeHandles);
+
+handles.xyXMenus = dofMenus(handles.dataSet,1,0,0);
+handles.xyXMenus.setCheckHandles(checkHandles);
+handles.xyXMenus.setPopupHandles(handles.xyAxisPopupX);
+
+handles.xyYMenus = dofMenus(handles.dataSet,0,1,0);
+handles.xyYMenus.setCheckHandles(checkHandles);
+
+xyHandles = [handles.xyAxisPopupY1,handles.xyAxisPopupY2,handles.xyAxisPopupY3,...
+    handles.xyAxisPopupY4,handles.xyAxisPopupY5,handles.xyAxisPopupY6];
+
+handles.xyYMenus.setPopupHandles(xyHandles);
 
 % Update handles structure
 guidata(hObject, handles);
@@ -516,7 +536,9 @@ function DxCheck_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of DxCheck
-PopupMenuLists(hObject,handles);
+handles.timeMenus.setMenus(1);
+handles.xyXMenus.setMenus(1);
+handles.xyYMenus.setMenus(1);
 
 % --- Executes on button press in DyCheck.
 function DyCheck_Callback(hObject, eventdata, handles)
@@ -525,7 +547,9 @@ function DyCheck_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of DyCheck
-PopupMenuLists(hObject,handles);
+handles.timeMenus.setMenus(2);
+handles.xyXMenus.setMenus(2);
+handles.xyYMenus.setMenus(2);
 
 % --- Executes on button press in DzCheck.
 function DzCheck_Callback(hObject, eventdata, handles)
@@ -534,7 +558,9 @@ function DzCheck_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of DzCheck
-PopupMenuLists(hObject,handles);
+handles.timeMenus.setMenus(3);
+handles.xyXMenus.setMenus(3);
+handles.xyYMenus.setMenus(3);
 
 % --- Executes on button press in RxCheck.
 function RxCheck_Callback(hObject, eventdata, handles)
@@ -543,7 +569,9 @@ function RxCheck_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of RxCheck
-PopupMenuLists(hObject,handles);
+handles.timeMenus.setMenus(4);
+handles.xyXMenus.setMenus(4);
+handles.xyYMenus.setMenus(4);
 
 % --- Executes on button press in RyCheck.
 function RyCheck_Callback(hObject, eventdata, handles)
@@ -552,7 +580,9 @@ function RyCheck_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of RyCheck
-PopupMenuLists(hObject,handles);
+handles.timeMenus.setMenus(5);
+handles.xyXMenus.setMenus(5);
+handles.xyYMenus.setMenus(5);
 
 % --- Executes on button press in RzCheck.
 function RzCheck_Callback(hObject, eventdata, handles)
@@ -561,7 +591,9 @@ function RzCheck_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of RzCheck
-PopupMenuLists(hObject,handles)
+handles.timeMenus.setMenus(6);
+handles.xyXMenus.setMenus(6);
+handles.xyYMenus.setMenus(6);
 
 
 % --- Executes on button press in timePlotClearButton.
@@ -570,7 +602,7 @@ function timePlotClearButton_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 handles.timePlot.clearAll();
-resetPopups(handles,0);
+handles.timeMenus.clearMenus();
 
 % --- Executes on button press in xyPlotClearButton.
 function xyPlotClearButton_Callback(hObject, eventdata, handles)
@@ -579,5 +611,7 @@ function xyPlotClearButton_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 handles.xyPlot.clearAll();
 resetPopups(handles,1);
+handles.xyXMenus.clearMenus();
+handles.xyYMenus.clearMenus();
 
 
