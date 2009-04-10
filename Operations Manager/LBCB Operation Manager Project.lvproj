@@ -293,7 +293,7 @@
             <Property Name="App_autoIncrement" Type="Bool">true</Property>
             <Property Name="App_companyName" Type="Str">University of Illinois</Property>
             <Property Name="App_fileType" Type="Int">1</Property>
-            <Property Name="App_fileVersion.build" Type="Int">8</Property>
+            <Property Name="App_fileVersion.build" Type="Int">10</Property>
             <Property Name="App_fileVersion.major" Type="Int">2</Property>
             <Property Name="App_fileVersion.patch" Type="Int">2</Property>
             <Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
@@ -332,7 +332,7 @@
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{1D778703-4DEA-48D6-90A6-D69436F78ADB}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{C2DEFAC2-FCBA-47C2-AEE1-9AC4FC764E56}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
