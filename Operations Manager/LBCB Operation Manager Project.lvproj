@@ -287,13 +287,13 @@
          <Item Name="systemexec" Type="VI" URL="systemexec"/>
       </Item>
       <Item Name="Build Specifications" Type="Build">
-         <Item Name="LBCB OM 2.08" Type="EXE">
+         <Item Name="LBCB OM 2.09" Type="EXE">
             <Property Name="App_applicationGUID" Type="Str">{57C3770E-1E04-49DB-9AC6-3F2971020B88}</Property>
             <Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
             <Property Name="App_autoIncrement" Type="Bool">true</Property>
             <Property Name="App_companyName" Type="Str">University of Illinois</Property>
             <Property Name="App_fileType" Type="Int">1</Property>
-            <Property Name="App_fileVersion.build" Type="Int">15</Property>
+            <Property Name="App_fileVersion.build" Type="Int">16</Property>
             <Property Name="App_fileVersion.major" Type="Int">2</Property>
             <Property Name="App_fileVersion.patch" Type="Int">2</Property>
             <Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
@@ -301,7 +301,7 @@
             <Property Name="App_internalName" Type="Str">Master Slave</Property>
             <Property Name="App_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
             <Property Name="App_productName" Type="Str">LBCB Operation Manager</Property>
-            <Property Name="Bld_buildSpecName" Type="Str">LBCB OM 2.08</Property>
+            <Property Name="Bld_buildSpecName" Type="Str">LBCB OM 2.09</Property>
             <Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
             <Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
             <Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
@@ -341,7 +341,7 @@
             <Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
             <Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-            <Property Name="Source[0].itemID" Type="Str">{7523C84C-F062-49F9-9401-995222B748C7}</Property>
+            <Property Name="Source[0].itemID" Type="Str">{C1788F18-FDD2-4827-AA66-91B9C9D13A57}</Property>
             <Property Name="Source[0].type" Type="Str">Container</Property>
             <Property Name="Source[1].destinationIndex" Type="Int">0</Property>
             <Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
