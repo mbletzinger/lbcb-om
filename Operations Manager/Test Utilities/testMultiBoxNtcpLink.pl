@@ -4,14 +4,14 @@ use IO::Socket::INET;
 use File::Spec;
 use Cwd;
 
-my ($host, $port) = ("cee-zzul.cee.uiuc.edu","6342");
-#my ($host, $port) = ("192.168.1.101","5057");
+my ($host, $port) = ("cee-neessmom2.cee.illinois.edu","6342");
+#my ($host, $port) = ("cee-neesit1.cee.illinois.edu","6342");
 my $cwd =cwd();
 my @dirs = File::Spec->splitdir($cwd);
 my $dropped = pop @dirs;
 my $pwd = File::Spec->catdir(@dirs);
-
-
+$| = 1;
+print "Connecting to $host:$port...";
 my $socket = new IO::Socket::INET(
 		PeerAddr => $host,
 		PeerPort => $port,
@@ -19,6 +19,7 @@ my $socket = new IO::Socket::INET(
 	);
 
 die "Connection to $host:$port failed because $!" unless defined $socket;
+print "...done\n";
 
 sendCommand("open-session dummySession");
 receiveCommand();
@@ -26,25 +27,40 @@ receiveCommand();
 sendCommand("set-parameter dummySetParam	nstep	0");
 receiveCommand();
 
-my $increment = "0.5";
-for my $i (1..500) {
+my $increment = 0.0;
+my $stepUp = 1;
+for my $i (1..50) {
 	($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst)=localtime(time);
 	$year += 1900;
 	$month++;
 	print "$mon/$mday/$year";
-	sendCommand("propose\ttrans$year$month$mday$hour$min$sec.320\tMDL-00-01:LBCB 1\tx\tdisplacement\t$increment\ty\tdisplacement\t0.0");
-	receiveCommand();
-	sendCommand("propose\ttrans$year$month$mday$hour$min$sec.320\tMDL-00-01:LBCB 2\tx\tdisplacement\t$increment\ty\tdisplacement\t0.0");
+	sendCommand("propose\ttrans$year$month$mday$hour$min$sec.320" . 
+"\tMDL-00-01:LBCB1\tx\tdisplacement\t$increment\ty\tdisplacement\t0.0" . 
+"\tMDL-00-01:LBCB2\tx\tdisplacement\t$increment\ty\tdisplacement\t0.0");
 	receiveCommand();
 	sendCommand("execute\ttrans$year$month$mday$hour$min$sec.320");
 	receiveCommand();
-	sendCommand("get-control-point\tdummy\tMDL-00-01:LBCB 1");
+	sendCommand("get-control-point\tdummy\tMDL-00-01:LBCB1");
 	receiveCommand();
-	sendCommand("get-control-point\tdummy\tMDL-00-01:LBCB 2");
+	sendCommand("get-control-point\tdummy\tMDL-00-01:LBCB2");
 	receiveCommand();
-	sendCommand("get-control-point\tdummy\tMDL-00-01:External Sensors");
+	sendCommand("get-control-point\tdummy\tMDL-00-01:ExternalSensors");
 	receiveCommand();
-	$increment = $increment eq "0.5" ? "-0.5" : "0.5";
+        if ($stepUp) {
+          if ($increment >= 0.4) {
+            $stepUp = 0;
+          }
+        } else {
+          if ($increment <= -0.4) {
+            $stepUp = 1;
+          }
+        }
+
+        if ($stepUp) {
+          $increment += 0.1;
+        } else {
+          $increment += -0.1;
+        }
 	sleep 3;
 }
 
@@ -56,7 +72,8 @@ close $socket;
 sub sendCommand {
 	my ($cmd) = @_;
 	print "Sending [$cmd]";
-	print $socket $cmd, "\n";
+	print $socket $cmd, "\015\012";
+	#print $socket $cmd, "\n";
 
 }
 
