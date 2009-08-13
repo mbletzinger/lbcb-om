@@ -40,9 +40,7 @@
 		<Item Name="Exec" Type="Folder" URL="../Exec">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="Logs" Type="Folder" URL="../Logs">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
-		</Item>
+		<Item Name="Logs" Type="Folder"/>
 		<Item Name="LBCB Operation Manager.vi" Type="VI" URL="../LBCB Operation Manager.vi"/>
 		<Item Name="Calibration Factor.xls" Type="Document" URL="../Calibration Factor.xls"/>
 		<Item Name="Menu.rtm" Type="Document" URL="../Menu.rtm"/>
