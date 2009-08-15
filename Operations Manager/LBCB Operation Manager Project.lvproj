@@ -294,7 +294,7 @@
 				<Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">23</Property>
+				<Property Name="App_fileVersion.build" Type="Int">24</Property>
 				<Property Name="App_fileVersion.major" Type="Int">2</Property>
 				<Property Name="App_fileVersion.patch" Type="Int">2</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
@@ -342,7 +342,7 @@
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A7EE65FD-A4DB-4EA5-85B8-4243B0D202AF}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{AA6166B6-6B80-4BE3-AB52-05F085C0E0CF}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -412,17 +412,14 @@
 				<Property Name="Source[23].itemID" Type="Ref">/My Computer/Config</Property>
 				<Property Name="Source[23].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[23].type" Type="Str">Container</Property>
-				<Property Name="Source[24].destinationIndex" Type="Int">8</Property>
-				<Property Name="Source[24].itemID" Type="Ref">/My Computer/Logs/fake log.txt</Property>
+				<Property Name="Source[24].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[24].itemID" Type="Ref">/My Computer/OperationManagerGlobal.vi</Property>
 				<Property Name="Source[24].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[25].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[25].itemID" Type="Ref">/My Computer/OperationManagerGlobal.vi</Property>
-				<Property Name="Source[25].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[25].type" Type="Str">VI</Property>
-				<Property Name="Source[26].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[26].destinationIndex" Type="Int">7</Property>
-				<Property Name="Source[26].itemID" Type="Ref">/My Computer/Exec</Property>
-				<Property Name="Source[26].type" Type="Str">Container</Property>
+				<Property Name="Source[24].type" Type="Str">VI</Property>
+				<Property Name="Source[25].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[25].destinationIndex" Type="Int">7</Property>
+				<Property Name="Source[25].itemID" Type="Ref">/My Computer/Exec</Property>
+				<Property Name="Source[25].type" Type="Str">Container</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[3].itemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
@@ -449,7 +446,7 @@
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Data Transmission/Data Transmission Launcher.vi</Property>
 				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">27</Property>
+				<Property Name="SourceCount" Type="Int">26</Property>
 			</Item>
 		</Item>
 	</Item>
