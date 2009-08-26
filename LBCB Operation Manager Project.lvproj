@@ -287,6 +287,10 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.6/resource/lvanlys.dll"/>
+			<Item Name="Adj Continuous Data Buffer.vi" Type="VI" URL="../lib/Global Data/Adj Continuous Data Buffer.vi"/>
+			<Item Name="Join Cart Data.vi" Type="VI" URL="../lib/Global Data/Join Cart Data.vi"/>
+			<Item Name="Split Cart Data.vi" Type="VI" URL="../lib/Global Data/Split Cart Data.vi"/>
+			<Item Name="Slave Data DAO.vi" Type="VI" URL="../lib/Global Data/Slave Data DAO.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
