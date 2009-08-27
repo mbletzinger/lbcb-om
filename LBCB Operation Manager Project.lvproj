@@ -42,14 +42,13 @@
 		</Item>
 		<Item Name="Logs" Type="Folder"/>
 		<Item Name="LBCB Operation Manager.vi" Type="VI" URL="../LBCB Operation Manager.vi"/>
-		<Item Name="Calibration Factor.xls" Type="Document" URL="../Calibration Factor.xls"/>
 		<Item Name="Menu.rtm" Type="Document" URL="../Menu.rtm"/>
 		<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
-		<Item Name="Calibration Factors.xls" Type="Document" URL="../Calibration Factors.xls"/>
 		<Item Name="RampHoldTest.vi" Type="VI" URL="../Test Utilities/RampHoldTest.vi"/>
 		<Item Name="Sample Averaging Test.vi" Type="VI" URL="../Test Utilities/Sample Averaging Test.vi"/>
 		<Item Name="Time stamp test.vi" Type="VI" URL="../Test Utilities/Time stamp test.vi"/>
 		<Item Name="Tcp Test.vi" Type="VI" URL="../Test Utilities/Tcp Test.vi"/>
+		<Item Name="Original  LBCB Operation Manager.vi" Type="VI" URL="../Original  LBCB Operation Manager.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -64,20 +63,7 @@
 				<Item Name="compatFileDialog.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatFileDialog.vi"/>
 				<Item Name="compatOpenFileOperation.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatOpenFileOperation.vi"/>
 				<Item Name="compatCalcOffset.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatCalcOffset.vi"/>
-				<Item Name="Read From XML File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Read From XML File.vi"/>
-				<Item Name="Read From XML File(array).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Read From XML File(array).vi"/>
-				<Item Name="ParseXMLFragments.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/ParseXMLFragments.vi"/>
-				<Item Name="FindFirstTag.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindFirstTag.vi"/>
-				<Item Name="FindEmptyElement.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindEmptyElement.vi"/>
-				<Item Name="FindElement.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindElement.vi"/>
-				<Item Name="FindMatchingCloseTag.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindMatchingCloseTag.vi"/>
-				<Item Name="FindCloseTagByName.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindCloseTagByName.vi"/>
-				<Item Name="FindElementStartByName.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/FindElementStartByName.vi"/>
-				<Item Name="Read From XML File(string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Read From XML File(string).vi"/>
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
-				<Item Name="Write to XML File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File.vi"/>
-				<Item Name="Write to XML File(string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File(string).vi"/>
-				<Item Name="Write to XML File(array).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File(array).vi"/>
 				<Item Name="DAQmx Write.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write.vi"/>
 				<Item Name="DAQmx Write (Analog 1D DBL 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Analog 1D DBL 1Chan NSamp).vi"/>
 				<Item Name="DAQmx Fill In Error Info.vi" Type="VI" URL="/&lt;vilib&gt;/daqmx/miscellaneous.llb/DAQmx Fill In Error Info.vi"/>
@@ -217,10 +203,6 @@
 				<Item Name="DAQmx Read (Digital 1D U16 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D U16 1Chan NSamp).vi"/>
 				<Item Name="DAQmx Read (Digital 1D U16 NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D U16 NChan 1Samp).vi"/>
 				<Item Name="DAQmx Read (Digital 2D U16 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 2D U16 NChan NSamp).vi"/>
-				<Item Name="Read Characters From File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Characters From File.vi"/>
-				<Item Name="Open File+.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Open File+.vi"/>
-				<Item Name="Read File+ (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read File+ (string).vi"/>
-				<Item Name="compatReadText.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatReadText.vi"/>
 				<Item Name="Merge Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Merge Errors.vi"/>
 				<Item Name="Open/Create/Replace File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Open/Create/Replace File.vi"/>
 				<Item Name="Error to Warning.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error to Warning.vi"/>
@@ -291,6 +273,22 @@
 			<Item Name="Join Cart Data.vi" Type="VI" URL="../lib/Global Data/Join Cart Data.vi"/>
 			<Item Name="Split Cart Data.vi" Type="VI" URL="../lib/Global Data/Split Cart Data.vi"/>
 			<Item Name="Slave Data DAO.vi" Type="VI" URL="../lib/Global Data/Slave Data DAO.vi"/>
+			<Item Name="ConsolidatedDAQChannelNames.vi" Type="VI" URL="../lib/ConsolidatedDAQChannelNames.vi"/>
+			<Item Name="Save Point Cartesian SubVI.vi" Type="VI" URL="../lib/Data Access Objects/Autobalance/Save Point Cartesian SubVI.vi"/>
+			<Item Name="Load Point Cartesian SubVI.vi" Type="VI" URL="../lib/Data Access Objects/Autobalance/Load Point Cartesian SubVI.vi"/>
+			<Item Name="Load Input File.vi" Type="VI" URL="../lib/Load Input File.vi"/>
+			<Item Name="GetSamplingRate.vi" Type="VI" URL="../lib/GetSamplingRate.vi"/>
+			<Item Name="FG_Execute.vi" Type="VI" URL="../lib/FG_Execute.vi"/>
+			<Item Name="FG_Auto.vi" Type="VI" URL="../lib/FG_Auto.vi"/>
+			<Item Name="FG_Pause.vi" Type="VI" URL="../lib/FG_Pause.vi"/>
+			<Item Name="GetChannelNameArray.vi" Type="VI" URL="../lib/GetChannelNameArray.vi"/>
+			<Item Name="Load Digital Filter File.vi" Type="VI" URL="../lib/Load Digital Filter File.vi"/>
+			<Item Name="Save Config Data.vi" Type="VI" URL="../lib/Save Config Data.vi"/>
+			<Item Name="Load Config Data.vi" Type="VI" URL="../lib/Load Config Data.vi"/>
+			<Item Name="LVDT Coeff Adjustment.vi" Type="VI" URL="../lib/LVDT Coeff Adjustment.vi"/>
+			<Item Name="LBCB ID.ctl" Type="VI" URL="../lib/Data Access Objects/LBCB ID.ctl"/>
+			<Item Name="Save Point Actuator SubVI.vi" Type="VI" URL="../lib/Data Access Objects/Control Loop/Save Point Actuator SubVI.vi"/>
+			<Item Name="Load Point Actuator SubVI.vi" Type="VI" URL="../lib/Data Access Objects/Control Loop/Load Point Actuator SubVI.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
