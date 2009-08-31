@@ -273,7 +273,6 @@
 			<Item Name="Join Cart Data.vi" Type="VI" URL="../lib/Global Data/Join Cart Data.vi"/>
 			<Item Name="Split Cart Data.vi" Type="VI" URL="../lib/Global Data/Split Cart Data.vi"/>
 			<Item Name="Slave Data DAO.vi" Type="VI" URL="../lib/Global Data/Slave Data DAO.vi"/>
-			<Item Name="ConsolidatedDAQChannelNames.vi" Type="VI" URL="../lib/ConsolidatedDAQChannelNames.vi"/>
 			<Item Name="Save Point Cartesian SubVI.vi" Type="VI" URL="../lib/Data Access Objects/Autobalance/Save Point Cartesian SubVI.vi"/>
 			<Item Name="Load Point Cartesian SubVI.vi" Type="VI" URL="../lib/Data Access Objects/Autobalance/Load Point Cartesian SubVI.vi"/>
 			<Item Name="Load Input File.vi" Type="VI" URL="../lib/Load Input File.vi"/>
@@ -287,8 +286,6 @@
 			<Item Name="Load Config Data.vi" Type="VI" URL="../lib/Load Config Data.vi"/>
 			<Item Name="LVDT Coeff Adjustment.vi" Type="VI" URL="../lib/LVDT Coeff Adjustment.vi"/>
 			<Item Name="LBCB ID.ctl" Type="VI" URL="../lib/Data Access Objects/LBCB ID.ctl"/>
-			<Item Name="Save Point Actuator SubVI.vi" Type="VI" URL="../lib/Data Access Objects/Control Loop/Save Point Actuator SubVI.vi"/>
-			<Item Name="Load Point Actuator SubVI.vi" Type="VI" URL="../lib/Data Access Objects/Control Loop/Load Point Actuator SubVI.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
