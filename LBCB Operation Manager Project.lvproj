@@ -274,7 +274,6 @@
 			<Item Name="Split Cart Data.vi" Type="VI" URL="../lib/Global Data/Split Cart Data.vi"/>
 			<Item Name="Slave Data DAO.vi" Type="VI" URL="../lib/Global Data/Slave Data DAO.vi"/>
 			<Item Name="Load Input File.vi" Type="VI" URL="../lib/Load Input File.vi"/>
-			<Item Name="GetSamplingRate.vi" Type="VI" URL="../lib/GetSamplingRate.vi"/>
 			<Item Name="FG_Execute.vi" Type="VI" URL="../lib/FG_Execute.vi"/>
 			<Item Name="FG_Auto.vi" Type="VI" URL="../lib/FG_Auto.vi"/>
 			<Item Name="FG_Pause.vi" Type="VI" URL="../lib/FG_Pause.vi"/>
@@ -283,7 +282,9 @@
 			<Item Name="Save Config Data.vi" Type="VI" URL="../lib/Save Config Data.vi"/>
 			<Item Name="Load Config Data.vi" Type="VI" URL="../lib/Load Config Data.vi"/>
 			<Item Name="LVDT Coeff Adjustment.vi" Type="VI" URL="../lib/LVDT Coeff Adjustment.vi"/>
-			<Item Name="LBCB ID.ctl" Type="VI" URL="../lib/Data Access Objects/LBCB ID.ctl"/>
+			<Item Name="Mixed Mode Parameters DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Parameters DAO.vi"/>
+			<Item Name="Mixed Mode Parameters Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Parameters Actions.ctl"/>
+			<Item Name="Stiffness Jacobian Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Stiffness Jacobian Actions.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
