@@ -112,9 +112,6 @@
 				<Item Name="DAQmx Write (Digital 1D U16 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D U16 1Chan NSamp).vi"/>
 				<Item Name="DAQmx Write (Digital 1D U16 NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 1D U16 NChan 1Samp).vi"/>
 				<Item Name="DAQmx Write (Digital 2D U16 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Digital 2D U16 NChan NSamp).vi"/>
-				<Item Name="Waveform Array To Dynamic.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/transition.llb/Waveform Array To Dynamic.vi"/>
-				<Item Name="Dynamic To Waveform Array.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/transition.llb/Dynamic To Waveform Array.vi"/>
-				<Item Name="ex_Modify Signal Name.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_Modify Signal Name.vi"/>
 				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
 				<Item Name="NI_Matrix.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/Matrix/NI_Matrix.lvlib"/>
 				<Item Name="Write Characters To File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write Characters To File.vi"/>
@@ -159,7 +156,6 @@
 				<Item Name="DAQmx Timing (Burst Export Clock).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Burst Export Clock).vi"/>
 				<Item Name="DAQmx Timing (Pipelined Sample Clock).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/timing.llb/DAQmx Timing (Pipelined Sample Clock).vi"/>
 				<Item Name="DAQmx Start Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Start Task.vi"/>
-				<Item Name="exnFormulaBlock how many pts in the wave.vi" Type="VI" URL="/&lt;vilib&gt;/express/express arith-compare/Formula/Block/exnFormulaBlock how many pts in the wave.vi"/>
 				<Item Name="DAQmx Read.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read.vi"/>
 				<Item Name="DAQmx Read (Analog 1D Wfm NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog 1D Wfm NChan NSamp).vi"/>
 				<Item Name="DAQmx Read (Analog 1D DBL 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Analog 1D DBL 1Chan NSamp).vi"/>
@@ -204,7 +200,6 @@
 				<Item Name="DAQmx Read (Digital 1D U16 NChan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 1D U16 NChan 1Samp).vi"/>
 				<Item Name="DAQmx Read (Digital 2D U16 NChan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Digital 2D U16 NChan NSamp).vi"/>
 				<Item Name="Merge Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Merge Errors.vi"/>
-				<Item Name="Open/Create/Replace File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Open/Create/Replace File.vi"/>
 				<Item Name="Error to Warning.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error to Warning.vi"/>
 				<Item Name="TCP Listen.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/TCP Listen.vi"/>
 				<Item Name="Internecine Avoider.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/tcp.llb/Internecine Avoider.vi"/>
@@ -270,7 +265,6 @@
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.6/resource/lvanlys.dll"/>
 			<Item Name="Adj Continuous Data Buffer.vi" Type="VI" URL="../lib/Global Data/Adj Continuous Data Buffer.vi"/>
-			<Item Name="Join Cart Data.vi" Type="VI" URL="../lib/Global Data/Join Cart Data.vi"/>
 			<Item Name="Split Cart Data.vi" Type="VI" URL="../lib/Global Data/Split Cart Data.vi"/>
 			<Item Name="Slave Data DAO.vi" Type="VI" URL="../lib/Global Data/Slave Data DAO.vi"/>
 			<Item Name="Load Input File.vi" Type="VI" URL="../lib/Load Input File.vi"/>
@@ -278,13 +272,26 @@
 			<Item Name="FG_Auto.vi" Type="VI" URL="../lib/FG_Auto.vi"/>
 			<Item Name="FG_Pause.vi" Type="VI" URL="../lib/FG_Pause.vi"/>
 			<Item Name="GetChannelNameArray.vi" Type="VI" URL="../lib/GetChannelNameArray.vi"/>
-			<Item Name="Load Digital Filter File.vi" Type="VI" URL="../lib/Load Digital Filter File.vi"/>
 			<Item Name="Save Config Data.vi" Type="VI" URL="../lib/Save Config Data.vi"/>
 			<Item Name="Load Config Data.vi" Type="VI" URL="../lib/Load Config Data.vi"/>
 			<Item Name="LVDT Coeff Adjustment.vi" Type="VI" URL="../lib/LVDT Coeff Adjustment.vi"/>
 			<Item Name="Mixed Mode Parameters DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Parameters DAO.vi"/>
 			<Item Name="Mixed Mode Parameters Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Parameters Actions.ctl"/>
 			<Item Name="Stiffness Jacobian Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Stiffness Jacobian Actions.ctl"/>
+			<Item Name="Mixed Mode Measurement Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Measurement Actions.ctl"/>
+			<Item Name="Volts 2 Actuator Measurments.vi" Type="VI" URL="../lib/Global Data/Volts 2 Actuator Measurments.vi"/>
+			<Item Name="Split Actuator Disp and Forces.vi" Type="VI" URL="../lib/Global Data/Split Actuator Disp and Forces.vi"/>
+			<Item Name="Join Act Measurments.vi" Type="VI" URL="../lib/Global Data/Join Act Measurments.vi"/>
+			<Item Name="Split Act Data.vi" Type="VI" URL="../lib/Global Data/Split Act Data.vi"/>
+			<Item Name="Split Actuator Measurement.vi" Type="VI" URL="../lib/Global Data/Split Actuator Measurement.vi"/>
+			<Item Name="Input Data.ctl" Type="VI" URL="../lib/Global Data/Input Data.ctl"/>
+			<Item Name="LBCB Type 2 String.vi" Type="VI" URL="../lib/Global Data/LBCB Type 2 String.vi"/>
+			<Item Name="Auto Balance Controller.vi" Type="VI" URL="../lib/Auto Balance Controller.vi"/>
+			<Item Name="Autobalance Actions.ctl" Type="VI" URL="../lib/Autobalance Actions.ctl"/>
+			<Item Name="Command Adjustment.vi" Type="VI" URL="../lib/Command Adjustment.vi"/>
+			<Item Name="Control Loop Controls.ctl" Type="VI" URL="../lib/Control Loop Controls.ctl"/>
+			<Item Name="PlotInputData.vi" Type="VI" URL="../lib/PlotInputData.vi"/>
+			<Item Name="WriteTextData.vi" Type="VI" URL="../lib/WriteTextData.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
