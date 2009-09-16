@@ -40,7 +40,9 @@
 		<Item Name="Exec" Type="Folder" URL="../Exec">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="Logs" Type="Folder"/>
+		<Item Name="Logs" Type="Folder" URL="../Logs">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="LBCB Operation Manager.vi" Type="VI" URL="../LBCB Operation Manager.vi"/>
 		<Item Name="Calibration Factor.xls" Type="Document" URL="../Calibration Factor.xls"/>
 		<Item Name="Menu.rtm" Type="Document" URL="../Menu.rtm"/>
@@ -49,7 +51,6 @@
 		<Item Name="RampHoldTest.vi" Type="VI" URL="../Test Utilities/RampHoldTest.vi"/>
 		<Item Name="Sample Averaging Test.vi" Type="VI" URL="../Test Utilities/Sample Averaging Test.vi"/>
 		<Item Name="Time stamp test.vi" Type="VI" URL="../Test Utilities/Time stamp test.vi"/>
-		<Item Name="Tcp Test.vi" Type="VI" URL="../Test Utilities/Tcp Test.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -286,23 +287,23 @@
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.6/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 8.6/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="LBCB OM" Type="EXE">
+			<Item Name="LBCB OM 2.0.13" Type="EXE">
 				<Property Name="App_applicationGUID" Type="Str">{57C3770E-1E04-49DB-9AC6-3F2971020B88}</Property>
 				<Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">6</Property>
+				<Property Name="App_fileVersion.build" Type="Int">24</Property>
 				<Property Name="App_fileVersion.major" Type="Int">2</Property>
-				<Property Name="App_fileVersion.minor" Type="Int">1</Property>
+				<Property Name="App_fileVersion.patch" Type="Int">2</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{2C4F13AB-15A9-450C-9083-C3C7C0D1641F}</Property>
 				<Property Name="App_internalName" Type="Str">Master Slave</Property>
 				<Property Name="App_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
 				<Property Name="App_productName" Type="Str">LBCB Operation Manager</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">LBCB OM</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">LBCB OM 2.0.13</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
@@ -310,39 +311,30 @@
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">LBCB Operation Manager.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/internal.llb</Property>
-				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[0].path" Type="Path">../MEBs Latest Build/internal.llb</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/data</Property>
-				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[1].path" Type="Path">../MEBs Latest Build/data</Property>
 				<Property Name="Destination[2].destName" Type="Str">Destination Directory</Property>
-				<Property Name="Destination[2].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build</Property>
-				<Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[2].path" Type="Path">../MEBs Latest Build</Property>
 				<Property Name="Destination[3].destName" Type="Str">Config</Property>
-				<Property Name="Destination[3].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/Config</Property>
-				<Property Name="Destination[3].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[3].path" Type="Path">../MEBs Latest Build/Config</Property>
 				<Property Name="Destination[4].destName" Type="Str">DigitalFilter</Property>
-				<Property Name="Destination[4].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/DigitalFilter</Property>
-				<Property Name="Destination[4].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[4].path" Type="Path">../MEBs Latest Build/DigitalFilter</Property>
 				<Property Name="Destination[5].destName" Type="Str">InputFiles</Property>
-				<Property Name="Destination[5].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/InputFiles</Property>
-				<Property Name="Destination[5].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[5].path" Type="Path">../MEBs Latest Build/InputFiles</Property>
 				<Property Name="Destination[6].destName" Type="Str">image</Property>
-				<Property Name="Destination[6].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/image</Property>
-				<Property Name="Destination[6].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[6].path" Type="Path">../MEBs Latest Build/image</Property>
 				<Property Name="Destination[7].destName" Type="Str">Exec</Property>
-				<Property Name="Destination[7].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/Exec</Property>
-				<Property Name="Destination[7].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[7].path" Type="Path">../MEBs Latest Build/Exec</Property>
 				<Property Name="Destination[8].destName" Type="Str">Logs</Property>
-				<Property Name="Destination[8].path" Type="Path">/C/Documents and Settings/All Users/Desktop/MEBs Latest Build/Logs</Property>
-				<Property Name="Destination[8].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[8].path" Type="Path">../MEBs Latest Build/Logs</Property>
 				<Property Name="DestinationCount" Type="Int">9</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{7969F39B-D6DA-4341-B76A-FBF11EDE246D}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{B41DB767-FA78-4CB2-80AC-D01348040B1D}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -412,14 +404,17 @@
 				<Property Name="Source[23].itemID" Type="Ref">/My Computer/Config</Property>
 				<Property Name="Source[23].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[23].type" Type="Str">Container</Property>
-				<Property Name="Source[24].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[24].itemID" Type="Ref">/My Computer/OperationManagerGlobal.vi</Property>
+				<Property Name="Source[24].destinationIndex" Type="Int">8</Property>
+				<Property Name="Source[24].itemID" Type="Ref">/My Computer/Logs/fake log.txt</Property>
 				<Property Name="Source[24].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[24].type" Type="Str">VI</Property>
-				<Property Name="Source[25].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[25].destinationIndex" Type="Int">7</Property>
-				<Property Name="Source[25].itemID" Type="Ref">/My Computer/Exec</Property>
-				<Property Name="Source[25].type" Type="Str">Container</Property>
+				<Property Name="Source[25].destinationIndex" Type="Int">2</Property>
+				<Property Name="Source[25].itemID" Type="Ref">/My Computer/OperationManagerGlobal.vi</Property>
+				<Property Name="Source[25].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[25].type" Type="Str">VI</Property>
+				<Property Name="Source[26].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[26].destinationIndex" Type="Int">7</Property>
+				<Property Name="Source[26].itemID" Type="Ref">/My Computer/Exec</Property>
+				<Property Name="Source[26].type" Type="Str">Container</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[3].itemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
@@ -446,7 +441,7 @@
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Data Transmission/Data Transmission Launcher.vi</Property>
 				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">26</Property>
+				<Property Name="SourceCount" Type="Int">27</Property>
 			</Item>
 		</Item>
 	</Item>
