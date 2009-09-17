@@ -256,6 +256,15 @@
 				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
 				<Item Name="Get String Text Bounds.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Get String Text Bounds.vi"/>
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
+				<Item Name="DAQmx Read (Counter 1D Pulse Freq 1 Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter 1D Pulse Freq 1 Chan NSamp).vi"/>
+				<Item Name="DAQmx Read (Counter 1D Pulse Ticks 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter 1D Pulse Ticks 1Chan NSamp).vi"/>
+				<Item Name="DAQmx Read (Counter 1D Pulse Time 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter 1D Pulse Time 1Chan NSamp).vi"/>
+				<Item Name="DAQmx Read (Counter Pulse Freq 1 Chan 1 Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter Pulse Freq 1 Chan 1 Samp).vi"/>
+				<Item Name="DAQmx Read (Counter Pulse Ticks 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter Pulse Ticks 1Chan 1Samp).vi"/>
+				<Item Name="DAQmx Read (Counter Pulse Time 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter Pulse Time 1Chan 1Samp).vi"/>
+				<Item Name="DAQmx Write (Counter 1D Frequency 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter 1D Frequency 1Chan NSamp).vi"/>
+				<Item Name="DAQmx Write (Counter 1D Ticks 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter 1D Ticks 1Chan NSamp).vi"/>
+				<Item Name="DAQmx Write (Counter 1D Time 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter 1D Time 1Chan NSamp).vi"/>
 			</Item>
 			<Item Name="RampHold.dll" Type="Document" URL="../lib/DLL/RampHold.dll"/>
 			<Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="../OperationManagerGlobal_Slave.vi"/>
@@ -280,8 +289,6 @@
 			<Item Name="Stiffness Jacobian Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Stiffness Jacobian Actions.ctl"/>
 			<Item Name="Mixed Mode Measurement Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Measurement Actions.ctl"/>
 			<Item Name="Volts 2 Actuator Measurments.vi" Type="VI" URL="../lib/Global Data/Volts 2 Actuator Measurments.vi"/>
-			<Item Name="Split Actuator Disp and Forces.vi" Type="VI" URL="../lib/Global Data/Split Actuator Disp and Forces.vi"/>
-			<Item Name="Join Act Measurments.vi" Type="VI" URL="../lib/Global Data/Join Act Measurments.vi"/>
 			<Item Name="Split Act Data.vi" Type="VI" URL="../lib/Global Data/Split Act Data.vi"/>
 			<Item Name="Split Actuator Measurement.vi" Type="VI" URL="../lib/Global Data/Split Actuator Measurement.vi"/>
 			<Item Name="Input Data.ctl" Type="VI" URL="../lib/Global Data/Input Data.ctl"/>
@@ -292,6 +299,24 @@
 			<Item Name="Control Loop Controls.ctl" Type="VI" URL="../lib/Control Loop Controls.ctl"/>
 			<Item Name="PlotInputData.vi" Type="VI" URL="../lib/PlotInputData.vi"/>
 			<Item Name="WriteTextData.vi" Type="VI" URL="../lib/WriteTextData.vi"/>
+			<Item Name="Double2WaveWithFlag.vi" Type="VI" URL="../lib/Double2WaveWithFlag.vi"/>
+			<Item Name="Digital Display Column.ctl" Type="VI" URL="../lib/Digital Display Column.ctl"/>
+			<Item Name="LBCB Settings Datastore.ctl" Type="VI" URL="../lib/LBCB Settings Datastore.ctl"/>
+			<Item Name="Control Loop Indicators.ctl" Type="VI" URL="../lib/Control Loop Indicators.ctl"/>
+			<Item Name="Data Transmission Parameters DAO.vi" Type="VI" URL="../../BeamColumnOm/Data Transmission/Data Transmission Parameters DAO.vi"/>
+			<Item Name="DAO Actions.ctl" Type="VI" URL="../../BeamColumnOm/lib/Global Data/DAO Actions.ctl"/>
+			<Item Name="Data Transmission Parameters.ctl" Type="VI" URL="../../BeamColumnOm/Data Transmission/Data Transmission Parameters.ctl"/>
+			<Item Name="Data Transmission State.ctl" Type="VI" URL="../../BeamColumnOm/Data Transmission/Data Transmission State.ctl"/>
+			<Item Name="Yes No Button.ctl" Type="VI" URL="../../BeamColumnOm/lib/Apps/Yes No Button.ctl"/>
+			<Item Name="On Off Button.ctl" Type="VI" URL="../../BeamColumnOm/lib/Apps/On Off Button.ctl"/>
+			<Item Name="Error Logger.vi" Type="VI" URL="../../BeamColumnOm/lib/Launcher/Error Logger.vi"/>
+			<Item Name="App Parameter Globals.vi" Type="VI" URL="../../BeamColumnOm/lib/Apps/App Parameter Globals.vi"/>
+			<Item Name="App Parameters.ctl" Type="VI" URL="../../BeamColumnOm/lib/Apps/App Parameters.ctl"/>
+			<Item Name="Timing Parameters.ctl" Type="VI" URL="../../BeamColumnOm/lib/Logging/Timing Parameters.ctl"/>
+			<Item Name="App Parameters Actions.ctl" Type="VI" URL="../../BeamColumnOm/lib/Apps/App Parameters Actions.ctl"/>
+			<Item Name="Data Transmission Actions.ctl" Type="VI" URL="../../BeamColumnOm/Data Transmission/Data Transmission Actions.ctl"/>
+			<Item Name="Control Point Suffix.ctl" Type="VI" URL="../../BeamColumnOm/lib/NTCP Client/Control Point Suffix.ctl"/>
+			<Item Name="TransmissionData.ctl" Type="VI" URL="../../BeamColumnOm/Data Transmission/TransmissionData.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
@@ -382,7 +407,7 @@
 				<Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[16].type" Type="Str">VI</Property>
 				<Property Name="Source[17].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[17].itemID" Type="Ref">/My Computer/Data Transmission/DataTransmissionActions.vi</Property>
+				<Property Name="Source[17].itemID" Type="Ref">/My Computer/Data Transmission/Data Transmission Parameters DAO.vi</Property>
 				<Property Name="Source[17].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[17].type" Type="Str">VI</Property>
 				<Property Name="Source[18].destinationIndex" Type="Int">0</Property>
@@ -390,7 +415,7 @@
 				<Property Name="Source[18].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[18].type" Type="Str">VI</Property>
 				<Property Name="Source[19].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[19].itemID" Type="Ref">/My Computer/Data Transmission/DataTransmissionTcpWriter.vi</Property>
+				<Property Name="Source[19].itemID" Type="Ref">/My Computer/Exec/DataTransmissionTcpWriter.vi</Property>
 				<Property Name="Source[19].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[19].type" Type="Str">VI</Property>
 				<Property Name="Source[2].Container.applyDestination" Type="Bool">true</Property>
@@ -402,7 +427,7 @@
 				<Property Name="Source[20].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[20].type" Type="Str">VI</Property>
 				<Property Name="Source[21].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[21].itemID" Type="Ref">/My Computer/Data Transmission/TransmitData.vi</Property>
+				<Property Name="Source[21].itemID" Type="Ref"></Property>
 				<Property Name="Source[21].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[21].type" Type="Str">VI</Property>
 				<Property Name="Source[22].Container.applyDestination" Type="Bool">true</Property>
