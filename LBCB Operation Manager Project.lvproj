@@ -225,7 +225,6 @@
 				<Item Name="String to Config Data.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/String to Config Data.vi"/>
 				<Item Name="Invalid Config Data Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Invalid Config Data Reference.vi"/>
 				<Item Name="Config Data Close Reference.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data Close Reference.vi"/>
-				<Item Name="NI_MABase.lvlib" Type="Library" URL="/&lt;vilib&gt;/measure/NI_MABase.lvlib"/>
 				<Item Name="Config Data RefNum" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Config Data RefNum"/>
 				<Item Name="DAQmx Stop Task.vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/configure/task.llb/DAQmx Stop Task.vi"/>
 				<Item Name="Read Key.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/Read Key.vi"/>
@@ -268,7 +267,6 @@
 			</Item>
 			<Item Name="RampHold.dll" Type="Document" URL="../lib/DLL/RampHold.dll"/>
 			<Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="../OperationManagerGlobal_Slave.vi"/>
-			<Item Name="MixedModeControl.vi" Type="VI" URL="../lib/MixedMode/MixedModeControl.vi"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -276,9 +274,6 @@
 			<Item Name="Adj Continuous Data Buffer.vi" Type="VI" URL="../lib/Global Data/Adj Continuous Data Buffer.vi"/>
 			<Item Name="Split Cart Data.vi" Type="VI" URL="../lib/Global Data/Split Cart Data.vi"/>
 			<Item Name="Slave Data DAO.vi" Type="VI" URL="../lib/Global Data/Slave Data DAO.vi"/>
-			<Item Name="FG_Execute.vi" Type="VI" URL="../lib/FG_Execute.vi"/>
-			<Item Name="FG_Auto.vi" Type="VI" URL="../lib/FG_Auto.vi"/>
-			<Item Name="FG_Pause.vi" Type="VI" URL="../lib/FG_Pause.vi"/>
 			<Item Name="GetChannelNameArray.vi" Type="VI" URL="../lib/GetChannelNameArray.vi"/>
 			<Item Name="Save Config Data.vi" Type="VI" URL="../lib/Save Config Data.vi"/>
 			<Item Name="Load Config Data.vi" Type="VI" URL="../lib/Load Config Data.vi"/>
@@ -287,9 +282,7 @@
 			<Item Name="Mixed Mode Parameters Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Parameters Actions.ctl"/>
 			<Item Name="Stiffness Jacobian Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Stiffness Jacobian Actions.ctl"/>
 			<Item Name="Mixed Mode Measurement Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Measurement Actions.ctl"/>
-			<Item Name="Volts 2 Actuator Measurments.vi" Type="VI" URL="../lib/Global Data/Volts 2 Actuator Measurments.vi"/>
 			<Item Name="Split Act Data.vi" Type="VI" URL="../lib/Global Data/Split Act Data.vi"/>
-			<Item Name="Split Actuator Measurement.vi" Type="VI" URL="../lib/Global Data/Split Actuator Measurement.vi"/>
 			<Item Name="Input Data.ctl" Type="VI" URL="../lib/Global Data/Input Data.ctl"/>
 			<Item Name="LBCB Type 2 String.vi" Type="VI" URL="../lib/Global Data/LBCB Type 2 String.vi"/>
 			<Item Name="Auto Balance Controller.vi" Type="VI" URL="../lib/Auto Balance Controller.vi"/>
@@ -297,11 +290,13 @@
 			<Item Name="Control Loop Controls.ctl" Type="VI" URL="../lib/Control Loop Controls.ctl"/>
 			<Item Name="PlotInputData.vi" Type="VI" URL="../lib/PlotInputData.vi"/>
 			<Item Name="WriteTextData.vi" Type="VI" URL="../lib/WriteTextData.vi"/>
-			<Item Name="Double2WaveWithFlag.vi" Type="VI" URL="../lib/Double2WaveWithFlag.vi"/>
 			<Item Name="Digital Display Column.ctl" Type="VI" URL="../lib/Digital Display Column.ctl"/>
 			<Item Name="LBCB Settings Datastore.ctl" Type="VI" URL="../lib/LBCB Settings Datastore.ctl"/>
 			<Item Name="Control Loop Indicators.ctl" Type="VI" URL="../lib/Control Loop Indicators.ctl"/>
 			<Item Name="Autobalance State DAO Delete.vi" Type="VI" URL="../Autobalance State DAO Delete.vi"/>
+			<Item Name="Quick Volt to Cart Conversion Delete.vi" Type="VI" URL="../Quick Volt to Cart Conversion Delete.vi"/>
+			<Item Name="Data Transmission Actions Old Delete.vi" Type="VI" URL="../Data Transmission Actions Old Delete.vi"/>
+			<Item Name="Load OM Setup.vi" Type="VI" URL="../lib/Data Access Objects/Application/Load OM Setup.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
@@ -388,7 +383,7 @@
 				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[15].type" Type="Str">VI</Property>
 				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[16].itemID" Type="Ref">/My Computer/Data Transmission/Data Transmission Test.vi</Property>
+				<Property Name="Source[16].itemID" Type="Ref"></Property>
 				<Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[16].type" Type="Str">VI</Property>
 				<Property Name="Source[17].destinationIndex" Type="Int">0</Property>
@@ -396,7 +391,7 @@
 				<Property Name="Source[17].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[17].type" Type="Str">VI</Property>
 				<Property Name="Source[18].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[18].itemID" Type="Ref">/My Computer/Data Transmission/DataTransmissionGlobals.vi</Property>
+				<Property Name="Source[18].itemID" Type="Ref"></Property>
 				<Property Name="Source[18].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[18].type" Type="Str">VI</Property>
 				<Property Name="Source[19].destinationIndex" Type="Int">0</Property>
@@ -408,7 +403,7 @@
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/IconFiles</Property>
 				<Property Name="Source[2].type" Type="Str">Container</Property>
 				<Property Name="Source[20].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[20].itemID" Type="Ref">/My Computer/Data Transmission/LaunchDataTransmissionTcpWriterVi.vi</Property>
+				<Property Name="Source[20].itemID" Type="Ref"></Property>
 				<Property Name="Source[20].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[20].type" Type="Str">VI</Property>
 				<Property Name="Source[21].destinationIndex" Type="Int">0</Property>
@@ -458,7 +453,7 @@
 				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[8].type" Type="Str">Container</Property>
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Data Transmission/Data Transmission Launcher.vi</Property>
+				<Property Name="Source[9].itemID" Type="Ref"></Property>
 				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">26</Property>
