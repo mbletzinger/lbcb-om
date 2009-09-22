@@ -296,7 +296,6 @@
 			<Item Name="Autobalance State DAO Delete.vi" Type="VI" URL="../Autobalance State DAO Delete.vi"/>
 			<Item Name="Quick Volt to Cart Conversion Delete.vi" Type="VI" URL="../Quick Volt to Cart Conversion Delete.vi"/>
 			<Item Name="Data Transmission Actions Old Delete.vi" Type="VI" URL="../Data Transmission Actions Old Delete.vi"/>
-			<Item Name="Load OM Setup.vi" Type="VI" URL="../lib/Data Access Objects/Application/Load OM Setup.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
