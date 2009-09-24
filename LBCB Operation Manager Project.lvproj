@@ -48,7 +48,7 @@
 		<Item Name="Sample Averaging Test.vi" Type="VI" URL="../Test Utilities/Sample Averaging Test.vi"/>
 		<Item Name="Time stamp test.vi" Type="VI" URL="../Test Utilities/Time stamp test.vi"/>
 		<Item Name="Tcp Test.vi" Type="VI" URL="../Test Utilities/Tcp Test.vi"/>
-		<Item Name="Original  LBCB Operation Manager.vi" Type="VI" URL="../Original  LBCB Operation Manager.vi"/>
+		<Item Name="Mixed Mode Widget.vi" Type="VI" URL="../Mixed Mode Widget.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -271,31 +271,12 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.6/resource/lvanlys.dll"/>
-			<Item Name="Adj Continuous Data Buffer.vi" Type="VI" URL="../lib/Global Data/Adj Continuous Data Buffer.vi"/>
-			<Item Name="Split Cart Data.vi" Type="VI" URL="../lib/Global Data/Split Cart Data.vi"/>
-			<Item Name="Slave Data DAO.vi" Type="VI" URL="../lib/Global Data/Slave Data DAO.vi"/>
 			<Item Name="GetChannelNameArray.vi" Type="VI" URL="../lib/GetChannelNameArray.vi"/>
-			<Item Name="Save Config Data.vi" Type="VI" URL="../lib/Save Config Data.vi"/>
-			<Item Name="Load Config Data.vi" Type="VI" URL="../lib/Load Config Data.vi"/>
-			<Item Name="LVDT Coeff Adjustment.vi" Type="VI" URL="../lib/LVDT Coeff Adjustment.vi"/>
 			<Item Name="Mixed Mode Parameters DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Parameters DAO.vi"/>
 			<Item Name="Mixed Mode Parameters Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Parameters Actions.ctl"/>
 			<Item Name="Stiffness Jacobian Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Stiffness Jacobian Actions.ctl"/>
-			<Item Name="Mixed Mode Measurement Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Measurement Actions.ctl"/>
-			<Item Name="Split Act Data.vi" Type="VI" URL="../lib/Global Data/Split Act Data.vi"/>
-			<Item Name="Input Data.ctl" Type="VI" URL="../lib/Global Data/Input Data.ctl"/>
-			<Item Name="LBCB Type 2 String.vi" Type="VI" URL="../lib/Global Data/LBCB Type 2 String.vi"/>
-			<Item Name="Auto Balance Controller.vi" Type="VI" URL="../lib/Auto Balance Controller.vi"/>
-			<Item Name="Autobalance Actions.ctl" Type="VI" URL="../lib/Autobalance Actions.ctl"/>
-			<Item Name="Control Loop Controls.ctl" Type="VI" URL="../lib/Control Loop Controls.ctl"/>
 			<Item Name="PlotInputData.vi" Type="VI" URL="../lib/PlotInputData.vi"/>
 			<Item Name="WriteTextData.vi" Type="VI" URL="../lib/WriteTextData.vi"/>
-			<Item Name="Digital Display Column.ctl" Type="VI" URL="../lib/Digital Display Column.ctl"/>
-			<Item Name="LBCB Settings Datastore.ctl" Type="VI" URL="../lib/LBCB Settings Datastore.ctl"/>
-			<Item Name="Control Loop Indicators.ctl" Type="VI" URL="../lib/Control Loop Indicators.ctl"/>
-			<Item Name="Autobalance State DAO Delete.vi" Type="VI" URL="../Autobalance State DAO Delete.vi"/>
-			<Item Name="Quick Volt to Cart Conversion Delete.vi" Type="VI" URL="../Quick Volt to Cart Conversion Delete.vi"/>
-			<Item Name="Data Transmission Actions Old Delete.vi" Type="VI" URL="../Data Transmission Actions Old Delete.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
@@ -362,11 +343,11 @@
 				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[11].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/Exec/Mixed Mode Widget.vi</Property>
+				<Property Name="Source[11].itemID" Type="Ref"></Property>
 				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[11].type" Type="Str">VI</Property>
 				<Property Name="Source[12].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/Exec/MixedModeStateMachine.vi</Property>
+				<Property Name="Source[12].itemID" Type="Ref"></Property>
 				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[12].type" Type="Str">VI</Property>
 				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
@@ -374,7 +355,7 @@
 				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[13].type" Type="Str">VI</Property>
 				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Exec/Slave OM.vi</Property>
+				<Property Name="Source[14].itemID" Type="Ref"></Property>
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[14].type" Type="Str">VI</Property>
 				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
