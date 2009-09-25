@@ -13,7 +13,16 @@
 		<Item Name="Config" Type="Folder" URL="../Config">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="Data Transmission" Type="Folder" URL="../Data Transmission">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="DigitalFilter" Type="Folder" URL="../DigitalFilter">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
+		<Item Name="DLL" Type="Folder" URL="../DLL">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
+		<Item Name="Exec" Type="Folder" URL="../Exec">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="IconFiles" Type="Folder" URL="../IconFiles">
@@ -28,27 +37,18 @@
 		<Item Name="lib" Type="Folder" URL="../lib">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="Logs" Type="Folder"/>
 		<Item Name="NTCP library" Type="Folder" URL="../NTCP library">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="DLL" Type="Folder" URL="../DLL">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
-		</Item>
-		<Item Name="Data Transmission" Type="Folder" URL="../Data Transmission">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
-		</Item>
-		<Item Name="Exec" Type="Folder" URL="../Exec">
-			<Property Name="NI.DISK" Type="Bool">true</Property>
-		</Item>
-		<Item Name="Logs" Type="Folder"/>
 		<Item Name="LBCB Operation Manager.vi" Type="VI" URL="../LBCB Operation Manager.vi"/>
 		<Item Name="Menu.rtm" Type="Document" URL="../Menu.rtm"/>
+		<Item Name="Mixed Mode Widget.vi" Type="VI" URL="../Mixed Mode Widget.vi"/>
 		<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
 		<Item Name="RampHoldTest.vi" Type="VI" URL="../Test Utilities/RampHoldTest.vi"/>
 		<Item Name="Sample Averaging Test.vi" Type="VI" URL="../Test Utilities/Sample Averaging Test.vi"/>
-		<Item Name="Time stamp test.vi" Type="VI" URL="../Test Utilities/Time stamp test.vi"/>
 		<Item Name="Tcp Test.vi" Type="VI" URL="../Test Utilities/Tcp Test.vi"/>
-		<Item Name="Mixed Mode Widget.vi" Type="VI" URL="../Mixed Mode Widget.vi"/>
+		<Item Name="Time stamp test.vi" Type="VI" URL="../Test Utilities/Time stamp test.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
