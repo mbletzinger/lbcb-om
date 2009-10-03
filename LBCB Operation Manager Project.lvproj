@@ -277,6 +277,7 @@
 			<Item Name="PlotInputData.vi" Type="VI" URL="../lib/PlotInputData.vi"/>
 			<Item Name="App Switches.vi" Type="VI" URL="../lib/Apps/App Switches.vi"/>
 			<Item Name="App Switch Actions.ctl" Type="VI" URL="../lib/Apps/App Switch Actions.ctl"/>
+			<Item Name="Mixed Mode Commands Actions Delete Me.ctl" Type="VI" URL="../Mixed Mode Commands Actions Delete Me.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
