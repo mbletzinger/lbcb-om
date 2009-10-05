@@ -254,6 +254,15 @@
 				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
 				<Item Name="Get String Text Bounds.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Get String Text Bounds.vi"/>
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
+				<Item Name="DAQmx Read (Counter 1D Pulse Freq 1 Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter 1D Pulse Freq 1 Chan NSamp).vi"/>
+				<Item Name="DAQmx Read (Counter 1D Pulse Ticks 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter 1D Pulse Ticks 1Chan NSamp).vi"/>
+				<Item Name="DAQmx Read (Counter 1D Pulse Time 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter 1D Pulse Time 1Chan NSamp).vi"/>
+				<Item Name="DAQmx Read (Counter Pulse Freq 1 Chan 1 Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter Pulse Freq 1 Chan 1 Samp).vi"/>
+				<Item Name="DAQmx Read (Counter Pulse Ticks 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter Pulse Ticks 1Chan 1Samp).vi"/>
+				<Item Name="DAQmx Read (Counter Pulse Time 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter Pulse Time 1Chan 1Samp).vi"/>
+				<Item Name="DAQmx Write (Counter 1D Frequency 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter 1D Frequency 1Chan NSamp).vi"/>
+				<Item Name="DAQmx Write (Counter 1D Ticks 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter 1D Ticks 1Chan NSamp).vi"/>
+				<Item Name="DAQmx Write (Counter 1D Time 1Chan NSamp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/write.llb/DAQmx Write (Counter 1D Time 1Chan NSamp).vi"/>
 			</Item>
 			<Item Name="RampHold.dll" Type="Document" URL="../lib/DLL/RampHold.dll"/>
 			<Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="../OperationManagerGlobal_Slave.vi"/>
@@ -269,6 +278,23 @@
 			<Item Name="App Switches.vi" Type="VI" URL="../lib/Apps/App Switches.vi"/>
 			<Item Name="App Switch Actions.ctl" Type="VI" URL="../lib/Apps/App Switch Actions.ctl"/>
 			<Item Name="Mixed Mode Commands Actions Delete Me.ctl" Type="VI" URL="../Mixed Mode Commands Actions Delete Me.ctl"/>
+			<Item Name="About LBCB Operation Manager.vi" Type="VI" URL="../Popups/About LBCB Operation Manager.vi"/>
+			<Item Name="App Parameters Dialog.vi" Type="VI" URL="../Popups/App Parameters Dialog.vi"/>
+			<Item Name="Auto Balance Loop.vi" Type="VI" URL="../Popups/Auto Balance Loop.vi"/>
+			<Item Name="Command Voltage Limit.vi" Type="VI" URL="../Popups/Command Voltage Limit.vi"/>
+			<Item Name="Data and Label.ctl" Type="VI" URL="../Popups/Data and Label.ctl"/>
+			<Item Name="Displacement Limit.vi" Type="VI" URL="../Popups/Displacement Limit.vi"/>
+			<Item Name="Jacobian Setup.vi" Type="VI" URL="../Popups/Jacobian Setup.vi"/>
+			<Item Name="LBCB Initialization &amp; Autobalancing.vi" Type="VI" URL="../Popups/LBCB Initialization &amp; Autobalancing.vi"/>
+			<Item Name="LBCB Position Popup.vi" Type="VI" URL="../Popups/LBCB Position Popup.vi"/>
+			<Item Name="Load Previous Command.vi" Type="VI" URL="../Popups/Load Previous Command.vi"/>
+			<Item Name="PID Loop Property.vi" Type="VI" URL="../Popups/PID Loop Property.vi"/>
+			<Item Name="Mixed Mode Parameters Dialog.vi" Type="VI" URL="../Popups/Mixed Mode Parameters Dialog.vi"/>
+			<Item Name="Offsets Widgets.vi" Type="VI" URL="../Popups/Offsets Widgets.vi"/>
+			<Item Name="Old Force Limit Delete Me.vi" Type="VI" URL="../Old Force Limit Delete Me.vi"/>
+			<Item Name="Save Offsets.vi" Type="VI" URL="../Popups/Save Offsets.vi"/>
+			<Item Name="Set Limit Type.ctl" Type="VI" URL="../Popups/Set Limit Type.ctl"/>
+			<Item Name="Update Actions.ctl" Type="VI" URL="../Popups/Update Actions.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
