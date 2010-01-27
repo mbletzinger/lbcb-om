@@ -4,8 +4,8 @@ use IO::Socket::INET;
 use File::Spec;
 use Cwd;
 
-my ($host, $port) = ("cee-neessmom2.cee.illinois.edu","6342");
-#my ($host, $port) = ("cee-neesit1.cee.illinois.edu","6342");
+#my ($host, $port) = ("cee-neessmom2.cee.illinois.edu","6342");
+my ($host, $port) = ("cee-neesstit1.cee.illinois.edu","6342");
 my $cwd =cwd();
 my @dirs = File::Spec->splitdir($cwd);
 my $dropped = pop @dirs;
