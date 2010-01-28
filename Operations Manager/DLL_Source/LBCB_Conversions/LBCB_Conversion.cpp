@@ -333,7 +333,7 @@ _declspec(dllexport) void LBCB_Conversion_Init(long size)
 		lplatformpin(1,6) = -30;
 		lplatformpin(2,6) = -24;
 		lplatformpin(3,6) = -12.875;
-	} else if (size == 2) { // Portable LBCB The sides are identical for now
+	} else if (size == 2) { // Portable LBCB 
 		rbasepin(1,2) = 19.299;
 		rbasepin(2,2) = 1.969;
 		rbasepin(3,2) = -4.980;
