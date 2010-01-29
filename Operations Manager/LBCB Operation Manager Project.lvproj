@@ -298,7 +298,6 @@
 			<Item Name="Buffer Actions.ctl" Type="VI" URL="../lib/Global Data/Buffer Actions.ctl"/>
 			<Item Name="StepData Buffer.vi" Type="VI" URL="../lib/Global Data/StepData Buffer.vi"/>
 			<Item Name="Data Transmission Parameters DAO.vi" Type="VI" URL="../Data Transmission/Data Transmission Parameters DAO.vi"/>
-			<Item Name="Command Offsets DAO.vi" Type="VI" URL="../lib/Data Access Objects/Calibration/Command Offsets DAO.vi"/>
 			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 8.6/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
