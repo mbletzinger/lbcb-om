@@ -36,9 +36,9 @@ void ErrorLogger::flush()
 }
 void ErrorLogger::setFile(string Filename)
 {
-	EnterCriticalSection(&critical_section);
+//	EnterCriticalSection(&critical_section);
 	LogFilename = Filename;
-	LeaveCriticalSection(&critical_section);
+//	LeaveCriticalSection(&critical_section);
 }
 void ErrorLogger::addedError()
 {
