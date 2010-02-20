@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\Documents and Settings\adminmbletzin\Desktop\Work\Operations Manager 2\DLL_Source\LBCB_Conversions&quot;"
+				AdditionalIncludeDirectories="&quot;C:\Documents and Settings\mbletzin\Desktop\Work\Operations Manager\DLL_Source\LBCB_Conversions&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"

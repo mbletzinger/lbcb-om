@@ -26,10 +26,11 @@ void ErrorLogger::flush()
 	prfx<<prefix<<"["<<threadid<<"]";
 
 	EnterCriticalSection(&critical_section);
-	ofstream Logout (LogFilename.c_str(), ios_base::out | ios_base::app);
+	string lfn = LogFilename;
+	LeaveCriticalSection(&critical_section);
+	ofstream Logout (lfn.c_str(), ios_base::out | ios_base::app);
 	Logout << prfx.str()<< ":START"<<endl<<ErrorStream->str()<<prfx.str()<<":END"<<endl;
 	Logout.close();
-	LeaveCriticalSection(&critical_section);
 	delete ErrorStream;
 	ErrorStream = new ostringstream();
 	ContainsErrors = false;

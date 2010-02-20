@@ -10,9 +10,9 @@
 
 using namespace std;
 
-#define MAX_THREADS 20
+#define MAX_THREADS 2
 
-const char* OutFileRoot = "c:\\Documents and Settings\\adminmbletzin\\Desktop\\Logs\\LBCB_ConversionTest";
+const char* OutFileRoot = "c:\\Documents and Settings\\mbletzin\\Desktop\\Logs\\LBCB_ConversionTest";
 DWORD WINAPI ThreadCalc( LPVOID lpParam );
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -20,10 +20,10 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	HANDLE  hThreadArray[MAX_THREADS]; 
 	DWORD   dwThreadIdArray[MAX_THREADS];
-	long size = 1;
+	long size = 2;
 	long type = 1;
-//	LBCB_Conversion_Init(size);
-//	LBCB_Conversion_SetErrorLogFile("c:\\Documents and Settings\\adminmbletzin\\Desktop\\Logs\\DLLError.txt",65);
+	LBCB_Conversion_Init(size);
+	LBCB_Conversion_SetErrorLogFile("c:\\Documents and Settings\\mbletzin\\Desktop\\Logs\\DLLError.txt",65);
 
 	for (int i=0; i < MAX_THREADS; i++) {
 		int* sleept = new int(1);
