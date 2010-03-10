@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <map>
 #include "ThreadLocalObjects.h"
+#include "ErrorLogger.h"
 
 using namespace std;
 
@@ -13,8 +14,9 @@ public:
 	~ThreadLocalFactory(void);
 	void SetLocalObjects(DWORD thread, ThreadLocalObjects* tlo);
 	ThreadLocalObjects* GetLocalObjects(DWORD thread);
-	static void InitCSV();
+	ErrorLogger* getErrorLog();
 private:
 	map<DWORD,ThreadLocalObjects*> ObjMap;
-	static CRITICAL_SECTION critical_section;
+	CriticalSection critical_section;
+	ErrorLogger* errors;
 };

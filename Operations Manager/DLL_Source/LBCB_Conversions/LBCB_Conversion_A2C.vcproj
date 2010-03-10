@@ -222,6 +222,10 @@
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 			>
 			<File
+				RelativePath=".\CriticalSection.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\ErrorLogger.cpp"
 				>
 			</File>
@@ -374,6 +378,10 @@
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl"
 			>
+			<File
+				RelativePath=".\CriticalSection.h"
+				>
+			</File>
 			<File
 				RelativePath=".\ErrorLogger.h"
 				>

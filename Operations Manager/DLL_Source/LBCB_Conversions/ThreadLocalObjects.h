@@ -12,7 +12,10 @@ public:
 	void SetMemoryCounterFactory(MemoryCounterFactory* mcnt);
 	MemoryCounterFactory* GetMemoryCounterFactory();
 	void AddMemoryCounter(string name);
+	void setThreadId(DWORD id);
+	void flush();
 private:
-	ErrorLogger* log;
-	MemoryCounterFactory* mcnt;
+	ErrorLogger* m_log;
+	MemoryCounterFactory* m_mcnt;
+	DWORD m_threadid;
 };

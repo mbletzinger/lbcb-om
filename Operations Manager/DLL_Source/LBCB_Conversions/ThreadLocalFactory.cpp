@@ -1,32 +1,32 @@
 
 #include "ThreadLocalFactory.h"
 #include <process.h>
-CRITICAL_SECTION ThreadLocalFactory::critical_section;
 
 ThreadLocalFactory::ThreadLocalFactory(void)
 {
+	errors = new ErrorLogger();
 }
 
 ThreadLocalFactory::~ThreadLocalFactory(void)
 {
-	DeleteCriticalSection(&critical_section);
 }
 void ThreadLocalFactory::SetLocalObjects(DWORD thread, ThreadLocalObjects* tlo)
 {
-	EnterCriticalSection(&critical_section);
+	critical_section.Enter();
+	tlo->SetErrorLogger(errors);
+	tlo->setThreadId(thread);
 	ObjMap[thread] = tlo;
-	LeaveCriticalSection(&critical_section);
+	critical_section.Leave();
 }
 ThreadLocalObjects* ThreadLocalFactory::GetLocalObjects(DWORD thread)
 {
 	ThreadLocalObjects* result;
-	EnterCriticalSection(&critical_section);
+	critical_section.Enter();
 	result =  ObjMap[thread];
-	LeaveCriticalSection(&critical_section);
+	critical_section.Leave();
 	return result;
 }
-void ThreadLocalFactory::InitCSV()
+ErrorLogger* ThreadLocalFactory::getErrorLog()
 {
-	InitializeCriticalSection(&critical_section);
+	return errors;
 }
-

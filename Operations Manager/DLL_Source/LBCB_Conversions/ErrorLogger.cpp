@@ -1,62 +1,52 @@
-#include "ErrorLogger.h"
 #include <fstream>
 using namespace std;
-
-CRITICAL_SECTION ErrorLogger::critical_section;
-string ErrorLogger::LogFilename("c:\\LbcbDllLog.txt");
-
-ErrorLogger::ErrorLogger(DWORD id) : threadid(id)
-{
-	ContainsErrors = false;
-	ErrorStream = new ostringstream();
-}
+#include "ErrorLogger.h"
 
 ErrorLogger::~ErrorLogger(void)
 {
+	m_ContainsErrors = false;
+	m_ErrorStream = new ostringstream();
+	m_LogFilename = "c:\\LbcbDllLog.txt";
 }
 void ErrorLogger::SetPrefix(string pfx)
 {
-	prefix = pfx;
+	m_prefix = pfx;
 }
 
-void ErrorLogger::flush()
+void ErrorLogger::flush(DWORD threadid)
 {
-	if(! ContainsErrors) return;
+	if(! m_ContainsErrors) return;
 	ostringstream prfx;
-	prfx<<prefix<<"["<<threadid<<"]";
+	prfx<<m_prefix<<"["<<threadid<<"]";
 
-	EnterCriticalSection(&critical_section);
-	string lfn = LogFilename;
-	LeaveCriticalSection(&critical_section);
-	ofstream Logout (lfn.c_str(), ios_base::out | ios_base::app);
-	Logout << prfx.str()<< ":START"<<endl<<ErrorStream->str()<<prfx.str()<<":END"<<endl;
-	Logout.close();
-	delete ErrorStream;
-	ErrorStream = new ostringstream();
-	ContainsErrors = false;
+	m_CriticalSection.Enter();
+	string lfn = m_LogFilename;
+	m_CriticalSection.Leave();
+//	ofstream Logout (lfn.c_str(), ios_base::out | ios_base::app);
+//	Logout << prfx.str()<< ":START"<<endl<<m_ErrorStream->str()<<prfx.str()<<":END"<<endl;
+//	Logout.close();
+//	delete m_ErrorStream;
+//	m_ErrorStream = new ostringstream();
+	m_ContainsErrors = false;
 }
 void ErrorLogger::setFile(string Filename)
 {
-	EnterCriticalSection(&critical_section);
-	LogFilename = Filename;
-	LeaveCriticalSection(&critical_section);
+	m_CriticalSection.Enter();
+	m_LogFilename = Filename;
+	m_CriticalSection.Leave();
 }
 void ErrorLogger::addedError()
 {
-	*ErrorStream << endl;
-	ContainsErrors = true;
+	*m_ErrorStream << endl;
+	m_ContainsErrors = true;
 }
 
 bool ErrorLogger::hasError()
 {
-	return ContainsErrors;
+	return m_ContainsErrors;
 	}
 
 ostream& ErrorLogger::getErrorStream()
 {
-	return *ErrorStream;
-}
-void ErrorLogger::InitCSV()
-{
-	InitializeCriticalSection(&critical_section);
+	return *m_ErrorStream;
 }

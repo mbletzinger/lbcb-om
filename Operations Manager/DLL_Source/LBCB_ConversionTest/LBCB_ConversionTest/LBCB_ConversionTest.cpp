@@ -13,6 +13,7 @@ using namespace std;
 #define MAX_THREADS 2
 
 const char* OutFileRoot = "c:\\Documents and Settings\\mbletzin\\Desktop\\Logs\\LBCB_ConversionTest";
+char* ErrorFile = "c:\\Documents and Settings\\mbletzin\\Desktop\\Logs\\DLLError.txt";
 DWORD WINAPI ThreadCalc( LPVOID lpParam );
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -22,8 +23,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	DWORD   dwThreadIdArray[MAX_THREADS];
 	long size = 2;
 	long type = 1;
-	LBCB_Conversion_Init(size);
-	LBCB_Conversion_SetErrorLogFile("c:\\Documents and Settings\\mbletzin\\Desktop\\Logs\\DLLError.txt",65);
+	LBCB_Conversion_Init(size, ErrorFile,(int)strlen(ErrorFile));
 
 	for (int i=0; i < MAX_THREADS; i++) {
 		int* sleept = new int(1);
@@ -64,7 +64,7 @@ DWORD WINAPI ThreadCalc( LPVOID lpParam )
 	string filename = filenamestrm.str();
 	long type = 0;
 
-	for (int r=1; r <= 300; r++) { 
+	for (int r=1; r <= 30; r++) { 
 		LBCB_Conversion_A2C(type, motion_center,length, sensor_readings, cartesian_value,&error);
 		LBCB_conversion_C2A(type, motion_center, return_sensor_readings, cartesian_value, &error);
 		ofstream Logout (filename.c_str(), ios_base::out | ios_base::app);

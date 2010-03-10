@@ -25,12 +25,11 @@ ThreadLocalObjects* GetThreadLocalObjects()
 
 	DWORD threadid = GetCurrentThreadId();
 	if(tspace == NULL) {
-		ErrorLogger::InitCSV();
-		ErrorLogger elog(threadid);
+		ErrorLogger elog;
 		elog.getErrorStream()<<"LBCB_Conversions has not been initialized";
 		elog.addedError();
 		elog.SetPrefix("Main");
-		elog.flush();
+		elog.flush(0);
 		return NULL;
 	}
 	ThreadLocalObjects* tlo = tspace->GetLocalObjects(threadid);
@@ -38,10 +37,8 @@ ThreadLocalObjects* GetThreadLocalObjects()
 	{
 		return tlo;
 	}
-	ErrorLogger* elog = new ErrorLogger(threadid);
 	MemoryCounterFactory* mcf = new MemoryCounterFactory(); 
 	tlo = new ThreadLocalObjects();
-	tlo->SetErrorLogger(elog);
 	tlo->SetMemoryCounterFactory(mcf);
 	tlo->AddMemoryCounter(string("LBCB"));
 	tlo->AddMemoryCounter(string("LBCB_Actuator"));
@@ -58,18 +55,18 @@ ThreadLocalObjects* GetThreadLocalObjects()
 int ProcessErrors(string name, ThreadLocalObjects* tlo)
 {
 	int result = 0;
-	ErrorLogger* elog = tlo->GetErrorLogger();
+	ErrorLogger* elog = tspace->getErrorLog();
 	elog->SetPrefix(name);
 	if(elog->hasError()) {
 		result = 1;
-		elog->flush();
+		tlo->flush();
 	}
 
 	MemoryCounterFactory* mcf = tlo->GetMemoryCounterFactory(); 
 	if(mcf->IsRunCounterExpired())
 	{
 		mcf->LogMemoryUse();
-		elog->flush();
+		tlo->flush();
 	}
 	return result;
 }
@@ -155,11 +152,9 @@ _declspec(dllexport) void LBCB_conversion_C2A(long type, double motion_center[],
 
 }
 
-_declspec(dllexport) void LBCB_Conversion_Init(long size)
+_declspec(dllexport) void LBCB_Conversion_Init(long size,char* filename, long length)
 {
 
-	ThreadLocalFactory::InitCSV();
-	ErrorLogger::InitCSV();
 	tspace = new ThreadLocalFactory();
 	ThreadLocalObjects* tlo = GetThreadLocalObjects();
 	MATRIX rbasepin(3,6,tlo), rplatformpin(3,6,tlo), lbasepin(3,6,tlo), lplatformpin(3,6,tlo);
@@ -420,16 +415,12 @@ _declspec(dllexport) void LBCB_Conversion_Init(long size)
 	}
 
 	LBCB_Parameters::Create(rbasepin, rplatformpin, lbasepin, lplatformpin, tlo );
-	ErrorLogger* elog = tlo->GetErrorLogger();
-	elog->SetPrefix("LBCB_Conversion_Init");
-
-	MemoryCounterFactory* mcf = tlo->GetMemoryCounterFactory(); 
-	mcf->LogMemoryUse();
-	elog->flush();
+	LBCB_Conversion_SetErrorLogFile(filename,length);
+	ProcessErrors("LBCB_Conversion_Init",tlo);
 }
 
 _declspec(dllexport) void LBCB_Conversion_SetErrorLogFile(char* filename, long length)
 {
 	string Filename(filename,filename + length);
-	ErrorLogger::setFile(Filename);
+	tspace->getErrorLog()->setFile(Filename);
 }

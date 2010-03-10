@@ -10,22 +10,28 @@ ThreadLocalObjects::~ThreadLocalObjects(void)
 }
 void ThreadLocalObjects::SetErrorLogger(ErrorLogger* elog)
 {
-	log = elog;
+	m_log = elog;
 }
 ErrorLogger* ThreadLocalObjects::GetErrorLogger()
 {
-	return log;
+	return m_log;
 }
 void ThreadLocalObjects::SetMemoryCounterFactory(MemoryCounterFactory* lmcnt)
 {
-	mcnt = lmcnt;
+	m_mcnt = lmcnt;
 }
 MemoryCounterFactory* ThreadLocalObjects::GetMemoryCounterFactory()
 {
-	return mcnt;
+	return m_mcnt;
 }
 void ThreadLocalObjects::AddMemoryCounter(string name) {
 	MemoryCounter* mc = new MemoryCounter(name);
-	mcnt->SetMemoryCounter(name,mc);
-	mc->SetErrorLogger(log);
+	m_mcnt->SetMemoryCounter(name,mc);
+	mc->SetErrorLogger(m_log);
+}
+void ThreadLocalObjects::flush() {
+	m_log->flush(m_threadid);
+}
+void ThreadLocalObjects::setThreadId(DWORD id) {
+	m_threadid = id;
 }
