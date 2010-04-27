@@ -1,5 +1,0 @@
-FILE DELETED
-------------
-
-Antigen for Exchange removed LBCB_OM.zip__NTCP Socket.exe since it
-was found to match the FILE FILTER= unnamed: *.exe file filter.
