@@ -50,6 +50,7 @@
 		<Item Name="LBCB Operation Manager.vi" Type="VI" URL="../LBCB Operation Manager.vi"/>
 		<Item Name="Menu.rtm" Type="Document" URL="../Menu.rtm"/>
 		<Item Name="Mixed Mode Widget.vi" Type="VI" URL="../Mixed Mode Widget.vi"/>
+		<Item Name="Autobalance.ico" Type="Document" URL="../IconFiles/Autobalance.ico"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -254,7 +255,7 @@
 			<Item Name="Data Transmission Parameters DAO.vi" Type="VI" URL="../Data Transmission/Data Transmission Parameters DAO.vi"/>
 			<Item Name="Data Transmission Actions Old Delete.vi" Type="VI" URL="../Data Transmission Actions Old Delete.vi"/>
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
@@ -420,11 +421,11 @@
 				<Property Name="Destination[7].destName" Type="Str">Logs</Property>
 				<Property Name="Destination[7].path" Type="Path">../OM Latest Build/Logs</Property>
 				<Property Name="DestinationCount" Type="Int">8</Property>
-				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
+				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/Setup.ico</Property>
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{42098D89-7796-431F-8D48-E33885BEB86F}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{AA13D0EE-D465-44C5-8D14-33D79DA1DAF0}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -493,6 +494,85 @@
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Exec/NTCP Socket.vi</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">21</Property>
+			</Item>
+			<Item Name="Calibration" Type="EXE">
+				<Property Name="App_applicationGUID" Type="Str">{F8A5BEA2-3AD2-42C0-8EEB-A63A1019A0C4}</Property>
+				<Property Name="App_applicationName" Type="Str">Calibration.exe</Property>
+				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
+				<Property Name="App_fileDescription" Type="Str">Calibration</Property>
+				<Property Name="App_fileVersion.major" Type="Int">1</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{DBDB76A3-C81C-4541-827B-147033AE1A51}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{65AEB58B-1941-4748-A50B-CD3C15E34B5F}</Property>
+				<Property Name="App_internalName" Type="Str">Calibration</Property>
+				<Property Name="App_legalCopyright" Type="Str">Copyright © 2010 University of Illinois</Property>
+				<Property Name="App_productName" Type="Str">Calibration</Property>
+				<Property Name="App_winsec.description" Type="Str">http://www.University of Illinois.com</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Calibration</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Destination[0].destName" Type="Str">Calibration.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/Calibration.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/data</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/Scales.ico</Property>
+				<Property Name="Source[0].itemID" Type="Str">{01DFAC2E-C959-4542-918B-B702681870CE}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Popups/Calibration.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
+			</Item>
+			<Item Name="Autobalance Test" Type="EXE">
+				<Property Name="App_applicationGUID" Type="Str">{78125BF1-80DA-474C-948A-9633B0737165}</Property>
+				<Property Name="App_applicationName" Type="Str">AutobalanceTest.exe</Property>
+				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
+				<Property Name="App_fileDescription" Type="Str">Autobalance Test</Property>
+				<Property Name="App_fileVersion.major" Type="Int">1</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{ACAECD7A-2F73-4387-858D-197E5F9AFAC0}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{8BCE91A5-B009-4031-8605-9F861DEE7FE8}</Property>
+				<Property Name="App_internalName" Type="Str">Autobalance Test</Property>
+				<Property Name="App_legalCopyright" Type="Str">Copyright © 2010 University of Illinois</Property>
+				<Property Name="App_productName" Type="Str">Autobalance Test</Property>
+				<Property Name="App_winsec.description" Type="Str">http://www.University of Illinois.com</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">Autobalance Test</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Destination[0].destName" Type="Str">AutobalanceTest.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/AutobalanceTest.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/data</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/Autobalance.ico</Property>
+				<Property Name="Source[0].itemID" Type="Str">{01DFAC2E-C959-4542-918B-B702681870CE}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Popups/AutobalanceTest.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/Autobalance Test Data.txt</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/ScrewyYiX1Autobalance.txt</Property>
+				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/OneBoxFifthAutobalanceLog.txt</Property>
+				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/pLbcbLog2.txt</Property>
+				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/Log_2ndpLbcbPosition.txt</Property>
+				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="SourceCount" Type="Int">7</Property>
 			</Item>
 		</Item>
 	</Item>
