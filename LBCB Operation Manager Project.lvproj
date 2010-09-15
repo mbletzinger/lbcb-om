@@ -536,7 +536,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/Scales.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{F76D8D6D-CBEA-45F9-B51D-C4072FC57DBC}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{FF14B90C-5DCC-4201-936B-7C385A7DED5E}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Popups/Calibration.vi</Property>
