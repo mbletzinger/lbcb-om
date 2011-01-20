@@ -263,10 +263,10 @@
 				<Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">2</Property>
+				<Property Name="App_fileVersion.build" Type="Int">1</Property>
 				<Property Name="App_fileVersion.major" Type="Int">3</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">1</Property>
-				<Property Name="App_fileVersion.patch" Type="Int">1</Property>
+				<Property Name="App_fileVersion.patch" Type="Int">2</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{2C4F13AB-15A9-450C-9083-C3C7C0D1641F}</Property>
 				<Property Name="App_internalName" Type="Str">OM</Property>
@@ -310,7 +310,7 @@
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{92634CE0-9478-4ECB-B465-CD80D0238E78}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{074BA80B-58D4-49E3-AB60-60F0D46654F4}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -549,9 +549,12 @@
 			<Item Name="Autobalance Test" Type="EXE">
 				<Property Name="App_applicationGUID" Type="Str">{78125BF1-80DA-474C-948A-9633B0737165}</Property>
 				<Property Name="App_applicationName" Type="Str">AutobalanceTest.exe</Property>
+				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
 				<Property Name="App_fileDescription" Type="Str">Autobalance Test</Property>
+				<Property Name="App_fileVersion.build" Type="Int">1</Property>
 				<Property Name="App_fileVersion.major" Type="Int">1</Property>
+				<Property Name="App_fileVersion.minor" Type="Int">1</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{ACAECD7A-2F73-4387-858D-197E5F9AFAC0}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{8BCE91A5-B009-4031-8605-9F861DEE7FE8}</Property>
 				<Property Name="App_internalName" Type="Str">Autobalance Test</Property>
@@ -572,7 +575,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/Autobalance.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{92634CE0-9478-4ECB-B465-CD80D0238E78}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{074BA80B-58D4-49E3-AB60-60F0D46654F4}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Popups/AutobalanceTest.vi</Property>
