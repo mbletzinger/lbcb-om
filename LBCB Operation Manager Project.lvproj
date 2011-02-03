@@ -50,6 +50,8 @@
 		<Item Name="LBCB Operation Manager.vi" Type="VI" URL="../LBCB Operation Manager.vi"/>
 		<Item Name="Menu.rtm" Type="Document" URL="../Menu.rtm"/>
 		<Item Name="Mixed Mode Widget.vi" Type="VI" URL="../Mixed Mode Widget.vi"/>
+		<Item Name="Load Offsets.vi" Type="VI" URL="../Popups/Load Offsets.vi"/>
+		<Item Name="Parse Offsets.vi" Type="VI" URL="../lib/Global Data/Parse Offsets.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -235,6 +237,8 @@
 				<Item Name="DAQmx Read (Counter Pulse Time 1Chan 1Samp).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/read.llb/DAQmx Read (Counter Pulse Time 1Chan 1Samp).vi"/>
 				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
 				<Item Name="NI_Gmath.lvlib" Type="Library" URL="/&lt;vilib&gt;/gmath/NI_Gmath.lvlib"/>
+				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
+				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
 			</Item>
 			<Item Name="RampHold.dll" Type="Document" URL="../lib/DLL/RampHold.dll"/>
 			<Item Name="OperationManagerGlobal_Slave.vi" Type="VI" URL="../OperationManagerGlobal_Slave.vi"/>
