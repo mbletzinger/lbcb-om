@@ -50,9 +50,6 @@
 		<Item Name="LBCB Operation Manager.vi" Type="VI" URL="../LBCB Operation Manager.vi"/>
 		<Item Name="Menu.rtm" Type="Document" URL="../Menu.rtm"/>
 		<Item Name="Mixed Mode Widget.vi" Type="VI" URL="../Mixed Mode Widget.vi"/>
-		<Item Name="Average All.vi" Type="VI" URL="../lib/Control Loop/Average All.vi"/>
-		<Item Name="MM Result Actions.ctl" Type="VI" URL="../lib/Control Loop/MM Result Actions.ctl"/>
-		<Item Name="Cntrl Loop Actuator Out 2 MM Comand.vi" Type="VI" URL="../lib/Control Loop/Cntrl Loop Actuator Out 2 MM Comand.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -259,7 +256,7 @@
 			<Item Name="StepData Buffer.vi" Type="VI" URL="../lib/Global Data/StepData Buffer.vi"/>
 			<Item Name="Data Transmission Parameters DAO.vi" Type="VI" URL="../Data Transmission/Data Transmission Parameters DAO.vi"/>
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
