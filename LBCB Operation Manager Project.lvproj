@@ -50,6 +50,9 @@
 		<Item Name="LBCB Operation Manager.vi" Type="VI" URL="../LBCB Operation Manager.vi"/>
 		<Item Name="Menu.rtm" Type="Document" URL="../Menu.rtm"/>
 		<Item Name="Mixed Mode Widget.vi" Type="VI" URL="../Mixed Mode Widget.vi"/>
+		<Item Name="Average All.vi" Type="VI" URL="../lib/Control Loop/Average All.vi"/>
+		<Item Name="MM Result Actions.ctl" Type="VI" URL="../lib/Control Loop/MM Result Actions.ctl"/>
+		<Item Name="Cntrl Loop Actuator Out 2 MM Comand.vi" Type="VI" URL="../lib/Control Loop/Cntrl Loop Actuator Out 2 MM Comand.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
