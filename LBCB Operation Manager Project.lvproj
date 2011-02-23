@@ -50,12 +50,9 @@
 		<Item Name="LBCB Operation Manager.vi" Type="VI" URL="../LBCB Operation Manager.vi"/>
 		<Item Name="Menu.rtm" Type="Document" URL="../Menu.rtm"/>
 		<Item Name="Mixed Mode Widget.vi" Type="VI" URL="../Mixed Mode Widget.vi"/>
-		<Item Name="Actuator Controls.ctl" Type="VI" URL="../../CombinedControl OM/lib/Calibration/Actuator Controls.ctl"/>
-		<Item Name="Actuator Controls 2 Array.vi" Type="VI" URL="../../CombinedControl OM/lib/Calibration/Actuator Controls 2 Array.vi"/>
-		<Item Name="Array 2 Actuator Controls.vi" Type="VI" URL="../../CombinedControl OM/lib/Calibration/Array 2 Actuator Controls.vi"/>
-		<Item Name="Cal Autobalance Loop States.ctl" Type="VI" URL="../lib/Calibration/Cal Autobalance Loop States.ctl"/>
-		<Item Name="Cal Autobalance State.ctl" Type="VI" URL="../lib/Calibration/Cal Autobalance State.ctl"/>
-		<Item Name="Autobalance State 2 Cal Autobalance State.vi" Type="VI" URL="../lib/Calibration/Autobalance State 2 Cal Autobalance State.vi"/>
+		<Item Name="Actuator Controls.ctl" Type="VI" URL="../lib/Calibration/Actuator Controls.ctl"/>
+		<Item Name="Actuator Controls 2 Array.vi" Type="VI" URL="../lib/Calibration/Actuator Controls 2 Array.vi"/>
+		<Item Name="Array 2 Actuator Controls.vi" Type="VI" URL="../lib/Calibration/Array 2 Actuator Controls.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -262,7 +259,7 @@
 			<Item Name="StepData Buffer.vi" Type="VI" URL="../lib/Global Data/StepData Buffer.vi"/>
 			<Item Name="Data Transmission Parameters DAO.vi" Type="VI" URL="../Data Transmission/Data Transmission Parameters DAO.vi"/>
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
