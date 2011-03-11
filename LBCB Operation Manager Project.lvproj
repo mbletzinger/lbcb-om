@@ -256,7 +256,7 @@
 			<Item Name="StepData Buffer.vi" Type="VI" URL="../lib/Global Data/StepData Buffer.vi"/>
 			<Item Name="Data Transmission Parameters DAO.vi" Type="VI" URL="../Data Transmission/Data Transmission Parameters DAO.vi"/>
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
@@ -264,7 +264,7 @@
 				<Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">3</Property>
+				<Property Name="App_fileVersion.build" Type="Int">4</Property>
 				<Property Name="App_fileVersion.major" Type="Int">3</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">1</Property>
 				<Property Name="App_fileVersion.patch" Type="Int">3</Property>
@@ -391,7 +391,7 @@
 				<Property Name="App_applicationName" Type="Str">OM Setup.exe</Property>
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">1</Property>
+				<Property Name="App_fileVersion.build" Type="Int">2</Property>
 				<Property Name="App_fileVersion.major" Type="Int">3</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">1</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{8F1B6CF8-A334-4A21-B771-F6AAB1099971}</Property>
@@ -505,7 +505,7 @@
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
 				<Property Name="App_fileDescription" Type="Str">Calibration</Property>
-				<Property Name="App_fileVersion.build" Type="Int">1</Property>
+				<Property Name="App_fileVersion.build" Type="Int">2</Property>
 				<Property Name="App_fileVersion.major" Type="Int">1</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{DBDB76A3-C81C-4541-827B-147033AE1A51}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{65AEB58B-1941-4748-A50B-CD3C15E34B5F}</Property>
@@ -539,7 +539,7 @@
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
 				<Property Name="App_fileDescription" Type="Str">Autobalance Test</Property>
-				<Property Name="App_fileVersion.build" Type="Int">10</Property>
+				<Property Name="App_fileVersion.build" Type="Int">11</Property>
 				<Property Name="App_fileVersion.major" Type="Int">1</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">1</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{ACAECD7A-2F73-4387-858D-197E5F9AFAC0}</Property>
