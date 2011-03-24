@@ -308,7 +308,7 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Exec/DataTransmissionTcpWriter.vi</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Exec/DaqLink.vi</Property>
 				<Property Name="Source[10].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[11].Container.applyDestination" Type="Bool">true</Property>
@@ -329,7 +329,7 @@
 				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[14].type" Type="Str">VI</Property>
 				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Exec/Cartesian Time Plot.vi</Property>
+				<Property Name="Source[15].itemID" Type="Ref"></Property>
 				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[15].type" Type="Str">VI</Property>
 				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
@@ -433,7 +433,7 @@
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Exec/DataTransmissionTcpWriter.vi</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Exec/DaqLink.vi</Property>
 				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[11].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[11].itemID" Type="Ref">/My Computer/DigitalFilter</Property>
@@ -452,7 +452,7 @@
 				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Exec/Autobalance Monitor.vi</Property>
 				<Property Name="Source[14].type" Type="Str">VI</Property>
 				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Exec/Cartesian Time Plot.vi</Property>
+				<Property Name="Source[15].itemID" Type="Ref"></Property>
 				<Property Name="Source[15].type" Type="Str">VI</Property>
 				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[16].itemID" Type="Ref">/My Computer/Exec/Data Archiving.vi</Property>
