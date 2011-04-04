@@ -255,7 +255,6 @@
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
 			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 			<Item Name="Caclulate Maximum Deviation.vi" Type="VI" URL="../lib/Calibration/Caclulate Maximum Deviation.vi"/>
-			<Item Name="Double2WaveWithFlag2 Signals.vi" Type="VI" URL="../lib/Data Display/Double2WaveWithFlag2 Signals.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
