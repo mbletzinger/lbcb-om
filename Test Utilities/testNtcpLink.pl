@@ -3,7 +3,7 @@
 use IO::Socket::INET;
 
 
-my ($host, $port) = ("cee-neesstit1.cee.illinois.edu","6342");
+my ($host, $port) = ("127.0.0.1","6342");
 #my ($host, $port) = ("192.168.1.101","5057");
 
 my $socket = new IO::Socket::INET(
@@ -28,9 +28,13 @@ for my $i (1..500) {
 	$month++;
 	print "$mon/$mday/$year";
 	sendCommand("propose\ttrans$year$month$mday$hour$min$sec.320\tMDL-00-01\tx\tdisplacement\t$increment");
-	receiveCommand();
+	if(receiveCommand()) {
+          next;
+        }
 	sendCommand("execute\ttrans$year$month$mday$hour$min$sec.320");
-	receiveCommand();
+	if(receiveCommand()) {
+          next;
+        }
 	sendCommand("get-control-point\tdummy\tMDL-00-01:LBCB1");
 	receiveCommand();
 	sendCommand("get-control-point\tdummy\tMDL-00-01:ExternalSensors");
@@ -55,4 +59,5 @@ sub receiveCommand {
 	my $result = <$socket>;
 	chomp $result;
 	print "Received [$result]\n";
+        return $result =~ m!NOK!;
 }
