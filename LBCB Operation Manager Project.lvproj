@@ -54,6 +54,9 @@
 		<Item Name="OM Setup.vi" Type="VI" URL="../OM Setup.vi"/>
 		<Item Name="AutobalanceTest.vi" Type="VI" URL="../AutobalanceTest.vi"/>
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
+		<Item Name="Mixed Mode Force Group Priorities DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Force Group Priorities DAO.vi"/>
+		<Item Name="Stiffness Limits DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Stiffness Limits DAO.vi"/>
+		<Item Name="Force Control Parameters.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Force Control Parameters.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
