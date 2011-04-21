@@ -54,9 +54,6 @@
 		<Item Name="OM Setup.vi" Type="VI" URL="../OM Setup.vi"/>
 		<Item Name="AutobalanceTest.vi" Type="VI" URL="../AutobalanceTest.vi"/>
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
-		<Item Name="Mixed Mode Force Group Priorities DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Force Group Priorities DAO.vi"/>
-		<Item Name="Stiffness Limits DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Stiffness Limits DAO.vi"/>
-		<Item Name="Force Control Parameters.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Force Control Parameters.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -260,7 +257,7 @@
 			<Item Name="StepData Buffer.vi" Type="VI" URL="../lib/Global Data/StepData Buffer.vi"/>
 			<Item Name="Data Transmission Parameters DAO.vi" Type="VI" URL="../Data Transmission/Data Transmission Parameters DAO.vi"/>
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
