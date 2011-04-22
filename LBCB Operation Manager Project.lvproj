@@ -249,15 +249,8 @@
 			<Item Name="Mixed Mode Parameters Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Parameters Actions.ctl"/>
 			<Item Name="Stiffness Jacobian Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Stiffness Jacobian Actions.ctl"/>
 			<Item Name="PlotInputData.vi" Type="VI" URL="../lib/PlotInputData.vi"/>
-			<Item Name="App Switches.vi" Type="VI" URL="../lib/Apps/App Switches.vi"/>
-			<Item Name="App Switch Actions.ctl" Type="VI" URL="../lib/Apps/App Switch Actions.ctl"/>
-			<Item Name="Mixed Mode Commands Actions Delete Me.ctl" Type="VI" URL="../Mixed Mode Commands Actions Delete Me.ctl"/>
-			<Item Name="Continuous Data Buffer.vi" Type="VI" URL="../lib/Global Data/Continuous Data Buffer.vi"/>
-			<Item Name="Buffer Actions.ctl" Type="VI" URL="../lib/Global Data/Buffer Actions.ctl"/>
-			<Item Name="StepData Buffer.vi" Type="VI" URL="../lib/Global Data/StepData Buffer.vi"/>
-			<Item Name="Data Transmission Parameters DAO.vi" Type="VI" URL="../Data Transmission/Data Transmission Parameters DAO.vi"/>
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
