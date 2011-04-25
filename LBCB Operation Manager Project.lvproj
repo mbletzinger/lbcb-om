@@ -257,7 +257,7 @@
 			<Item Name="StepData Buffer.vi" Type="VI" URL="../lib/Global Data/StepData Buffer.vi"/>
 			<Item Name="Data Transmission Parameters DAO.vi" Type="VI" URL="../Data Transmission/Data Transmission Parameters DAO.vi"/>
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
@@ -265,7 +265,7 @@
 				<Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">1</Property>
+				<Property Name="App_fileVersion.build" Type="Int">4</Property>
 				<Property Name="App_fileVersion.major" Type="Int">3</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
@@ -311,7 +311,7 @@
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{8DD990DF-E1CB-4207-AEA8-E7B458D1DB32}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{A464F594-B5E6-46FA-AF27-2BAE28F8ABED}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -319,7 +319,6 @@
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Exec/DaqLink.vi</Property>
-				<Property Name="Source[10].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[10].type" Type="Str">VI</Property>
 				<Property Name="Source[11].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[11].itemID" Type="Ref">/My Computer/DigitalFilter</Property>
@@ -331,20 +330,19 @@
 				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[12].type" Type="Str">Container</Property>
 				<Property Name="Source[13].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[13].destinationIndex" Type="Int">6</Property>
+				<Property Name="Source[13].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[13].itemID" Type="Ref">/My Computer/Exec</Property>
+				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[13].type" Type="Str">Container</Property>
 				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Exec/Autobalance Monitor.vi</Property>
-				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[14].type" Type="Str">VI</Property>
 				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Exec/Data Archiving.vi</Property>
-				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[15].type" Type="Str">VI</Property>
 				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[16].itemID" Type="Ref">/My Computer/Exec/Mixed Mode Monitor.vi</Property>
-				<Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[16].type" Type="Str">VI</Property>
 				<Property Name="Source[17].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[17].itemID" Type="Ref">/My Computer/Mixed Mode Widget.vi</Property>
@@ -352,7 +350,6 @@
 				<Property Name="Source[17].type" Type="Str">VI</Property>
 				<Property Name="Source[18].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[18].itemID" Type="Ref">/My Computer/Exec/Command Displacement Diffs.vi</Property>
-				<Property Name="Source[18].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[18].type" Type="Str">VI</Property>
 				<Property Name="Source[19].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[19].itemID" Type="Ref">/My Computer/Test Utilities/testNtcpLink.pl</Property>
@@ -385,7 +382,6 @@
 				<Property Name="Source[8].type" Type="Str">Container</Property>
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Exec/NTCP Socket.vi</Property>
-				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">20</Property>
 			</Item>
@@ -394,7 +390,7 @@
 				<Property Name="App_applicationName" Type="Str">OM Setup.exe</Property>
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">3</Property>
+				<Property Name="App_fileVersion.build" Type="Int">6</Property>
 				<Property Name="App_fileVersion.major" Type="Int">3</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{8F1B6CF8-A334-4A21-B771-F6AAB1099971}</Property>
@@ -513,7 +509,7 @@
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
 				<Property Name="App_fileDescription" Type="Str">Calibration</Property>
-				<Property Name="App_fileVersion.build" Type="Int">3</Property>
+				<Property Name="App_fileVersion.build" Type="Int">6</Property>
 				<Property Name="App_fileVersion.major" Type="Int">1</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{DBDB76A3-C81C-4541-827B-147033AE1A51}</Property>
