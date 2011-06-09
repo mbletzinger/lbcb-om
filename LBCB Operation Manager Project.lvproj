@@ -54,6 +54,9 @@
 		<Item Name="OM Setup.vi" Type="VI" URL="../OM Setup.vi"/>
 		<Item Name="AutobalanceTest.vi" Type="VI" URL="../AutobalanceTest.vi"/>
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
+		<Item Name="OM Setup Page.ctl" Type="VI" URL="../lib/Data Access Objects/Utilities/OM Setup Page.ctl"/>
+		<Item Name="OM Setup Page Filter.vi" Type="VI" URL="../lib/Data Access Objects/Utilities/OM Setup Page Filter.vi"/>
+		<Item Name="Timing Edit Transfer.vi" Type="VI" URL="../lib/Data Access Objects/Utilities/Timing Edit Transfer.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
