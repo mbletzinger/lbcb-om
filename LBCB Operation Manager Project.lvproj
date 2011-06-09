@@ -250,7 +250,7 @@
 			<Item Name="Stiffness Jacobian Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Stiffness Jacobian Actions.ctl"/>
 			<Item Name="PlotInputData.vi" Type="VI" URL="../lib/PlotInputData.vi"/>
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
