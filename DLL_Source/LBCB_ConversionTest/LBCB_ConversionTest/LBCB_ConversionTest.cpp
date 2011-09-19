@@ -12,8 +12,8 @@ using namespace std;
 
 #define MAX_THREADS 2
 
-const char* OutFileRoot = "c:\\Documents and Settings\\mbletzin\\Desktop\\Logs\\LBCB_ConversionTest";
-char* ErrorFile = "c:\\Documents and Settings\\mbletzin\\Desktop\\Logs\\DLLError.txt";
+const char* OutFileRoot = "X:\\Operations Manager\\DLL_Source\\LBCB_Conversions\\Logs\\LBCB_ConversionTest";
+char* ErrorFile = "X:\\Operations Manager\\DLL_Source\\LBCB_Conversions\\Logs\\DLLError.txt";
 DWORD WINAPI ThreadCalc( LPVOID lpParam );
 
 int _tmain(int argc, _TCHAR* argv[])

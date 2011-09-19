@@ -1,11 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LBCB_ConversionTest", "LBCB_ConversionTest\LBCB_ConversionTest.vcproj", "{79FA864B-46E0-41ED-A706-1092465CC627}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{17178470-4854-4D59-823B-844E3CD5FB5F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LBCB_Conversions", "..\LBCB_Conversions\LBCB_Conversion_A2C.vcproj", "{17AB0628-9FD4-4AE4-9230-53F7494D98AB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LBCB_ConversionTest", "LBCB_ConversionTest\LBCB_ConversionTest.vcxproj", "{79FA864B-46E0-41ED-A706-1092465CC627}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LBCB_Conversions", "..\LBCB_Conversions\LBCB_Conversion_A2C.vcxproj", "{17AB0628-9FD4-4AE4-9230-53F7494D98AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
