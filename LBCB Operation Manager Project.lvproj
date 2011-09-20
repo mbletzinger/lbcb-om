@@ -54,12 +54,7 @@
 		<Item Name="OM Setup.vi" Type="VI" URL="../OM Setup.vi"/>
 		<Item Name="AutobalanceTest.vi" Type="VI" URL="../AutobalanceTest.vi"/>
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
-		<Item Name="MM Multi DOF State Machine.vi" Type="VI" URL="../lib/MixedMode/MM Multi DOF State Machine.vi"/>
-		<Item Name="MM Multi DOF Status DAO.vi" Type="VI" URL="../lib/MixedMode/MM Multi DOF Status DAO.vi"/>
-		<Item Name="Mixed Mode Multidof State.ctl" Type="VI" URL="../lib/MixedMode/Mixed Mode Multidof State.ctl"/>
-		<Item Name="Mixed Mode Multidof Status.ctl" Type="VI" URL="../lib/MixedMode/Mixed Mode Multidof Status.ctl"/>
-		<Item Name="Pick A DOF Strategy Types.ctl" Type="VI" URL="../lib/MixedMode/Pick A DOF Strategy Types.ctl"/>
-		<Item Name="Pick A DOF Strategy.vi" Type="VI" URL="../lib/MixedMode/Pick A DOF Strategy.vi"/>
+		<Item Name="Cartesian Force Matrix.ctl" Type="VI" URL="../lib/Data Access Objects/Metadata/Cartesian Force Matrix.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
