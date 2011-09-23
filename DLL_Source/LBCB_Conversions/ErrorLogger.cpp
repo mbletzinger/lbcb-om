@@ -22,11 +22,11 @@ void ErrorLogger::flush(DWORD threadid)
 	m_CriticalSection.Enter();
 	string lfn = m_LogFilename;
 	m_CriticalSection.Leave();
-	ofstream Logout (lfn.c_str(), ios_base::out | ios_base::app);
-	Logout << prfx.str()<< ":START"<<endl<<m_ErrorStream->str()<<prfx.str()<<":END"<<endl;
-	Logout.close();
-	delete m_ErrorStream;
-	m_ErrorStream = new ostringstream();
+//	ofstream Logout (lfn.c_str(), ios_base::out | ios_base::app);
+//	Logout << prfx.str()<< ":START"<<endl<<m_ErrorStream->str()<<prfx.str()<<":END"<<endl;
+//	Logout.close();
+//	delete m_ErrorStream;
+//	m_ErrorStream = new ostringstream();
 	m_ContainsErrors = false;
 }
 void ErrorLogger::setFile(string Filename)

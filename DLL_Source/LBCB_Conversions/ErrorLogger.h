@@ -16,7 +16,6 @@ public:
 	void setFile(string Filename);
 	void addedError();
 	ostream& getErrorStream();
-
 	bool hasError();
 	void SetPrefix(string pfx);
 private:
