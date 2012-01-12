@@ -258,9 +258,10 @@
 				<Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">35</Property>
+				<Property Name="App_fileVersion.build" Type="Int">2</Property>
 				<Property Name="App_fileVersion.major" Type="Int">3</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
+				<Property Name="App_fileVersion.patch" Type="Int">1</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{2C4F13AB-15A9-450C-9083-C3C7C0D1641F}</Property>
 				<Property Name="App_internalName" Type="Str">OM</Property>
@@ -274,37 +275,37 @@
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">LBCB Operation Manager.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/LBCB Operation Manager.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/LBCB Operation Manager.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/data</Property>
+				<Property Name="Destination[1].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[2].destName" Type="Str">Destination Directory</Property>
-				<Property Name="Destination[2].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build</Property>
+				<Property Name="Destination[2].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build</Property>
 				<Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[3].destName" Type="Str">Config</Property>
-				<Property Name="Destination[3].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/Config</Property>
+				<Property Name="Destination[3].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/Config</Property>
 				<Property Name="Destination[3].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[3].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[4].destName" Type="Str">InputFiles</Property>
-				<Property Name="Destination[4].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/InputFiles</Property>
+				<Property Name="Destination[4].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/InputFiles</Property>
 				<Property Name="Destination[4].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[5].destName" Type="Str">image</Property>
-				<Property Name="Destination[5].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/image</Property>
+				<Property Name="Destination[5].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/image</Property>
 				<Property Name="Destination[5].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[6].destName" Type="Str">Exec</Property>
-				<Property Name="Destination[6].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/Exec</Property>
+				<Property Name="Destination[6].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/Exec</Property>
 				<Property Name="Destination[6].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[7].destName" Type="Str">Logs</Property>
-				<Property Name="Destination[7].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/Logs</Property>
+				<Property Name="Destination[7].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/Logs</Property>
 				<Property Name="Destination[7].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">8</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A489B7A4-242F-406B-B355-5AEC1E63DEBD}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{D919E3E7-52FA-4A2E-A1E4-0A2862180F7F}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -377,9 +378,10 @@
 				<Property Name="App_applicationName" Type="Str">OM Setup.exe</Property>
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">36</Property>
+				<Property Name="App_fileVersion.build" Type="Int">1</Property>
 				<Property Name="App_fileVersion.major" Type="Int">3</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
+				<Property Name="App_fileVersion.patch" Type="Int">1</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{8F1B6CF8-A334-4A21-B771-F6AAB1099971}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{0B796CE7-924F-4800-9632-175E3F482B13}</Property>
 				<Property Name="App_internalName" Type="Str">OM</Property>
@@ -393,37 +395,37 @@
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">OM Setup.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/OM Setup.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/OM Setup.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/data</Property>
+				<Property Name="Destination[1].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[2].destName" Type="Str">Destination Directory</Property>
-				<Property Name="Destination[2].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build</Property>
+				<Property Name="Destination[2].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build</Property>
 				<Property Name="Destination[2].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[3].destName" Type="Str">Config</Property>
-				<Property Name="Destination[3].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/Config</Property>
+				<Property Name="Destination[3].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/Config</Property>
 				<Property Name="Destination[3].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[3].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[4].destName" Type="Str">InputFiles</Property>
-				<Property Name="Destination[4].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/InputFiles</Property>
+				<Property Name="Destination[4].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/InputFiles</Property>
 				<Property Name="Destination[4].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[5].destName" Type="Str">image</Property>
-				<Property Name="Destination[5].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/image</Property>
+				<Property Name="Destination[5].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/image</Property>
 				<Property Name="Destination[5].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[6].destName" Type="Str">Exec</Property>
-				<Property Name="Destination[6].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/Exec</Property>
+				<Property Name="Destination[6].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/Exec</Property>
 				<Property Name="Destination[6].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[7].destName" Type="Str">Logs</Property>
-				<Property Name="Destination[7].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/Logs</Property>
+				<Property Name="Destination[7].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/Logs</Property>
 				<Property Name="Destination[7].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">8</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/Setup.ico</Property>
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A489B7A4-242F-406B-B355-5AEC1E63DEBD}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{D919E3E7-52FA-4A2E-A1E4-0A2862180F7F}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -487,9 +489,10 @@
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
 				<Property Name="App_fileDescription" Type="Str">Calibration</Property>
-				<Property Name="App_fileVersion.build" Type="Int">36</Property>
+				<Property Name="App_fileVersion.build" Type="Int">1</Property>
 				<Property Name="App_fileVersion.major" Type="Int">1</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
+				<Property Name="App_fileVersion.patch" Type="Int">1</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{DBDB76A3-C81C-4541-827B-147033AE1A51}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{65AEB58B-1941-4748-A50B-CD3C15E34B5F}</Property>
 				<Property Name="App_internalName" Type="Str">Calibration</Property>
@@ -501,16 +504,16 @@
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Destination[0].destName" Type="Str">Calibration.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/Calibration.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/Calibration.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/data</Property>
+				<Property Name="Destination[1].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/Scales.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A489B7A4-242F-406B-B355-5AEC1E63DEBD}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{D919E3E7-52FA-4A2E-A1E4-0A2862180F7F}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Calibration.vi</Property>
@@ -521,10 +524,13 @@
 			<Item Name="Autobalance Test" Type="EXE">
 				<Property Name="App_applicationGUID" Type="Str">{78125BF1-80DA-474C-948A-9633B0737165}</Property>
 				<Property Name="App_applicationName" Type="Str">AutobalanceTest.exe</Property>
+				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
 				<Property Name="App_fileDescription" Type="Str">Autobalance Test</Property>
+				<Property Name="App_fileVersion.build" Type="Int">1</Property>
 				<Property Name="App_fileVersion.major" Type="Int">1</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
+				<Property Name="App_fileVersion.patch" Type="Int">1</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{ACAECD7A-2F73-4387-858D-197E5F9AFAC0}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{8BCE91A5-B009-4031-8605-9F861DEE7FE8}</Property>
 				<Property Name="App_internalName" Type="Str">Autobalance Test</Property>
@@ -536,16 +542,16 @@
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Destination[0].destName" Type="Str">AutobalanceTest.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/AutobalanceTest.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/AutobalanceTest.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">/C/Users/mbletzin/Desktop/My OM Latest Build/data</Property>
+				<Property Name="Destination[1].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/Autobalance.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A489B7A4-242F-406B-B355-5AEC1E63DEBD}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{D919E3E7-52FA-4A2E-A1E4-0A2862180F7F}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/Autobalance Test Data.txt</Property>
