@@ -54,7 +54,11 @@
 		<Item Name="OM Setup.vi" Type="VI" URL="../OM Setup.vi"/>
 		<Item Name="AutobalanceTest.vi" Type="VI" URL="../AutobalanceTest.vi"/>
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
-		<Item Name="External Actuator Daq Send.vi" Type="VI" URL="../lib/DAQ IO/External Actuator Daq Send.vi"/>
+		<Item Name="External Actuator Data Set.vi" Type="VI" URL="../lib/Global Data/External Actuator Data Set.vi"/>
+		<Item Name="External Actuator Data Type.ctl" Type="VI" URL="../lib/Global Data/External Actuator Data Type.ctl"/>
+		<Item Name="Package External Actuator Data.vi" Type="VI" URL="../lib/Global Data/Package External Actuator Data.vi"/>
+		<Item Name="External Actuator Calibrations DAO.vi" Type="VI" URL="../lib/Data Access Objects/External Actuators/External Actuator Calibrations DAO.vi"/>
+		<Item Name="External Actuator Calibrations.ctl" Type="VI" URL="../lib/Data Access Objects/External Actuators/External Actuator Calibrations.ctl"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
