@@ -49,7 +49,6 @@
 		</Item>
 		<Item Name="LBCB Operation Manager.vi" Type="VI" URL="../LBCB Operation Manager.vi"/>
 		<Item Name="Menu.rtm" Type="Document" URL="../Menu.rtm"/>
-		<Item Name="Mixed Mode Widget.vi" Type="VI" URL="../Mixed Mode Widget.vi"/>
 		<Item Name="Command Voltages Check.vi" Type="VI" URL="../Command Voltages Check.vi"/>
 		<Item Name="OM Setup.vi" Type="VI" URL="../OM Setup.vi"/>
 		<Item Name="AutobalanceTest.vi" Type="VI" URL="../AutobalanceTest.vi"/>
@@ -591,7 +590,7 @@
 				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Exec/Data Archiving.vi</Property>
 				<Property Name="Source[14].type" Type="Str">VI</Property>
 				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Mixed Mode Widget.vi</Property>
+				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Exec/Mixed Mode Widget.vi</Property>
 				<Property Name="Source[15].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[15].type" Type="Str">VI</Property>
 				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
@@ -708,7 +707,7 @@
 				<Property Name="Source[14].itemID" Type="Ref">/My Computer/Exec/Data Archiving.vi</Property>
 				<Property Name="Source[14].type" Type="Str">VI</Property>
 				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Mixed Mode Widget.vi</Property>
+				<Property Name="Source[15].itemID" Type="Ref">/My Computer/Exec/Mixed Mode Widget.vi</Property>
 				<Property Name="Source[15].type" Type="Str">VI</Property>
 				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[16].itemID" Type="Ref">/My Computer/OM Setup.vi</Property>
