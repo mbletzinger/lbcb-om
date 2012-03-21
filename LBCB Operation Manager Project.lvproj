@@ -509,8 +509,9 @@
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
 			<Item Name="Cartesian Measurment Actions delete me.ctl" Type="VI" URL="../lib/Global Data/Cartesian Measurment Actions delete me.ctl"/>
 			<Item Name="Cartesian Data Set.vi" Type="VI" URL="../lib/Global Data/Cartesian Data Set.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
-			<Item Name="lvStorage.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/objmgr/lvStorage.dll"/>
+			<Item Name="Batch Retrieve Cartesian Offsets delete me.vi" Type="VI" URL="../lib/Offsets/Batch Retrieve Cartesian Offsets delete me.vi"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvStorage.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/objmgr/lvStorage.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
