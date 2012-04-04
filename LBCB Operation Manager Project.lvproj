@@ -512,12 +512,6 @@
 			<Item Name="Cartesian Data Set.vi" Type="VI" URL="../lib/Global Data/Cartesian Data Set.vi"/>
 			<Item Name="Cartesian Measurment Actions delete me.ctl" Type="VI" URL="../lib/Global Data/Cartesian Measurment Actions delete me.ctl"/>
 			<Item Name="Force Offset Tags DAO.vi" Type="VI" URL="../lib/Offsets/Force Offset Tags DAO.vi"/>
-			<Item Name="Dataset Transaction Id.ctl" Type="VI" URL="../lib/Global Data/Dataset Transaction Id.ctl"/>
-			<Item Name="Dataset Source.ctl" Type="VI" URL="../lib/Global Data/Dataset Source.ctl"/>
-			<Item Name="Dataset Type.ctl" Type="VI" URL="../lib/Global Data/Dataset Type.ctl"/>
-			<Item Name="Create Transaction List.vi" Type="VI" URL="../lib/Global Data/Create Transaction List.vi"/>
-			<Item Name="LBCB Number 2 Source.vi" Type="VI" URL="../lib/Global Data/LBCB Number 2 Source.vi"/>
-			<Item Name="Create Archiving Transaction List.vi" Type="VI" URL="../lib/Global Data/Create Archiving Transaction List.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
