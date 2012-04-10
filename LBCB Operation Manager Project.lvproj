@@ -509,8 +509,8 @@
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
 			<Item Name="Cartesian Data Set.vi" Type="VI" URL="../lib/Global Data/Cartesian Data Set.vi"/>
 			<Item Name="Cartesian Measurment Actions delete me.ctl" Type="VI" URL="../lib/Global Data/Cartesian Measurment Actions delete me.ctl"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
-			<Item Name="lvStorage.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 2009/resource/objmgr/lvStorage.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvStorage.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/objmgr/lvStorage.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
@@ -518,10 +518,9 @@
 				<Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">37</Property>
+				<Property Name="App_fileVersion.build" Type="Int">1</Property>
 				<Property Name="App_fileVersion.major" Type="Int">3</Property>
-				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
-				<Property Name="App_fileVersion.patch" Type="Int">1</Property>
+				<Property Name="App_fileVersion.minor" Type="Int">3</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{2C4F13AB-15A9-450C-9083-C3C7C0D1641F}</Property>
 				<Property Name="App_internalName" Type="Str">OM</Property>
@@ -565,7 +564,7 @@
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{F91D951D-EA12-4396-B930-1E6FBB90BFD7}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{1E6A7369-10D8-4F64-8D16-C2E6CC38DCBD}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -636,12 +635,9 @@
 			<Item Name="OM Setup" Type="EXE">
 				<Property Name="App_applicationGUID" Type="Str">{1BB071C4-D20D-42F5-A1CC-0A32BE2F1F55}</Property>
 				<Property Name="App_applicationName" Type="Str">OM Setup.exe</Property>
-				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">39</Property>
 				<Property Name="App_fileVersion.major" Type="Int">3</Property>
-				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
-				<Property Name="App_fileVersion.patch" Type="Int">1</Property>
+				<Property Name="App_fileVersion.minor" Type="Int">3</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{8F1B6CF8-A334-4A21-B771-F6AAB1099971}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{0B796CE7-924F-4800-9632-175E3F482B13}</Property>
 				<Property Name="App_internalName" Type="Str">OM</Property>
@@ -685,7 +681,7 @@
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{5DA6172D-5A67-4055-8117-5787F43E0612}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{1E6A7369-10D8-4F64-8D16-C2E6CC38DCBD}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -746,7 +742,6 @@
 			<Item Name="Calibration" Type="EXE">
 				<Property Name="App_applicationGUID" Type="Str">{F8A5BEA2-3AD2-42C0-8EEB-A63A1019A0C4}</Property>
 				<Property Name="App_applicationName" Type="Str">Calibration.exe</Property>
-				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
 				<Property Name="App_fileDescription" Type="Str">Calibration</Property>
 				<Property Name="App_fileVersion.build" Type="Int">39</Property>
@@ -773,7 +768,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/Scales.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{F91D951D-EA12-4396-B930-1E6FBB90BFD7}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{1E6A7369-10D8-4F64-8D16-C2E6CC38DCBD}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Calibration.vi</Property>
@@ -787,7 +782,7 @@
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
 				<Property Name="App_fileDescription" Type="Str">Autobalance Test</Property>
-				<Property Name="App_fileVersion.build" Type="Int">2</Property>
+				<Property Name="App_fileVersion.build" Type="Int">3</Property>
 				<Property Name="App_fileVersion.major" Type="Int">1</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
 				<Property Name="App_fileVersion.patch" Type="Int">1</Property>
