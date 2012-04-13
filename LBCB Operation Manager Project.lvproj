@@ -250,7 +250,7 @@
 			<Item Name="Stiffness Jacobian Actions.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Stiffness Jacobian Actions.ctl"/>
 			<Item Name="PlotInputData.vi" Type="VI" URL="../lib/PlotInputData.vi"/>
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
@@ -304,7 +304,7 @@
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{2C504CB7-90C3-472B-98C5-294816EA5088}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{528A416E-18F7-467B-8188-797487107B76}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -423,7 +423,7 @@
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{EB879687-6A2C-4576-B35B-A0C82417CA88}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{528A416E-18F7-467B-8188-797487107B76}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -510,7 +510,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/Scales.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{EB879687-6A2C-4576-B35B-A0C82417CA88}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{528A416E-18F7-467B-8188-797487107B76}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Calibration.vi</Property>
@@ -545,7 +545,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/Autobalance.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{EB879687-6A2C-4576-B35B-A0C82417CA88}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{528A416E-18F7-467B-8188-797487107B76}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/Autobalance Test Data.txt</Property>
