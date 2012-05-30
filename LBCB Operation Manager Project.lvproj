@@ -518,7 +518,7 @@
 				<Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">7</Property>
+				<Property Name="App_fileVersion.build" Type="Int">9</Property>
 				<Property Name="App_fileVersion.major" Type="Int">3</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
 				<Property Name="App_fileVersion.patch" Type="Int">2</Property>
@@ -565,7 +565,7 @@
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{DF261E1C-94CB-490F-8ECE-187593934083}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{E366928C-D159-4A14-BBDC-CE82931CD74D}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -784,7 +784,7 @@
 				<Property Name="App_autoIncrement" Type="Bool">true</Property>
 				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
 				<Property Name="App_fileDescription" Type="Str">Autobalance Test</Property>
-				<Property Name="App_fileVersion.build" Type="Int">6</Property>
+				<Property Name="App_fileVersion.build" Type="Int">8</Property>
 				<Property Name="App_fileVersion.major" Type="Int">1</Property>
 				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
 				<Property Name="App_fileVersion.patch" Type="Int">1</Property>
