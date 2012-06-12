@@ -53,6 +53,7 @@
 		<Item Name="OM Setup.vi" Type="VI" URL="../OM Setup.vi"/>
 		<Item Name="AutobalanceTest.vi" Type="VI" URL="../AutobalanceTest.vi"/>
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
+		<Item Name="Determine Archive Types.vi" Type="VI" URL="../lib/Logging/Determine Archive Types.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -509,8 +510,8 @@
 			<Item Name="OperationManagerGlobal.vi" Type="VI" URL="../OperationManagerGlobal.vi"/>
 			<Item Name="Cartesian Data Set.vi" Type="VI" URL="../lib/Global Data/Cartesian Data Set.vi"/>
 			<Item Name="Cartesian Measurment Actions delete me.ctl" Type="VI" URL="../lib/Global Data/Cartesian Measurment Actions delete me.ctl"/>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
-			<Item Name="lvStorage.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/objmgr/lvStorage.dll"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
+			<Item Name="lvStorage.dll" Type="Document" URL="/C/Program Files (x86)/National Instruments/LabVIEW 2009/resource/objmgr/lvStorage.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
