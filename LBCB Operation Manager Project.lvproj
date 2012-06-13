@@ -511,7 +511,6 @@
 			<Item Name="Cartesian Measurment Actions delete me.ctl" Type="VI" URL="../lib/Global Data/Cartesian Measurment Actions delete me.ctl"/>
 			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
 			<Item Name="lvStorage.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/objmgr/lvStorage.dll"/>
-			<Item Name="Dataset Source 2 Volt Types.vi" Type="VI" URL="../lib/Global Data/Transactions/Dataset Source 2 Volt Types.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
