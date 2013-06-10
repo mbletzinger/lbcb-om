@@ -412,6 +412,103 @@ _declspec(dllexport) void LBCB_Conversion_Init(long size,char* filename, long le
 		lplatformpin(1,6) = 5.8;
 		lplatformpin(2,6) = -4.8;
 		lplatformpin(3,6) = -2.355;
+	} else if (size == 3) { // Mid-sized LBCB @ the University of Houston. 
+	
+/*		X1		X2		Y		Z1		Z2		Z3
+Base
+	x	-36.813	-36.813	0		-12		12		12
+	y	12		-12		-19.062	0		12		-12
+	z	-15.28	-15.28	-17.698	-30.688	-30.688	-30.688
+
+Platx	-9.525	-9.525	0		-12		12		12
+	y	12		-12		12		0		12		-12
+	z	-6.875	-6.875	-8.625	-4.25	-4.25	-4.25
+*/
+		
+		rbasepin(1,1) = -36.813;
+		rbasepin(2,1) = 12;
+		rbasepin(3,1) = -15.28;
+		rplatformpin(1,1) = -9.525;
+		rplatformpin(2,1) = 12;
+		rplatformpin(3,1) = -6.875;
+
+		rbasepin(1,2) = -36.813;
+		rbasepin(2,2) = -12;
+		rbasepin(3,2) = -15.28;
+		rplatformpin(1,2) = -9.525;
+		rplatformpin(2,2) = -12;
+		rplatformpin(3,2) = -6.875;
+
+		rbasepin(1,3) = 0;
+		rbasepin(2,3) = -19.062;
+		rbasepin(3,3) = -17.698;
+		rplatformpin(1,3) = 0;
+		rplatformpin(2,3) = 12;
+		rplatformpin(3,3) = -8.625;
+
+		rbasepin(1,4) = -12;
+		rbasepin(2,4) = 0;
+		rbasepin(3,4) = -30.688;
+		rplatformpin(1,4) = -12;
+		rplatformpin(2,4) = 0.0;
+		rplatformpin(3,4) = -4.25;
+
+		rbasepin(1,5) = 12;
+		rbasepin(2,5) = 12;
+		rbasepin(3,5) = -30.688;
+		rplatformpin(1,5) = 12;
+		rplatformpin(2,5) = 12;
+		rplatformpin(3,5) = -4.25;
+
+		rbasepin(1,6) = 12;
+		rbasepin(2,6) = -12;
+		rbasepin(3,6) = -30.688;
+		rplatformpin(1,6) = 12;
+		rplatformpin(2,6) = -12;
+		rplatformpin(3,6) = -4.25;
+
+		lbasepin(1,1) = -36.813;
+		lbasepin(2,1) = 12;
+		lbasepin(3,1) = -15.28;
+		lplatformpin(1,1) = -9.525;
+		lplatformpin(2,1) = 12;
+		lplatformpin(3,1) = -6.875;
+
+		lbasepin(1,2) = -36.813;
+		lbasepin(2,2) = -12;
+		lbasepin(3,2) = -15.28;
+		lplatformpin(1,2) = -9.525;
+		lplatformpin(2,2) = -12;
+		lplatformpin(3,2) = -6.875;
+
+		lbasepin(1,3) = 0;
+		lbasepin(2,3) = -19.062;
+		lbasepin(3,3) = -17.698;
+		lplatformpin(1,3) = 0;
+		lplatformpin(2,3) = 12;
+		lplatformpin(3,3) = -8.625;
+
+		lbasepin(1,4) = -12;
+		lbasepin(2,4) = 0;
+		lbasepin(3,4) = -30.688;
+		lplatformpin(1,4) = -12;
+		lplatformpin(2,4) = 0.0;
+		lplatformpin(3,4) = -4.25;
+
+		lbasepin(1,5) = 12;
+		lbasepin(2,5) = 12;
+		lbasepin(3,5) = -30.688;
+		lplatformpin(1,5) = 12;
+		lplatformpin(2,5) = 12;
+		lplatformpin(3,5) = -4.25;
+
+		lbasepin(1,6) = 12;
+		lbasepin(2,6) = -12;
+		lbasepin(3,6) = -30.688;
+		lplatformpin(1,6) = 12;
+		lplatformpin(2,6) = -12;
+		lplatformpin(3,6) = -4.25;
+
 	}
 
 	LBCB_Parameters::Create(rbasepin, rplatformpin, lbasepin, lplatformpin, tlo );
