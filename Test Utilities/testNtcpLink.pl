@@ -6,7 +6,8 @@ use Getopt::Long;
 my $option = 0;
 my $lbcb = 1;
 my $result = GetOptions("option=i"=>\$option,"lbcb=i"=>\$lbcb);
-my ($host, $port) = ("127.0.0.1","6347");
+#my ($host, $port) = ("127.0.0.1","6347");
+my ($host, $port) = ("128.174.15.156","6347");
 #my ($host, $port) = ("192.168.1.101","5057");
 
 my $socket = new IO::Socket::INET(
@@ -26,7 +27,7 @@ receiveCommand();
 print "Option=$option\n";
 
 my $increment = "1.0";
-for my $i (1..500) {
+for my $i (1..4) {
 	($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst)=localtime(time);
 	$year += 1900;
 	$month++;
