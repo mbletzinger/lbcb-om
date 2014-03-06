@@ -29,9 +29,9 @@ namespace LbcbConversions
             this.fixedPin = new DenseVector(3);
             this.platformPin = new DenseVector(3);
             combinedPins.CopySubVectorTo(this.fixedPin, 0, 0, 3);
-            log.Debug("Fixed set at " + l2s.toString(this.fixedPin.Values));
+            log.Debug("Fixed set at " + l2s.ToString(this.fixedPin.Values));
             combinedPins.CopySubVectorTo(this.platformPin, 3, 0, 3);
-            log.Debug("Platform set at " + l2s.toString(this.platformPin.Values));
+            log.Debug("Platform set at " + l2s.ToString(this.platformPin.Values));
             this.label = label;
             updateLength();
         }
@@ -72,8 +72,8 @@ namespace LbcbConversions
         {
             List2String l2s = new List2String();
             String result = "APos: " + label;
-            result += " Fixed: " + l2s.toString(fixedPin.Values);
-            result += " Plat: " + l2s.toString(platformPin.Values);
+            result += " Fixed: " + l2s.ToString(fixedPin.Values);
+            result += " Plat: " + l2s.ToString(platformPin.Values);
             result += " Length: " + length;
             return result;
         }

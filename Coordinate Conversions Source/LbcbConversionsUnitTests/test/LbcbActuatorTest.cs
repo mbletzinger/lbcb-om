@@ -1,7 +1,8 @@
 ﻿using LbcbConversions;
-using log4net.Config;
+using MathNet.Numerics.LinearAlgebra.Double;
 using NUnit.Framework;
 using System;
+using System.Globalization;
 using System.Reflection;
 
 namespace LbcbConversionsUnitTests.test
@@ -28,11 +29,14 @@ namespace LbcbConversionsUnitTests.test
  //       [CI]
         public void test02DiffCalculations()
         {
-            double[] cart = new double[] {0,0,0,0,0,0}; 
-            double[] expected0 = new double[] { 0.9507, 0, 0.3101, 8.3920, -3.8690, -22.8173 };
-            double[] expected1 = new double[] { 0.9507, 0, 0.3101, 8.4119, -3.8691, -22.8591 };
-            double[] expected2 = new double[] { 0.9507, 0, 0.3101, 8.3920, -3.7207, -22.7798 };
-            double[] expected3 = new double[] { 0.9507, 0, 0.3101, 8.3501, -3.8319, -22.7258 };
+//            MatrixDataAccessor mda = new MatrixDataAccessor();
+ //           mda.Run();
+
+            double[] cart = new double[] {0,0,0,0,0,0};
+            double[] expected0 = new double[] { 0.9507, 0, 0.3101, 7.4413, -3.8690, -22.8173 };
+            double[] expected1 = new double[] { 0.9507, 0, 0.3101, 7.4612, -3.8691, -22.8591 };
+            double[] expected2 = new double[] { 0.9507, 0, 0.3101, 7.4413, -3.7207, -22.7798 };
+            double[] expected3 = new double[] { 0.9507, 0, 0.3101, 7.3994, -3.8319, -22.7258 };
             LbcbActuatorPosition[] pins1 = l1pins.getActuatorPositions();
             LbcbActuator x1 = new LbcbActuator("X1", pins1[0]);
             CompareDoubleLists cdl = new CompareDoubleLists(expected0);

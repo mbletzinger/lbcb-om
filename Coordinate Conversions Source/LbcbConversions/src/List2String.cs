@@ -19,7 +19,7 @@ namespace LbcbConversions
             this.separator = separator;
         }
 
-        public String toString(double[] list)
+        public String ToString(double[] list)
         {
             String result = "";
             bool first = true;

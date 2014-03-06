@@ -77,17 +77,17 @@ namespace LbcbConversionsUnitTests.test
         override public string ToString()
         {
             StringBuilder msg = new StringBuilder("cart cmds: ");
-            msg.Append(l2s.toString(cartCommands));
+            msg.Append(l2s.ToString(cartCommands));
             msg.Append("\ncart disps: ");
-            msg.Append(l2s.toString(cartDisplacements));
+            msg.Append(l2s.ToString(cartDisplacements));
             msg.Append("\ncart forces: ");
-            msg.Append(l2s.toString(cartForces));
+            msg.Append(l2s.ToString(cartForces));
             msg.Append("\nact cmds: ");
-            msg.Append(l2s.toString(actCommands));
+            msg.Append(l2s.ToString(actCommands));
             msg.Append("\nact disps: ");
-            msg.Append(l2s.toString(actLvdts));
+            msg.Append(l2s.ToString(actLvdts));
             msg.Append("\nact forces: ");
-            msg.Append(l2s.toString(actLoadCells));
+            msg.Append(l2s.ToString(actLoadCells));
             return msg.ToString();
         }
     }

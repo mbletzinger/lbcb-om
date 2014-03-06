@@ -16,7 +16,7 @@ namespace LbcbConversionsUnitTests.test
         private List2String l2s = new List2String();
         public void Compare(double[] actual)
         {
-            log.Debug("Comparing expected " + l2s.toString(expected) + " with actual " + l2s.toString(actual));
+            log.Debug("Comparing expected " + l2s.ToString(expected) + " with actual " + l2s.ToString(actual));
             for (int d = 0; d < expected.Length; d++)
             {
                 Assert.That(actual[d],Is.EqualTo(expected[d]).Within(0.001));
