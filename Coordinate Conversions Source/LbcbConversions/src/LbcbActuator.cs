@@ -125,21 +125,21 @@ namespace LbcbConversions
             DenseMatrix p = pitch.create(theta_y);
             DenseMatrix y = yaw.create(theta_z);
             DenseVector cur = null;
-            DenseVector curT = (DenseVector)initial.getPlatformPin().Add(translation);
+            DenseVector curT = (DenseVector)initial.getPlatformPinV().Add(translation);
             DenseMatrix curR = (DenseMatrix)r.Multiply(p.Multiply(y));
             cur = (DenseVector)curR.Multiply(curT);
 
-            current.setPlatformPin(cur);
+            current.setPlatformPin(cur.Values);
             current.updateLength();
         }
         public double[] getDirectionalVector()
         {
-            DenseVector result = (DenseVector)current.getPlatformPin().Subtract(current.getFixedPin());
+            DenseVector result = (DenseVector)current.getPlatformPinV().Subtract(current.getFixedPinV());
             return result.Values;
         }
         public double[] getForceArm(DenseVector translation)
         {
-            DenseVector result = (DenseVector)current.getPlatformPin().Subtract(translation);
+            DenseVector result = (DenseVector)current.getPlatformPinV().Subtract(translation);
             return result.Values;
         }
         public String getLabel()

@@ -29,9 +29,9 @@ namespace LbcbConversions
             this.fixedPin = new DenseVector(3);
             this.platformPin = new DenseVector(3);
             combinedPins.CopySubVectorTo(this.fixedPin, 0, 0, 3);
-            log.Debug("Fixed set at " + l2s.ToString(this.fixedPin.Values));
+//            log.Debug("Fixed set at " + l2s.ToString(this.fixedPin.Values));
             combinedPins.CopySubVectorTo(this.platformPin, 3, 0, 3);
-            log.Debug("Platform set at " + l2s.ToString(this.platformPin.Values));
+//            log.Debug("Platform set at " + l2s.ToString(this.platformPin.Values));
             this.label = label;
             updateLength();
         }
@@ -51,13 +51,25 @@ namespace LbcbConversions
         {
             this.length = length;
         }
-        public DenseVector getFixedPin()
+        public double[] getFixedPin()
         {
-            return fixedPin;
+            return fixedPin.Values;
         }
-        public DenseVector getPlatformPin()
+        public double[] getPlatformPin()
         {
-            return platformPin;
+            return platformPin.Values;
+        }
+        public DenseVector getFixedPinV()
+        {
+            return fixedPin.Values;
+        }
+        public DenseVector getPlatformPinV()
+        {
+            return platformPin.Values;
+        }
+        public void setPlatformPin(double[] pin)
+        {
+            this.platformPin = new DenseVector(pin);
         }
         public void setPlatformPin(DenseVector pin)
         {
