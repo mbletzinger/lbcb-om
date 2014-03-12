@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace LbcbConversionsUnitTests.test
 {
-    class ActuatorPinPositions
+    class ActuatorPinTests
     {
-        private ILog log = LogManager.GetLogger(typeof(ActuatorPinPositions));
+        private ILog log = LogManager.GetLogger(typeof(ActuatorPinTests));
         private Assembly _assembly;
         private double[][] pins = new double[6][];
 
-        public ActuatorPinPositions(Assembly _assembly)
+        public ActuatorPinTests(Assembly _assembly)
         {
             this._assembly = _assembly;
         }
@@ -90,14 +90,14 @@ namespace LbcbConversionsUnitTests.test
                 actuator++;
             }
         }
-        public LbcbActuatorPosition [] getActuatorPositions() {
-        LbcbActuatorPosition[] actuatorPositions = new LbcbActuatorPosition[6];
+        public LbcbActuator [] getActuators() {
+        LbcbActuator[] actuators = new LbcbActuator[6];
             for (int a = 0; a < 6; a++)
             {
-                actuatorPositions[a] = new LbcbActuatorPosition(((ActuatorLabels)a).ToString(), pins[a]);
-                log.Debug("Created Actuator Position: " + actuatorPositions[a]);
+                actuators[a] = new LbcbActuator(((ActuatorLabels)a).ToString(), pins[a]);
+                log.Debug("Created Actuator Position: " + actuators[a]);
             }
-            return actuatorPositions;
+            return actuators;
         }
         private double[] convertTokens(string[] tokens)
         {

@@ -42,7 +42,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="test\ActuatorPinPositions.cs">
+    <Compile Include="test\ActuatorPinTests.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="test\CompareDoubleLists.cs">

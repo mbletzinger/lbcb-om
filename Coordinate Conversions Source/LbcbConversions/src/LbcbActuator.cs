@@ -11,35 +11,45 @@ namespace LbcbConversions
 {
     public class LbcbActuator
     {
-        private LbcbActuatorPosition initial;
-        private LbcbActuatorPosition current;
+        private double length;
+        private double initialLength;
+        private DenseVector fixedPin;
+        private DenseVector platformPin;
+        private DenseVector initialPlatformPin;
         private RotationalMatrix roll = new RotationalMatrix(RotationalOrientation.Roll);
         private RotationalMatrix pitch = new RotationalMatrix(RotationalOrientation.Pitch);
         private RotationalMatrix yaw = new RotationalMatrix(RotationalOrientation.Yaw);
         private ILog log = LogManager.GetLogger(typeof(LbcbActuator));
         private String label;
 
-        public LbcbActuator(String label, LbcbActuatorPosition initial)
+        public LbcbActuator(String label, double [] pins)
         {
-            this.initial = initial;
-            this.current = initial.clone(label + "_current");
+            DenseVector combinedPins = new DenseVector(pins);
+            this.fixedPin = new DenseVector(3);
+            this.platformPin = new DenseVector(3);
+            this.initialPlatformPin = new DenseVector(3);
+            combinedPins.CopySubVectorTo(this.fixedPin, 0, 0, 3);
+            combinedPins.CopySubVectorTo(this.platformPin, 3, 0, 3);
+            combinedPins.CopySubVectorTo(this.initialPlatformPin, 3, 0, 3);
             this.label = label;
+            updateLength();
+            initialLength = length;
         }
-        public LbcbActuatorPosition getInitial()
+        public double [] getInitialPlatformPin()
         {
-            return initial;
+            return initialPlatformPin.Values;
         }
-        public LbcbActuatorPosition getCurrent()
+        public double[] getPlatformPin()
         {
-            return current;
-        }
-        public void setCurrent(LbcbActuatorPosition current)
-        {
-            this.current = current;
+            return platformPin.Values;
         }
         public double getCurrentDisplacement()
         {
-            return current.getLength() - initial.getLength();
+            return length - initialLength;
+        }
+        public double getLength()
+        {
+            return length;
         }
         public double[] calcNewDiffs(double[] cartesian)
         {
@@ -60,25 +70,25 @@ namespace LbcbConversions
             rotTrig.At(2, 0, Math.Sin(theta_z));
             rotTrig.At(2, 1, Math.Cos(theta_z));
             log.Debug("Rotation Angles " + rotTrig.ToString("#000.00000\t", formatProvider));
-            DenseVector basepin = initial.getFixedPin();
-            DenseVector nominalplatformpin = initial.getPlatformPin();
+            DenseVector basepin = fixedPin;
+            DenseVector nominalplatformpin = initialPlatformPin;
             double Ppx = nominalplatformpin[0];
             double Ppy = nominalplatformpin[1];
             double Ppz = nominalplatformpin[2];
             log.Debug("Ppx= " + Ppx + "Ppy= " + Ppy + "Ppz= " + Ppz);
-            DenseVector currentplatformpin = current.getPlatformPin();
+            DenseVector currentplatformpin = platformPin;
             List2String l2s = new List2String();
 
             DenseVector phai = (DenseVector) currentplatformpin.Subtract(basepin);
             log.Debug("phai " + l2s.ToString(phai.Values));
 
-            if (current.getLength() == 0.0)
+            if (length == 0.0)
             {
                 log.Error("Actuator length is zero.  Caused a divide-by-zero error");
                 throw new Exception("Actuator length is zero causing a divide by zero error");
             }
 
-            phai = (DenseVector) phai.Divide(current.getLength());
+            phai = (DenseVector) phai.Divide(length);
             log.Debug("phai " + l2s.ToString(phai.Values));
 
             DenseMatrix J = DenseMatrix.Create(3,3,0);
@@ -124,35 +134,51 @@ namespace LbcbConversions
             DenseMatrix r = roll.create(theta_x);
             DenseMatrix p = pitch.create(theta_y);
             DenseMatrix y = yaw.create(theta_z);
-            DenseVector cur = null;
-            DenseVector curT = (DenseVector)initial.getPlatformPinV().Add(translation);
+            DenseVector curT = (DenseVector)initialPlatformPin.Add(translation);
             DenseMatrix curR = (DenseMatrix)r.Multiply(p.Multiply(y));
-            cur = (DenseVector)curR.Multiply(curT);
-
-            current.setPlatformPin(cur.Values);
-            current.updateLength();
+            platformPin = (DenseVector)curR.Multiply(curT);
+            updateLength();
         }
         public double[] getDirectionalVector()
         {
-            DenseVector result = (DenseVector)current.getPlatformPinV().Subtract(current.getFixedPinV());
+            DenseVector result = (DenseVector)platformPin.Subtract(fixedPin);
             return result.Values;
         }
         public double[] getForceArm(DenseVector translation)
         {
-            DenseVector result = (DenseVector)current.getPlatformPinV().Subtract(translation);
+            DenseVector result = (DenseVector)platformPin.Subtract(translation);
             return result.Values;
         }
         public String getLabel()
         {
             return label;
         }
+        public void setPlatformPin(double[] pin)
+        {
+            this.platformPin = new DenseVector(pin);
+        }
+        public void setPlatformPin(DenseVector pin)
+        {
+            this.platformPin = pin;
+        }
         public override string ToString()
         {
+            List2String l2s = new List2String();
             string result = label + " ";
-            result += "\tCurrent: " + current;
-            result += "\tInitial: " + initial;
+            result += "\tCurrent: " + l2s.ToString(platformPin.Values);
+            result += "\tFixed: " + l2s.ToString(fixedPin.Values);
+            result += "\tInitial: " + l2s.ToString(initialPlatformPin.Values);
             result += "\tDisplacement: " + getCurrentDisplacement();
+            result += "\tLength: " + length;
+            result += "\tInitial Length: " + initialLength;
+
             return result;
+        }
+        public void updateLength()
+        {
+            DenseVector actuatorVector = (DenseVector)platformPin.Subtract(fixedPin);
+            length = actuatorVector.Norm(2.0);
+            log.Debug("Length for " + label + " calculated at " + length);
         }
     }
 }

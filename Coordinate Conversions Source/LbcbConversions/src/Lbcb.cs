@@ -1,4 +1,5 @@
-﻿using MathNet.Numerics.LinearAlgebra.Double;
+﻿using log4net;
+using MathNet.Numerics.LinearAlgebra.Double;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,12 +20,12 @@ namespace LbcbConversions
         private DenseVector cartesianForce = new DenseVector(6);
         private DenseVector errorWindow = DenseVector.Create(6, 0.00001);
         private string label;
+        private readonly static ILog log = LogManager.GetLogger(typeof(Lbcb));
         public Lbcb(String label, double[][] actPins)
         {
             for (int aps = 0; aps < 6; aps++)
             {
-                LbcbActuatorPosition actP = new LbcbActuatorPosition(((ActuatorLabels)aps).ToString() + "_initial", actPins[aps]);
-                LbcbActuator act = new LbcbActuator(((ActuatorLabels)aps).ToString(), actP);
+                LbcbActuator act = new LbcbActuator(((ActuatorLabels)aps).ToString(), actPins[aps]);
                 actuators[aps] = act;
             }
             this.label = label;
@@ -104,9 +105,12 @@ namespace LbcbConversions
             DenseVector newAct = new DenseVector(adisp);
             DenseVector actError = (DenseVector)newAct.Subtract(actuatorDisp);
             cartesianDisp.CopyTo(cartDisp);
+            int iterations = 0;
 
             while (check == false)
             {
+                List2String l2s = new List2String();
+
                 DenseMatrix JacobianMatrix = new DenseMatrix(6, 6);
 
                 for (int i = 0; i < 6; i++)
@@ -115,10 +119,20 @@ namespace LbcbConversions
                     JacobianMatrix.SetRow(i, DL_Dd);
                 }
                 DenseVector diffCart = (DenseVector)JacobianMatrix.LU().Solve(actError);
-                cartDisp.Add(diffCart);
+                log.Debug("Cartesian differences " + l2s.ToString(diffCart.Values));
+                cartDisp = (DenseVector)cartDisp.Add(diffCart);
                 setCartesianDisp(cartDisp.Values);
+                log.Debug("New cartesian estimate " + this);
                 actError = (DenseVector)newAct.Subtract(actuatorDisp);
+                log.Debug("Actuator error " + l2s.ToString(actError.Values));
+
                 check = withinErrorWindow(actError);
+                if (iterations > 20)
+                {
+                    check = true;
+                    log.Error("Calculations for " + label + " won't converge with " + this);
+                }
+                iterations++;
             }
 
         }

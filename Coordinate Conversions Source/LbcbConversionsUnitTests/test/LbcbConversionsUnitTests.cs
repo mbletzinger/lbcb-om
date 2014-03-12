@@ -25,8 +25,8 @@ namespace LbcbConversionsUnitTests.test
             _assembly = Assembly.GetExecutingAssembly();
             expected1 = parseDataFile("LBCB1_Snapshot.txt");
             expected2 = parseDataFile("LBCB2_Snapshot.txt");
-            ActuatorPinPositions l1pins = new ActuatorPinPositions(Assembly.GetExecutingAssembly());
-            ActuatorPinPositions l2pins = new ActuatorPinPositions(Assembly.GetExecutingAssembly());
+            ActuatorPinTests l1pins = new ActuatorPinTests(Assembly.GetExecutingAssembly());
+            ActuatorPinTests l2pins = new ActuatorPinTests(Assembly.GetExecutingAssembly());
             l1pins.loadPins("Lbcb1PinPositions.txt");
             l2pins.loadPins("Lbcb2PinPositions.txt");
             lbcb1 = new Lbcb("LBCB 1", l1pins.getPins());
@@ -34,17 +34,30 @@ namespace LbcbConversionsUnitTests.test
 
         }
         [NUnit.Framework.Test]
-        public void ConvertActuator2Cartesian()
+        public void ConvertActuatorDisplacements2Cartesian()
         {
- /*           foreach (ExpectedLbcbValues ev in albcb1)
+           foreach (ExpectedLbcbValues ev in expected1)
             {
                 CompareDoubleLists cmp = new CompareDoubleLists(ev.getDofs(DofType.CartCommands));
                 lbcb1.setActuatorDisp(ev.getDofs(DofType.ActCommands));
                 double [] carts = lbcb1.getCartesianDisp();
                 cmp.Compare(carts);
             }
-  */ 
+ 
          }
+        [NUnit.Framework.Test]
+        public void ConvertActuatorForces2Cartesian()
+        {
+            foreach (ExpectedLbcbValues ev in expected1)
+            {
+                CompareDoubleLists cmp = new CompareDoubleLists(ev.getDofs(DofType.CartForces));
+                lbcb1.setActuatorDisp(ev.getDofs(DofType.ActCommands));
+                lbcb1.setActuatorForce(ev.getDofs(DofType.ActLoadCells));
+                double[] carts = lbcb1.getCartesianForce();
+                cmp.Compare(carts);
+            }
+
+        }
         [NUnit.Framework.Test]
         public void ConvertCartesian2Actuator()
         {
@@ -60,7 +73,7 @@ namespace LbcbConversionsUnitTests.test
         }
         private ExpectedLbcbValues[] parseDataFile(String filename)
         {
-            const int timeIndex = 2;
+            const int timeIndex = 4;
 
             List<ExpectedLbcbValues> result = new List<ExpectedLbcbValues>();
 
@@ -134,7 +147,7 @@ namespace LbcbConversionsUnitTests.test
                 offset += 6;
                 values = convertTokens(tokens, timeIndex + offset);
                 lbcb.setDofs(DofType.ActLoadCells, values);
-  //              log.Debug("LBCB added " + lbcb.ToString());
+//                log.Debug("LBCB added " + lbcb.ToString());
                 result.Add(lbcb);
             }
             return result.ToArray();
