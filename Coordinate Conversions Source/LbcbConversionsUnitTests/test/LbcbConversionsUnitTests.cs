@@ -13,22 +13,50 @@ namespace LbcbConversionsUnitTests.test
     public class LbcbConversionsUnitTests
     {
         private Assembly _assembly;
-        private ExpectedLbcbValues[] albcb1;
-        private ExpectedLbcbValues[] albcb2;
+        private ExpectedLbcbValues[] expected1;
+        private ExpectedLbcbValues[] expected2;
+        private Lbcb lbcb1;
+        private Lbcb lbcb2;
         private static readonly ILog log = LogManager.GetLogger(typeof(LbcbConversionsUnitTests));
 
         [NUnit.Framework.SetUp]
         public void setup()
         {
             _assembly = Assembly.GetExecutingAssembly();
-            albcb1 = parseDataFile("LBCB1_Snapshot.txt");
-            albcb2 = parseDataFile("LBCB2_Snapshot.txt");
+            expected1 = parseDataFile("LBCB1_Snapshot.txt");
+            expected2 = parseDataFile("LBCB2_Snapshot.txt");
+            ActuatorPinPositions l1pins = new ActuatorPinPositions(Assembly.GetExecutingAssembly());
+            ActuatorPinPositions l2pins = new ActuatorPinPositions(Assembly.GetExecutingAssembly());
+            l1pins.loadPins("Lbcb1PinPositions.txt");
+            l2pins.loadPins("Lbcb2PinPositions.txt");
+            lbcb1 = new Lbcb("LBCB 1", l1pins.getPins());
+            lbcb2 = new Lbcb("LBCB 2", l2pins.getPins());
 
         }
         [NUnit.Framework.Test]
-        [NUnit.Framework.Category("LU")]
         public void ConvertActuator2Cartesian()
         {
+ /*           foreach (ExpectedLbcbValues ev in albcb1)
+            {
+                CompareDoubleLists cmp = new CompareDoubleLists(ev.getDofs(DofType.CartCommands));
+                lbcb1.setActuatorDisp(ev.getDofs(DofType.ActCommands));
+                double [] carts = lbcb1.getCartesianDisp();
+                cmp.Compare(carts);
+            }
+  */ 
+         }
+        [NUnit.Framework.Test]
+        public void ConvertCartesian2Actuator()
+        {
+            log.Debug("Start " + lbcb1);
+            foreach (ExpectedLbcbValues ev in expected1)
+            {
+                CompareDoubleLists cmp = new CompareDoubleLists(ev.getDofs(DofType.ActLvdts));
+                lbcb1.setCartesianDisp(ev.getDofs(DofType.CartCommands));
+                log.Debug("Current " + lbcb1);
+                double[] carts = lbcb1.getActuatorDisp();
+                cmp.Compare(carts);
+            }
         }
         private ExpectedLbcbValues[] parseDataFile(String filename)
         {
@@ -38,7 +66,7 @@ namespace LbcbConversionsUnitTests.test
 
             StringBuilder canonicalFilename = new StringBuilder("LbcbConversionsUnitTests.resources.");
             canonicalFilename.Append(filename);
-            log.Debug("Opening file \"" + canonicalFilename + "\"");
+//            log.Debug("Opening file \"" + canonicalFilename + "\"");
             Stream strm = null;
             try
             {
@@ -106,7 +134,7 @@ namespace LbcbConversionsUnitTests.test
                 offset += 6;
                 values = convertTokens(tokens, timeIndex + offset);
                 lbcb.setDofs(DofType.ActLoadCells, values);
-                log.Debug("LBCB added " + lbcb.ToString());
+  //              log.Debug("LBCB added " + lbcb.ToString());
                 result.Add(lbcb);
             }
             return result.ToArray();

@@ -14,13 +14,13 @@ namespace LbcbConversionsUnitTests.test
     {
         private ILog log = LogManager.GetLogger(typeof(ActuatorPinPositions));
         private Assembly _assembly;
-        private LbcbActuatorPosition[] actuatorPositions = new LbcbActuatorPosition[6];
+        private double[][] pins = new double[6][];
+
         public ActuatorPinPositions(Assembly _assembly)
         {
             this._assembly = _assembly;
         }
-
-        public void loadLbcb(String resourceName)
+        private Stream open(String resourceName)
         {
             StringBuilder canonicalFilename = new StringBuilder("LbcbConversionsUnitTests.resources.");
             canonicalFilename.Append(resourceName);
@@ -47,11 +47,22 @@ namespace LbcbConversionsUnitTests.test
             catch (Exception e)
             {
                 log.Error("Cannot open file \"" + canonicalFilename.ToString() + "\" because:", e);
-                return;
+                return null;
             }
             if (strm == null)
             {
                 log.Error("Cannot open file \"" + canonicalFilename.ToString() + "\" because the stream is null");
+                return null;
+            }
+
+            return strm;
+        }
+        public void loadPins(String resourceName)
+        {
+            Stream strm = open(resourceName);
+            if (strm == null)
+            {
+                log.Error("Aborting LBCB pin position load");
                 return;
             }
             StreamReader _textStreamReader = new StreamReader(strm);
@@ -65,20 +76,28 @@ namespace LbcbConversionsUnitTests.test
                 }
                 catch (SystemException e)
                 {
-                    log.Debug("Parsing of file \"" + canonicalFilename + "\" aborted", e);
+                    log.Debug("Parsing of file \"" + resourceName + "\" aborted", e);
                     break;
                 }
                 if (line == null)
                 {
-                    log.Debug("Parsing of file \"" + canonicalFilename + "\" finished");
+                    log.Debug("Parsing of file \"" + resourceName + "\" finished");
                     break;
                 }
                 string[] tokens = line.Split('\t');
                 double[] values = convertTokens(tokens);
-                actuatorPositions[actuator] = new LbcbActuatorPosition(Enum.ToObject(typeof(ActuatorLabels),actuator).ToString(), values);
-                log.Debug("Created Actuator Position: " + actuatorPositions[actuator]);
+                pins[actuator] = values;
                 actuator++;
             }
+        }
+        public LbcbActuatorPosition [] getActuatorPositions() {
+        LbcbActuatorPosition[] actuatorPositions = new LbcbActuatorPosition[6];
+            for (int a = 0; a < 6; a++)
+            {
+                actuatorPositions[a] = new LbcbActuatorPosition(((ActuatorLabels)a).ToString(), pins[a]);
+                log.Debug("Created Actuator Position: " + actuatorPositions[a]);
+            }
+            return actuatorPositions;
         }
         private double[] convertTokens(string[] tokens)
         {
@@ -100,9 +119,9 @@ namespace LbcbConversionsUnitTests.test
 
             return values;
         }
-        public LbcbActuatorPosition[] getActuatorPositions()
+        public double[][] getPins()
         {
-            return actuatorPositions;
+            return pins;
         }
     }
 }

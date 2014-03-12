@@ -35,13 +35,13 @@ namespace LbcbConversions
             this.label = label;
             updateLength();
         }
-        public LbcbActuatorPosition clone()
+        public LbcbActuatorPosition clone(String newLabel)
         {
             DenseVector fpc = new DenseVector(3);
             DenseVector ppc = new DenseVector(3);
             fixedPin.CopyTo(fpc);
             platformPin.CopyTo(ppc);
-            return new LbcbActuatorPosition(label, length, fpc, ppc);
+            return new LbcbActuatorPosition(newLabel, length, fpc, ppc);
         }
         public double getLength()
         {
@@ -79,6 +79,7 @@ namespace LbcbConversions
         {
             DenseVector actuatorVector = (DenseVector)platformPin.Subtract(fixedPin);
             length = actuatorVector.Norm(2.0);
+            log.Debug("Length for " + label + " calculated at " + length);
         }
         public override String ToString()
         {
@@ -86,8 +87,12 @@ namespace LbcbConversions
             String result = "APos: " + label;
             result += " Fixed: " + l2s.ToString(fixedPin.Values);
             result += " Plat: " + l2s.ToString(platformPin.Values);
-            result += " Length: " + length;
+//            result += " Length: " + length;
             return result;
+        }
+        public string getLabel()
+        {
+            return label;
         }
 
     }

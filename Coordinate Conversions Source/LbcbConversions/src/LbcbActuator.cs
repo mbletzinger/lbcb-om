@@ -22,7 +22,7 @@ namespace LbcbConversions
         public LbcbActuator(String label, LbcbActuatorPosition initial)
         {
             this.initial = initial;
-            this.current = initial.clone();
+            this.current = initial.clone(label + "_current");
             this.label = label;
         }
         public LbcbActuatorPosition getInitial()
@@ -37,7 +37,7 @@ namespace LbcbConversions
         {
             this.current = current;
         }
-        public double getCurrentStroke()
+        public double getCurrentDisplacement()
         {
             return current.getLength() - initial.getLength();
         }
@@ -145,6 +145,14 @@ namespace LbcbConversions
         public String getLabel()
         {
             return label;
+        }
+        public override string ToString()
+        {
+            string result = label + " ";
+            result += "\tCurrent: " + current;
+            result += "\tInitial: " + initial;
+            result += "\tDisplacement: " + getCurrentDisplacement();
+            return result;
         }
     }
 }

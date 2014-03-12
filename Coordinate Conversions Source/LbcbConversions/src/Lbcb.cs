@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace LbcbConversions
 {
-    public enum ActuatorLabels { X1, X2, Y1, Z1, Z2, Z3};
-    public enum DofDispLabels { Dx, Dy, Dz, Rx, Ry, Rz};
+    public enum ActuatorLabels { X1, X2, Y1, Z1, Z2, Z3 };
+    public enum DofDispLabels { Dx, Dy, Dz, Rx, Ry, Rz };
     public enum DofForceLbels { Fx, Fy, Fz, Mx, My, Mz };
     public class Lbcb
     {
@@ -17,28 +17,51 @@ namespace LbcbConversions
         private DenseVector actuatorForce = new DenseVector(6);
         private DenseVector cartesianDisp = new DenseVector(6);
         private DenseVector cartesianForce = new DenseVector(6);
-        public void setActuatorDisp(double [] adisp)
+        private DenseVector errorWindow = DenseVector.Create(6, 0.00001);
+        private string label;
+        public Lbcb(String label, double[][] actPins)
         {
-
+            for (int aps = 0; aps < 6; aps++)
+            {
+                LbcbActuatorPosition actP = new LbcbActuatorPosition(((ActuatorLabels)aps).ToString() + "_initial", actPins[aps]);
+                LbcbActuator act = new LbcbActuator(((ActuatorLabels)aps).ToString(), actP);
+                actuators[aps] = act;
+            }
+            this.label = label;
         }
-        public double [] getActuatorDisp()
+        public void setActuatorDisp(double[] adisp)
+        {
+            solveActuator2CartesianDisp(adisp);
+        }
+        public double[] getActuatorDisp()
         {
             return actuatorDisp.ToArray();
         }
-        public void setActuatorForce(double [] aforce)
+        public void setActuatorForce(double[] aforce)
         {
             actuatorForce.SetValues(aforce);
             actuatorForce2Cartesian();
         }
+        public double[] getActuatorForce()
+        {
+            return actuatorForce.Values;
+        }
+        public double[] getCartesianForce()
+        {
+            return cartesianForce.Values;
+        }
         public void setCartesianDisp(double[] cdisp)
         {
-
+            cartesianDisp.SetValues(cdisp);
+            cartesionDisplacement2Actuators();
+            actuators2ActuatorDisp();
         }
         public double[] getCartesianDisp()
         {
             return cartesianDisp.ToArray();
         }
-        private void actuatorForce2Cartesian() {
+        private void actuatorForce2Cartesian()
+        {
             DenseVector force = new DenseVector(3);
             DenseVector moment = new DenseVector(3);
             DenseVector translation = new DenseVector(3);
@@ -47,23 +70,40 @@ namespace LbcbConversions
             for (int a = 0; a < 6; a++)
             {
                 DenseVector unitVector = (DenseVector)actuators[a].getDirectionalVector();
-                unitVector = (DenseVector) unitVector.Normalize(2.0);
+                unitVector = (DenseVector)unitVector.Normalize(2.0);
                 DenseVector forceArm = actuators[a].getForceArm(translation);
-                DenseVector newForce = (DenseVector) unitVector.Multiply(actuatorForce[a]);
-                force = (DenseVector) force.Add(newForce);
+                DenseVector newForce = (DenseVector)unitVector.Multiply(actuatorForce[a]);
+                force = (DenseVector)force.Add(newForce);
                 DenseVectorCrossProduct cx = new DenseVectorCrossProduct(forceArm);
                 DenseVector newMoment = (DenseVector)cx.crossProduct(unitVector);
-                newMoment = (DenseVector) newMoment.Multiply(actuatorForce[a]);
-                moment = (DenseVector) moment.Add(newMoment);
+                newMoment = (DenseVector)newMoment.Multiply(actuatorForce[a]);
+                moment = (DenseVector)moment.Add(newMoment);
             }
             cartesianForce.SetSubVector(0, 3, force);
             cartesianForce.SetSubVector(3, 3, moment);
         }
-        private void solveActuator2CartesianDisp()
+        private void cartesionDisplacement2Actuators()
+        {
+            foreach (LbcbActuator a in actuators)
+            {
+                a.update(cartesianDisp.Values);
+            }
+        }
+        private void actuators2ActuatorDisp()
+        {
+            for (int a = 0; a < 6; a++)
+            {
+                actuatorDisp[a] = actuators[a].getCurrentDisplacement();
+            }
+
+        }
+        private void solveActuator2CartesianDisp(double[] adisp)
         {
             bool check = false;
-            DenseVector cartesiandisp = new DenseVector(6);
-            cartesianDisp.CopyTo(cartesiandisp);
+            DenseVector cartDisp = new DenseVector(6);
+            DenseVector newAct = new DenseVector(adisp);
+            DenseVector actError = (DenseVector)newAct.Subtract(actuatorDisp);
+            cartesianDisp.CopyTo(cartDisp);
 
             while (check == false)
             {
@@ -71,31 +111,41 @@ namespace LbcbConversions
 
                 for (int i = 0; i < 6; i++)
                 {
-                    DenseVector DL_Dd = actuators[i].calcNewDiffs(cartesiandisp.Values);
+                    DenseVector DL_Dd = actuators[i].calcNewDiffs(cartDisp.Values);
                     JacobianMatrix.SetRow(i, DL_Dd);
                 }
-
-                //JacobianMatrix.LinearSolver(error, D_cartesian);
-
-                //cartesiandisp = cartesiandisp + D_cartesian;
-                //Cartesian2Actuator(cartesiandisp, dummy1, temp_stroke, dummy2);
-                //error = actuatorstroke - temp_stroke;
-
-                //for (int j = 1; j <= 6; j++)
-                //{
-                //    if (fabs(error(j)) > fabs(limitation(j))) { temp_check(j) = 1; }
-                //    else { temp_check(j) = 0; }
-                //}
-
-                //if (temp_check(1) == 1 || temp_check(2) == 1 || temp_check(3) == 1 || temp_check(4) == 1 || temp_check(5) == 1 || temp_check(6) == 1)
-                //{ check = false; }
-                //else { check = true; }
-
-                //num_iteration++;
-                //if (num_iteration > 10) { check = true; }
-
+                DenseVector diffCart = (DenseVector)JacobianMatrix.LU().Solve(actError);
+                cartDisp.Add(diffCart);
+                setCartesianDisp(cartDisp.Values);
+                actError = (DenseVector)newAct.Subtract(actuatorDisp);
+                check = withinErrorWindow(actError);
             }
 
+        }
+        private Boolean withinErrorWindow(DenseVector error)
+        {
+            for (int d = 0; d < 6; d++)
+            {
+                if (Math.Abs(error[d]) > errorWindow[d])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public override string ToString()
+        {
+            List2String l2s = new List2String();
+            string result = label + ":";
+            result += "\nCartD: " + l2s.ToString(cartesianDisp.Values);
+            result += "\nCartF: " + l2s.ToString(cartesianForce.Values);
+            result += "\nActD: " + l2s.ToString(actuatorDisp.Values);
+            result += "\nActF: " + l2s.ToString(actuatorForce.Values);
+            foreach (LbcbActuator act in actuators)
+            {
+                result += "\n" + act;
+            }
+            return result;
         }
     }
 }

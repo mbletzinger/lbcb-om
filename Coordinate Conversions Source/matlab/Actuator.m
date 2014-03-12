@@ -4,6 +4,8 @@ classdef Actuator < handle
         currentPlat
         fixed
         label
+        currentDisp
+        initialLength
     end
     methods
         function me = Actuator(positions, label)
@@ -11,6 +13,8 @@ classdef Actuator < handle
             me.initialPlat = positions(4:6);
             me.currentPlat = me.initialPlat;
             me.label = label;
+            me.currentDisp = 0;
+            me.initialLength = me.getLength();
         end
         function jacob = newDiffs(me, cart)
             jacob = jacobianDiffs(me.initialPlat, me.currentPlat, me.fixed,cart);
@@ -21,6 +25,7 @@ classdef Actuator < handle
             yaw = me.rotationalMatrix(cart(6),3);
             current = roll * pitch * yaw * me.initialPlat' + cart(1:3)';
             me.currentPlat = current';
+            me.currentDisp = me.getLength() - me.initialLength;
         end
         function rot = rotationalMatrix(me,angle, type)
             rot = eye(3);
@@ -48,6 +53,13 @@ classdef Actuator < handle
         function length = getLength(me)
             directional_vector = me.currentPlat - me.fixed;
             length = norm(directional_vector);
+        end
+        function vec = getUnitVector(me)
+            vec = me.currentPlat - me.fixed;
+            vec = vec / norm(vec);
+        end
+        function fa = getForceArm(me,trans)
+            fa = me.currentPlat - trans;
         end
     end
 end

@@ -88,8 +88,8 @@ namespace LbcbConversionsUnitTests.test
         {
             l1pins = new ActuatorPinPositions(Assembly.GetExecutingAssembly());
             l2pins = new ActuatorPinPositions(Assembly.GetExecutingAssembly());
-            l1pins.loadLbcb("Lbcb1PinPositions.txt");
-            l2pins.loadLbcb("Lbcb2PinPositions.txt");
+            l1pins.loadPins("Lbcb1PinPositions.txt");
+            l2pins.loadPins("Lbcb2PinPositions.txt");
         }
     }
 }
