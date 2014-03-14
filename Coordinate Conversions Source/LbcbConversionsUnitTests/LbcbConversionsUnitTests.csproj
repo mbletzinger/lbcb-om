@@ -42,7 +42,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="test\ActuatorPinTests.cs">
+    <Compile Include="test\ActuatorPinLocationData.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="test\CompareDoubleLists.cs">
@@ -61,6 +61,7 @@
     <Compile Include="test\NunitSetup.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="test\RigidTransformationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LbcbConversions\LbcbConversions.csproj">

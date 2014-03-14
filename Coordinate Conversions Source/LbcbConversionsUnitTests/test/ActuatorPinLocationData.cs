@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace LbcbConversionsUnitTests.test
 {
-    class ActuatorPinTests
+    class ActuatorPinLocationData
     {
-        private ILog log = LogManager.GetLogger(typeof(ActuatorPinTests));
+        private ILog log = LogManager.GetLogger(typeof(ActuatorPinLocationData));
         private Assembly _assembly;
         private double[][] pins = new double[6][];
 
-        public ActuatorPinTests(Assembly _assembly)
+        public ActuatorPinLocationData(Assembly _assembly)
         {
             this._assembly = _assembly;
         }

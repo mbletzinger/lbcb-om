@@ -53,9 +53,6 @@ namespace LbcbConversions
         }
         public double[] calcNewDiffs(double[] cartesian)
         {
- //           var formatProvider = (CultureInfo)CultureInfo.InvariantCulture.Clone();
-   //         formatProvider.TextInfo.ListSeparator = " ";
-
             DenseMatrix rotTrig = DenseMatrix.Create(3,2,0);
             double theta_x = cartesian[3];
             double theta_y = cartesian[4];

@@ -25,8 +25,8 @@ namespace LbcbConversionsUnitTests.test
             _assembly = Assembly.GetExecutingAssembly();
             expected1 = parseDataFile("LBCB1_Snapshot.txt");
             expected2 = parseDataFile("LBCB2_Snapshot.txt");
-            ActuatorPinTests l1pins = new ActuatorPinTests(Assembly.GetExecutingAssembly());
-            ActuatorPinTests l2pins = new ActuatorPinTests(Assembly.GetExecutingAssembly());
+            ActuatorPinLocationData l1pins = new ActuatorPinLocationData(Assembly.GetExecutingAssembly());
+            ActuatorPinLocationData l2pins = new ActuatorPinLocationData(Assembly.GetExecutingAssembly());
             l1pins.loadPins("Lbcb1PinPositions.txt");
             l2pins.loadPins("Lbcb2PinPositions.txt");
             lbcb1 = new Lbcb("LBCB 1", l1pins.getPins());
@@ -38,10 +38,10 @@ namespace LbcbConversionsUnitTests.test
         {
            foreach (ExpectedLbcbValues ev in expected1)
             {
-                CompareDoubleLists cmp = new CompareDoubleLists(ev.getDofs(DofType.CartCommands));
+                CompareDoubleLists cmp = new CompareDoubleLists();
                 lbcb1.setActuatorDisp(ev.getDofs(DofType.ActCommands));
                 double [] carts = lbcb1.getCartesianDisp();
-                cmp.Compare(carts);
+                cmp.Compare(ev.getDofs(DofType.CartCommands), carts);
             }
  
          }
@@ -50,11 +50,11 @@ namespace LbcbConversionsUnitTests.test
         {
             foreach (ExpectedLbcbValues ev in expected1)
             {
-                CompareDoubleLists cmp = new CompareDoubleLists(ev.getDofs(DofType.CartForces));
+                CompareDoubleLists cmp = new CompareDoubleLists();
                 lbcb1.setActuatorDisp(ev.getDofs(DofType.ActCommands));
                 lbcb1.setActuatorForce(ev.getDofs(DofType.ActLoadCells));
                 double[] carts = lbcb1.getCartesianForce();
-                cmp.Compare(carts);
+                cmp.Compare(ev.getDofs(DofType.CartForces), carts);
             }
 
         }
@@ -64,11 +64,11 @@ namespace LbcbConversionsUnitTests.test
             log.Debug("Start " + lbcb1);
             foreach (ExpectedLbcbValues ev in expected1)
             {
-                CompareDoubleLists cmp = new CompareDoubleLists(ev.getDofs(DofType.ActLvdts));
+                CompareDoubleLists cmp = new CompareDoubleLists();
                 lbcb1.setCartesianDisp(ev.getDofs(DofType.CartCommands));
                 log.Debug("Current " + lbcb1);
                 double[] carts = lbcb1.getActuatorDisp();
-                cmp.Compare(carts);
+                cmp.Compare(ev.getDofs(DofType.ActLvdts),carts);
             }
         }
         private ExpectedLbcbValues[] parseDataFile(String filename)

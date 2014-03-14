@@ -1,4 +1,7 @@
-﻿using System;
+﻿using log4net;
+using log4net.Appender;
+using log4net.Repository;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
@@ -11,43 +14,35 @@ namespace LbcbConversions
 {
     public class LbcbConversionsApi
     {
-        ConcurrentDictionary<String, Lbcb> lbcbMap = new ConcurrentDictionary<string,Lbcb>();
-        public void loadLogInstructions(String path) {
-            Console.WriteLine("Yay NUnit found me!!!");
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            string[] names = assembly.GetManifestResourceNames();
-            StringBuilder msg = new StringBuilder("Resource Names [ ");
-            bool first = true;
-            foreach (var item in names)
+        private ConcurrentDictionary<String, Lbcb> lbcbMap = new ConcurrentDictionary<String,Lbcb>();
+        private ILog log = LogManager.GetLogger(typeof(LbcbConversionsApi));
+        public Lbcb create(String label, double[] flattenedPinArray)
+        {
+            if (lbcbMap.ContainsKey(label))
             {
-                if (first == false)
+                log.Warn("LBCB " + label + " already created.");
+                return get(label);
+            }
+            double[][] pins = new double[6][];
+            for (int r = 0; r < 6; r++)
+            {
+                pins[r] = new double[6];
+                for (int c = 0; c < 6; c++)
                 {
-                    msg.Append(", ");
-                }
-                first = false;
-                msg.Append(item);
-            }
-            msg.Append(" ]");
-            Console.WriteLine(msg);
-            Stream strm = null;
-            String file = "LbcbConversionsUnitTests.resources.nunitLog.config";
-            try
-            {
-                strm = assembly.GetManifestResourceStream(file);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("NunitSetup ERROR Cannot open file \"" + file + "\" because:" + e.Message);
-                return;
-            }
-            if (strm == null)
-            {
-                Console.WriteLine("NunitSetup ERROR Cannot open file \"" + file + "\" because the stream is null");
-                return;
-            }
-            log4net.Config.XmlConfigurator.Configure(strm);
-            log4net.Util.LogLog.InternalDebugging = true;
+                    pins[r][c] = flattenedPinArray[r * 6 + c];
 
+                }
+            }
+            
+            Lbcb lbcb = new Lbcb(label, pins);
+            lbcbMap.TryAdd(label, lbcb);
+            return lbcb;
+        }
+        public Lbcb get(String label)
+        {
+            Lbcb result;
+            bool worked = lbcbMap.TryGetValue(label,out result);
+            return result;
         }
     }
 }

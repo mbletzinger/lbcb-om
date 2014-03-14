@@ -11,20 +11,24 @@ namespace LbcbConversionsUnitTests.test
 {
     class CompareDoubleLists
     {
-        private double[] expected;
+        private double tolerance;
         private ILog log = LogManager.GetLogger(typeof(CompareDoubleLists));
         private List2String l2s = new List2String();
-        public void Compare(double[] actual)
+        public void Compare(double[] expected, double[] actual)
         {
             log.Debug("Comparing expected " + l2s.ToString(expected) + " with actual " + l2s.ToString(actual));
             for (int d = 0; d < expected.Length; d++)
             {
-                Assert.That(actual[d],Is.EqualTo(expected[d]).Within(0.001));
+                Assert.That(actual[d],Is.EqualTo(expected[d]).Within(tolerance));
             }
         }
-        public CompareDoubleLists(double[] expected)
+        public CompareDoubleLists()
         {
-            this.expected = expected;
+            this.tolerance = 0.001;
+        }
+        public CompareDoubleLists(double tolerance)
+        {
+            this.tolerance = tolerance;
         }
     }
 }

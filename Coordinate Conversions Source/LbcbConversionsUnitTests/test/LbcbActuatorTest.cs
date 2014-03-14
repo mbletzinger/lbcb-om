@@ -7,8 +7,8 @@ namespace LbcbConversionsUnitTests.test
     [TestFixture]
     public class LbcbActuatorTest
     {
-        private ActuatorPinTests l1pins;
-        private ActuatorPinTests l2pins;
+        private ActuatorPinLocationData l1pins;
+        private ActuatorPinLocationData l2pins;
         [Test]
         [Category("CI")]
         public void test01PinPositions()
@@ -36,19 +36,16 @@ namespace LbcbConversionsUnitTests.test
             double[] expected3 = new double[] { 0.9507, 0, 0.3101, 7.3994, -3.8319, -22.7258 };
             LbcbActuator[] pins1 = l1pins.getActuators();
             LbcbActuator x1 = pins1[0];
-            CompareDoubleLists cdl = new CompareDoubleLists(expected0);
-            cdl.Compare(x1.calcNewDiffs(cart));
+            CompareDoubleLists cdl = new CompareDoubleLists();
+            cdl.Compare(expected0,x1.calcNewDiffs(cart));
             cart[3] = 0.005;
-            cdl = new CompareDoubleLists(expected1);
-            cdl.Compare(x1.calcNewDiffs(cart));
+            cdl.Compare(expected1, x1.calcNewDiffs(cart));
             cart[3] = 0.0;
             cart[4] = 0.005;
-            cdl = new CompareDoubleLists(expected2);
-            cdl.Compare(x1.calcNewDiffs(cart));
+            cdl.Compare(expected2, x1.calcNewDiffs(cart));
             cart[4] = 0.0;
             cart[5] = 0.005;
-            cdl = new CompareDoubleLists(expected3);
-            cdl.Compare(x1.calcNewDiffs(cart));
+            cdl.Compare(expected3, x1.calcNewDiffs(cart));
         }
         [Test]
         public void test03Updates()
@@ -76,17 +73,17 @@ namespace LbcbConversionsUnitTests.test
             LbcbActuator x1 = pins1[0];
             for (int t = 0; t < 6; t++)
             {
-                CompareDoubleLists cdl = new CompareDoubleLists(positions[t]);
+                CompareDoubleLists cdl = new CompareDoubleLists();
                 x1.update(cartesians[t]);
-                cdl.Compare(x1.getPlatformPin());
+                cdl.Compare(positions[t], x1.getPlatformPin());
                 Assert.That(x1.getLength(), Is.EqualTo(lengths[t]).Within(0.001));
             }
         }
         [SetUp]
         public void setup()
         {
-            l1pins = new ActuatorPinTests(Assembly.GetExecutingAssembly());
-            l2pins = new ActuatorPinTests(Assembly.GetExecutingAssembly());
+            l1pins = new ActuatorPinLocationData(Assembly.GetExecutingAssembly());
+            l2pins = new ActuatorPinLocationData(Assembly.GetExecutingAssembly());
             l1pins.loadPins("Lbcb1PinPositions.txt");
             l2pins.loadPins("Lbcb2PinPositions.txt");
         }
