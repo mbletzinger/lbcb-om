@@ -1,6 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<Project Type="Project" LVVersion="9008000">
+<Project Type="Project" LVVersion="13008000">
 	<Item Name="My Computer" Type="My Computer">
+		<Property Name="NI.SortType" Type="Int">3</Property>
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="server.tcp.enabled" Type="Bool">false</Property>
@@ -53,6 +54,9 @@
 		<Item Name="OM Setup.vi" Type="VI" URL="../OM Setup.vi"/>
 		<Item Name="AutobalanceTest.vi" Type="VI" URL="../AutobalanceTest.vi"/>
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
+		<Item Name="LbcbConversionTypes.ctl" Type="VI" URL="../lib/LbcbConversions/LbcbConversionTypes.ctl"/>
+		<Item Name="LBCB Pin Positions.ctl" Type="VI" URL="../lib/Data Access Objects/Metadata/LBCB Pin Positions.ctl"/>
+		<Item Name="LBCB Pins DAO.vi" Type="VI" URL="../lib/Data Access Objects/Application/LBCB Pins DAO.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -496,35 +500,38 @@
 				<Item Name="ex_getNextGroupTDMS.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_TDMS/ex_getNextGroupTDMS.vi"/>
 				<Item Name="LVPointTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPointTypeDef.ctl"/>
 				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
+				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
+				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
+			</Item>
+			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
+			<Item Name="lvStorage.dll" Type="Document" URL="lvStorage.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="lvanlys.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/lvanlys.dll"/>
-			<Item Name="lvStorage.dll" Type="Document" URL="../../../../../../Program Files (x86)/National Instruments/LabVIEW 2009/resource/objmgr/lvStorage.dll"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
-				<Property Name="App_applicationGUID" Type="Str">{57C3770E-1E04-49DB-9AC6-3F2971020B88}</Property>
-				<Property Name="App_applicationName" Type="Str">LBCB Operation Manager.exe</Property>
-				<Property Name="App_autoIncrement" Type="Bool">true</Property>
-				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">5</Property>
-				<Property Name="App_fileVersion.major" Type="Int">3</Property>
-				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
-				<Property Name="App_fileVersion.patch" Type="Int">3</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{201DC45C-ACF9-4DCF-A7A1-706292F005AE}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{2C4F13AB-15A9-450C-9083-C3C7C0D1641F}</Property>
-				<Property Name="App_internalName" Type="Str">OM</Property>
-				<Property Name="App_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
-				<Property Name="App_productName" Type="Str">LBCB Operation Manager</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{D97A303C-5483-4342-BECF-0C0EFCDE5D87}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">LBCB OM</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/C/Users/Public/Desktop/OM Latest Build</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{6EDCF80E-E1C2-4DBB-9590-F94BEE7E1E0F}</Property>
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
+				<Property Name="Bld_targetDestDir" Type="Path"></Property>
+				<Property Name="Bld_version.build" Type="Int">5</Property>
+				<Property Name="Bld_version.major" Type="Int">3</Property>
+				<Property Name="Bld_version.minor" Type="Int">2</Property>
+				<Property Name="Bld_version.patch" Type="Int">3</Property>
 				<Property Name="Destination[0].destName" Type="Str">LBCB Operation Manager.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/LBCB Operation Manager.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
@@ -623,26 +630,31 @@
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Exec/NTCP Socket.vi</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">18</Property>
+				<Property Name="TgtF_companyName" Type="Str">University of Illinois</Property>
+				<Property Name="TgtF_internalName" Type="Str">OM</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
+				<Property Name="TgtF_productName" Type="Str">LBCB Operation Manager</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{57C3770E-1E04-49DB-9AC6-3F2971020B88}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">LBCB Operation Manager.exe</Property>
 			</Item>
 			<Item Name="OM Setup" Type="EXE">
-				<Property Name="App_applicationGUID" Type="Str">{1BB071C4-D20D-42F5-A1CC-0A32BE2F1F55}</Property>
-				<Property Name="App_applicationName" Type="Str">OM Setup.exe</Property>
-				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileVersion.build" Type="Int">2</Property>
-				<Property Name="App_fileVersion.major" Type="Int">3</Property>
-				<Property Name="App_fileVersion.minor" Type="Int">3</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{8F1B6CF8-A334-4A21-B771-F6AAB1099971}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{0B796CE7-924F-4800-9632-175E3F482B13}</Property>
-				<Property Name="App_internalName" Type="Str">OM</Property>
-				<Property Name="App_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
-				<Property Name="App_productName" Type="Str">LBCB Operation Manager</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{C5732433-BE40-4BFD-9A92-9231304A91BE}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">OM Setup</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/C/Users/Public/Desktop/OM Latest Build</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{8FC213A8-B2D3-4AD6-B4C6-57FD80AA0125}</Property>
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
+				<Property Name="Bld_targetDestDir" Type="Path"></Property>
+				<Property Name="Bld_version.build" Type="Int">2</Property>
+				<Property Name="Bld_version.major" Type="Int">3</Property>
+				<Property Name="Bld_version.minor" Type="Int">3</Property>
 				<Property Name="Destination[0].destName" Type="Str">OM Setup.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/OM Setup.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
@@ -731,26 +743,30 @@
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Exec/NTCP Socket.vi</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">17</Property>
+				<Property Name="TgtF_companyName" Type="Str">University of Illinois</Property>
+				<Property Name="TgtF_internalName" Type="Str">OM</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
+				<Property Name="TgtF_productName" Type="Str">LBCB Operation Manager</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{1BB071C4-D20D-42F5-A1CC-0A32BE2F1F55}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">OM Setup.exe</Property>
 			</Item>
 			<Item Name="Calibration" Type="EXE">
-				<Property Name="App_applicationGUID" Type="Str">{F8A5BEA2-3AD2-42C0-8EEB-A63A1019A0C4}</Property>
-				<Property Name="App_applicationName" Type="Str">Calibration.exe</Property>
-				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileDescription" Type="Str">Calibration</Property>
-				<Property Name="App_fileVersion.build" Type="Int">2</Property>
-				<Property Name="App_fileVersion.major" Type="Int">1</Property>
-				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
-				<Property Name="App_fileVersion.patch" Type="Int">1</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{DBDB76A3-C81C-4541-827B-147033AE1A51}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{65AEB58B-1941-4748-A50B-CD3C15E34B5F}</Property>
-				<Property Name="App_internalName" Type="Str">Calibration</Property>
-				<Property Name="App_legalCopyright" Type="Str">Copyright © 2010 University of Illinois</Property>
-				<Property Name="App_productName" Type="Str">Calibration</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="App_winsec.description" Type="Str">http://www.University of Illinois.com</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{7EB1897A-AEB9-4B4B-937F-4F0B019BB329}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">Calibration</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/C/Users/Public/Desktop/OM Latest Build</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{51CBE7BB-9A94-4992-8D42-C726CFE815E7}</Property>
+				<Property Name="Bld_targetDestDir" Type="Path"></Property>
+				<Property Name="Bld_version.build" Type="Int">2</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Bld_version.minor" Type="Int">2</Property>
+				<Property Name="Bld_version.patch" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Calibration.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/Calibration.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
@@ -768,27 +784,32 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="TgtF_companyName" Type="Str">University of Illinois</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Calibration</Property>
+				<Property Name="TgtF_internalName" Type="Str">Calibration</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2010 University of Illinois</Property>
+				<Property Name="TgtF_productName" Type="Str">Calibration</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{F8A5BEA2-3AD2-42C0-8EEB-A63A1019A0C4}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">Calibration.exe</Property>
 			</Item>
 			<Item Name="Autobalance Test" Type="EXE">
-				<Property Name="App_applicationGUID" Type="Str">{78125BF1-80DA-474C-948A-9633B0737165}</Property>
-				<Property Name="App_applicationName" Type="Str">AutobalanceTest.exe</Property>
-				<Property Name="App_autoIncrement" Type="Bool">true</Property>
-				<Property Name="App_companyName" Type="Str">University of Illinois</Property>
-				<Property Name="App_fileDescription" Type="Str">Autobalance Test</Property>
-				<Property Name="App_fileVersion.build" Type="Int">20</Property>
-				<Property Name="App_fileVersion.major" Type="Int">1</Property>
-				<Property Name="App_fileVersion.minor" Type="Int">2</Property>
-				<Property Name="App_fileVersion.patch" Type="Int">1</Property>
 				<Property Name="App_INI_aliasGUID" Type="Str">{ACAECD7A-2F73-4387-858D-197E5F9AFAC0}</Property>
 				<Property Name="App_INI_GUID" Type="Str">{8BCE91A5-B009-4031-8605-9F861DEE7FE8}</Property>
-				<Property Name="App_internalName" Type="Str">Autobalance Test</Property>
-				<Property Name="App_legalCopyright" Type="Str">Copyright © 2010 University of Illinois</Property>
-				<Property Name="App_productName" Type="Str">Autobalance Test</Property>
+				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="App_winsec.description" Type="Str">http://www.University of Illinois.com</Property>
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{E03CBB9B-F5EB-41DA-8D86-3D7B49F5163D}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">Autobalance Test</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">/C/Users/Public/Desktop/OM Latest Build</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{00245106-59CE-428A-ADAB-AE8D3D77E5B5}</Property>
+				<Property Name="Bld_targetDestDir" Type="Path"></Property>
+				<Property Name="Bld_version.build" Type="Int">20</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Bld_version.minor" Type="Int">2</Property>
+				<Property Name="Bld_version.patch" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">AutobalanceTest.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/AutobalanceTest.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
@@ -821,6 +842,13 @@
 				<Property Name="Source[6].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[6].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">7</Property>
+				<Property Name="TgtF_companyName" Type="Str">University of Illinois</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">Autobalance Test</Property>
+				<Property Name="TgtF_internalName" Type="Str">Autobalance Test</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2010 University of Illinois</Property>
+				<Property Name="TgtF_productName" Type="Str">Autobalance Test</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{78125BF1-80DA-474C-948A-9633B0737165}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">AutobalanceTest.exe</Property>
 			</Item>
 		</Item>
 	</Item>

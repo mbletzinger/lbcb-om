@@ -21,8 +21,12 @@ namespace LbcbConversions
         private DenseVector errorWindow = DenseVector.Create(6, 0.00001);
         private string label;
         private readonly static ILog log = LogManager.GetLogger(typeof(Lbcb));
+        private double[][] actuatorPins;
+
         public Lbcb(String label, double[][] actPins)
         {
+            this.actuatorPins = actPins;
+
             for (int aps = 0; aps < 6; aps++)
             {
                 LbcbActuator act = new LbcbActuator(((ActuatorLabels)aps).ToString(), actPins[aps]);
@@ -160,6 +164,9 @@ namespace LbcbConversions
                 result += "\n" + act;
             }
             return result;
+        }
+        public double [][] getActuatorPins() {
+            return actuatorPins;
         }
     }
 }

@@ -9,7 +9,7 @@ using LbcbConversions;
 namespace LbcbConversionsUnitTests.test
 {
     public enum DofType { CartCommands, CartDisplacements, CartForces, ActCommands, ActLvdts, ActLoadCells };
-    class ExpectedLbcbValues
+    public class ExpectedLbcbValues
     {
         private double [] cartCommands = new double[6];
         private double[] actCommands = new double[6];

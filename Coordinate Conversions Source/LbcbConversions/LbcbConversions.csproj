@@ -66,10 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\DenseMatrix2String.cs" />
+    <Compile Include="src\LbcbConversion.cs" />
     <Compile Include="src\LbcbConversionsLogSetup.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="src\LbcbConversionsApi.cs">
+    <Compile Include="src\LbcbConversionFactory.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="src\DenseVectorCrossProduct.cs">
@@ -89,6 +90,7 @@
     <Compile Include="src\RotationalMatrix.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="src\SynchronizedLbcbDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

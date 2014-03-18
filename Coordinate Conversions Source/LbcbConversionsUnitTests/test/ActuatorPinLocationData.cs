@@ -123,5 +123,14 @@ namespace LbcbConversionsUnitTests.test
         {
             return pins;
         }
+        public double[] getFlattenedPins()
+        {
+            double[] result = new double[36];
+            for (int r = 0; r < 6; r++)
+            {
+                pins[r].CopyTo(result, r * 6);
+            }
+            return result;
+        }
     }
 }

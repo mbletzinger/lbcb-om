@@ -57,6 +57,10 @@
     <Compile Include="test\LbcbConversionsUnitTests.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="test\LbcbUnitTests.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="test\LbcbData.cs" />
     <Compile Include="test\MatrixDataAccessor.cs" />
     <Compile Include="test\NunitSetup.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
