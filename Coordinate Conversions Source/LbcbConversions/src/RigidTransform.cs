@@ -1,10 +1,5 @@
 ﻿using log4net;
 using MathNet.Numerics.LinearAlgebra.Double;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LbcbConversions
 {
@@ -18,10 +13,12 @@ namespace LbcbConversions
         private RotationalMatrix yaw = new RotationalMatrix(RotationalOrientation.Yaw);
         private ILog log = LogManager.GetLogger(typeof(RigidTransform));
         private DenseMatrix collective = DenseMatrix.OfArray(new double[,] {{ 0.0, 1.0, 1.0 },{ 1.0, 0.0, 1.0 },{ 1.0, 1.0, 0.0 }});
+        private DenseMatrix transformation;
 
-        public RigidTransform(double[] motionCenter)
+        public RigidTransform(double[] motionCenter, double [,] transformation)
         {
             this.motionCenter = new DenseVector(motionCenter);
+            this.transformation = DenseMatrix.OfArray(transformation);
             List2String l2s = new List2String();
             log.Debug("motionCenter: " + l2s.ToString(this.motionCenter.Values) +
                 " platformCenter: " + l2s.ToString(this.platformCenter.Values));
@@ -29,6 +26,7 @@ namespace LbcbConversions
 
         public double[] transform(double[] displacement, bool isreverse)
         {
+            DenseMatrix xform = (isreverse ? (DenseMatrix) transformation.Transpose() : transformation);
             double[] ddisp = new double[6];
             displacement.CopyTo(ddisp, 0);
             DenseMatrix2String m2s = new DenseMatrix2String();
@@ -47,6 +45,7 @@ namespace LbcbConversions
             DenseVector newDisp1 = (DenseVector)unt.Add(newDisp);
             log.Debug("newDisp1: " + l2s.ToString(newDisp1.Values));
             dispV.SetSubVector(0, 3, newDisp1);
+            dispV = (DenseVector) xform.Multiply(dispV);
             return dispV.Values;
         }
         public double[] transformMoments(double[] forces)

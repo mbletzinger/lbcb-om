@@ -39,15 +39,22 @@ namespace LbcbConversionsUnitTests.test
         [Test]
         public void testTransform()
         {
-            RigidTransform rig = new RigidTransform(new double[] {3, 0, 0});
+            RigidTransform rig = new RigidTransform(new double[] { 3, 0, 0 }, new double[,] { 
+             {1.0, 0.0, 0.0, 0.0, 0.0, 0.0}, 
+             {0.0, 1.0, 0.0, 0.0, 0.0, 0.0}, 
+             {0.0, 0.0, 1.0, 0.0, 0.0, 0.0}, 
+             {0.0, 0.0, 0.0, 1.0, 0.0, 0.0}, 
+             {0.0, 0.0, 0.0, 0.0, 1.0, 0.0}, 
+             {0.0, 0.0, 0.0, 0.0, 0.0, 1.0} 
+        });
             for (int t = 0; t < 4; t++)
             {
                 CompareDoubleLists cmp = new CompareDoubleLists();
                 double[] actual = rig.transform(platDisp[t], false);
-                cmp.Compare(mcDisp[t],actual);
+                cmp.Compare(mcDisp[t], actual);
                 CompareDoubleLists cmpF = new CompareDoubleLists(.5);
                 actual = rig.transformMoments(platForces[t]);
-                cmpF.Compare(mcForces[t],actual);
+                cmpF.Compare(mcForces[t], actual);
                 actual = rig.transform(mcDisp[t], true);
                 cmp.Compare(platDisp[t], actual);
                 actual = rig.transformMoments(mcForces[t]);

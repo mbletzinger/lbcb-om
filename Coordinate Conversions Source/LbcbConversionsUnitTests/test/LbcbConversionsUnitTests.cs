@@ -30,8 +30,16 @@ namespace LbcbConversionsUnitTests.test
             l2pins.loadPins("Lbcb2PinPositions.txt");
             lbcbFactory = new LbcbConversionFactory();
             double[] motionCenter = new double[] { 0.0, 0.0, 0.0 };
-            lbcbFactory.setLbcb(false, l1pins.getFlattenedPins(),motionCenter);
-            lbcbFactory.setLbcb(true, l2pins.getFlattenedPins(), motionCenter);
+            double[] xform = new double[] { 
+             1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 
+             0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 
+             0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 
+             0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 
+             0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 
+             0.0, 0.0, 0.0, 0.0, 0.0, 1.0 
+        };
+            lbcbFactory.setLbcb(false, l1pins.getFlattenedPins(),motionCenter, xform);
+            lbcbFactory.setLbcb(true, l2pins.getFlattenedPins(), motionCenter, xform);
             string [] lnames = new string [] {"Command", "Readings"};
             foreach (string n in lnames)
             {
