@@ -54,7 +54,6 @@
 		<Item Name="OM Setup.vi" Type="VI" URL="../OM Setup.vi"/>
 		<Item Name="AutobalanceTest.vi" Type="VI" URL="../AutobalanceTest.vi"/>
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
-		<Item Name="Flatten 2D Double Array.vi" Type="VI" URL="../lib/LbcbConversions/Flatten 2D Double Array.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -525,8 +524,7 @@
 				<Property Name="Bld_previewCacheID" Type="Str">{6EDCF80E-E1C2-4DBB-9590-F94BEE7E1E0F}</Property>
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
-				<Property Name="Bld_targetDestDir" Type="Path"></Property>
-				<Property Name="Bld_version.build" Type="Int">5</Property>
+				<Property Name="Bld_version.build" Type="Int">11</Property>
 				<Property Name="Bld_version.major" Type="Int">3</Property>
 				<Property Name="Bld_version.minor" Type="Int">2</Property>
 				<Property Name="Bld_version.patch" Type="Int">3</Property>
@@ -556,12 +554,15 @@
 				<Property Name="Destination[7].destName" Type="Str">Logs</Property>
 				<Property Name="Destination[7].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/Logs</Property>
 				<Property Name="Destination[7].path.type" Type="Str">&lt;none&gt;</Property>
-				<Property Name="DestinationCount" Type="Int">8</Property>
+				<Property Name="Destination[8].destName" Type="Str">Fake Files</Property>
+				<Property Name="Destination[8].path" Type="Path">/C/Users/Public/Desktop/OM Latest Build/Fake Files</Property>
+				<Property Name="Destination[8].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="DestinationCount" Type="Int">9</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{8AD267A8-5023-43DE-A2CA-20E78013CCD9}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{623FF6E2-8926-4920-A9A2-B388E2E1D499}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -598,10 +599,28 @@
 				<Property Name="Source[17].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[17].itemID" Type="Ref">/My Computer/Test Utilities/testNtcpLink.pl</Property>
 				<Property Name="Source[17].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[18].destinationIndex" Type="Int">8</Property>
+				<Property Name="Source[18].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/Autobalance Test Data.txt</Property>
+				<Property Name="Source[18].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[19].destinationIndex" Type="Int">8</Property>
+				<Property Name="Source[19].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/Extreme Y1 Test Data.txt</Property>
+				<Property Name="Source[19].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">5</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/IconFiles</Property>
 				<Property Name="Source[2].type" Type="Str">Container</Property>
+				<Property Name="Source[20].destinationIndex" Type="Int">8</Property>
+				<Property Name="Source[20].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/Log_2ndpLbcbPosition.txt</Property>
+				<Property Name="Source[20].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[21].destinationIndex" Type="Int">8</Property>
+				<Property Name="Source[21].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/OneBoxFifthAutobalanceLog.txt</Property>
+				<Property Name="Source[21].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[22].destinationIndex" Type="Int">8</Property>
+				<Property Name="Source[22].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/ScrewyYiX1Autobalance.txt</Property>
+				<Property Name="Source[22].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[23].destinationIndex" Type="Int">8</Property>
+				<Property Name="Source[23].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/pLbcbLog2.txt</Property>
+				<Property Name="Source[23].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[3].itemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
@@ -627,7 +646,7 @@
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Exec/NTCP Socket.vi</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">18</Property>
+				<Property Name="SourceCount" Type="Int">24</Property>
 				<Property Name="TgtF_companyName" Type="Str">University of Illinois</Property>
 				<Property Name="TgtF_internalName" Type="Str">OM</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
@@ -804,7 +823,7 @@
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{00245106-59CE-428A-ADAB-AE8D3D77E5B5}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path"></Property>
-				<Property Name="Bld_version.build" Type="Int">20</Property>
+				<Property Name="Bld_version.build" Type="Int">24</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Bld_version.minor" Type="Int">2</Property>
 				<Property Name="Bld_version.patch" Type="Int">1</Property>
