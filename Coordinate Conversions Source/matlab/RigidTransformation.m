@@ -3,21 +3,28 @@ classdef RigidTransformation < handle
         motionCenter
         platformCenter
         directionalVector
+        transformMatrix
     end
     methods
-        function me = RigidTransformation(motionCenter)
+        function me = RigidTransformation(motionCenter, transformMatrix)
             me.motionCenter = motionCenter;
             me.platformCenter = zeros(1,3);
+            me.transformMatrix = transformMatrix;
         end
         function result = transform(me,disp,isreverse)
+            xform = me.transformMatrix;
+            if isreverse
+                xform = xform';
+            end
             result = disp;
             roll = rotationalMatrix(disp(4),1);
             pitch = rotationalMatrix(disp(5),2);
             yaw = rotationalMatrix(disp(6),3);
-            trans = me.translate(disp, isreverse)
-            rot = roll * pitch * yaw
-            unt = rot * me.directionalVector'
+            trans = me.translate(disp, isreverse);
+            rot = roll * pitch * yaw';
+            unt = rot * me.directionalVector';
             result(1:3) = unt + trans';
+            result = xform * result;
         end
         function result = transformForces(me,forces)
             result = forces;

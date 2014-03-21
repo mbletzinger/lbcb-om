@@ -1,6 +1,7 @@
 ﻿using log4net;
 using log4net.Appender;
 using log4net.Repository;
+using MathNet.Numerics.LinearAlgebra.Double;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -22,18 +23,27 @@ namespace LbcbConversions
         {
             double[][] pins = new double[6][];
             double[,] xform = new double[6, 6];
+            double[,] xpins = new double[6, 6];
+            List2String l2s = new List2String();
+            DenseMatrix2String m2s = new DenseMatrix2String();
+
             for (int r = 0; r < 6; r++)
             {
                 pins[r] = new double[6];
                 for (int c = 0; c < 6; c++)
                 {
                     pins[r][c] = flattenedPinArray[r * 6 + c];
-                    xform[r,c] = flattenedTransformation[r * 6 + c];
+                    xpins[r,c] = flattenedPinArray[r * 6 + c];
+                    xform[r, c] = flattenedTransformation[r * 6 + c];
 
                 }
             }
-            
-            Lbcb lbcb = new Lbcb((isLbcb2 ? "LBCB 2" : "LBCB 1"), pins);
+
+            log.Info("Creating " + (isLbcb2 ? "LBCB 2" : "LBCB 1")
+                + " with \n]\t Motion Center: " + l2s.ToString(motionCenter)
+               + "\n\t Transformation Matrix: " + m2s.ToString(DenseMatrix.OfArray(xform)) 
+               + "\n\t Pins Locations: " + m2s.ToString(DenseMatrix.OfArray(xpins)));
+           Lbcb lbcb = new Lbcb((isLbcb2 ? "LBCB 2" : "LBCB 1"), pins);
             lbcbs[(isLbcb2 ? 1 : 0)] = lbcb;
             RigidTransform transform = new RigidTransform(motionCenter,xform);
             transforms[(isLbcb2 ? 1 : 0)] = transform;
@@ -48,8 +58,24 @@ namespace LbcbConversions
         public LbcbConversion get(String label)
         {
             LbcbConversion result;
-            bool worked = convertMap.TryGetValue(label,out result);
-            return result;
+            try
+            {
+                bool worked = convertMap.TryGetValue(label, out result);
+                if (worked)
+                {
+                    return result;
+                }
+                else
+                {
+                    log.Error("\"" + label + "\" does not exist");
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                log.Error("\"" + label + "\" does not work because ",e);
+                return null;
+            }
         }
     }
 }
