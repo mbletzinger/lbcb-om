@@ -264,7 +264,7 @@
 				<Property Name="Bld_previewCacheID" Type="Str">{6EDCF80E-E1C2-4DBB-9590-F94BEE7E1E0F}</Property>
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
-				<Property Name="Bld_version.build" Type="Int">11</Property>
+				<Property Name="Bld_version.build" Type="Int">13</Property>
 				<Property Name="Bld_version.major" Type="Int">3</Property>
 				<Property Name="Bld_version.minor" Type="Int">2</Property>
 				<Property Name="Bld_version.patch" Type="Int">3</Property>
@@ -302,7 +302,7 @@
 				<Property Name="Source[0].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[0].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{623FF6E2-8926-4920-A9A2-B388E2E1D499}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{8A1876C3-CA9C-4040-9FBA-E37A3D569080}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LBCB Operation Manager.vi</Property>
@@ -361,9 +361,30 @@
 				<Property Name="Source[23].destinationIndex" Type="Int">8</Property>
 				<Property Name="Source[23].itemID" Type="Ref">/My Computer/lib/DAQ IO/Fake/pLbcbLog2.txt</Property>
 				<Property Name="Source[23].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[24].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[24].itemID" Type="Ref">/My Computer/DLL/LbcbConversions.dll</Property>
+				<Property Name="Source[24].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[25].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[25].itemID" Type="Ref">/My Computer/DLL/LbcbConversions.pdb</Property>
+				<Property Name="Source[25].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[26].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[26].itemID" Type="Ref">/My Computer/DLL/log4net.dll</Property>
+				<Property Name="Source[26].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[27].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[27].itemID" Type="Ref">/My Computer/DLL/log4net.xml</Property>
+				<Property Name="Source[27].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[28].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[28].itemID" Type="Ref">/My Computer/DLL/MathNet.Numerics.dll</Property>
+				<Property Name="Source[28].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[29].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[29].itemID" Type="Ref">/My Computer/DLL/MathNet.Numerics.pdb</Property>
+				<Property Name="Source[29].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[3].itemID" Type="Ref">/My Computer/IconFiles/LBCB Operation Manager.ico</Property>
 				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[30].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[30].itemID" Type="Ref">/My Computer/DLL/MathNet.Numerics.xml</Property>
+				<Property Name="Source[30].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[4].itemID" Type="Ref">/My Computer/IconFiles/NTCP socket.ico</Property>
 				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
@@ -386,7 +407,7 @@
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Exec/NTCP Socket.vi</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">24</Property>
+				<Property Name="SourceCount" Type="Int">31</Property>
 				<Property Name="TgtF_companyName" Type="Str">University of Illinois</Property>
 				<Property Name="TgtF_internalName" Type="Str">OM</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2008 University of Illinois</Property>
@@ -563,7 +584,7 @@
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{00245106-59CE-428A-ADAB-AE8D3D77E5B5}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path"></Property>
-				<Property Name="Bld_version.build" Type="Int">24</Property>
+				<Property Name="Bld_version.build" Type="Int">25</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Bld_version.minor" Type="Int">2</Property>
 				<Property Name="Bld_version.patch" Type="Int">1</Property>
