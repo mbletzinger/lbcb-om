@@ -264,7 +264,7 @@
 				<Property Name="Bld_previewCacheID" Type="Str">{6EDCF80E-E1C2-4DBB-9590-F94BEE7E1E0F}</Property>
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
-				<Property Name="Bld_version.build" Type="Int">14</Property>
+				<Property Name="Bld_version.build" Type="Int">15</Property>
 				<Property Name="Bld_version.major" Type="Int">3</Property>
 				<Property Name="Bld_version.minor" Type="Int">2</Property>
 				<Property Name="Bld_version.patch" Type="Int">3</Property>
@@ -584,7 +584,7 @@
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{00245106-59CE-428A-ADAB-AE8D3D77E5B5}</Property>
 				<Property Name="Bld_targetDestDir" Type="Path"></Property>
-				<Property Name="Bld_version.build" Type="Int">26</Property>
+				<Property Name="Bld_version.build" Type="Int">27</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Bld_version.minor" Type="Int">2</Property>
 				<Property Name="Bld_version.patch" Type="Int">1</Property>
