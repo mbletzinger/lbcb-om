@@ -26,7 +26,7 @@ namespace LbcbConversions
 
         public double[] transform(double[] displacement, bool isreverse)
         {
-            DenseMatrix xform = (isreverse ? (DenseMatrix) transformation.Transpose() : transformation);
+            DenseMatrix xform = (isreverse ? (DenseMatrix) transformation.Inverse() : transformation);
             double[] ddisp = new double[6];
             displacement.CopyTo(ddisp, 0);
             DenseMatrix2String m2s = new DenseMatrix2String();

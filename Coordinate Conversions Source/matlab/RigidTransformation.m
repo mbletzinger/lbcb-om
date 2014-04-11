@@ -14,9 +14,12 @@ classdef RigidTransformation < handle
         function result = transform(me,disp,isreverse)
             xform = me.transformMatrix;
             if isreverse
-                xform = xform';
+                xform = inv(xform);
             end
             result = disp;
+            if size(result,1) == 1
+                result = disp';
+            end
             roll = rotationalMatrix(disp(4),1);
             pitch = rotationalMatrix(disp(5),2);
             yaw = rotationalMatrix(disp(6),3);
@@ -25,6 +28,9 @@ classdef RigidTransformation < handle
             unt = rot * me.directionalVector';
             result(1:3) = unt + trans';
             result = xform * result;
+            if size(disp,1) == 1
+                result = result';
+            end
         end
         function result = transformForces(me,forces)
             result = forces;
