@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1000]W:\Operations Manager New DLL\Coordinate Conversions Source\LbcbConversionsUnitTests\LbcbConversionsUnitTests.csproj</TopNode>
+  <SelectedNode>[0-1005]LbcbConversionsUnitTests.test.LbcbConversionsUnitTests</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]W:\Operations Manager New DLL\Coordinate Conversions Source\LbcbConversionsUnitTests\LbcbConversionsUnitTests.csproj" Expanded="true" />
+    <Node UniqueName="[0-1016]W:\Operations Manager New DLL\Coordinate Conversions Source\LbcbConversionsUnitTests\bin\Debug\LbcbConversionsUnitTests.dll" Expanded="true" />
+    <Node UniqueName="[0-1017]LbcbConversionsUnitTests" Expanded="true" />
+    <Node UniqueName="[0-1013]LbcbConversionsUnitTests.test.NunitSetup" Expanded="true" />
+    <Node UniqueName="[0-1001]LbcbConversionsUnitTests.test.LbcbActuatorTest" Expanded="true" />
+    <Node UniqueName="[0-1005]LbcbConversionsUnitTests.test.LbcbConversionsUnitTests" Expanded="true" />
+    <Node UniqueName="[0-1009]LbcbConversionsUnitTests.test.LbcbUnitTests" Expanded="true" />
+    <Node UniqueName="[0-1014]LbcbConversionsUnitTests.test.RigidTransformationTests" Expanded="true" />
+  </Nodes>
+</VisualState>
