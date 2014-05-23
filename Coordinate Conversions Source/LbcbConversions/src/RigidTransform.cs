@@ -12,10 +12,9 @@ namespace LbcbConversions
         private RotationalMatrix pitch = new RotationalMatrix(RotationalOrientation.Pitch);
         private RotationalMatrix yaw = new RotationalMatrix(RotationalOrientation.Yaw);
         private ILog log = LogManager.GetLogger(typeof(RigidTransform));
-        private DenseMatrix collective = DenseMatrix.OfArray(new double[,] {{ 0.0, 1.0, 1.0 },{ 1.0, 0.0, 1.0 },{ 1.0, 1.0, 0.0 }});
         private DenseMatrix transformation;
 
-        public RigidTransform(double[] motionCenter, double [,] transformation)
+        public RigidTransform(double[] motionCenter, double[,] transformation)
         {
             this.motionCenter = new DenseVector(motionCenter);
             this.transformation = DenseMatrix.OfArray(transformation);
@@ -26,7 +25,7 @@ namespace LbcbConversions
 
         public double[] transform(double[] displacement, bool isreverse)
         {
-            DenseMatrix xform = (isreverse ? (DenseMatrix) transformation.Inverse() : transformation);
+            DenseMatrix xform = (isreverse ? (DenseMatrix)transformation.Inverse() : transformation);
             double[] ddisp = new double[6];
             displacement.CopyTo(ddisp, 0);
             DenseMatrix2String m2s = new DenseMatrix2String();
@@ -45,27 +44,25 @@ namespace LbcbConversions
             DenseVector newDisp1 = (DenseVector)unt.Add(newDisp);
             log.Debug("newDisp1: " + l2s.ToString(newDisp1.Values));
             dispV.SetSubVector(0, 3, newDisp1);
-            dispV = (DenseVector) xform.Multiply(dispV);
+            dispV = (DenseVector)xform.Multiply(dispV);
             return dispV.Values;
         }
         public double[] transformMoments(double[] forces)
         {
-            double [] fforce = new double[6];
+            double[] fforce = new double[6];
             forces.CopyTo(fforce, 0);
             DenseVector forceV = new DenseVector(fforce);
             DenseVector tforce = (DenseVector)forceV.SubVector(0, 3);
-            DenseVector moments = (DenseVector) forceV.SubVector(3, 3);
+            DenseVector moments = (DenseVector)forceV.SubVector(3, 3);
 
-            for (int i = 0; i < 3; i++)
-            {
-                DenseVector oneMass = (DenseVector) collective.Column(i);
-                DenseVectorCrossProduct crs = new DenseVectorCrossProduct(oneMass);
-                moments = (DenseVector)crs.crossProduct(directionalVector).Multiply(tforce[i]).Add(moments);
-            }
+            DenseVectorCrossProduct crs = new DenseVectorCrossProduct(tforce);
+            moments = (DenseVector)crs.crossProduct(directionalVector).Add(moments);
+
             forceV.SetSubVector(3, 3, moments);
             return forceV.Values;
         }
-        private DenseVector translate(double[] displacement, bool isreverse) {
+        private DenseVector translate(double[] displacement, bool isreverse)
+        {
             double[] ddisp = new double[6];
             displacement.CopyTo(ddisp, 0);
             DenseVector translation = DenseVector.Create(3, 0.0); ;
@@ -73,9 +70,9 @@ namespace LbcbConversions
             log.Debug("original disp: " + l2s.ToString(displacement));
             DenseVector dispV = new DenseVector(ddisp);
             log.Debug("original disp: " + l2s.ToString(displacement));
-            dispV.CopySubVectorTo(translation,0,0,3);
+            dispV.CopySubVectorTo(translation, 0, 0, 3);
             log.Debug("given trans:" + l2s.ToString(translation.Values) +
-                " from: " + l2s.ToString(dispV.Values) + 
+                " from: " + l2s.ToString(dispV.Values) +
                 " orig: " + l2s.ToString(displacement));
             DenseVector target;
             DenseVector reference;
@@ -93,11 +90,11 @@ namespace LbcbConversions
                 target = platformCenter;
                 reference = motionCenter;
             }
-            log.Debug("translation: " + l2s.ToString(translation.Values) + 
-                " reference: " + l2s.ToString(reference.Values) + 
+            log.Debug("translation: " + l2s.ToString(translation.Values) +
+                " reference: " + l2s.ToString(reference.Values) +
                 " target: " + l2s.ToString(target.Values));
-            DenseVector newDisp = (DenseVector) translation.Add(reference).Subtract(target);
-            log.Debug("calculated trans:" + l2s.ToString(newDisp.Values) + 
+            DenseVector newDisp = (DenseVector)translation.Add(reference).Subtract(target);
+            log.Debug("calculated trans:" + l2s.ToString(newDisp.Values) +
                 " dv: " + l2s.ToString(directionalVector.Values));
             return newDisp;
         }

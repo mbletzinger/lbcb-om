@@ -31,10 +31,10 @@ namespace LbcbConversionsUnitTests.test
         new double[] {   -0.0000e3,     0.0000e3,     0.0000e3,     0.0001e3,    -0.0005e3,    -0.0000e3},
         };
         private double[][] mcForces = new double[][] { 
-        new double[] {0.0568e3, 0.0217e3, 0.3595e3, 1.6722e3, -5.9672e3, -1.2473e3},
-        new double[] {0.0572e3, 0.0209e3, 0.3590e3, 1.7098e3, -5.9119e3, -1.5517e3},
-        new double[] {-0.0060e3, 0.0196e3, 0.3381e3, 1.6543e3, -5.7272e3, -1.2140e3},
-        new double[] {-0.0004, 0.0012, 0.0279, 0.1326, -0.4782, -0.1048}
+        new double[] {0.0568e3,    0.0217e3,    0.3595e3,    1.6722e3,   -5.1242e3,   -0.0637e3,},
+        new double[] {0.0572e3,    0.0209e3,    0.3590e3,    1.7098e3,   -5.0693e3,   -0.3658e3,},
+        new double[] {-0.0060e3,    0.0196e3,    0.3381e3,    1.6543e3,   -4.7538e3,   -0.2764e3,},
+        new double[] {0,         0,         0,    0.1000,   -0.5000,         0}
         };
         [Test]
         public void testTransform()
