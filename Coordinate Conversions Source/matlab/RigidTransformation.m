@@ -34,12 +34,19 @@ classdef RigidTransformation < handle
         end
         function result = transformForces(me,forces)
             result = forces;
-            rotationalM = [0 1 1; 1 0 1; 1 1 0];
+            rotationalM = eye(3);
             tforce = forces(1:3);
             moments = forces(4:6);
             for d = 1:3
                 moments = moments + cross(rotationalM(d,:),me.directionalVector) * tforce(d);
             end
+            result(4:6) = moments;
+        end
+        function result = transformForces2(me,forces)
+            result = forces;
+            tforce = forces(1:3);
+            moments = forces(4:6);
+            moments = moments + cross(tforce,me.directionalVector);
             result(4:6) = moments;
         end
         function translation = translate(me,disp,isreverse)
