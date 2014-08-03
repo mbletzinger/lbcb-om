@@ -28,7 +28,7 @@ namespace LbcbConversions
             switch (orient)
             {
                 case RotationalOrientation.Roll:
-                    result[0, 0] = cosine;
+                    result[1, 1] = cosine;
                     result[1, 2] = -sine;
                     result[2, 1] = sine;
                     result[2, 2] = cosine;

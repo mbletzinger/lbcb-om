@@ -24,7 +24,7 @@ classdef RigidTransformation < handle
             pitch = rotationalMatrix(disp(5),2);
             yaw = rotationalMatrix(disp(6),3);
             trans = me.translate(disp, isreverse);
-            rot = roll * pitch * yaw';
+            rot = roll * pitch * yaw;
             unt = rot * me.directionalVector';
             result(1:3) = unt + trans';
             result = xform * result;
