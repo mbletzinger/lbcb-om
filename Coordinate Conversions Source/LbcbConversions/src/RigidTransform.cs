@@ -32,7 +32,11 @@ namespace LbcbConversions
             List2String l2s = new List2String();
             DenseVector dispV = new DenseVector(ddisp);
             log.Debug("original disp: " + l2s.ToString(displacement));
-            DenseVector newDisp = translate(displacement, isreverse);
+            if (isreverse)
+            {
+                dispV = (DenseVector)xform.Multiply(dispV);
+            }
+            DenseVector newDisp = translate(dispV.Values, isreverse);
             log.Debug("newDisp: " + l2s.ToString(newDisp.Values));
             DenseMatrix rollM = roll.create(displacement[3]);
             DenseMatrix pitchM = pitch.create(displacement[4]);
@@ -44,7 +48,10 @@ namespace LbcbConversions
             DenseVector newDisp1 = (DenseVector)unt.Add(newDisp);
             log.Debug("newDisp1: " + l2s.ToString(newDisp1.Values));
             dispV.SetSubVector(0, 3, newDisp1);
-            dispV = (DenseVector)xform.Multiply(dispV);
+            if (isreverse == false)
+            {
+                dispV = (DenseVector)xform.Multiply(dispV);
+            }
             return dispV.Values;
         }
         public double[] transformMoments(double[] forces)
