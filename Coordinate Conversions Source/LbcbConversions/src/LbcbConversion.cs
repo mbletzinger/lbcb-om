@@ -33,8 +33,10 @@ namespace LbcbConversions
                 log.Debug("\"" + label + "\" result " + lbcb.ToString());
            
             actuatorDisplacements.setData(adisp);
-            double [] cartDisp = transform.transform(lbcb.getCartesianDisp(),false);
+            double [] cdisp = lbcb.getCartesianDisp();
+            double [] cartDisp = transform.transform(cdisp,false);
             cartesianDisplacements.setData(cartDisp);
+            log.Debug("\"" + label + "\" transformed cdisp from plat " + l2s.ToString(cdisp) + "\n\tto mc " + l2s.ToString(cartDisp));
             return cartDisp;
         }
         public double [] convertActuator2CartesianForces(double[] aforce)
@@ -49,7 +51,7 @@ namespace LbcbConversions
         {
             double [] cartDisp = transform.transform(cdisp, true);
                 log.Debug("\n\n\"" + label + "\" before " + lbcb.ToString());
-                log.Debug("\"" + label + "\" transformed cdisp from " + l2s.ToString(cdisp) + "\n\tto " + l2s.ToString(cartDisp));
+                log.Debug("\"" + label + "\" transformed cdisp from mc " + l2s.ToString(cdisp) + "\n\tto plat" + l2s.ToString(cartDisp));
                 log.Debug("\"" + label + "\" setting Cdisp to " + l2s.ToString(cartDisp));
                 lbcb.setCartesianDisp(cartDisp);
                 log.Debug("\"" + label + "\" result " + lbcb.ToString());
