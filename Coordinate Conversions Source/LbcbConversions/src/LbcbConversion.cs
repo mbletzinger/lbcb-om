@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,9 @@ namespace LbcbConversions
         private SynchronizedLbcbDataAccess actuatorDisplacements = new SynchronizedLbcbDataAccess();
         private SynchronizedLbcbDataAccess actuatorForces = new SynchronizedLbcbDataAccess();
         private String label;
+        private readonly static ILog log = LogManager.GetLogger(typeof(LbcbConversion));
+        private List2String l2s = new List2String();
+
         public LbcbConversion(String label, Lbcb lbcb, RigidTransform transform)
         {
             this.lbcb = lbcb;
@@ -23,7 +27,9 @@ namespace LbcbConversions
         }
         public double[] convertActuator2CartesianDisplacements(double[] adisp)
         {
+            log.Debug("\"" + label + "\" setting Adisp to " + l2s.ToString(adisp));
             lbcb.setActuatorDisp(adisp);
+            log.Debug("\"" + label + "\" result " + lbcb.ToString());
             actuatorDisplacements.setData(adisp);
             double [] cartDisp = transform.transform(lbcb.getCartesianDisp(),false);
             cartesianDisplacements.setData(cartDisp);
@@ -40,7 +46,10 @@ namespace LbcbConversions
         public double[] convertCartesian2ActuatorDisplacements(double[] cdisp)
         {
             double [] cartDisp = transform.transform(cdisp, true);
+            log.Debug("\"" + label + "\" transformed cdisp from " + l2s.ToString(cdisp) + " to " + l2s.ToString(cartDisp));
+            log.Debug("\"" + label + "\" setting Adisp to " + l2s.ToString(cartDisp));
             lbcb.setCartesianDisp(cartDisp);
+            log.Debug("\"" +label + "\" result " + lbcb.ToString());
             cartesianDisplacements.setData(cartDisp);
             double [] actDisp = lbcb.getActuatorDisp();
             actuatorDisplacements.setData(actDisp);

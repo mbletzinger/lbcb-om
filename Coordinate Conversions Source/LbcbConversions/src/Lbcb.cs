@@ -159,10 +159,10 @@ namespace LbcbConversions
             result += "\nCartF: " + l2s.ToString(cartesianForce.Values);
             result += "\nActD: " + l2s.ToString(actuatorDisp.Values);
             result += "\nActF: " + l2s.ToString(actuatorForce.Values);
-            foreach (LbcbActuator act in actuators)
-            {
-                result += "\n" + act;
-            }
+            //foreach (LbcbActuator act in actuators)
+            //{
+            //    result += "\n" + act;
+            //}
             return result;
         }
         public double [][] getActuatorPins() {

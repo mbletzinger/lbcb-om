@@ -25,7 +25,17 @@
       <appender-ref ref="RollingLogFileAppender" />
     </root>
 
-    <logger name="LbcbConversions.Lbcb">
-      <level value="INFO" />
-    </logger>
-  </log4net>
+  <!-- Print only messages of level WARN or above in the package Com.Foo -->
+  <logger name="LbcbConversions.LbcbActuator">
+    <level value="INFO" />
+  </logger>
+  <logger name="LbcbConversions.Lbcb">
+    <level value="INFO" />
+  </logger>
+  <logger name="LbcbConversions.RigidTransform">
+    <level value="INFO" />
+  </logger>
+  <logger name="LbcbConversions.LbcbConversion">
+    <level value="DEBUG" />
+  </logger>
+</log4net>
