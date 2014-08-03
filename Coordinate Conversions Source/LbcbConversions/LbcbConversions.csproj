@@ -96,6 +96,7 @@
     <None Include="packages.config" />
     <EmbeddedResource Include="resources\LogFormat.log">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

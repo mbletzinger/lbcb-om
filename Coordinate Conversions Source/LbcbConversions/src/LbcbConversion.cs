@@ -27,9 +27,13 @@ namespace LbcbConversions
         }
         public double[] convertActuator2CartesianDisplacements(double[] adisp)
         {
-            log.Debug("\"" + label + "\" setting Adisp to " + l2s.ToString(adisp));
-            lbcb.setActuatorDisp(adisp);
-            log.Debug("\"" + label + "\" result " + lbcb.ToString());
+            if (label.Contains("Read") == false)
+            {
+                log.Debug("\"" + label + "\" before " + lbcb.ToString());
+                log.Debug("\"" + label + "\" setting Adisp to " + l2s.ToString(adisp));
+                lbcb.setActuatorDisp(adisp);
+                log.Debug("\"" + label + "\" result " + lbcb.ToString());
+            }
             actuatorDisplacements.setData(adisp);
             double [] cartDisp = transform.transform(lbcb.getCartesianDisp(),false);
             cartesianDisplacements.setData(cartDisp);
@@ -46,10 +50,14 @@ namespace LbcbConversions
         public double[] convertCartesian2ActuatorDisplacements(double[] cdisp)
         {
             double [] cartDisp = transform.transform(cdisp, true);
-            log.Debug("\"" + label + "\" transformed cdisp from " + l2s.ToString(cdisp) + " to " + l2s.ToString(cartDisp));
-            log.Debug("\"" + label + "\" setting Adisp to " + l2s.ToString(cartDisp));
-            lbcb.setCartesianDisp(cartDisp);
-            log.Debug("\"" +label + "\" result " + lbcb.ToString());
+            if (label.Contains("Read") == false)
+            {
+                log.Debug("\"" + label + "\" before " + lbcb.ToString());
+                log.Debug("\"" + label + "\" transformed cdisp from " + l2s.ToString(cdisp) + "\n\tto " + l2s.ToString(cartDisp));
+                log.Debug("\"" + label + "\" setting Cdisp to " + l2s.ToString(cartDisp));
+                lbcb.setCartesianDisp(cartDisp);
+                log.Debug("\"" + label + "\" result " + lbcb.ToString());
+            }
             cartesianDisplacements.setData(cartDisp);
             double [] actDisp = lbcb.getActuatorDisp();
             actuatorDisplacements.setData(actDisp);
