@@ -150,18 +150,19 @@ namespace LbcbConversionsUnitTests.test
             for (int t = 0; t < 5; t++)
             {
                 CompareDoubleLists cmp = new CompareDoubleLists();
+                CompareDoubleLists cmpF = new CompareDoubleLists(0.005);
                 double[] actual = rig.transform(platDisp[t], false);
                 log.Debug("Checking mc disp");
                 cmp.Compare(exDisp[t], actual);
                 actual = rig.transformMoments(platForces[t]);
                 log.Debug("Checking mc force");
-                cmp.Compare(exForce[t], actual);
+                cmpF.Compare(exForce[t], actual);
                 actual = rig.transform(exDisp[t], true);
                 log.Debug("Checking plat disp");
                 cmp.Compare(platDisp[t], actual);
                 actual = rig.transformMoments(exForce[t]);
                 log.Debug("Checking plat force");
-                cmp.Compare(platForces[t], actual);
+                cmpF.Compare(platForces[t], actual);
             }
         }
     }

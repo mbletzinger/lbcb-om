@@ -26,21 +26,22 @@ namespace LbcbConversions
         public double[] transform(double[] displacement, bool isreverse)
         {
             DenseMatrix xform = (isreverse ? (DenseMatrix)transformation.Inverse() : transformation);
-            double[] ddisp = new double[6];
-            displacement.CopyTo(ddisp, 0);
+            double[] dispcopy = new double[6];
+            displacement.CopyTo(dispcopy, 0);
             DenseMatrix2String m2s = new DenseMatrix2String();
             List2String l2s = new List2String();
-            DenseVector dispV = new DenseVector(ddisp);
+            DenseVector dispV = new DenseVector(dispcopy);
             log.Debug("original disp: " + l2s.ToString(displacement));
             if (isreverse)
             {
                 dispV = (DenseVector)xform.Multiply(dispV);
+                log.Debug("transformed Disp: " + l2s.ToString(dispV.Values));
             }
             DenseVector newDisp = translate(dispV.Values, isreverse);
             log.Debug("newDisp: " + l2s.ToString(newDisp.Values));
-            DenseMatrix rollM = roll.create(displacement[3]);
-            DenseMatrix pitchM = pitch.create(displacement[4]);
-            DenseMatrix yawM = yaw.create(displacement[5]);
+            DenseMatrix rollM = roll.create(dispV.Values[3]);
+            DenseMatrix pitchM = pitch.create(dispV.Values[4]);
+            DenseMatrix yawM = yaw.create(dispV.Values[5]);
             DenseMatrix rotation = (DenseMatrix)rollM.Multiply(pitchM.Multiply(yawM));
             log.Debug("rotation: " + m2s.ToString(rotation));
             DenseVector unt = (DenseVector)rotation.Multiply(directionalVector);
@@ -52,6 +53,7 @@ namespace LbcbConversions
             {
                 dispV = (DenseVector)xform.Multiply(dispV);
             }
+            log.Debug("resulting Disp: " + l2s.ToString(dispV.Values));
             return dispV.Values;
         }
         public double[] transformMoments(double[] forces)
@@ -76,7 +78,6 @@ namespace LbcbConversions
             List2String l2s = new List2String();
             log.Debug("original disp: " + l2s.ToString(displacement));
             DenseVector dispV = new DenseVector(ddisp);
-            log.Debug("original disp: " + l2s.ToString(displacement));
             dispV.CopySubVectorTo(translation, 0, 0, 3);
             log.Debug("given trans:" + l2s.ToString(translation.Values) +
                 " from: " + l2s.ToString(dispV.Values) +
