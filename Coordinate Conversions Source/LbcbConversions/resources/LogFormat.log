@@ -36,6 +36,6 @@
     <level value="INFO" />
   </logger>
   <logger name="LbcbConversions.LbcbConversion">
-    <level value="DEBUG" />
+    <level value="INFO" />
   </logger>
 </log4net>
