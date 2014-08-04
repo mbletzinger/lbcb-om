@@ -1,4 +1,4 @@
-function [lbcb xfrm ] = loadLbcbsTxt(folder,lbcbNumber)
+function [lbcb, xfrm ] = loadLbcbsTxt(folder,lbcbNumber)
 pinFile = 'Lbcb[X]PinPositions.txt';
 xfrmFile = 'LBCB[X]_Transform.txt';
 mcFile = 'MotionCenters.txt';

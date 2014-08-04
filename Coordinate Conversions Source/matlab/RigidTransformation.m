@@ -13,21 +13,23 @@ classdef RigidTransformation < handle
         end
         function result = transform(me,disp,isreverse)
             xform = me.transformMatrix;
-            if isreverse
-                xform = inv(xform);
-            end
             result = disp;
             if size(result,1) == 1
                 result = disp';
             end
-            roll = rotationalMatrix(disp(4),1);
-            pitch = rotationalMatrix(disp(5),2);
-            yaw = rotationalMatrix(disp(6),3);
-            trans = me.translate(disp, isreverse);
+            if isreverse
+                result = xform\result;
+            end
+            roll = rotationalMatrix(result(4),1);
+            pitch = rotationalMatrix(result(5),2);
+            yaw = rotationalMatrix(result(6),3);
+            trans = me.translate(result, isreverse);
             rot = roll * pitch * yaw;
             unt = rot * me.directionalVector';
             result(1:3) = unt + trans';
-            result = xform * result;
+            if isreverse == false
+                result = xform * result;
+            end
             if size(disp,1) == 1
                 result = result';
             end
@@ -58,7 +60,7 @@ classdef RigidTransformation < handle
                 target = me.motionCenter;
             end
             me.directionalVector = target - reference;
-            translation = disp(1:3) + reference - target;
+            translation = disp(1:3)' + reference - target;
         end
     end
 end
