@@ -30,13 +30,14 @@ namespace LbcbConversionsUnitTests.test
             //           mda.Run();
 
             double[] cart = new double[] { 0, 0, 0, 0, 0, 0 };
-            double[] expected0 = new double[] { 0.9507, 0, 0.3101, 7.4413, -3.8690, -22.8173 };
-            double[] expected1 = new double[] { 0.9507, 0, 0.3101, 7.4612, -3.8691, -22.8591 };
-            double[] expected2 = new double[] { 0.9507, 0, 0.3101, 7.4413, -3.7207, -22.7798 };
-            double[] expected3 = new double[] { 0.9507, 0, 0.3101, 7.3994, -3.8319, -22.7258 };
+            double[] expected0 = new double[] { 9.507188628e-01, 000000000, 3.100542597e-01, 7.441302234e+00, -3.869040345e+00, -2.281725271e+01 };
+            double[] expected1 = new double[] { 9.507188628e-01, 000000000, 3.100542597e-01, 7.461168878e+00, -3.869144988e+00, -2.285910986e+01 };
+            double[] expected2 = new double[] { 9.507188628e-01, 000000000, 3.100542597e-01, 7.441302234e+00, -3.720685810e+00, -2.277976114e+01 };
+            double[] expected3 = new double[] { 9.507188628e-01, 000000000, 3.100542597e-01, 7.399352067e+00, -3.831938632e+00, -2.268862098e+01 };
             LbcbActuator[] pins1 = l1pins.getActuators();
             LbcbActuator x1 = pins1[0];
             CompareDoubleLists cdl = new CompareDoubleLists();
+
             cdl.Compare(expected0,x1.calcNewDiffs(cart));
             cart[3] = 0.005;
             cdl.Compare(expected1, x1.calcNewDiffs(cart));

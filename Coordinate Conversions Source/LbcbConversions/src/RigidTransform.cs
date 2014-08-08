@@ -64,8 +64,8 @@ namespace LbcbConversions
             DenseVector tforce = (DenseVector)forceV.SubVector(0, 3);
             DenseVector moments = (DenseVector)forceV.SubVector(3, 3);
 
-            DenseVectorCrossProduct crs = new DenseVectorCrossProduct(tforce);
-            moments = (DenseVector)crs.crossProduct(directionalVector).Add(moments);
+            DenseVectorCrossProduct crs = new DenseVectorCrossProduct(directionalVector);
+            moments = (DenseVector)crs.crossProduct(tforce).Add(moments);
 
             forceV.SetSubVector(3, 3, moments);
             return forceV.Values;
