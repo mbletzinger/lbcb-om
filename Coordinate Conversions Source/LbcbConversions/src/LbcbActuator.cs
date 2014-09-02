@@ -113,7 +113,7 @@ namespace LbcbConversions
             diffs.SetSubVector(0, 3, phai);
             DenseVector rphai = new DenseVector(new[] { (J[0, 0] * phai[0] + J[1, 0] * phai[1] + J[2, 0] * phai[2]), 
                     (J[0, 1] * phai[0] + J[1, 1] * phai[1] + J[2, 1] * phai[2]), 
-                        (J[0, 2] * phai[0] + J[1, 2] * phai[1] + J[2, 2] * phai[2]) });
+                        (J[0, 2] * phai[0] + J[1, 2] * phai[2] + J[2, 2] * phai[2]) });
             log.Debug("rphai " + l2s.ToString(rphai.Values));
             diffs.SetSubVector(3, 3, rphai);
             return diffs.Values;

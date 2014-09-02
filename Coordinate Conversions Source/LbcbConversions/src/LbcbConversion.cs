@@ -21,7 +21,8 @@ namespace LbcbConversions
 
         public LbcbConversion(String label, Lbcb lbcb, RigidTransform transform)
         {
-            this.lbcb = lbcb;
+            String newlabel = lbcb.getLabel() + "_" + label;
+            this.lbcb = new Lbcb( newlabel, lbcb.getActuatorPins());
             this.transform = transform;
             this.label = label;
         }

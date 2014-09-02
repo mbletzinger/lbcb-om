@@ -168,5 +168,9 @@ namespace LbcbConversions
         public double [][] getActuatorPins() {
             return actuatorPins;
         }
+        public String getLabel()
+        {
+            return label;
+        }
     }
 }
