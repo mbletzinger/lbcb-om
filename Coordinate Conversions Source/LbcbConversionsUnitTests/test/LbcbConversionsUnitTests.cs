@@ -14,7 +14,7 @@ namespace LbcbConversionsUnitTests.test
     {
         private ExpectedLbcbValues[] expected1;
         private ExpectedLbcbValues[] expected2;
-        private LbcbConversionFactory lbcbFactory;
+        private ConversionFactory lbcbFactory;
         private static readonly ILog log = LogManager.GetLogger(typeof(LbcbConversionsUnitTests));
 
         [NUnit.Framework.SetUp]
@@ -24,11 +24,11 @@ namespace LbcbConversionsUnitTests.test
             expected1 = data.getExpectedLbcbValues();
             data = new LbcbData("LBCB2_Snapshot.txt");
             expected2 = data.getExpectedLbcbValues();
-            ActuatorPinLocationData l1pins = new ActuatorPinLocationData(Assembly.GetExecutingAssembly());
-            ActuatorPinLocationData l2pins = new ActuatorPinLocationData(Assembly.GetExecutingAssembly());
+            TransducerPinLocationData l1pins = new TransducerPinLocationData(Assembly.GetExecutingAssembly());
+            TransducerPinLocationData l2pins = new TransducerPinLocationData(Assembly.GetExecutingAssembly());
             l1pins.loadPins("Lbcb1PinPositions.txt");
             l2pins.loadPins("Lbcb2PinPositions.txt");
-            lbcbFactory = new LbcbConversionFactory();
+            lbcbFactory = new ConversionFactory();
             double[] motionCenter = new double[] { 0.0, 0.0, 0.0 };
             double[] xform = new double[] { 
              1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 

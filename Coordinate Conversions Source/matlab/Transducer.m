@@ -1,4 +1,4 @@
-classdef Actuator < handle
+classdef Transducer < handle
     properties
         initialPlat
         currentPlat
@@ -8,7 +8,7 @@ classdef Actuator < handle
         initialLength
     end
     methods
-        function me = Actuator(positions, label)
+        function me = Transducer(positions, label)
             me.fixed = positions(1:3);
             me.initialPlat = positions(4:6);
             me.currentPlat = me.initialPlat;

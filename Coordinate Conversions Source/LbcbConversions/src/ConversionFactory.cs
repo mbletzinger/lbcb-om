@@ -13,10 +13,11 @@ using System.Threading.Tasks;
 
 namespace LbcbConversions
 {
-    public class LbcbConversionFactory
+    public class ConversionFactory
     {
-        private Dictionary<String, LbcbConversion> convertMap = new Dictionary<String,LbcbConversion>();
-        private ILog log = LogManager.GetLogger(typeof(LbcbConversionFactory));
+        private Dictionary<String, LbcbConversion> lbcbMap = new Dictionary<String, LbcbConversion>();
+        private Dictionary<String, TransducerConversion> transducerMap = new Dictionary<String, TransducerConversion>();
+        private ILog log = LogManager.GetLogger(typeof(ConversionFactory));
         private Lbcb[] lbcbs = new Lbcb[2];
         private RigidTransform[] transforms = new RigidTransform[2];
         public void setLbcb(bool isLbcb2, double[] flattenedPinArray, double[] motionCenter, double[] flattenedTransformation)
@@ -33,7 +34,7 @@ namespace LbcbConversions
                 for (int c = 0; c < 6; c++)
                 {
                     pins[r][c] = flattenedPinArray[r * 6 + c];
-                    xpins[r,c] = flattenedPinArray[r * 6 + c];
+                    xpins[r, c] = flattenedPinArray[r * 6 + c];
                     xform[r, c] = flattenedTransformation[r * 6 + c];
 
                 }
@@ -41,18 +42,19 @@ namespace LbcbConversions
 
             log.Info("Creating " + (isLbcb2 ? "LBCB 2" : "LBCB 1")
                 + " with \n]\t Motion Center: " + l2s.ToString(motionCenter)
-               + "\n\t Transformation Matrix: " + m2s.ToString(DenseMatrix.OfArray(xform)) 
+               + "\n\t Transformation Matrix: " + m2s.ToString(DenseMatrix.OfArray(xform))
                + "\n\t Pins Locations: " + m2s.ToString(DenseMatrix.OfArray(xpins)));
-           Lbcb lbcb = new Lbcb((isLbcb2 ? "LBCB 2" : "LBCB 1"), pins);
+            double[] errorWindow = new double [] { 0.00001, 0.00001, 0.00001, 0.00001, 0.00001, 0.00001 };
+            Lbcb lbcb = new Lbcb((isLbcb2 ? "LBCB 2" : "LBCB 1"), pins, errorWindow);
             lbcbs[(isLbcb2 ? 1 : 0)] = lbcb;
-            RigidTransform transform = new RigidTransform(motionCenter,xform);
+            RigidTransform transform = new RigidTransform(motionCenter, xform);
             transforms[(isLbcb2 ? 1 : 0)] = transform;
         }
         public LbcbConversion create(String label, bool isLbcb2)
         {
             int idx = (isLbcb2 ? 1 : 0);
             LbcbConversion convert = new LbcbConversion(label, lbcbs[idx], transforms[idx]);
-            convertMap.Add(label, convert);
+            lbcbMap.Add(label, convert);
             return convert;
         }
         public LbcbConversion get(String label)
@@ -60,7 +62,7 @@ namespace LbcbConversions
             LbcbConversion result;
             try
             {
-                bool worked = convertMap.TryGetValue(label, out result);
+                bool worked = lbcbMap.TryGetValue(label, out result);
                 if (worked)
                 {
                     return result;
@@ -73,7 +75,7 @@ namespace LbcbConversions
             }
             catch (Exception e)
             {
-                log.Error("\"" + label + "\" does not work because ",e);
+                log.Error("\"" + label + "\" does not work because ", e);
                 return null;
             }
         }

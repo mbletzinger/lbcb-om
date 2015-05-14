@@ -10,13 +10,14 @@ using System.Threading.Tasks;
 
 namespace LbcbConversionsUnitTests.test
 {
-    class ActuatorPinLocationData
+    class TransducerPinLocationData
     {
-        private ILog log = LogManager.GetLogger(typeof(ActuatorPinLocationData));
+        private ILog log = LogManager.GetLogger(typeof(TransducerPinLocationData));
         private Assembly _assembly;
         private double[][] pins = new double[6][];
+        private String[] labels = new String[6];
 
-        public ActuatorPinLocationData(Assembly _assembly)
+        public TransducerPinLocationData(Assembly _assembly)
         {
             this._assembly = _assembly;
         }
@@ -66,7 +67,7 @@ namespace LbcbConversionsUnitTests.test
                 return;
             }
             StreamReader _textStreamReader = new StreamReader(strm);
-            int actuator = 0;
+            int transducer = 0;
             while (true)
             {
                 string line;
@@ -86,15 +87,48 @@ namespace LbcbConversionsUnitTests.test
                 }
                 string[] tokens = line.Split('\t');
                 double[] values = convertTokens(tokens);
-                pins[actuator] = values;
-                actuator++;
+                pins[transducer] = values;
+                transducer++;
             }
+            _textStreamReader.Close();
+            _textStreamReader.Dispose();
         }
-        public LbcbActuator [] getActuators() {
-        LbcbActuator[] actuators = new LbcbActuator[6];
+        public void loadLabels(String resourceName)
+        {
+            Stream strm = open(resourceName);
+            if (strm == null)
+            {
+                log.Error("Aborting LBCB pin position load");
+                return;
+            }
+            StreamReader _textStreamReader = new StreamReader(strm);
+                string line;
+                try
+                {
+                    line = _textStreamReader.ReadLine();
+                }
+                catch (SystemException e)
+                {
+                    log.Debug("Parsing of file \"" + resourceName + "\" aborted", e);
+                    _textStreamReader.Close();
+                    _textStreamReader.Dispose();
+                    return;
+                }
+                if (line == null)
+                {
+                    log.Debug("Parsing of file \"" + resourceName + "\" finished");
+                    _textStreamReader.Close();
+                    _textStreamReader.Dispose();
+                    return;
+                }
+                labels = line.Split('\t');
+        }
+        public DispTransducer[] getActuators()
+        {
+        DispTransducer[] actuators = new DispTransducer[6];
             for (int a = 0; a < 6; a++)
             {
-                actuators[a] = new LbcbActuator(((ActuatorLabels)a).ToString(), pins[a]);
+                actuators[a] = new DispTransducer(((ActuatorLabels)a).ToString(), pins[a]);
                 log.Debug("Created Actuator Position: " + actuators[a]);
             }
             return actuators;
@@ -122,6 +156,10 @@ namespace LbcbConversionsUnitTests.test
         public double[][] getPins()
         {
             return pins;
+        }
+        public String [] getLabels()
+        {
+            return labels;
         }
         public double[] getFlattenedPins()
         {

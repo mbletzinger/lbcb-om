@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LbcbConversions
 {
-    public class LbcbActuator
+    public class DispTransducer
     {
         private double length;
         private double initialLength;
@@ -19,10 +19,10 @@ namespace LbcbConversions
         private RotationalMatrix roll = new RotationalMatrix(RotationalOrientation.Roll);
         private RotationalMatrix pitch = new RotationalMatrix(RotationalOrientation.Pitch);
         private RotationalMatrix yaw = new RotationalMatrix(RotationalOrientation.Yaw);
-        private ILog log = LogManager.GetLogger(typeof(LbcbActuator));
+        private ILog log = LogManager.GetLogger(typeof(DispTransducer));
         private String label;
 
-        public LbcbActuator(String label, double [] pins)
+        public DispTransducer(String label, double [] pins)
         {
             DenseVector combinedPins = new DenseVector(pins);
             this.fixedPin = new DenseVector(3);

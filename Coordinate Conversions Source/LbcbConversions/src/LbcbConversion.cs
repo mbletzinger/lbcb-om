@@ -1,4 +1,5 @@
 ﻿using log4net;
+using MathNet.Numerics.LinearAlgebra.Double;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace LbcbConversions
         public LbcbConversion(String label, Lbcb lbcb, RigidTransform transform)
         {
             String newlabel = lbcb.getLabel() + "_" + label;
-            this.lbcb = new Lbcb( newlabel, lbcb.getActuatorPins());
+            this.lbcb = new Lbcb( newlabel, lbcb.getActuatorPins(), lbcb.getErrorWindow());
             this.transform = transform;
             this.label = label;
         }
