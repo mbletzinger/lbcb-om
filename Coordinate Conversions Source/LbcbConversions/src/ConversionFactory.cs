@@ -16,9 +16,9 @@ namespace LbcbConversions
     public class ConversionFactory
     {
         private Dictionary<String, LbcbConversion> lbcbMap = new Dictionary<String, LbcbConversion>();
-        private Dictionary<String, TransducerConversion> transducerMap = new Dictionary<String, TransducerConversion>();
         private ILog log = LogManager.GetLogger(typeof(ConversionFactory));
         private Lbcb[] lbcbs = new Lbcb[2];
+        private TransducerSpace[] transducers = new TransducerSpace[2];
         private RigidTransform[] transforms = new RigidTransform[2];
         public void setLbcb(bool isLbcb2, double[] flattenedPinArray, double[] motionCenter, double[] flattenedTransformation)
         {
@@ -50,12 +50,39 @@ namespace LbcbConversions
             RigidTransform transform = new RigidTransform(motionCenter, xform);
             transforms[(isLbcb2 ? 1 : 0)] = transform;
         }
+        public void setSensors(bool isSensors2, double[] flattenedPinArray, String [] sensorLabels, double[] errorWindow) 
+        {
+            double[][] pins = new double[6][];
+            double[,] xpins = new double[6, 6];
+            List2String l2s = new List2String();
+            DenseMatrix2String m2s = new DenseMatrix2String();
+
+            for (int r = 0; r < 6; r++)
+            {
+                pins[r] = new double[6];
+                for (int c = 0; c < 6; c++)
+                {
+                    pins[r][c] = flattenedPinArray[r * 6 + c];
+                    xpins[r, c] = flattenedPinArray[r * 6 + c];
+
+                }
+            }
+
+            log.Info("Creating " + (isSensors2 ? "Sensors 2" : "Sensors 1")
+               + "\n\t Pins Locations: " + m2s.ToString(DenseMatrix.OfArray(xpins)));
+            TransducerSpace sensors = new TransducerSpace((isSensors2 ? "Sensors 2" : "Sensors 1"), pins, sensorLabels,  errorWindow);
+            transducers[(isSensors2 ? 1 : 0)] = sensors;
+        }
         public LbcbConversion create(String label, bool isLbcb2)
         {
             int idx = (isLbcb2 ? 1 : 0);
             LbcbConversion convert = new LbcbConversion(label, lbcbs[idx], transforms[idx]);
             lbcbMap.Add(label, convert);
             return convert;
+        }
+        public TransducerSpace getSensors(bool isSensors2)
+        {
+            return transducers[(isSensors2 ? 1 : 0)];
         }
         public LbcbConversion get(String label)
         {
