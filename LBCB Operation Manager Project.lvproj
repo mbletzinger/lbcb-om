@@ -54,8 +54,6 @@
 		<Item Name="OM Setup.vi" Type="VI" URL="../OM Setup.vi"/>
 		<Item Name="AutobalanceTest.vi" Type="VI" URL="../AutobalanceTest.vi"/>
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
-		<Item Name="MCL Volts Transactions List.vi" Type="VI" URL="../lib/Global Data/Transactions/MCL Volts Transactions List.vi"/>
-		<Item Name="Pack Volts.vi" Type="VI" URL="../lib/Global Data/Transactions/Pack Volts.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -340,7 +338,6 @@
 			<Item Name="Enum2String.vi" Type="VI" URL="../Data Access Objects/Channel Paths/Enum2String.vi"/>
 			<Item Name="Channel Path List Actions.ctl" Type="VI" URL="../Data Access Objects/Channel Paths/Channel Path List Actions.ctl"/>
 			<Item Name="Daq Channel Paths DAO.vi" Type="VI" URL="../Data Access Objects/Channel Paths/Daq Channel Paths DAO.vi"/>
-			<Item Name="Source Group Type.ctl" Type="VI" URL="/W/NSEL OM/lib/Global Data/Names/Source Group Type.ctl"/>
 			<Item Name="Create Snapshot Transaction List.vi" Type="VI" URL="../lib/Global Data/Transactions/Create Snapshot Transaction List.vi"/>
 			<Item Name="Dataset Transaction Id.ctl" Type="VI" URL="../lib/Global Data/Transactions/Dataset Transaction Id.ctl"/>
 			<Item Name="Dataset Transaction Id 2 Label.vi" Type="VI" URL="../lib/Global Data/Transactions/Dataset Transaction Id 2 Label.vi"/>
@@ -431,7 +428,7 @@
 				<Property Name="Source[15].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[15].type" Type="Str">VI</Property>
 				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[16].itemID" Type="Ref">/My Computer/Exec/Command Displacement Diffs.vi</Property>
+				<Property Name="Source[16].itemID" Type="Ref">/My Computer/Exec/Autobalance Window.vi</Property>
 				<Property Name="Source[16].type" Type="Str">VI</Property>
 				<Property Name="Source[17].destinationIndex" Type="Int">2</Property>
 				<Property Name="Source[17].itemID" Type="Ref">/My Computer/Test Utilities/testNtcpLink.pl</Property>
