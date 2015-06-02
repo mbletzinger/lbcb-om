@@ -48,9 +48,11 @@
 		<Item Name="Test Utilities" Type="Folder" URL="../Test Utilities">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="XControls" Type="Folder">
-			<Item Name="LBCB Position XC.xctl" Type="XControl" URL="../XControls/LBCB Position XC.xctl"/>
-			<Item Name="Pin Position.xctl" Type="XControl" URL="../Menus/Pin Position.xctl"/>
+		<Item Name="XControls" Type="Folder" URL="../XControls">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
+		<Item Name="Menus" Type="Folder" URL="../Menus">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="LBCB Operation Manager.vi" Type="VI" URL="../LBCB Operation Manager.vi"/>
 		<Item Name="Menu.rtm" Type="Document" URL="../Menu.rtm"/>
@@ -59,7 +61,6 @@
 		<Item Name="AutobalanceTest.vi" Type="VI" URL="../AutobalanceTest.vi"/>
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
 		<Item Name="Old OM Setup.vi" Type="VI" URL="../Old OM Setup.vi"/>
-		<Item Name="LBCB Position Menu.rtm" Type="Document" URL="../Menus/LBCB Position Menu.rtm"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
