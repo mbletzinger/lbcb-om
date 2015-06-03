@@ -24,12 +24,6 @@
 		<Item Name="DofType Read.vi" Type="Property VI" URL="../DofType Read.vi"/>
 		<Item Name="DofType Write.vi" Type="Property VI" URL="../DofType Write.vi"/>
 	</Item>
-	<Item Name="LBCB" Type="Property Folder">
-		<Property Name="NI.LibItem.Prop.Identifier" Type="Str">LBCB</Property>
-		<Property Name="NI.LibItem.Prop.Localized.LongName" Type="Str">LBCB</Property>
-		<Item Name="LBCB Read.vi" Type="Property VI" URL="../LBCB Read.vi"/>
-		<Item Name="LBCB Write.vi" Type="Property VI" URL="../LBCB Write.vi"/>
-	</Item>
 	<Item Name="Limit State" Type="Property Folder">
 		<Property Name="NI.LibItem.Prop.Identifier" Type="Str">Limit State</Property>
 		<Property Name="NI.LibItem.Prop.Localized.LongName" Type="Str">Limit State</Property>
@@ -42,6 +36,7 @@
 		<Item Name="System Fault Read.vi" Type="Property VI" URL="../System Fault Read.vi"/>
 		<Item Name="System Fault Write.vi" Type="Property VI" URL="../System Fault Write.vi"/>
 	</Item>
+	<Item Name="Check Limits.vi" Type="VI" URL="../Check Limits.vi"/>
 	<Item Name="Display State 2 Colors.vi" Type="VI" URL="../Display State 2 Colors.vi"/>
 	<Item Name="Limits Data.ctl" Type="Ability VI" URL="../Limits Data.ctl">
 		<Property Name="NI.XItem.Name" Type="Str">Data</Property>

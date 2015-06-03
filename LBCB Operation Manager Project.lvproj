@@ -350,6 +350,12 @@
 			<Item Name="Create Snapshot Transaction List.vi" Type="VI" URL="../lib/Global Data/Transactions/Create Snapshot Transaction List.vi"/>
 			<Item Name="Dataset Transaction Id.ctl" Type="VI" URL="../lib/Global Data/Transactions/Dataset Transaction Id.ctl"/>
 			<Item Name="Dataset Transaction Id 2 Label.vi" Type="VI" URL="../lib/Global Data/Transactions/Dataset Transaction Id 2 Label.vi"/>
+			<Item Name="Cartesian Moment Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Cartesian Moment Boundary DAO.vi"/>
+			<Item Name="Actuator Disp Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Actuator Disp Boundary DAO.vi"/>
+			<Item Name="Cartesian Translation Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Cartesian Translation Boundary DAO.vi"/>
+			<Item Name="Cartesian Force Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Cartesian Force Boundary DAO.vi"/>
+			<Item Name="Cartesian Rotation Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Cartesian Rotation Boundary DAO.vi"/>
+			<Item Name="Actuator Force Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Actuator Force Boundary DAO.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
