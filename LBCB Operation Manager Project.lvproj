@@ -357,6 +357,13 @@
 			<Item Name="Cartesian Force Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Cartesian Force Boundary DAO.vi"/>
 			<Item Name="Cartesian Rotation Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Cartesian Rotation Boundary DAO.vi"/>
 			<Item Name="Actuator Force Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Actuator Force Boundary DAO.vi"/>
+			<Item Name="I Gain DAO.vi" Type="VI" URL="../lib/Data Access Objects/Control Loop/I Gain DAO.vi"/>
+			<Item Name="PID Controls.ctl" Type="VI" URL="../lib/Data Access Objects/Control Loop/PID Controls.ctl"/>
+			<Item Name="PID Controls DAO.vi" Type="VI" URL="../lib/Data Access Objects/Control Loop/PID Controls DAO.vi"/>
+			<Item Name="P Gain DAO.vi" Type="VI" URL="../lib/Data Access Objects/Control Loop/P Gain DAO.vi"/>
+			<Item Name="Force Control Parameters.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Force Control Parameters.ctl"/>
+			<Item Name="Mixed Mode Force Group Priorities DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Force Group Priorities DAO.vi"/>
+			<Item Name="Force Control Parameters DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Force Control Parameters DAO.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
