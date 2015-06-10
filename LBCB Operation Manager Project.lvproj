@@ -364,7 +364,6 @@
 			<Item Name="Force Control Parameters.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Force Control Parameters.ctl"/>
 			<Item Name="Mixed Mode Force Group Priorities DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Force Group Priorities DAO.vi"/>
 			<Item Name="Force Control Parameters DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Force Control Parameters DAO.vi"/>
-			<Item Name="Command Channel Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/Calibration/Command Channel Names DAO.vi"/>
 			<Item Name="LVDT Channel Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/Calibration/LVDT Channel Names DAO.vi"/>
 			<Item Name="Load Cell Channel Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/Calibration/Load Cell Channel Names DAO.vi"/>
 			<Item Name="Servo Error Channel Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/Calibration/Servo Error Channel Names DAO.vi"/>
