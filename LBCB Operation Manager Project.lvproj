@@ -338,6 +338,7 @@
 				<Item Name="DAQmx Create Channel (CI-Duty Cycle).vi" Type="VI" URL="/&lt;vilib&gt;/DAQmx/create/channels.llb/DAQmx Create Channel (CI-Duty Cycle).vi"/>
 				<Item Name="XControlSupport.lvlib" Type="Library" URL="/&lt;vilib&gt;/_xctls/XControlSupport.lvlib"/>
 				<Item Name="Version To Dotted String.vi" Type="VI" URL="/&lt;vilib&gt;/_xctls/Version To Dotted String.vi"/>
+				<Item Name="LVRowAndColumnTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRowAndColumnTypeDef.ctl"/>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
@@ -369,7 +370,7 @@
 			<Item Name="Servo Error Channel Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/Calibration/Servo Error Channel Names DAO.vi"/>
 			<Item Name="External Sensor Channel Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/External Sensors/External Sensor Channel Names DAO.vi"/>
 			<Item Name="External Sensor Display Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/External Sensors/External Sensor Display Names DAO.vi"/>
-			<Item Name="External Sensor Sensitivities DAO.vi" Type="VI" URL="../lib/Data Access Objects/External Sensors/External Sensor Sensitivities DAO.vi"/>
+			<Item Name="Command Voltage Limit DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Command Voltage Limit DAO.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
