@@ -9,16 +9,16 @@
 	<Property Name="NI.XItem.Express" Type="Bool">false</Property>
 	<Property Name="NI.XItem.Name" Type="Str">XControl 1</Property>
 	<Property Name="NI.XItem.SupportsFatalErrorOut" Type="Bool">false</Property>
-	<Item Name="Sensors Page Data.ctl" Type="Ability VI" URL="../../lib/Data Access Objects/Sensors Page Data.ctl">
+	<Item Name="Sensors Page Data.ctl" Type="Ability VI" URL="../Sensors Page Data.ctl">
 		<Property Name="NI.XItem.Name" Type="Str">Data</Property>
 	</Item>
-	<Item Name="Sensors Page Facade.vi" Type="Ability VI" URL="../../lib/Data Access Objects/Sensors Page Facade.vi">
+	<Item Name="Sensors Page Facade.vi" Type="Ability VI" URL="../Sensors Page Facade.vi">
 		<Property Name="NI.XItem.Name" Type="Str">Facade</Property>
 	</Item>
-	<Item Name="Sensors Page Init.vi" Type="Ability VI" URL="../../lib/Data Access Objects/Sensors Page Init.vi">
+	<Item Name="Sensors Page Init.vi" Type="Ability VI" URL="../Sensors Page Init.vi">
 		<Property Name="NI.XItem.Name" Type="Str">Init</Property>
 	</Item>
-	<Item Name="Sensors Page State.ctl" Type="Ability VI" URL="../../lib/Data Access Objects/Sensors Page State.ctl">
+	<Item Name="Sensors Page State.ctl" Type="Ability VI" URL="../Sensors Page State.ctl">
 		<Property Name="NI.XItem.Name" Type="Str">State</Property>
 	</Item>
 </XControl>

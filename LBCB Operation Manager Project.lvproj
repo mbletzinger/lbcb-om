@@ -62,6 +62,7 @@
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
 		<Item Name="Old OM Setup.vi" Type="VI" URL="../Old OM Setup.vi"/>
 		<Item Name="Old Limits Page.vi" Type="VI" URL="../Old Limits Page.vi"/>
+		<Item Name="Sensor Changes.vi" Type="VI" URL="/W/NSEL OM/XControls/Sensor Changes.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
