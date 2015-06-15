@@ -62,7 +62,6 @@
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
 		<Item Name="Old OM Setup.vi" Type="VI" URL="../Old OM Setup.vi"/>
 		<Item Name="Old Limits Page.vi" Type="VI" URL="../Old Limits Page.vi"/>
-		<Item Name="Sensor Changes.vi" Type="VI" URL="/W/NSEL OM/XControls/Sensor Changes.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -347,7 +346,6 @@
 			</Item>
 			<Item Name="Sensor DB Actions.ctl" Type="VI" URL="../Data Access Objects/Sensors/Sensor DB Actions.ctl"/>
 			<Item Name="Sensor Limits.vi" Type="VI" URL="../Data Access Objects/Sensors/Sensor Limits.vi"/>
-			<Item Name="Enum2String.vi" Type="VI" URL="../Data Access Objects/Channel Paths/Enum2String.vi"/>
 			<Item Name="Channel Path List Actions.ctl" Type="VI" URL="../Data Access Objects/Channel Paths/Channel Path List Actions.ctl"/>
 			<Item Name="Daq Channel Paths DAO.vi" Type="VI" URL="../Data Access Objects/Channel Paths/Daq Channel Paths DAO.vi"/>
 			<Item Name="Create Snapshot Transaction List.vi" Type="VI" URL="../lib/Global Data/Transactions/Create Snapshot Transaction List.vi"/>
