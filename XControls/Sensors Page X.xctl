@@ -9,6 +9,7 @@
 	<Property Name="NI.XItem.Express" Type="Bool">false</Property>
 	<Property Name="NI.XItem.Name" Type="Str">XControl 1</Property>
 	<Property Name="NI.XItem.SupportsFatalErrorOut" Type="Bool">false</Property>
+	<Item Name="Add DAQmx Channels.vi" Type="VI" URL="../../lib/DAQ IO/Add DAQmx Channels.vi"/>
 	<Item Name="Sensors Page Data.ctl" Type="Ability VI" URL="../Sensors Page Data.ctl">
 		<Property Name="NI.XItem.Name" Type="Str">Data</Property>
 	</Item>
