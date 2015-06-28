@@ -370,6 +370,7 @@
 			<Item Name="External Sensor Channel Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/External Sensors/External Sensor Channel Names DAO.vi"/>
 			<Item Name="External Sensor Display Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/External Sensors/External Sensor Display Names DAO.vi"/>
 			<Item Name="Command Voltage Limit DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Command Voltage Limit DAO.vi"/>
+			<Item Name="Sensor DAO Class.lvclass" Type="LVClass" URL="/W/NSEL OM/lib/Data Access Objects/Sensors/Sensor DAO Class.lvclass"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
