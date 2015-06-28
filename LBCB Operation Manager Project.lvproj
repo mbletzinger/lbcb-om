@@ -367,6 +367,7 @@
 			<Item Name="External Sensor Display Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/External Sensors/External Sensor Display Names DAO.vi"/>
 			<Item Name="Command Voltage Limit DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Command Voltage Limit DAO.vi"/>
 			<Item Name="BadAiMax Filter.vi" Type="VI" URL="../lib/DAQ IO/BadAiMax Filter.vi"/>
+			<Item Name="Force Tags Change Message DAO.vi" Type="VI" URL="../lib/IPC Messages/Force Tags Change Message DAO.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
