@@ -344,10 +344,6 @@
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Sensor DB Actions.ctl" Type="VI" URL="../Data Access Objects/Sensors/Sensor DB Actions.ctl"/>
-			<Item Name="Sensor Limits.vi" Type="VI" URL="../Data Access Objects/Sensors/Sensor Limits.vi"/>
-			<Item Name="Channel Path List Actions.ctl" Type="VI" URL="../Data Access Objects/Channel Paths/Channel Path List Actions.ctl"/>
-			<Item Name="Daq Channel Paths DAO.vi" Type="VI" URL="../Data Access Objects/Channel Paths/Daq Channel Paths DAO.vi"/>
 			<Item Name="Create Snapshot Transaction List.vi" Type="VI" URL="../lib/Global Data/Transactions/Create Snapshot Transaction List.vi"/>
 			<Item Name="Dataset Transaction Id.ctl" Type="VI" URL="../lib/Global Data/Transactions/Dataset Transaction Id.ctl"/>
 			<Item Name="Dataset Transaction Id 2 Label.vi" Type="VI" URL="../lib/Global Data/Transactions/Dataset Transaction Id 2 Label.vi"/>
@@ -370,7 +366,7 @@
 			<Item Name="External Sensor Channel Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/External Sensors/External Sensor Channel Names DAO.vi"/>
 			<Item Name="External Sensor Display Names DAO.vi" Type="VI" URL="../lib/Data Access Objects/External Sensors/External Sensor Display Names DAO.vi"/>
 			<Item Name="Command Voltage Limit DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Command Voltage Limit DAO.vi"/>
-			<Item Name="Sensor DAO Class.lvclass" Type="LVClass" URL="/W/NSEL OM/lib/Data Access Objects/Sensors/Sensor DAO Class.lvclass"/>
+			<Item Name="BadAiMax Filter.vi" Type="VI" URL="../lib/DAQ IO/BadAiMax Filter.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
