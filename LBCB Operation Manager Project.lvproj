@@ -368,12 +368,14 @@
 			<Item Name="BadAiMax Filter.vi" Type="VI" URL="../lib/DAQ IO/BadAiMax Filter.vi"/>
 			<Item Name="Force Tags Change Message DAO.vi" Type="VI" URL="../lib/IPC Messages/Force Tags Change Message DAO.vi"/>
 			<Item Name="Offsets.vi" Type="VI" URL="../lib/Offsets/Offsets.vi"/>
-			<Item Name="Dataset Source.ctl" Type="VI" URL="../lib/Global Data/Transactions/Dataset Source.ctl"/>
 			<Item Name="Sort Transactions.vi" Type="VI" URL="../lib/Global Data/Transactions/Sort Transactions.vi"/>
 			<Item Name="Label 2 Dataset Transaction Id.vi" Type="VI" URL="../lib/Global Data/Transactions/Label 2 Dataset Transaction Id.vi"/>
 			<Item Name="Name Actions.ctl" Type="VI" URL="../lib/Global Data/Names/Name Actions.ctl"/>
 			<Item Name="Names Data Set.vi" Type="VI" URL="../lib/Global Data/Names/Names Data Set.vi"/>
 			<Item Name="Global Name Set.vi" Type="VI" URL="../lib/Global Data/Names/Global Name Set.vi"/>
+			<Item Name="Increment Data.vi" Type="VI" URL="../lib/Global Data/Increment Data.vi"/>
+			<Item Name="Limit Boundary Parameters.ctl" Type="VI" URL="../lib/Data Access Objects/Limits/Limit Boundary Parameters.ctl"/>
+			<Item Name="External Sensor Sensitivities DAO.vi" Type="VI" URL="../lib/Data Access Objects/Calibration/External Sensor Sensitivities DAO.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
