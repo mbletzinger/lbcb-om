@@ -378,7 +378,6 @@
 			<Item Name="External Sensor Sensitivities DAO.vi" Type="VI" URL="../lib/Data Access Objects/Calibration/External Sensor Sensitivities DAO.vi"/>
 			<Item Name="ConsolidatedDAQChannelNames.vi" Type="VI" URL="../lib/DAQ IO/ConsolidatedDAQChannelNames.vi"/>
 			<Item Name="MM Multi DOF Status DAO.vi" Type="VI" URL="../lib/MixedMode/MM Multi DOF Status DAO.vi"/>
-			<Item Name="Mixed Mode Multidof State.ctl" Type="VI" URL="../lib/MixedMode/Mixed Mode Multidof State.ctl"/>
 			<Item Name="MM Multi DOF State Machine.vi" Type="VI" URL="../lib/MixedMode/MM Multi DOF State Machine.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
