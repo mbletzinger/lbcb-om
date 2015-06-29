@@ -346,7 +346,6 @@
 			</Item>
 			<Item Name="Create Snapshot Transaction List.vi" Type="VI" URL="../lib/Global Data/Transactions/Create Snapshot Transaction List.vi"/>
 			<Item Name="Dataset Transaction Id.ctl" Type="VI" URL="../lib/Global Data/Transactions/Dataset Transaction Id.ctl"/>
-			<Item Name="Dataset Transaction Id 2 Label.vi" Type="VI" URL="../lib/Global Data/Transactions/Dataset Transaction Id 2 Label.vi"/>
 			<Item Name="Cartesian Moment Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Cartesian Moment Boundary DAO.vi"/>
 			<Item Name="Actuator Disp Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Actuator Disp Boundary DAO.vi"/>
 			<Item Name="Cartesian Translation Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Cartesian Translation Boundary DAO.vi"/>
@@ -368,6 +367,13 @@
 			<Item Name="Command Voltage Limit DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Command Voltage Limit DAO.vi"/>
 			<Item Name="BadAiMax Filter.vi" Type="VI" URL="../lib/DAQ IO/BadAiMax Filter.vi"/>
 			<Item Name="Force Tags Change Message DAO.vi" Type="VI" URL="../lib/IPC Messages/Force Tags Change Message DAO.vi"/>
+			<Item Name="Offsets.vi" Type="VI" URL="../lib/Offsets/Offsets.vi"/>
+			<Item Name="Dataset Source.ctl" Type="VI" URL="../lib/Global Data/Transactions/Dataset Source.ctl"/>
+			<Item Name="Sort Transactions.vi" Type="VI" URL="../lib/Global Data/Transactions/Sort Transactions.vi"/>
+			<Item Name="Label 2 Dataset Transaction Id.vi" Type="VI" URL="../lib/Global Data/Transactions/Label 2 Dataset Transaction Id.vi"/>
+			<Item Name="Name Actions.ctl" Type="VI" URL="../lib/Global Data/Names/Name Actions.ctl"/>
+			<Item Name="Names Data Set.vi" Type="VI" URL="../lib/Global Data/Names/Names Data Set.vi"/>
+			<Item Name="Global Name Set.vi" Type="VI" URL="../lib/Global Data/Names/Global Name Set.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
