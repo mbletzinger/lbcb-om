@@ -376,6 +376,7 @@
 			<Item Name="Increment Data.vi" Type="VI" URL="../lib/Global Data/Increment Data.vi"/>
 			<Item Name="Limit Boundary Parameters.ctl" Type="VI" URL="../lib/Data Access Objects/Limits/Limit Boundary Parameters.ctl"/>
 			<Item Name="External Sensor Sensitivities DAO.vi" Type="VI" URL="../lib/Data Access Objects/Calibration/External Sensor Sensitivities DAO.vi"/>
+			<Item Name="ConsolidatedDAQChannelNames.vi" Type="VI" URL="../lib/DAQ IO/ConsolidatedDAQChannelNames.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
