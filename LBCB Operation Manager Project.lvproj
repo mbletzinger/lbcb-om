@@ -62,6 +62,7 @@
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
 		<Item Name="Old OM Setup.vi" Type="VI" URL="../Old OM Setup.vi"/>
 		<Item Name="Old Limits Page.vi" Type="VI" URL="../Old Limits Page.vi"/>
+		<Item Name="Expand Channel Names.vi" Type="VI" URL="../lib/Autobalance/Expand Channel Names.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -344,7 +345,6 @@
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Create Snapshot Transaction List.vi" Type="VI" URL="../lib/Global Data/Transactions/Create Snapshot Transaction List.vi"/>
 			<Item Name="Dataset Transaction Id.ctl" Type="VI" URL="../lib/Global Data/Transactions/Dataset Transaction Id.ctl"/>
 			<Item Name="Cartesian Moment Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Cartesian Moment Boundary DAO.vi"/>
 			<Item Name="Actuator Disp Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Actuator Disp Boundary DAO.vi"/>
@@ -372,7 +372,6 @@
 			<Item Name="Label 2 Dataset Transaction Id.vi" Type="VI" URL="../lib/Global Data/Transactions/Label 2 Dataset Transaction Id.vi"/>
 			<Item Name="Name Actions.ctl" Type="VI" URL="../lib/Global Data/Names/Name Actions.ctl"/>
 			<Item Name="Names Data Set.vi" Type="VI" URL="../lib/Global Data/Names/Names Data Set.vi"/>
-			<Item Name="Global Name Set.vi" Type="VI" URL="../lib/Global Data/Names/Global Name Set.vi"/>
 			<Item Name="Increment Data.vi" Type="VI" URL="../lib/Global Data/Increment Data.vi"/>
 			<Item Name="Limit Boundary Parameters.ctl" Type="VI" URL="../lib/Data Access Objects/Limits/Limit Boundary Parameters.ctl"/>
 			<Item Name="External Sensor Sensitivities DAO.vi" Type="VI" URL="../lib/Data Access Objects/Calibration/External Sensor Sensitivities DAO.vi"/>
