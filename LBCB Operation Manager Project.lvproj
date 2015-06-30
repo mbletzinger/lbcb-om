@@ -62,7 +62,6 @@
 		<Item Name="Calibration.vi" Type="VI" URL="../Calibration.vi"/>
 		<Item Name="Old OM Setup.vi" Type="VI" URL="../Old OM Setup.vi"/>
 		<Item Name="Old Limits Page.vi" Type="VI" URL="../Old Limits Page.vi"/>
-		<Item Name="Expand Channel Names.vi" Type="VI" URL="../lib/Autobalance/Expand Channel Names.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Read BMP File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Read BMP File.vi"/>
@@ -353,8 +352,6 @@
 			<Item Name="Cartesian Rotation Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Cartesian Rotation Boundary DAO.vi"/>
 			<Item Name="Actuator Force Boundary DAO.vi" Type="VI" URL="../lib/Data Access Objects/Limits/Actuator Force Boundary DAO.vi"/>
 			<Item Name="I Gain DAO.vi" Type="VI" URL="../lib/Data Access Objects/Control Loop/I Gain DAO.vi"/>
-			<Item Name="PID Controls.ctl" Type="VI" URL="../lib/Data Access Objects/Control Loop/PID Controls.ctl"/>
-			<Item Name="PID Controls DAO.vi" Type="VI" URL="../lib/Data Access Objects/Control Loop/PID Controls DAO.vi"/>
 			<Item Name="P Gain DAO.vi" Type="VI" URL="../lib/Data Access Objects/Control Loop/P Gain DAO.vi"/>
 			<Item Name="Force Control Parameters.ctl" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Force Control Parameters.ctl"/>
 			<Item Name="Mixed Mode Force Group Priorities DAO.vi" Type="VI" URL="../lib/Data Access Objects/Mixed Mode/Mixed Mode Force Group Priorities DAO.vi"/>
@@ -370,14 +367,9 @@
 			<Item Name="Offsets.vi" Type="VI" URL="../lib/Offsets/Offsets.vi"/>
 			<Item Name="Sort Transactions.vi" Type="VI" URL="../lib/Global Data/Transactions/Sort Transactions.vi"/>
 			<Item Name="Label 2 Dataset Transaction Id.vi" Type="VI" URL="../lib/Global Data/Transactions/Label 2 Dataset Transaction Id.vi"/>
-			<Item Name="Name Actions.ctl" Type="VI" URL="../lib/Global Data/Names/Name Actions.ctl"/>
-			<Item Name="Names Data Set.vi" Type="VI" URL="../lib/Global Data/Names/Names Data Set.vi"/>
 			<Item Name="Increment Data.vi" Type="VI" URL="../lib/Global Data/Increment Data.vi"/>
 			<Item Name="Limit Boundary Parameters.ctl" Type="VI" URL="../lib/Data Access Objects/Limits/Limit Boundary Parameters.ctl"/>
 			<Item Name="External Sensor Sensitivities DAO.vi" Type="VI" URL="../lib/Data Access Objects/Calibration/External Sensor Sensitivities DAO.vi"/>
-			<Item Name="ConsolidatedDAQChannelNames.vi" Type="VI" URL="../lib/DAQ IO/ConsolidatedDAQChannelNames.vi"/>
-			<Item Name="MM Multi DOF Status DAO.vi" Type="VI" URL="../lib/MixedMode/MM Multi DOF Status DAO.vi"/>
-			<Item Name="MM Multi DOF State Machine.vi" Type="VI" URL="../lib/MixedMode/MM Multi DOF State Machine.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="LBCB OM" Type="EXE">
